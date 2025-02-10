@@ -134,9 +134,36 @@ if __name__ == "__main__":
             return 2.0
         else:
             return np.full_like(t, 2.0)
+        
+
+    def i_funcx(t):
+        """
+        Gibt eine Rampe zurück, die sich wie folgt verhält:
+        - 0 Sekunden bis 1 Sekunde: Wert = 0
+        - 1 Sekunde bis 6 Sekunden: Linearer Anstieg von 0 auf 1
+        - 6 Sekunden bis 16 Sekunden: Wert = 1
+        - Ab 16 Sekunden: Wert = 0
+        """
+        if np.isscalar(t):
+            if t < 1:
+                return 0.0
+            elif t < 6:
+                return (t - 1) / 5  # Linearer Anstieg von 0 bis 1 in 5 Sekunden
+            elif t < 16:
+                return 1.0
+            else:
+                return 0.0
+        else:
+            t = np.asarray(t)  # Sicherstellen, dass t ein Array ist
+            values = np.zeros_like(t)  # Standardmäßig alles auf 0 setzen
+            values[(t >= 1) & (t < 6)] = (t[(t >= 1) & (t < 6)] - 1) / 5
+            values[(t >= 6) & (t < 16)] = 1.0
+            return values
+
+    from stromkurven import i_func
 
     # 1) System
-    system = RCSystem(C, R, i_const)
+    system = RCSystem(C, R, i_func)
     vC0 = 0.0  # Startspannung
     system.simulate((t0, tEnd), x0=vC0, dt=dt_sim)
 
@@ -166,7 +193,7 @@ if __name__ == "__main__":
     # Reale Systemdaten
     t_sys = system.t_solution
     vC_sys = system.vC_solution
-    i_sys = i_const(t_sys)  # shape=(len(t_sys),)
+    i_sys = i_func(t_sys)  # shape=(len(t_sys),)
     y_clean = vC_sys + R*i_sys
 
     plt.figure(figsize=(10,8))
