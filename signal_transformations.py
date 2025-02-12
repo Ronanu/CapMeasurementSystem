@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.signal import medfilt
 
+
 class SignalData:
     def __init__(self, name, time, values):
         """
@@ -26,6 +27,31 @@ class SignalData:
         """Gibt das DataFrame zurück."""
         return self.data.copy()
 
+    # Überladung der Grundrechenarten mit Skalaren
+    def __add__(self, scalar):
+        if isinstance(scalar, (int, float)):
+            return SignalData(f"{self.name} + {scalar}", self.data["time"], self.data["value"] + scalar)
+        raise TypeError("Addition ist nur mit Skalarwerten (int, float) möglich.")
+
+    def __sub__(self, scalar):
+        if isinstance(scalar, (int, float)):
+            return SignalData(f"{self.name} - {scalar}", self.data["time"], self.data["value"] - scalar)
+        raise TypeError("Subtraktion ist nur mit Skalarwerten (int, float) möglich.")
+
+    def __mul__(self, scalar):
+        if isinstance(scalar, (int, float)):
+            return SignalData(f"{self.name} * {scalar}", self.data["time"], self.data["value"] * scalar)
+        raise TypeError("Multiplikation ist nur mit Skalarwerten (int, float) möglich.")
+
+    def __truediv__(self, scalar):
+        if isinstance(scalar, (int, float)):
+            if scalar == 0:
+                raise ValueError("Division durch null ist nicht erlaubt.")
+            return SignalData(f"{self.name} / {scalar}", self.data["time"], self.data["value"] / scalar)
+        raise TypeError("Division ist nur mit Skalarwerten (int, float) möglich.")
+
+
+
 class SignalDataLoader:
     def __init__(self, file_path, name, sampling_interval=0.01):
         """
@@ -45,11 +71,7 @@ class SignalDataLoader:
         df["value"] = df["value"].astype(str).str.replace(",", ".").astype(float)
         df["time"] = np.arange(len(df)) * self.sampling_interval
         return SignalData(name, df["time"], df["value"])
-    
-    def get_derivative_signal(self):
-        """Gibt ein neues SignalData-Objekt zurück, das die Ableitung enthält."""
-        df = self.signal_data.get_data()
-        return SignalData(self.signal_data.name + " (Derivative)", df["time"], df["derivative"])
+
 
 class SignalCutter:
     def __init__(self, signal_data):
@@ -100,6 +122,40 @@ class MedianFilter:
         df = self.original_data.get_data()
         df["value"] = medfilt(df["value"], kernel_size=window_size)
         return SignalData(self.original_data.name + " (Median)", df["time"], df["value"])
+    
+
+class MovingAverageFilter:
+    def __init__(self, signal_data, window_size=5):
+        """
+        Wendet einen gleitenden Mittelwertfilter auf ein SignalData-Objekt an.
+        :param signal_data: Ein SignalData-Objekt
+        :param window_size: Fenstergröße für den Mittelwertfilter
+        """
+        self.original_data = signal_data
+        self.signal_data = self.apply_filter(window_size)
+    
+    def apply_filter(self, window_size):
+        """Berechnet das gefilterte Signal und gibt ein neues SignalData-Objekt zurück."""
+        df = self.original_data.get_data()
+        df["value"] = df["value"].rolling(window=window_size, center=True).mean().bfill().ffill()
+        return SignalData(self.original_data.name + " (Moving Average)", df["time"], df["value"])
+
+class ConvolutionSmoothingFilter:
+    def __init__(self, signal_data, kernel_size=5):
+        """
+        Wendet eine Glättung mittels Faltung auf ein SignalData-Objekt an.
+        :param signal_data: Ein SignalData-Objekt
+        :param kernel_size: Größe des Glättungskerns
+        """
+        self.original_data = signal_data
+        self.signal_data = self.apply_filter(kernel_size)
+    
+    def apply_filter(self, kernel_size):
+        """Berechnet das gefilterte Signal durch Faltung und gibt ein neues SignalData-Objekt zurück."""
+        df = self.original_data.get_data()
+        kernel = np.ones(kernel_size) / kernel_size
+        df["value"] = np.convolve(df["value"], kernel, mode='same')
+        return SignalData(self.original_data.name + " (Convolution Smoothing)", df["time"], df["value"])
 
 class PlotVoltageAndCurrent:
     def __init__(self, voltage_signals, current_signals):
@@ -135,9 +191,13 @@ class PlotVoltageAndCurrent:
         plt.show()
 
 if __name__ == "__main__":
-    file_path = "MAL2_6A2.csv"
+    file_path = "MAL2_8.csv"
     raw_signal = SignalDataLoader(file_path, "Original Signal").signal_data
-    cut_signal = SignalCutter(raw_signal).cut_time_range((1, 200))
-    filtered_signal = MedianFilter(cut_signal, window_size=7).signal_data
-    derived_signal = raw_signal.get_derivative_signal()
-    PlotVoltageAndCurrent(voltage_signals=[cut_signal, filtered_signal], current_signals=[derived_signal])
+    cut_signal = SignalCutter(raw_signal).cut_time_range((1, 4000))
+    fil_len = 19
+    filtered_signal1 = MedianFilter(cut_signal, window_size=fil_len).signal_data
+    filtered_signal2 = MovingAverageFilter(cut_signal, window_size=fil_len).signal_data
+    filtered_signal3 = ConvolutionSmoothingFilter(cut_signal, kernel_size=fil_len).signal_data
+    derived_signal = raw_signal.get_derivative_signal() * 50
+    derived_signal2 = filtered_signal3.get_derivative_signal() * 50
+    PlotVoltageAndCurrent(voltage_signals=[cut_signal, filtered_signal1, filtered_signal2, filtered_signal3], current_signals=[derived_signal, derived_signal2])
