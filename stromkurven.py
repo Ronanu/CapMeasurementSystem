@@ -28,15 +28,16 @@ def i_func(t):
         values[(t >= 6) & (t < 16)] = 1.0
         values[t >= 16] = np.exp(-(t[t >= 16] - 16) / tau_decay)
         return values
+    
+if __name__ == "__main__":    
+    # Test mit einer grafischen Darstellung
+    t_values = np.linspace(0, 20, 1000)
+    i_values = i_func(t_values)
 
-# Test mit einer grafischen Darstellung
-t_values = np.linspace(0, 20, 1000)
-i_values = i_func(t_values)
-
-plt.plot(t_values, i_values, label="i_func(t)")
-plt.xlabel("Zeit (s)")
-plt.ylabel("i(t)")
-plt.title("Exponentielle Lade- und Entladekurve")
-plt.grid()
-plt.legend()
-plt.show()
+    plt.plot(t_values, i_values, label="i_func(t)")
+    plt.xlabel("Zeit (s)")
+    plt.ylabel("i(t)")
+    plt.title("Exponentielle Lade- und Entladekurve")
+    plt.grid()
+    plt.legend()
+    plt.show()
