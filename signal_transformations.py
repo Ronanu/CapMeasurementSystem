@@ -240,29 +240,30 @@ class PlotVoltageAndCurrent:
         axs[1].grid()
         
         plt.tight_layout()
-        
 
-if __name__ == "__main__":
+def testing_signal_cutter():
+    file_path = "MAL2_5A2esr.csv"
+    raw_signal = SignalDataLoader(file_path, "Original Signal").signal_data
+    threshold = 1  # Beispiel-Schwellenwert für die Spannung
+    signal_cutter = SignalCutter(raw_signal)    
+    cut_larger_left = signal_cutter.cut_by_value("l>", threshold) + 0.1
+    signal_cutter = SignalCutter(cut_larger_left)
+    cut_smaller_left = signal_cutter.cut_by_value("l<", threshold) + 0.2
+    signal_cutter = SignalCutter(raw_signal)
+    cut_larger_right = signal_cutter.cut_by_value("r>", threshold)
+    signal_cutter = SignalCutter(cut_larger_right)
+    cut_smaller_right = signal_cutter.cut_by_value("r<", threshold) + 0.1
+
+    PlotVoltageAndCurrent(
+    voltage_signals=[cut_larger_left, cut_smaller_left],
+    current_signals=[cut_larger_right, cut_smaller_right]
+    )
+
+def compare_raw_to_pressed():
     file_path = "MAL2_5A2esr.csv"
     raw_signal = SignalDataLoader(file_path, "Original Signal").signal_data
     file_path = "p1A2esr.csv"
     pressed_signal = SignalDataLoader(file_path, "Pressed Signal").signal_data
-
-    if False:
-        threshold = 1  # Beispiel-Schwellenwert für die Spannung
-        signal_cutter = SignalCutter(raw_signal)    
-        cut_larger_left = signal_cutter.cut_by_value("l>", threshold) + 0.1
-        signal_cutter = SignalCutter(cut_larger_left)
-        cut_smaller_left = signal_cutter.cut_by_value("l<", threshold) + 0.2
-        signal_cutter = SignalCutter(raw_signal)
-        cut_larger_right = signal_cutter.cut_by_value("r>", threshold)
-        signal_cutter = SignalCutter(cut_larger_right)
-        cut_smaller_right = signal_cutter.cut_by_value("r<", threshold) + 0.1
-
-        PlotVoltageAndCurrent(
-        voltage_signals=[cut_larger_left, cut_smaller_left],
-        current_signals=[cut_larger_right, cut_smaller_right]
-        )
 
     current_signal = raw_signal.get_derivative_signal() * 50
     smoothed_signal = ConvolutionSmoothingFilter(raw_signal, kernel_size=23).signal_data
@@ -276,6 +277,12 @@ if __name__ == "__main__":
         voltage_signals=[raw_signal, smoothed_signal, pressed_signal, pressed_smoothed],
         current_signals=[current_signal, smoothed_current, pressed_current, pressed_smoothed_current]
     )
+        
+3
+if __name__ == "__main__":
+    
+    testing_signal_cutter()
+    compare_raw_to_pressed()
 
     
 
