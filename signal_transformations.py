@@ -4,6 +4,28 @@ import matplotlib.pyplot as plt
 from scipy.signal import medfilt
 
 
+class SignalDataLoader:
+    def __init__(self, file_path, name, sampling_interval=0.01):
+        """
+        Lädt eine CSV-Datei und erstellt ein SignalData-Objekt.
+        :param file_path: Pfad zur CSV-Datei
+        :param name: Name des Signals
+        :param sampling_interval: Abtastintervall in Sekunden
+        """
+        self.file_path = file_path
+        self.sampling_interval = sampling_interval
+        self.signal_data = self.load_data(name)
+
+    def load_data(self, name):
+        """Lädt die CSV-Datei und gibt ein SignalData-Objekt zurück."""
+        df = pd.read_csv(self.file_path, delimiter=",", decimal=",", quotechar='"',
+                         skipinitialspace=True, usecols=[1], names=["value"], skiprows=1)
+        df["value"] = df["value"].astype(str).str.replace(",", ".").astype(float)
+        df.dropna(subset=["value"], inplace=True)
+        df["time"] = np.arange(len(df)) * self.sampling_interval
+        return SignalData(name, df["time"], df["value"])
+    
+
 class SignalData:
     def __init__(self, name, time, values):
         """
@@ -70,27 +92,6 @@ class SignalData:
         raise TypeError("Division ist nur mit Skalarwerten (int, float) möglich.")
 
 
-
-class SignalDataLoader:
-    def __init__(self, file_path, name, sampling_interval=0.01):
-        """
-        Lädt eine CSV-Datei und erstellt ein SignalData-Objekt.
-        :param file_path: Pfad zur CSV-Datei
-        :param name: Name des Signals
-        :param sampling_interval: Abtastintervall in Sekunden
-        """
-        self.file_path = file_path
-        self.sampling_interval = sampling_interval
-        self.signal_data = self.load_data(name)
-
-    def load_data(self, name):
-        """Lädt die CSV-Datei und gibt ein SignalData-Objekt zurück."""
-        df = pd.read_csv(self.file_path, delimiter=",", decimal=",", quotechar='"',
-                         skipinitialspace=True, usecols=[1], names=["value"], skiprows=1)
-        df["value"] = df["value"].astype(str).str.replace(",", ".").astype(float)
-        df.dropna(subset=["value"], inplace=True)
-        df["time"] = np.arange(len(df)) * self.sampling_interval
-        return SignalData(name, df["time"], df["value"])
 
 
 class SignalCutter:
@@ -215,6 +216,7 @@ class ConvolutionSmoothingFilter:
         df["value"] = np.convolve(df["value"], kernel, mode='same')
         return SignalData(self.original_data.name + " (Convolution Smoothing)", df["time"], df["value"])
 
+
 class PlotVoltageAndCurrent:
     def __init__(self, voltage_signals, current_signals):
         """
@@ -246,6 +248,7 @@ class PlotVoltageAndCurrent:
         axs[1].grid()
         
         plt.tight_layout()
+        
 
 def testing_signal_cutter():
     file_path = "MAL2_5A2esr.csv"
