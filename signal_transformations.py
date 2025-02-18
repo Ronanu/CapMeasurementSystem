@@ -26,7 +26,20 @@ class SignalData:
     def get_data(self):
         """Gibt das DataFrame zurück."""
         return self.data.copy()
-
+    
+    # Methode, die Zeitdauer zurückgibt
+    def get_time_duration(self):
+        return self.data["time"][-1] - self.data["time"][0]
+    
+    def set_start_time(self, start_time):   
+        # setzt die Startzeit auf den übergebenen Wert und passt die Zeitwerte entsprechend an
+        self.data["time"] = self.data["time"] - self.data["time"][0] + start_time
+    
+    # giebt die anzahl der datenpunkte zurück
+    def get_number_of_data_points(self):
+        return len(self.data["time"])
+    
+    
     # Überladung der Grundrechenarten mit Skalaren
     def __add__(self, scalar):
         if isinstance(scalar, (int, float)):
@@ -69,6 +82,7 @@ class SignalDataLoader:
         df = pd.read_csv(self.file_path, delimiter=",", decimal=",", quotechar='"',
                          skipinitialspace=True, usecols=[1], names=["value"], skiprows=1)
         df["value"] = df["value"].astype(str).str.replace(",", ".").astype(float)
+        df["value"].fillna(0.0, inplace=True)  # NaN-Werte durch 0.0 ersetzen
         df["time"] = np.arange(len(df)) * self.sampling_interval
         return SignalData(name, df["time"], df["value"])
 
@@ -87,25 +101,63 @@ class SignalCutter:
         df = df[(df["time"] >= time_range[0]) & (df["time"] <= time_range[1])]
         return SignalData(self.original_data.name + " (Time Cut)", df["time"], df["value"])
     
-    def cut_voltage_range(self, direction, threshold):
-        """Beschneidet das Signal basierend auf Spannungswerten.
+    def cut_by_value(self, direction, threshold):
+        """
+        Bsp.: cut_by_value("l>", 1) entfernt alle Werte von links, bis der erste Wert größer als 1 ist.
         :param direction: "l>" (links größer), "l<" (links kleiner), "r>" (rechts größer), "r<" (rechts kleiner)
         :param threshold: Schwellenwert für die Beschneidung
         """
         df = self.original_data.get_data()
+        
         if direction == "l>":
             first_idx = df[df["value"] > threshold].index.min()
+            if first_idx is None:
+                raise ValueError(f"Kein Wert größer als {threshold} gefunden.")
+            if first_idx == 0:
+                print(f"Warnung: Keine Datenpunkte wurden durch {direction} {threshold} entfernt.")
             df = df.loc[first_idx:]
+            # print direction, last_idx and len(df) to debug
+            print(f"{direction} {first_idx} of {len(df)}")
+        
         elif direction == "l<":
             first_idx = df[df["value"] < threshold].index.min()
+            if first_idx is None:
+                raise ValueError(f"Kein Wert kleiner als {threshold} gefunden.")
+            if first_idx == 0:
+                print(f"Warnung: Keine Datenpunkte wurden durch {direction} {threshold} entfernt.")
             df = df.loc[first_idx:]
+            # print direction, last_idx and len(df) to debug
+            print(f"{direction} {first_idx} of {len(df)}")
+        
         elif direction == "r>":
             last_idx = df[df["value"] > threshold].index.max()
+            if last_idx is None:
+                raise ValueError(f"Kein Wert größer als {threshold} gefunden.")
+            if last_idx == len(df) - 1:
+                print(f"Warnung: Keine Datenpunkte wurden durch {direction} {threshold} entfernt.")
             df = df.loc[:last_idx]
+            # print direction, last_idx and len(df) to debug
+            print(f"{direction} {last_idx} of {len(df)}")
+        
         elif direction == "r<":
             last_idx = df[df["value"] < threshold].index.max()
+            if last_idx is None:
+                raise ValueError(f"Kein Wert kleiner als {threshold} gefunden.")
+            if last_idx == len(df) - 1:
+                print(f"Warnung: Keine Datenpunkte wurden durch {direction} {threshold} entfernt.")
             df = df.loc[:last_idx]
-        return SignalData(self.original_data.name + " (Voltage Cut)", df["time"], df["value"])
+            # print direction, last_idx and len(df) to debug
+            print(f"{direction} {last_idx} of {len(df)}")
+        
+        else:
+            raise ValueError("Ungültige Richtung. Verwenden Sie 'l>', 'l<', 'r>' oder 'r<'.")
+        
+        return SignalData(
+            self.original_data.name + f" (Cut {direction} {threshold})",
+            df["time"],
+            df["value"]
+        )
+
 
 class MedianFilter:
     def __init__(self, signal_data, window_size=5):
@@ -188,16 +240,43 @@ class PlotVoltageAndCurrent:
         axs[1].grid()
         
         plt.tight_layout()
-        plt.show()
+        
 
 if __name__ == "__main__":
-    file_path = "MAL2_8.csv"
+    file_path = "MAL2_5A2esr.csv"
     raw_signal = SignalDataLoader(file_path, "Original Signal").signal_data
-    cut_signal = SignalCutter(raw_signal).cut_time_range((1, 4000))
-    fil_len = 19
-    filtered_signal1 = MedianFilter(cut_signal, window_size=fil_len).signal_data
-    filtered_signal2 = MovingAverageFilter(cut_signal, window_size=fil_len).signal_data
-    filtered_signal3 = ConvolutionSmoothingFilter(cut_signal, kernel_size=fil_len).signal_data
-    derived_signal = raw_signal.get_derivative_signal() * 50
-    derived_signal2 = filtered_signal3.get_derivative_signal() * 50
-    PlotVoltageAndCurrent(voltage_signals=[cut_signal, filtered_signal1, filtered_signal2, filtered_signal3], current_signals=[derived_signal, derived_signal2])
+    file_path = "p1A2esr.csv"
+    pressed_signal = SignalDataLoader(file_path, "Pressed Signal").signal_data
+
+    if False:
+        threshold = 1  # Beispiel-Schwellenwert für die Spannung
+        signal_cutter = SignalCutter(raw_signal)    
+        cut_larger_left = signal_cutter.cut_by_value("l>", threshold) + 0.1
+        signal_cutter = SignalCutter(cut_larger_left)
+        cut_smaller_left = signal_cutter.cut_by_value("l<", threshold) + 0.2
+        signal_cutter = SignalCutter(raw_signal)
+        cut_larger_right = signal_cutter.cut_by_value("r>", threshold)
+        signal_cutter = SignalCutter(cut_larger_right)
+        cut_smaller_right = signal_cutter.cut_by_value("r<", threshold) + 0.1
+
+        PlotVoltageAndCurrent(
+        voltage_signals=[cut_larger_left, cut_smaller_left],
+        current_signals=[cut_larger_right, cut_smaller_right]
+        )
+
+    current_signal = raw_signal.get_derivative_signal() * 50
+    smoothed_signal = ConvolutionSmoothingFilter(raw_signal, kernel_size=23).signal_data
+    smoothed_current = smoothed_signal.get_derivative_signal() * 50
+
+    pressed_current = pressed_signal.get_derivative_signal() * 50
+    pressed_smoothed = ConvolutionSmoothingFilter(pressed_signal, kernel_size=23).signal_data
+    pressed_smoothed_current = pressed_smoothed.get_derivative_signal() * 50
+    
+    PlotVoltageAndCurrent(
+        voltage_signals=[raw_signal, smoothed_signal, pressed_signal, pressed_smoothed],
+        current_signals=[current_signal, smoothed_current, pressed_current, pressed_smoothed_current]
+    )
+
+    
+
+    plt.show()
