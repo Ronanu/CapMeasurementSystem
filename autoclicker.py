@@ -55,18 +55,17 @@ class PositionLogger:
     def run(self):
         print("Drücke SPACE für Position, V für Einfügen, ENTER für Wartezeit, ESC zum Beenden und Speichern.")
         while True:
-            if keyboard.is_pressed('space'):
-                self.log_position()
-                keyboard.wait('space', suppress=True)
-            elif keyboard.is_pressed('v'):
-                self.log_paste()
-                keyboard.wait('v', suppress=True)
-            elif keyboard.is_pressed('enter'):
-                self.log_delay()
-                keyboard.wait('enter', suppress=True)
-            elif keyboard.is_pressed('esc'):
-                self.save_positions()
-                break
+            event = keyboard.read_event()
+            if event.event_type == keyboard.KEY_DOWN:
+                if event.name == 'space':
+                    self.log_position()
+                elif event.name == 'v':
+                    self.log_paste()
+                elif event.name == 'enter':
+                    self.log_delay()
+                elif event.name == 'esc':
+                    self.save_positions()
+                    break
 
 class PositionClicker:
     def __init__(self, input_file):

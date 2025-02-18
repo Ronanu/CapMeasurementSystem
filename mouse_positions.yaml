@@ -1,0 +1,16 @@
+- time: 0.0
+  type: paste
+- time: 2.720106840133667
+  type: delay
+- time: 3.5361545085906982
+  type: click
+  x: 1484
+  y: 516
+- time: 0.5285525321960449
+  type: click
+  x: 1481
+  y: 845
+- time: 0.583430290222168
+  type: click
+  x: 1386
+  y: 640
