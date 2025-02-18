@@ -248,7 +248,27 @@ class PlotVoltageAndCurrent:
         axs[1].grid()
         
         plt.tight_layout()
-        
+
+
+class CapacitorEvaluation:
+    def __init__(self, signal_data, U_apl=3, I_dis=1):
+        self.signal_data = signal_data
+        self.U_apl = U_apl
+        self.I_dis = I_dis
+        self.results = {}
+    
+    def lsm_fit(self, order=1):
+        coeff = np.polyfit(self.signal_data.data["time"], self.signal_data.data["value"], order)
+        return coeff
+    
+    def find_point_of_start_discharging(self, U_max, tolerance):
+        for i in range(len(self.signal_data.data)):
+            if (U_max - self.signal_data.data["value"].iloc[i]) > tolerance:
+                index_start_discharge = i - 1
+                return self.signal_data.data["time"].iloc[index_start_discharge], self.signal_data.data["value"].iloc[index_start_discharge], index_start_discharge
+        print("Fehler! Punkt, wo Entladevorgang startet, wurde nicht gefunden!")
+        return None, None, None
+    
 
 def testing_signal_cutter():
     file_path = "MAL2_5A2esr.csv"
@@ -287,22 +307,60 @@ def compare_raw_to_pressed():
         current_signals=[current_signal, smoothed_current, pressed_current, pressed_smoothed_current]
     )
 
-def seperate_sinal_components(filename, rated_voltage):
+def get_holding_voltage(filename, rated_voltage, do_plot=True):
     signal = SignalDataLoader(filename, "Original Signal").signal_data
-    first_cut = SignalCutter(signal).cut_by_value("l>", 0.9 * rated_voltage)
-    second_cut = SignalCutter(first_cut).cut_by_value("r>", 0.9 * rated_voltage)
-    start_time, end_time = second_cut.get_start_and_end_time()
-    third_cut = SignalCutter(second_cut).cut_time_range((start_time + 20, end_time - 20))
-
-    PlotVoltageAndCurrent(
-        voltage_signals=[signal, first_cut, second_cut, third_cut],
-        current_signals=[signal.get_derivative_signal() * 50, first_cut.get_derivative_signal() * 50, second_cut.get_derivative_signal() * 50]
-    )
     
-        
+    first_cut = SignalCutter(signal).cut_by_value("l>", 0.95 * rated_voltage)
+    second_cut = SignalCutter(first_cut).cut_by_value("r>", 0.95 * rated_voltage)
+    start_time, end_time = second_cut.get_start_and_end_time()
+    third_cut = SignalCutter(second_cut).cut_time_range((start_time + 60, end_time - 60))
+    signal_data = third_cut.get_data()
+
+    coeff = np.polyfit(signal_data["time"], signal_data["value"], 0)
+    holding_voltage = coeff[0]
+
+    print(f'holding_voltage: {holding_voltage} V')
+    if do_plot:
+        PlotVoltageAndCurrent(
+            voltage_signals=[signal, first_cut, second_cut, third_cut],
+            current_signals=[signal.get_derivative_signal() * 50, first_cut.get_derivative_signal() * 50, second_cut.get_derivative_signal() * 50]
+        )
+        return holding_voltage
+    
+def get_unloading(filename, rated_voltage, discharge_current=0.6, do_plot=True):
+    signal = SignalDataLoader(filename, "Original Signal").signal_data
+    first_cut = SignalCutter(signal).cut_by_value("l>", 0.95 * rated_voltage)
+    second_cut = SignalCutter(first_cut).cut_by_value("r>", 0.4 * rated_voltage)
+    third_cut = SignalCutter(second_cut).cut_by_value("l<", 0.8 * rated_voltage)
+
+    order = 2
+    coeff = np.polyfit(third_cut.get_data()["time"], third_cut.get_data()["value"], order)
+    print(f'coeff: {coeff}')
+    
+    # create signal from coefficients of polynomial
+    time =  third_cut.get_data()["time"]
+    a, b, c = coeff
+    voltage_poly_signal = SignalData("Polynomial Signal", time, np.polyval(coeff, time))
+    capacity = discharge_current / (2 * a * time + b)
+
+    # plot capacity signal with voltage signal on the x-axis
+    fig, ax = plt.subplots(1, 1, figsize=(12, 6))
+    ax.plot(voltage_poly_signal.get_data()["value"], capacity, label="Capacity Signal")
+    ax.set_xlabel("Voltage (V)")
+    ax.set_ylabel("Capacity (F)")
+    ax.set_title("Capacity vs. Voltage")
+    ax.grid()
+
+
+    if do_plot:
+        PlotVoltageAndCurrent(
+            voltage_signals=[signal, first_cut, second_cut, third_cut, voltage_poly_signal],
+            current_signals=[signal.get_derivative_signal() * 50, first_cut.get_derivative_signal() * 50, second_cut.get_derivative_signal() * 50]
+        )
+    return coeff
 
 if __name__ == "__main__":
     
-    seperate_sinal_components("MAL2_5A2esr.csv", 3)  
+    get_unloading("MAL2_5A2esr.csv", 3, do_plot=False)
 
     plt.show()
