@@ -341,7 +341,7 @@ def get_unloading(filename, rated_voltage, discharge_current=0.6, do_plot=True):
     time =  third_cut.get_data()["time"]
     a, b, c = coeff
     voltage_poly_signal = SignalData("Polynomial Signal", time, np.polyval(coeff, time))
-    capacity = discharge_current / (2 * a * time + b)
+    capacity = -discharge_current / (2 * a * time + b)
 
     # plot capacity signal with voltage signal on the x-axis
     fig, ax = plt.subplots(1, 1, figsize=(12, 6))
@@ -357,10 +357,20 @@ def get_unloading(filename, rated_voltage, discharge_current=0.6, do_plot=True):
             voltage_signals=[signal, first_cut, second_cut, third_cut, voltage_poly_signal],
             current_signals=[signal.get_derivative_signal() * 50, first_cut.get_derivative_signal() * 50, second_cut.get_derivative_signal() * 50]
         )
-    return coeff
+    return coeff, capacity, voltage_poly_signal
 
 if __name__ == "__main__":
     
-    get_unloading("MAL2_5A2esr.csv", 3, do_plot=False)
+    _, cp1, v1 = get_unloading("MAL2_5A2esr.csv", 3, do_plot=False)
+    _, cp2, v2 = get_unloading("p1A2esr.csv", 3, do_plot=False)
+
+    fig, ax = plt.subplots(1, 1, figsize=(12, 6))
+    ax.plot(v1.get_data()["value"], cp1, label="Capacity 1 Signal")
+    ax.plot(v2.get_data()["value"], cp2, label="Capacity 2 Signal")
+    ax.set_xlabel("Voltage (V)")
+    ax.set_ylabel("Capacity (F)")
+    ax.set_title("Capacity vs. Voltage")
+    ax.legend()
+    ax.grid()
 
     plt.show()
