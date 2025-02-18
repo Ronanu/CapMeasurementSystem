@@ -31,6 +31,12 @@ class SignalData:
     def get_time_duration(self):
         return self.data["time"][-1] - self.data["time"][0]
     
+    def get_start_and_end_time(self):
+        if self.data.empty:
+            raise ValueError("Das Signal enthält keine Datenpunkte nach dem Schneiden.")
+        return self.data["time"].iloc[0], self.data["time"].iloc[-1]
+
+    
     def set_start_time(self, start_time):   
         # setzt die Startzeit auf den übergebenen Wert und passt die Zeitwerte entsprechend an
         self.data["time"] = self.data["time"] - self.data["time"][0] + start_time
@@ -82,7 +88,7 @@ class SignalDataLoader:
         df = pd.read_csv(self.file_path, delimiter=",", decimal=",", quotechar='"',
                          skipinitialspace=True, usecols=[1], names=["value"], skiprows=1)
         df["value"] = df["value"].astype(str).str.replace(",", ".").astype(float)
-        df["value"].fillna(0.0, inplace=True)  # NaN-Werte durch 0.0 ersetzen
+        df.dropna(subset=["value"], inplace=True)
         df["time"] = np.arange(len(df)) * self.sampling_interval
         return SignalData(name, df["time"], df["value"])
 
@@ -98,7 +104,7 @@ class SignalCutter:
     def cut_time_range(self, time_range):
         """Beschneidet das Signal im angegebenen Zeitbereich."""
         df = self.original_data.get_data()
-        df = df[(df["time"] >= time_range[0]) & (df["time"] <= time_range[1])]
+        df = df[(df["time"] >= time_range[0]) & (df["time"] <= time_range[1])].reset_index(drop=True)
         return SignalData(self.original_data.name + " (Time Cut)", df["time"], df["value"])
     
     def cut_by_value(self, direction, threshold):
@@ -115,7 +121,7 @@ class SignalCutter:
                 raise ValueError(f"Kein Wert größer als {threshold} gefunden.")
             if first_idx == 0:
                 print(f"Warnung: Keine Datenpunkte wurden durch {direction} {threshold} entfernt.")
-            df = df.loc[first_idx:]
+            df = df.loc[first_idx:].reset_index(drop=True)
             # print direction, last_idx and len(df) to debug
             print(f"{direction} {first_idx} of {len(df)}")
         
@@ -125,7 +131,7 @@ class SignalCutter:
                 raise ValueError(f"Kein Wert kleiner als {threshold} gefunden.")
             if first_idx == 0:
                 print(f"Warnung: Keine Datenpunkte wurden durch {direction} {threshold} entfernt.")
-            df = df.loc[first_idx:]
+            df = df.loc[first_idx:].reset_index(drop=True)
             # print direction, last_idx and len(df) to debug
             print(f"{direction} {first_idx} of {len(df)}")
         
@@ -135,7 +141,7 @@ class SignalCutter:
                 raise ValueError(f"Kein Wert größer als {threshold} gefunden.")
             if last_idx == len(df) - 1:
                 print(f"Warnung: Keine Datenpunkte wurden durch {direction} {threshold} entfernt.")
-            df = df.loc[:last_idx]
+            df = df.loc[:last_idx].reset_index(drop=True)
             # print direction, last_idx and len(df) to debug
             print(f"{direction} {last_idx} of {len(df)}")
         
@@ -145,7 +151,7 @@ class SignalCutter:
                 raise ValueError(f"Kein Wert kleiner als {threshold} gefunden.")
             if last_idx == len(df) - 1:
                 print(f"Warnung: Keine Datenpunkte wurden durch {direction} {threshold} entfernt.")
-            df = df.loc[:last_idx]
+            df = df.loc[:last_idx].reset_index(drop=True)
             # print direction, last_idx and len(df) to debug
             print(f"{direction} {last_idx} of {len(df)}")
         
@@ -277,13 +283,23 @@ def compare_raw_to_pressed():
         voltage_signals=[raw_signal, smoothed_signal, pressed_signal, pressed_smoothed],
         current_signals=[current_signal, smoothed_current, pressed_current, pressed_smoothed_current]
     )
+
+def seperate_sinal_components(filename, rated_voltage):
+    signal = SignalDataLoader(filename, "Original Signal").signal_data
+    first_cut = SignalCutter(signal).cut_by_value("l>", 0.9 * rated_voltage)
+    second_cut = SignalCutter(first_cut).cut_by_value("r>", 0.9 * rated_voltage)
+    start_time, end_time = second_cut.get_start_and_end_time()
+    third_cut = SignalCutter(second_cut).cut_time_range((start_time + 20, end_time - 20))
+
+    PlotVoltageAndCurrent(
+        voltage_signals=[signal, first_cut, second_cut, third_cut],
+        current_signals=[signal.get_derivative_signal() * 50, first_cut.get_derivative_signal() * 50, second_cut.get_derivative_signal() * 50]
+    )
+    
         
-3
+
 if __name__ == "__main__":
     
-    testing_signal_cutter()
-    compare_raw_to_pressed()
-
-    
+    seperate_sinal_components("MAL2_5A2esr.csv", 3)  
 
     plt.show()
