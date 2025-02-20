@@ -80,28 +80,38 @@ class PositionClicker:
     def click_positions(self, v_msg='filename.csv'):
         start_time = time.time()
         for action in self.actions:
-            while time.time() - start_time < action["time"]:
-                time.sleep(0.05)
+            #while time.time() - start_time < action["time"]:
+                #time.sleep(0.05)
             if action["type"] == "click":
                 pyautogui.click(action["x"], action["y"])
                 time.sleep(0.3)
                 print(f"Klick an Position: ({action['x']}, {action['y']})")
             elif action["type"] == "paste":
                 pyperclip.copy(v_msg)
+                time.sleep(0.1)
                 pyautogui.hotkey('ctrl', 'v')
                 time.sleep(0.3)
-                print("Dateiname eingefügt.")
+                print(f"Dateiname {v_msg} eingefügt.")
             elif action["type"] == "delay":
-                print("Wartezeit durchgeführt.")
+                print("Warte...")
                 time.sleep(action["time"])
+                print("Wartezeit durchgeführt.")
 
 class FileProcessor:
     def __init__(self, folder_path, logger_file):
         self.folder_path = folder_path
         self.logger_file = logger_file
     
-    def process_files(self):
-        files = sorted(os.listdir(self.folder_path), key=lambda f: os.path.getsize(os.path.join(self.folder_path, f)), reverse=True)
+    def process_files(self):    
+        # Liste aller Dateien im Ordner
+        all_files = os.listdir(self.folder_path)
+
+        # Filtere nur Dateien mit der Endung '.picolog'
+        picolog_files = [f for f in all_files if f.endswith('.picolog')]
+
+        # Sortiere die Dateien nach Größe (absteigend)
+        files = sorted(picolog_files, key=lambda f: os.path.getsize(os.path.join(self.folder_path, f)), reverse=True)
+
         if not files:
             print("Keine Dateien gefunden.")
             return
@@ -111,8 +121,14 @@ class FileProcessor:
         for file in files:
             print(f"Öffne Datei: {file}")
             os.startfile(os.path.join(self.folder_path, file))
-            time.sleep(3)  # Warte 3 Sekunden
-            clicker.click_positions(file)
+            time.sleep(5)  # Warte 3 Sekunden
+            filename = self.cleanup_filename(file)  # Dateiname bereinigen
+            clicker.click_positions(filename)
+            time.sleep(2)
+
+    def cleanup_filename(self, filename):
+        # filename hat .picolog am ende. ersetze mit csv
+        return filename.replace('.picolog', '.csv')
 
 if __name__ == "__main__":
     mode = input("(L)ogger oder (C)licker oder (P)rozess? ").strip().lower()
