@@ -77,11 +77,8 @@ class PositionClicker:
         with open(self.input_file, 'r') as f:
             self.actions = yaml.safe_load(f)
     
-    def click_positions(self, v_msg='filename.csv'):
-        start_time = time.time()
+    def click_positions(self, v_msg='filename.csv', k_wait=1):
         for action in self.actions:
-            #while time.time() - start_time < action["time"]:
-                #time.sleep(0.05)
             if action["type"] == "click":
                 pyautogui.click(action["x"], action["y"])
                 time.sleep(0.3)
@@ -93,8 +90,9 @@ class PositionClicker:
                 time.sleep(0.3)
                 print(f"Dateiname {v_msg} eingefügt.")
             elif action["type"] == "delay":
-                print("Warte...")
-                time.sleep(action["time"])
+                waittime = action["time"] * k_wait + 10
+                print(f"Warte {round(waittime, 2)}s ...")
+                time.sleep(waittime)
                 print("Wartezeit durchgeführt.")
 
 class FileProcessor:
@@ -105,12 +103,15 @@ class FileProcessor:
     def process_files(self):    
         # Liste aller Dateien im Ordner
         all_files = os.listdir(self.folder_path)
-
         # Filtere nur Dateien mit der Endung '.picolog'
         picolog_files = [f for f in all_files if f.endswith('.picolog')]
-
         # Sortiere die Dateien nach Größe (absteigend)
         files = sorted(picolog_files, key=lambda f: os.path.getsize(os.path.join(self.folder_path, f)), reverse=True)
+        def get_file_size(file_path):
+            """Gibt die Größe einer Datei in Bytes zurück."""
+            return os.path.getsize(file_path)
+        biggest_size = get_file_size(os.path.join(self.folder_path, files[0])) if files else 0
+
 
         if not files:
             print("Keine Dateien gefunden.")
@@ -120,10 +121,11 @@ class FileProcessor:
         
         for file in files:
             print(f"Öffne Datei: {file}")
+            filesize = get_file_size(os.path.join(self.folder_path, file))
             os.startfile(os.path.join(self.folder_path, file))
             time.sleep(5)  # Warte 3 Sekunden
             filename = self.cleanup_filename(file)  # Dateiname bereinigen
-            clicker.click_positions(filename)
+            clicker.click_positions(filename, filesize / biggest_size)
             time.sleep(2)
 
     def cleanup_filename(self, filename):
