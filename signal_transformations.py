@@ -36,6 +36,7 @@ class SignalData:
         """
         self.name = name
         self.data = pd.DataFrame({"time": time, "value": values})
+        self.start_time_diff = 0
         self.data["derivative"] = self.get_derivative()
 
     def get_derivative(self):
@@ -61,7 +62,15 @@ class SignalData:
     
     def set_start_time(self, start_time):   
         # setzt die Startzeit auf den übergebenen Wert und passt die Zeitwerte entsprechend an
+        if not self.start_time_diff==0:
+            raise ValueError("Startzeit wurde bereits verschoben. Bitte setzen Sie die Startzeit vorher zurück.")
+        self.start_time_diff = self.data["time"][0] + start_time
         self.data["time"] = self.data["time"] - self.data["time"][0] + start_time
+
+    def reset_start_time(self):
+        starttime, _ = self.get_start_and_end_time()
+        self.start_time_diff = 0
+        self.set_start_time(-starttime+self.start_time_diff)
     
     # giebt die anzahl der datenpunkte zurück
     def get_number_of_data_points(self):
@@ -282,6 +291,26 @@ def testing_signal_cutter():
     cut_larger_right = signal_cutter.cut_by_value("r>", threshold)
     signal_cutter = SignalCutter(cut_larger_right)
     cut_smaller_right = signal_cutter.cut_by_value("r<", threshold) + 0.1
+
+    PlotVoltageAndCurrent(
+    voltage_signals=[cut_larger_left, cut_smaller_left],
+    current_signals=[cut_larger_right, cut_smaller_right]
+    )
+
+    cut_larger_left.set_start_time(0)
+    cut_smaller_left.set_start_time(0)
+    cut_larger_right.set_start_time(500)
+    cut_smaller_right.set_start_time(500)
+
+    PlotVoltageAndCurrent(
+    voltage_signals=[cut_larger_left, cut_smaller_left],
+    current_signals=[cut_larger_right, cut_smaller_right]
+    )
+
+    cut_larger_left.reset_start_time()
+    cut_smaller_left.reset_start_time()
+    cut_larger_right.reset_start_time()
+    cut_smaller_right.reset_start_time()
 
     PlotVoltageAndCurrent(
     voltage_signals=[cut_larger_left, cut_smaller_left],
