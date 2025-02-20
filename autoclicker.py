@@ -77,7 +77,7 @@ class PositionClicker:
         with open(self.input_file, 'r') as f:
             self.actions = yaml.safe_load(f)
     
-    def click_positions(self):
+    def click_positions(self, v_msg='filename.csv'):
         start_time = time.time()
         for action in self.actions:
             while time.time() - start_time < action["time"]:
@@ -87,6 +87,7 @@ class PositionClicker:
                 time.sleep(0.3)
                 print(f"Klick an Position: ({action['x']}, {action['y']})")
             elif action["type"] == "paste":
+                pyperclip.copy(v_msg)
                 pyautogui.hotkey('ctrl', 'v')
                 time.sleep(0.3)
                 print("Dateiname eingefügt.")
@@ -105,18 +106,13 @@ class FileProcessor:
             print("Keine Dateien gefunden.")
             return
         
-        print(f"Erstes File öffnen: {files[0]}")
-        os.startfile(os.path.join(self.folder_path, files[0]))
-        time.sleep(3)  # Warten für manuellen Start
-        
         clicker = PositionClicker(self.logger_file)
-        clicker.click_positions()
         
-        for file in files[1:]:
+        for file in files:
             print(f"Öffne Datei: {file}")
             os.startfile(os.path.join(self.folder_path, file))
             time.sleep(3)  # Warte 3 Sekunden
-            clicker.click_positions()
+            clicker.click_positions(file)
 
 if __name__ == "__main__":
     mode = input("(L)ogger oder (C)licker oder (P)rozess? ").strip().lower()
@@ -130,3 +126,5 @@ if __name__ == "__main__":
         folder = input("Ordner mit Picolog-Dateien: ").strip()
         processor = FileProcessor(folder, "mouse_positions.yaml")
         processor.process_files()
+    else:
+        print("Ungültiger Modus.")
