@@ -2,16 +2,16 @@ import os
 import re
 import shutil
 import tkinter as tk
-from tkinter import filedialog
+from tkinter import filedialog, simpledialog
 
-def parse_filename(fname):
+def parse_filename(fname, file_extension=".picolog"):
     """
     Zerlegt den Dateinamen in die Eigenschaften:
       Cap_nr, Method, Special
     und gibt außerdem den neuen Dateinamen zurück.
     """
-    # ".picolog" am Ende entfernen
-    name = re.sub(r"\.picolog$", "", fname)
+    # Dateiendung entfernen
+    name = re.sub(rf"\{file_extension}$", "", fname)
 
     # "MAL2_" entfernen, falls vorhanden
     name = re.sub(r"^MAL2_", "", name)
@@ -45,34 +45,49 @@ def parse_filename(fname):
 
     # Neuen Dateinamen erstellen
     if special:
-        new_name = f"cap{cap_nr}_{method}_{special}.picolog"
+        new_name = f"cap{cap_nr}_{method}_{special}{file_extension}"
     else:
-        new_name = f"cap{cap_nr}_{method}.picolog"
+        new_name = f"cap{cap_nr}_{method}{file_extension}"
 
     return cap_nr, method, special, new_name
 
-def process_files():
+def process_files(file_extension=".picolog"):
     """ Öffnet einen Dialog zur Auswahl des Quellordners und verarbeitet die Dateien """
     # GUI-Fenster für Ordnerauswahl
     root = tk.Tk()
     root.withdraw()  # Fenster verstecken
-    src_folder = filedialog.askdirectory(title="Wähle den Quellordner mit .picolog-Dateien")
+    src_folder = filedialog.askdirectory(title="Wähle den Quellordner mit den Dateien")
 
     if not src_folder:  # Falls kein Ordner gewählt wurde, abbrechen
         print("Kein Ordner ausgewählt. Vorgang abgebrochen.")
         return
 
+    # Dateiendung abfragen (mit Vorgabe aus Parameter)
+    user_extension = simpledialog.askstring("Dateiendung", 
+                                            "Gib die gewünschte Dateiendung ein (Standard: .picolog):",
+                                            initialvalue=file_extension)
+    
+    if not user_extension:
+        user_extension = file_extension  # Falls keine Eingabe, Standardwert nutzen
+    
+    if not user_extension.startswith("."):
+        user_extension = "." + user_extension  # Sicherstellen, dass die Endung mit einem Punkt beginnt
+
     dst_folder = os.path.join(src_folder, "processed_files")
     os.makedirs(dst_folder, exist_ok=True)
 
-    # Alle .picolog-Dateien im Quellordner finden
-    filenames = [f for f in os.listdir(src_folder) if f.endswith(".picolog")]
+    # Alle Dateien mit der gewählten Endung im Quellordner finden
+    filenames = [f for f in os.listdir(src_folder) if f.endswith(user_extension)]
+
+    if not filenames:
+        print(f"Keine Dateien mit der Endung '{user_extension}' gefunden.")
+        return
 
     for fname in filenames:
         old_path = os.path.join(src_folder, fname)
 
         # Eigenschaften extrahieren und neuen Namen generieren
-        cap_nr, method, special, new_name = parse_filename(fname)
+        cap_nr, method, special, new_name = parse_filename(fname, user_extension)
 
         # Zielpfad mit neuem Namen
         new_path = os.path.join(dst_folder, new_name)
