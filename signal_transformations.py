@@ -37,11 +37,12 @@ class SignalData:
         self.name = name
         self.data = pd.DataFrame({"time": time, "value": values})
         self.start_time_diff = 0
-        self.data["derivative"] = self.get_derivative()
-
+        self.data["derivative"] = None
+        
     def get_derivative(self):
         """Berechnet die erste Ableitung des Signals."""
-        return np.gradient(self.data["value"], self.data["time"])
+        self.data["derivative"] = np.gradient(self.data["value"], self.data["time"])
+        return self.data["derivative"]
     
     def get_derivative_signal(self):
         return SignalData(self.name + " (Derivative)", self.data["time"], self.data["derivative"])
