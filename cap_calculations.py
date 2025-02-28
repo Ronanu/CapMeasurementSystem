@@ -52,7 +52,7 @@ def get_condensed_signal(file, name, u_rated, order=3, plot=False):
 
     new_max_diff_idx = np.argmax(np.abs(new_difference))
     new_max_diff_time = interresting_time[new_max_diff_idx]
-    new_condensed_signal = SignalCutter(signal).cut_time_range((new_max_diff_time, unloading_end_time))
+    new_condensed_signal = SignalCutter(signal).cut_time_range((new_max_diff_time, np.inf))
 
     max_diff_esr = new_difference[new_max_diff_idx]
 
