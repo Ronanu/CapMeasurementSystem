@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from rename_files import parse_filename
 import os
 import numpy as np
-
+import tkinter as tk
 
 def ideal_voltage(holding_voltage, unloading_coeff, time):
     value = evaluate_polynomial(unloading_coeff, time)
@@ -86,6 +86,10 @@ if __name__ == '__main__':
     i_cc = 3
     all_i_dc = {'B2': 3, 'A2': 0.6, 'A2esr': 0.06}
 
+    # with tkinter open file dialog to select file. just csvs
+    file_path = tk.filedialog.askopenfilename()
+    
+
     all_files = os.listdir(folder_path)
             # Filtere nur Dateien mit der Endung '.picolog'
     csv_files = [f for f in all_files if f.endswith('.csv')]
@@ -104,6 +108,16 @@ if __name__ == '__main__':
             name = name, 
             u_rated= u_rated,
             plot=True)
+        # split file at '_' and delete last element (Date) 
+        name = name.split('_')[:-1]
+        # remove 'Testaufbau' from name list
+        name = [n for n in name if n != 'Testaufbau']
+        # add 'cut' to name list
+        name.append('cut')
+        # join name list to new name
+        name = '_'.join(name)
+
+
         
         file_path = folder_path + 'condensed' + file
         header = {
@@ -112,6 +126,10 @@ if __name__ == '__main__':
             'max_diff_time': max_diff_time
         }
         new_condensed_signal.get_derivative()
-        saver = SignalDataSaver(new_condensed_signal, file_path, header)
+        saver = SignalDataSaver(
+            signal_data=new_condensed_signal, 
+            filename=file_path, 
+            header_info=header
+            )
         saver.save_to_csv()
     plt.show()
