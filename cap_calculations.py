@@ -49,9 +49,12 @@ def get_condensed_signal(file, name, u_rated, order=3, plot=False):
     print(f'new_unloading_parameter={new_unloading_parameter}')
     new_ideal_voltages = [ideal_voltage(holding_voltage, new_unloading_parameter, t) for t in interresting_time]
     new_difference = np.array(interresting_voltage) - np.array(new_ideal_voltages)
+
     new_max_diff_idx = np.argmax(np.abs(new_difference))
     new_max_diff_time = interresting_time[new_max_diff_idx]
     new_condensed_signal = SignalCutter(signal).cut_time_range((new_max_diff_time, unloading_end_time))
+
+    max_diff_esr = new_difference[new_max_diff_idx]
 
     if not(max_diff_time == new_max_diff_time):
         raise ValueError('max_diff_time and new_max_diff_time are not equal')
@@ -61,10 +64,10 @@ def get_condensed_signal(file, name, u_rated, order=3, plot=False):
         axes[0].plot(signal.get_data()['time'], signal.get_data()['value'], label='Original Signal ' + name,
                       linewidth=4, alpha=0.5)
         axes[0].plot(interresting_time, interresting_voltage, label='interresting Signal')
-        axes[0].plot(interresting_time, ideal_voltages, label='Ideal Voltage')
-        axes[0].plot(interresting_time, new_ideal_voltages, label='New Ideal Voltage')
-        axes[1].plot(interresting_time, difference, label='Difference')
-        axes[1].plot(interresting_time, new_difference, label='New Difference')
+        axes[0].plot(interresting_time, ideal_voltages, label='Ideal Voltage', linewidth = 1)
+        axes[0].plot(interresting_time, new_ideal_voltages, label='New Ideal Voltage', linewidth = 1)
+        axes[1].plot(interresting_time, difference, label='Difference', linewidth=3)
+        axes[1].plot(interresting_time, new_difference, label='New Difference', linewidth = 1)	
         axes[2].plot(condensed_signal.get_data()['time'], condensed_signal.get_data()['value'], label='Condensed',
                      linewidth=3, alpha=0.5)
         axes[2].plot(new_condensed_signal.get_data()['time'], new_condensed_signal.get_data()['value'], label='New Condensed')
@@ -73,63 +76,66 @@ def get_condensed_signal(file, name, u_rated, order=3, plot=False):
             a.grid()
         plt.legend()
     
-    return new_condensed_signal, new_unloading_parameter, holding_voltage, max_diff_time
+    return new_condensed_signal, new_unloading_parameter, holding_voltage, max_diff_time, max_diff_esr
         
 
 
 if __name__ == '__main__':
+    import os
+    import tkinter as tk
+    from tkinter import filedialog
 
-    folder_path = 'csv_files/'
+    # Tkinter Dialog initialisieren und verstecken
+    root = tk.Tk()
+    root.withdraw()
 
+    # Datei auswählen
+    file_path = filedialog.askopenfilename(filetypes=[("CSV files", "*.csv")])
+
+    # Prüfen, ob eine Datei ausgewählt wurde
+    if not file_path:
+        print("Keine Datei ausgewählt. Programm wird beendet.")
+        exit(1)
+
+    # Verzeichnis aus dem gewählten Datei-Pfad extrahieren
+    folder_path = os.path.dirname(file_path)
+    file_name = os.path.basename(file_path)
+
+    # Parameter definieren
     u_rated = 3
-    esr_rated = 0.022
-    i_cc = 3
-    all_i_dc = {'B2': 3, 'A2': 0.6, 'A2esr': 0.06}
-
-    # with tkinter open file dialog to select file. just csvs
-    file_path = tk.filedialog.askopenfilename()
-    
-
-    all_files = os.listdir(folder_path)
-            # Filtere nur Dateien mit der Endung '.picolog'
-    csv_files = [f for f in all_files if f.endswith('.csv')]
-    csv_files = ['MAL2_1A2esr.csv'] # ,'MAL2_2.csv','MAL2_3.csv', 'MAL2_1A2esr.csv', 'MAL2_1A2.csv']
-
-    for file in csv_files:
-        file_path = folder_path + file
-
-        cap_nr, method, special, name = parse_filename(file, '.csv')
-        print(f'Processing file {file}: nr={cap_nr}, method={method}, special={special}')
-        i_dc = all_i_dc[method]
-        print(f'i_dc={i_dc}')
-
-        new_condensed_signal, new_unloading_parameter, holding_voltage, max_diff_time = get_condensed_signal(
-            file=file_path,
-            name = name, 
-            u_rated= u_rated,
-            plot=True)
-        # split file at '_' and delete last element (Date) 
-        name = name.split('_')[:-1]
-        # remove 'Testaufbau' from name list
-        name = [n for n in name if n != 'Testaufbau']
-        # add 'cut' to name list
-        name.append('cut')
-        # join name list to new name
-        name = '_'.join(name)
 
 
-        
-        file_path = folder_path + 'condensed' + file
-        header = {
-            'holding_voltage': holding_voltage,
-            'unloading_parameter': new_unloading_parameter,
-            'max_diff_time': max_diff_time
-        }
-        new_condensed_signal.get_derivative()
-        saver = SignalDataSaver(
-            signal_data=new_condensed_signal, 
-            filename=file_path, 
-            header_info=header
-            )
-        saver.save_to_csv()
+    # Signalverarbeitung durchführen
+    new_condensed_signal, new_unloading_parameter, \
+    holding_voltage, max_diff_time, max_diff_esr = get_condensed_signal(
+        file=file_path,
+        name=file_name,
+        u_rated=u_rated,
+        plot=True
+    )
+
+    # Name modifizieren
+    name_parts = file_name.split('_')[:-1]
+    name_parts = [n for n in name_parts if n != 'Testaufbau']
+    name_parts.append('cut')
+    name = '_'.join(name_parts)
+
+    # Speichern
+    save_path = os.path.join(folder_path, name + '.csv')
+    header = {
+        'holding_voltage': holding_voltage,
+        'unloading_parameter': new_unloading_parameter,
+        'max_diff_time': max_diff_time,
+        'U3': max_diff_esr
+    }
+
+    new_condensed_signal.get_derivative()
+    saver = SignalDataSaver(
+        signal_data=new_condensed_signal, 
+        filename=save_path, 
+        header_info=header
+    )
+    saver.save_to_csv()
+
+    # Falls geplottet wurde, anzeigen
     plt.show()
