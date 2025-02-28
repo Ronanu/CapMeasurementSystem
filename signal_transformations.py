@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.signal import medfilt
+import csv
+
 
 
 class SignalDataLoader:
@@ -101,7 +103,42 @@ class SignalData:
             return SignalData(f"{self.name} / {scalar}", self.data["time"], self.data["value"] / scalar)
         raise TypeError("Division ist nur mit Skalarwerten (int, float) möglich.")
 
+class SignalDataSaver:
+    def __init__(self, signal_data: SignalData, filename="signal_data.csv", header_info=None):
+        """
+        Initialisiert die Klasse mit einem SignalData-Objekt, einem Dateinamen und optionalen Header-Informationen.
+        :param signal_data: SignalData-Objekt mit Zeit- und Werte-Daten
+        :param filename: Name der CSV-Datei
+        :param header_info: Dictionary mit zusätzlichen Header-Informationen
+        """
+        self.signal_data = signal_data
+        self.filename = filename
+        self.header_info = header_info if isinstance(header_info, dict) else {}
 
+    def save_to_csv(self):
+        """
+        Speichert das SignalData-Objekt als CSV mit 10 Zeilen Header-Informationen.
+        """
+        if self.signal_data.data.empty:
+            print("Keine Signal-Daten zum Speichern.")
+            return
+
+        with open(self.filename, mode="w", newline="") as file:
+            writer = csv.writer(file)
+
+            # Header in den ersten 10 Zeilen abspeichern
+            writer.writerow(["Signal Name", self.signal_data.name])  # Name des Signals in die erste Zeile
+            for key, value in self.header_info.items():
+                writer.writerow([key, value])  # Speichert Schlüssel-Wert-Paare
+            
+            # Falls weniger als 10 Header-Zeilen, füllen wir die restlichen mit Leerzeilen
+            for _ in range(10 - (len(self.header_info) + 1)):  
+                writer.writerow([])
+
+            # Speichert das DataFrame mit Spaltennamen
+            self.signal_data.data.to_csv(file, index=False)
+
+        print(f"SignalData erfolgreich in {self.filename} gespeichert.")
 
 
 class SignalCutter:
