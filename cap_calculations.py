@@ -1,11 +1,13 @@
 from cap_signal_processing import get_holding_voltage_signal, get_unloading_signal, cut_basic_signal_nicely
 from cap_signal_processing import polynomial_fit, evaluate_polynomial, interpolate_signal, holding_and_unloading
 from signal_transformations import SignalDataLoader, SignalCutter, SignalData, PlotVoltageAndCurrent, SignalDataSaver
-import matplotlib.pyplot as plt
+
+
+from matplotlib.pyplot import show, subplots, legend
 from rename_files import parse_filename
-import os
-import numpy as np
-import tkinter as tk
+from os.path import dirname, basename, join
+from numpy import array, abs, argmax, inf
+from tkinter import filedialog, Tk
 
 def ideal_voltage(holding_voltage, unloading_coeff, time):
     value = evaluate_polynomial(unloading_coeff, time)
@@ -36,9 +38,9 @@ def get_condensed_signal(file, name, u_rated, order=3, plot=False):
     ideal_voltages = [ideal_voltage(holding_voltage, unloading_parameter, t) for t in interresting_time]
     interresting_voltage = interresting_signal.get_data()['value']  
 
-    difference = np.array(interresting_voltage) - np.array(ideal_voltages) 
+    difference = array(interresting_voltage) - array(ideal_voltages) 
     # get time of max difference:
-    max_diff_idx = np.argmax(np.abs(difference))
+    max_diff_idx = argmax(abs(difference))
     max_diff_time = interresting_time[max_diff_idx]
 
     condensed_signal = SignalCutter(signal).cut_time_range((max_diff_time, unloading_end_time)) 
@@ -48,11 +50,11 @@ def get_condensed_signal(file, name, u_rated, order=3, plot=False):
     new_unloading_parameter = polynomial_fit(new_unloading_signal_fit, order=order)
     print(f'new_unloading_parameter={new_unloading_parameter}')
     new_ideal_voltages = [ideal_voltage(holding_voltage, new_unloading_parameter, t) for t in interresting_time]
-    new_difference = np.array(interresting_voltage) - np.array(new_ideal_voltages)
+    new_difference = array(interresting_voltage) - array(new_ideal_voltages)
 
-    new_max_diff_idx = np.argmax(np.abs(new_difference))
+    new_max_diff_idx = argmax(abs(new_difference))
     new_max_diff_time = interresting_time[new_max_diff_idx]
-    new_condensed_signal = SignalCutter(signal).cut_time_range((new_max_diff_time, np.inf))
+    new_condensed_signal = SignalCutter(signal).cut_time_range((new_max_diff_time, inf))
 
     max_diff_esr = new_difference[new_max_diff_idx]
 
@@ -60,7 +62,7 @@ def get_condensed_signal(file, name, u_rated, order=3, plot=False):
         raise ValueError('max_diff_time and new_max_diff_time are not equal')
     
     if plot:
-        fig, axes = plt.subplots(3, 1, figsize=(10, 15), sharex=True)
+        _, axes = subplots(3, 1, figsize=(10, 15), sharex=True)
         axes[0].plot(signal.get_data()['time'], signal.get_data()['value'], label='Original Signal ' + name,
                       linewidth=4, alpha=0.5)
         axes[0].plot(interresting_time, interresting_voltage, label='interresting Signal')
@@ -74,19 +76,16 @@ def get_condensed_signal(file, name, u_rated, order=3, plot=False):
         for a in axes:
             a.legend(loc='best')
             a.grid()
-        plt.legend()
+        legend()
     
     return new_condensed_signal, new_unloading_parameter, holding_voltage, max_diff_time, max_diff_esr
         
 
 
 if __name__ == '__main__':
-    import os
-    import tkinter as tk
-    from tkinter import filedialog
 
     # Tkinter Dialog initialisieren und verstecken
-    root = tk.Tk()
+    root = Tk()
     root.withdraw()
 
     # Datei auswählen
@@ -98,8 +97,8 @@ if __name__ == '__main__':
         exit(1)
 
     # Verzeichnis aus dem gewählten Datei-Pfad extrahieren
-    folder_path = os.path.dirname(file_path)
-    file_name = os.path.basename(file_path)
+    folder_path = dirname(file_path)
+    file_name = basename(file_path)
 
     # Parameter definieren
     u_rated = 3
@@ -121,7 +120,7 @@ if __name__ == '__main__':
     name = '_'.join(name_parts)
 
     # Speichern
-    save_path = os.path.join(folder_path, name + '.csv')
+    save_path = join(folder_path, name + '.csv')
     header = {
         'holding_voltage': holding_voltage,
         'unloading_parameter': new_unloading_parameter,
@@ -138,4 +137,4 @@ if __name__ == '__main__':
     saver.save_to_csv()
 
     # Falls geplottet wurde, anzeigen
-    plt.show()
+    show()

@@ -1,8 +1,10 @@
 from signal_transformations import SignalDataLoader, SignalData, SignalCutter
 from signal_transformations import PlotVoltageAndCurrent
 from signal_transformations import MedianFilter, MovingAverageFilter, ConvolutionSmoothingFilter
-import numpy as np
-import matplotlib.pyplot as plt
+#import numpy as np
+#import matplotlib.pyplot as plt
+from numpy import polyfit, polyval, poly1d
+from matplotlib.pyplot import show
 
 def cut_basic_signal_nicely(signal, rated_voltage=3):
     first_cut = SignalCutter(signal).cut_by_value("l>", 0.03 * rated_voltage)
@@ -28,14 +30,14 @@ def get_unloading_signal(signal: SignalData, rated_voltage, low_level=0.4, high_
 
 
 def polynomial_fit(signal, order=2):
-    coeff = np.polyfit(signal.get_data()["time"], signal.get_data()["value"], order)
+    coeff = polyfit(signal.get_data()["time"], signal.get_data()["value"], order)
     return coeff
 
 def evaluate_polynomial(coeff, x):
-    return np.polyval(coeff, x)
+    return polyval(coeff, x)
 
 def interpolate_signal(x_values, y_values, order=2): 
-    func = np.poly1d(np.polyfit(x_values, y_values, order))
+    func = poly1d(polyfit(x_values, y_values, order))
     return func
 
 def holding_and_unloading(signal: SignalData, u_rated: float, do_plot=True):
@@ -60,4 +62,4 @@ if __name__ == '__main__':
     signal = SignalDataLoader(file, "Original Signal").signal_data
     u_rated = 3
     holding_and_unloading(signal=signal, u_rated=u_rated, do_plot=True)
-    plt.show()
+    show()

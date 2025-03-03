@@ -1,8 +1,10 @@
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
+
+from pandas import read_csv, DataFrame
+from csv import writer as csv_writer
+from numpy import gradient, arange, convolve, ones, polyfit
+from matplotlib.pyplot import subplots, tight_layout, show
 from scipy.signal import medfilt
-import csv
+
 
 
 
@@ -20,11 +22,11 @@ class SignalDataLoader:
 
     def load_data(self, name):
         """Lädt die CSV-Datei und gibt ein SignalData-Objekt zurück."""
-        df = pd.read_csv(self.file_path, delimiter=",", decimal=",", quotechar='"',
+        df = read_csv(self.file_path, delimiter=",", decimal=",", quotechar='"',
                          skipinitialspace=True, usecols=[1], names=["value"], skiprows=1)
         df["value"] = df["value"].astype(str).str.replace(",", ".").astype(float)
         df.dropna(subset=["value"], inplace=True)
-        df["time"] = np.arange(len(df)) * self.sampling_interval
+        df["time"] = arange(len(df)) * self.sampling_interval
         return SignalData(name, df["time"], df["value"])
     
 
@@ -37,13 +39,13 @@ class SignalData:
         :param values: Spannungs- oder Stromwerte als Liste oder NumPy-Array
         """
         self.name = name
-        self.data = pd.DataFrame({"time": time, "value": values})
+        self.data = DataFrame({"time": time, "value": values})
         self.start_time_diff = 0
         self.data["derivative"] = None
         
     def get_derivative(self):
         """Berechnet die erste Ableitung des Signals."""
-        self.data["derivative"] = np.gradient(self.data["value"], self.data["time"])
+        self.data["derivative"] = gradient(self.data["value"], self.data["time"])
         return self.data["derivative"]
     
     def get_derivative_signal(self):
@@ -124,7 +126,7 @@ class SignalDataSaver:
             return
 
         with open(self.filename, mode="w", newline="") as file:
-            writer = csv.writer(file)
+            writer = csv_writer(file)
 
             # Header in den ersten 10 Zeilen abspeichern
             writer.writerow(["Signal Name", self.signal_data.name])  # Name des Signals in die erste Zeile
@@ -259,8 +261,8 @@ class ConvolutionSmoothingFilter:
     def apply_filter(self, kernel_size):
         """Berechnet das gefilterte Signal durch Faltung und gibt ein neues SignalData-Objekt zurück."""
         df = self.original_data.get_data()
-        kernel = np.ones(kernel_size) / kernel_size
-        df["value"] = np.convolve(df["value"], kernel, mode='same')
+        kernel = ones(kernel_size) / kernel_size
+        df["value"] = convolve(df["value"], kernel, mode='same')
         return SignalData(self.original_data.name + " (Convolution Smoothing)", df["time"], df["value"])
 
 
@@ -277,7 +279,7 @@ class PlotVoltageAndCurrent:
 
     def plot_signal(self):
         """Erstellt den Plot."""
-        fig, axs = plt.subplots(2, 1, figsize=(12, 8), sharex=True)
+        fig, axs = subplots(2, 1, figsize=(12, 8), sharex=True)
         
         for signal in self.voltage_signals:
             axs[0].plot(signal.get_data()["time"], signal.get_data()["value"], label=signal.name)
@@ -294,7 +296,7 @@ class PlotVoltageAndCurrent:
         axs[1].legend()
         axs[1].grid()
         
-        plt.tight_layout()
+        tight_layout()
 
 
 class CapacitorEvaluation:
@@ -305,7 +307,7 @@ class CapacitorEvaluation:
         self.results = {}
     
     def lsm_fit(self, order=1):
-        coeff = np.polyfit(self.signal_data.data["time"], self.signal_data.data["value"], order)
+        coeff = polyfit(self.signal_data.data["time"], self.signal_data.data["value"], order)
         return coeff
     
     def find_point_of_start_discharging(self, U_max, tolerance):
@@ -357,4 +359,4 @@ def testing_signal_cutter():
 
 if __name__ == "__main__":
     testing_signal_cutter()
-    plt.show()
+    show()
