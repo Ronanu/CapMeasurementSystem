@@ -43,18 +43,37 @@ class PeakDetectionProcessor:
 
         valid_values = []
         for i, value in enumerate(self.signal_data.data["value"]):
-            if len(valid_values) < 50:  # Erste 10 Werte als Basis für Mittelwert
+            if len(valid_values) < 10:  # Erste 10 Werte als Basis für Mittelwert
                 valid_values.append(value)
                 continue
             
             mean_value = np.mean(valid_values)
-            if abs(value - mean_value) > self.sigma_threshold * self.std_dev:
+            if mean_value - value > self.sigma_threshold * self.std_dev:
                 self.outliers.append((i, value))  # Index und Wert speichern
             else:
                 valid_values.append(value)
                 valid_values.pop(0)
+        # der peak wird detektiert, wenn wenn 5 outliners hintereinander sind
+        counter = 0
+        last_index = 0
+        ausreißerfolge = 100
+        for o in self.outliers:
+            index, value = o
+            if index == last_index + 1:
+                counter += 1
+            else:
+                counter = 0
+            if counter == ausreißerfolge:
+                break
+            last_index = index
         
-        peak_index = self.outliers[0][0] - 1
+        if counter < ausreißerfolge:
+            print("Kein Peak gefunden!")
+            peak_index = 0
+        else:
+            peak_index = index - ausreißerfolge - 1
+        
+        # peak_index = self.outliers[0][0] - 1
         peak_time = self.signal_data.data["time"][peak_index]
         peak_value = self.signal_data.data["value"][peak_index]
         peak_window = self.signal_data.data["value"][peak_index - 10: peak_index]

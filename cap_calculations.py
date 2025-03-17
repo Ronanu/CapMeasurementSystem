@@ -54,7 +54,7 @@ if __name__ == '__main__':
     peak_detection_signal = SignalCutter(signal).cut_time_range((starttime, inf))
 
     # Peak Detection
-    processor = PeakDetectionProcessor(peak_detection_signal, holding_signal, sigma_threshold=2)
+    processor = PeakDetectionProcessor(peak_detection_signal, holding_signal, sigma_threshold=0.55)
     processor.high_pass_filter()
     processor.compute_standard_deviation()
     peak_time, peak_value, peak_mean, threshold = processor.detect_peaks()
