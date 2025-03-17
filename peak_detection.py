@@ -43,7 +43,7 @@ class PeakDetectionProcessor:
 
         valid_values = []
         for i, value in enumerate(self.signal_data.data["value"]):
-            if len(valid_values) < 10:  # Erste 10 Werte als Basis für Mittelwert
+            if len(valid_values) < 50:  # Erste 10 Werte als Basis für Mittelwert
                 valid_values.append(value)
                 continue
             

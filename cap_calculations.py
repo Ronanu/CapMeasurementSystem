@@ -9,77 +9,6 @@ from os.path import dirname, basename, join
 from numpy import array, abs, argmax, inf
 from tkinter import filedialog, Tk
 
-def ideal_voltage(holding_voltage, unloading_coeff, time):
-    value = evaluate_polynomial(unloading_coeff, time)
-    if value > holding_voltage:
-        return holding_voltage
-    return value
-
-
-def get_condensed_signal(file, name, u_rated, order=3, plot=False):
-    
-    data_loader = SignalDataLoader(file_path=file, name=name, sampling_interval=0.01)
-
-    signal = data_loader.signal_data
-    
-
-    holding_signal = get_holding_voltage_signal(signal, rated_voltage=u_rated)
-    holding_voltage = polynomial_fit(holding_signal, order=0)[0]
-    print(f'holding_voltage={holding_voltage}')
-    unloading_signal = get_unloading_signal(signal, rated_voltage=u_rated, low_level=0.4, high_level=0.8)
-    unloading_parameter = polynomial_fit(unloading_signal, order=order)
-    print(f'unloading_parameter={unloading_parameter}')
-    
-    holding_end_time = holding_signal.get_start_and_end_time()[1]
-    unloading_end_time = unloading_signal.get_start_and_end_time()[1]
-
-    interresting_signal = SignalCutter(signal).cut_time_range((holding_end_time, unloading_end_time))
-    interresting_time = interresting_signal.get_data()['time']
-    ideal_voltages = [ideal_voltage(holding_voltage, unloading_parameter, t) for t in interresting_time]
-    interresting_voltage = interresting_signal.get_data()['value']  
-
-    difference = array(interresting_voltage) - array(ideal_voltages) 
-    # get time of max difference:
-    max_diff_idx = argmax(abs(difference))
-    max_diff_time = interresting_time[max_diff_idx]
-
-    condensed_signal = SignalCutter(signal).cut_time_range((max_diff_time, unloading_end_time)) 
-
-    # zweiter fitting Durchggang
-    new_unloading_signal_fit = SignalCutter(signal).cut_time_range((max_diff_time+0.0, unloading_end_time))
-    new_unloading_parameter = polynomial_fit(new_unloading_signal_fit, order=order)
-    print(f'new_unloading_parameter={new_unloading_parameter}')
-    new_ideal_voltages = [ideal_voltage(holding_voltage, new_unloading_parameter, t) for t in interresting_time]
-    new_difference = array(interresting_voltage) - array(new_ideal_voltages)
-
-    new_max_diff_idx = argmax(abs(new_difference))
-    new_max_diff_time = interresting_time[new_max_diff_idx]
-    new_condensed_signal = SignalCutter(signal).cut_time_range((new_max_diff_time, inf))
-
-    max_diff_esr = new_difference[new_max_diff_idx]
-
-    if not(max_diff_time == new_max_diff_time):
-        pass
-    
-    if plot:
-        _, axes = subplots(3, 1, figsize=(10, 15), sharex=True)
-        axes[0].plot(signal.get_data()['time'], signal.get_data()['value'], label='Original Signal ' + name,
-                      linewidth=4, alpha=0.5)
-        axes[0].plot(interresting_time, interresting_voltage, label='interresting Signal')
-        axes[0].plot(interresting_time, ideal_voltages, label='Ideal Voltage', linewidth = 1)
-        axes[0].plot(interresting_time, new_ideal_voltages, label='New Ideal Voltage', linewidth = 1)
-        axes[1].plot(interresting_time, difference, label='Difference', linewidth=3)
-        axes[1].plot(interresting_time, new_difference, label='New Difference', linewidth = 1)	
-        axes[2].plot(condensed_signal.get_data()['time'], condensed_signal.get_data()['value'], label='Condensed',
-                     linewidth=3, alpha=0.5)
-        axes[2].plot(new_condensed_signal.get_data()['time'], new_condensed_signal.get_data()['value'], label='New Condensed')
-        for a in axes:
-            a.legend(loc='best')
-            a.grid()
-        legend()
-    
-    return new_condensed_signal, new_unloading_parameter, holding_voltage, max_diff_time, max_diff_esr
-        
 
 
 if __name__ == '__main__':
@@ -103,36 +32,45 @@ if __name__ == '__main__':
     # Parameter definieren
     u_rated = 3
 
-
-    # Signalverarbeitung durchführen (Differenzen)
-    new_condensed_signal, new_unloading_parameter, \
-    holding_voltage, max_diff_time, max_diff_esr = get_condensed_signal(
-        file=file_path,
-        name=file_name,
-        u_rated=u_rated,
-        plot=True
-    )
-
-    starttime, endtime = new_condensed_signal.get_start_and_end_time()
+    # Daten laden
     data_loader = SignalDataLoader(file_path=file_path, name='Original_Signal', sampling_interval=0.01)
-
     signal = data_loader.signal_data
-    sigma_clac_signal = get_holding_voltage_signal(signal, rated_voltage=u_rated)
-    peak_detection_signal = SignalCutter(signal).cut_time_range((starttime-1, endtime))
+
+    # Holding Signal extrahieren
+    holding_signal = get_holding_voltage_signal(signal, rated_voltage=u_rated, cutaway=0.1)
+    _, starttime = holding_signal.get_start_and_end_time()  # get endtime of holding signal as starttime for peak detection
+
+    # holding voltage berechnen
+    holding_voltage = polynomial_fit(holding_signal, order=0)
+    # calculate and plot fft for holding signal (not implemented jet)
+    from numpy.fft import fft, fftfreq
+    fft_values = fft(signal.get_data()["value"])
+    sampling_interval = data_loader.sampling_interval
+    freqs = fftfreq(len(signal.get_data()["time"]), sampling_interval)
+    fig, ax = subplots()
+    ax.plot(freqs, abs(fft_values))
+    ax.set_xlim(0, 0.5)
+
+    peak_detection_signal = SignalCutter(signal).cut_time_range((starttime, inf))
 
     # Peak Detection
-    processor = PeakDetectionProcessor(peak_detection_signal, sigma_clac_signal, sigma_threshold=2)
+    processor = PeakDetectionProcessor(peak_detection_signal, holding_signal, sigma_threshold=2)
     processor.high_pass_filter()
     processor.compute_standard_deviation()
     peak_time, peak_value, peak_mean, threshold = processor.detect_peaks()
     processor.plot_results()
+    
+    # Unloading Signal extrahieren
+    after_peak_signal = SignalCutter(signal).cut_time_range((peak_time, inf))
+    unloading_signal = SignalCutter(after_peak_signal).cut_by_value("r>", 0.4 * peak_value)
+    unloading_signal.plot_signal()
+
+    # Unloading Parameter berechnen
+    unloading_parameter = polynomial_fit(unloading_signal, order=5)
 
     # U3 berechnen
-    peak_eval_value = evaluate_polynomial(new_unloading_parameter, peak_time)
+    peak_eval_value = evaluate_polynomial(unloading_parameter, peak_time)
     u3 = peak_value - peak_eval_value
-
-    cut_signal = SignalCutter(signal).cut_time_range((peak_time, endtime))
-    cut_signal.plot_signal()
 
     # Name modifizieren
     name_parts = file_name.split('_')[:-1]
@@ -144,7 +82,7 @@ if __name__ == '__main__':
     save_path = join(folder_path, name + '.csv')
     header = {
         'holding_voltage': holding_voltage,
-        'unloading_parameter': new_unloading_parameter,
+        'unloading_parameter': unloading_parameter,
         'peak_time': peak_time,
         'peak_value': peak_value,
         'peak_mean': peak_mean,
@@ -152,9 +90,9 @@ if __name__ == '__main__':
         'U3': u3
     }
 
-    cut_signal.get_derivative()
+    after_peak_signal.get_derivative()
     saver = SignalDataSaver(
-        signal_data=cut_signal, 
+        signal_data=after_peak_signal, 
         filename=save_path, 
         header_info=header
     )
