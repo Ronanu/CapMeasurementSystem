@@ -104,6 +104,17 @@ class SignalData:
                 raise ValueError("Division durch null ist nicht erlaubt.")
             return SignalData(f"{self.name} / {scalar}", self.data["time"], self.data["value"] / scalar)
         raise TypeError("Division ist nur mit Skalarwerten (int, float) möglich.")
+    
+    def plot_signal(self):
+        """Plottet das Signal."""
+        fig, ax = subplots(figsize=(12, 6))
+        ax.plot(self.data["time"], self.data["value"], label=self.name)
+        ax.set_xlabel("Zeit (s)")
+        ax.set_ylabel("Wert")
+        ax.set_title("Signal")
+        ax.legend()
+        ax.grid()
+        tight_layout()
 
 class SignalDataSaver:
     def __init__(self, signal_data: SignalData, filename="signal_data.csv", header_info=None):

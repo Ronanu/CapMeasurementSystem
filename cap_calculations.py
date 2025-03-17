@@ -1,7 +1,7 @@
 from cap_signal_processing import get_holding_voltage_signal, get_unloading_signal, cut_basic_signal_nicely
 from cap_signal_processing import polynomial_fit, evaluate_polynomial, interpolate_signal, holding_and_unloading
 from signal_transformations import SignalDataLoader, SignalCutter, SignalData, PlotVoltageAndCurrent, SignalDataSaver
-
+from peak_detection import PeakDetectionProcessor
 
 from matplotlib.pyplot import show, subplots, legend
 from rename_files import parse_filename
@@ -59,7 +59,7 @@ def get_condensed_signal(file, name, u_rated, order=3, plot=False):
     max_diff_esr = new_difference[new_max_diff_idx]
 
     if not(max_diff_time == new_max_diff_time):
-        raise ValueError('max_diff_time and new_max_diff_time are not equal')
+        pass
     
     if plot:
         _, axes = subplots(3, 1, figsize=(10, 15), sharex=True)
@@ -104,7 +104,7 @@ if __name__ == '__main__':
     u_rated = 3
 
 
-    # Signalverarbeitung durchführen
+    # Signalverarbeitung durchführen (Differenzen)
     new_condensed_signal, new_unloading_parameter, \
     holding_voltage, max_diff_time, max_diff_esr = get_condensed_signal(
         file=file_path,
@@ -112,6 +112,27 @@ if __name__ == '__main__':
         u_rated=u_rated,
         plot=True
     )
+
+    starttime, endtime = new_condensed_signal.get_start_and_end_time()
+    data_loader = SignalDataLoader(file_path=file_path, name='Original_Signal', sampling_interval=0.01)
+
+    signal = data_loader.signal_data
+    sigma_clac_signal = get_holding_voltage_signal(signal, rated_voltage=u_rated)
+    peak_detection_signal = SignalCutter(signal).cut_time_range((starttime-1, endtime))
+
+    # Peak Detection
+    processor = PeakDetectionProcessor(peak_detection_signal, sigma_clac_signal, sigma_threshold=2)
+    processor.high_pass_filter()
+    processor.compute_standard_deviation()
+    peak_time, peak_value, peak_mean, threshold = processor.detect_peaks()
+    processor.plot_results()
+
+    # U3 berechnen
+    peak_eval_value = evaluate_polynomial(new_unloading_parameter, peak_time)
+    u3 = peak_value - peak_eval_value
+
+    cut_signal = SignalCutter(signal).cut_time_range((peak_time, endtime))
+    cut_signal.plot_signal()
 
     # Name modifizieren
     name_parts = file_name.split('_')[:-1]
@@ -124,13 +145,16 @@ if __name__ == '__main__':
     header = {
         'holding_voltage': holding_voltage,
         'unloading_parameter': new_unloading_parameter,
-        'max_diff_time': max_diff_time,
-        'U3': max_diff_esr
+        'peak_time': peak_time,
+        'peak_value': peak_value,
+        'peak_mean': peak_mean,
+        'plus_minus_toleranz': threshold,
+        'U3': u3
     }
 
-    new_condensed_signal.get_derivative()
+    cut_signal.get_derivative()
     saver = SignalDataSaver(
-        signal_data=new_condensed_signal, 
+        signal_data=cut_signal, 
         filename=save_path, 
         header_info=header
     )
