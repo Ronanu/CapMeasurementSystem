@@ -19,9 +19,9 @@ def cut_basic_signal_nicely(signal, rated_voltage=3):
     endtime = second_cut.get_start_and_end_time()[1]
     return SignalCutter(signal).cut_time_range((starttime-10, endtime+20))
 
-def get_holding_voltage_signal(signal, rated_voltage, cutaway=0.5):
-    first_cut = SignalCutter(signal).cut_by_value("l>", 0.95 * rated_voltage)
-    second_cut = SignalCutter(first_cut).cut_by_value("r>", 0.95 * rated_voltage)
+def get_holding_voltage_signal(signal, rated_voltage, limit=0.985, cutaway=0.5):
+    first_cut = SignalCutter(signal).cut_by_value("l>", limit * rated_voltage)
+    second_cut = SignalCutter(first_cut).cut_by_value("r>", limit * rated_voltage)
     start_time, end_time = second_cut.get_start_and_end_time()
     time_diff = end_time - start_time
     cut = cutaway * time_diff 
