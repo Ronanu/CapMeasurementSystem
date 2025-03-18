@@ -42,12 +42,14 @@ class PeakDetectionProcessor:
             raise ValueError("Standardabweichung muss zuerst berechnet werden!")
 
         valid_values = []
+        anz_valids = 15
+        valid_offset = 5
         for i, value in enumerate(self.signal_data.data["value"]):
-            if len(valid_values) < 10:  # Erste 10 Werte als Basis für Mittelwert
+            if len(valid_values) < anz_valids:  # Erste 10 Werte als Basis für Mittelwert
                 valid_values.append(value)
                 continue
             
-            mean_value = np.mean(valid_values)
+            mean_value = np.mean(valid_values[0:-valid_offset])
             if mean_value - value > self.sigma_threshold * self.std_dev:
                 self.outliers.append((i, value))  # Index und Wert speichern
             else:
@@ -80,7 +82,7 @@ class PeakDetectionProcessor:
         peak_mean = np.mean(peak_window)
         threshold = self.sigma_threshold * self.std_dev
         self.peak = {"time": peak_time, "value": peak_value, "mean": peak_mean, "threshold": threshold}
-        return peak_time, peak_value, peak_mean, threshold
+        return peak_index, peak_time, peak_value, peak_mean, threshold
 
     def plot_results(self):
         """Visualisiert die Daten, gefilterten Werte und markiert Peaks."""
