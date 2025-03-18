@@ -37,27 +37,34 @@ if __name__ == '__main__':
     signal = data_loader.signal_data
 
     # Holding Signal extrahieren
-    holding_signal = get_holding_voltage_signal(signal, rated_voltage=u_rated, cutaway=0.1)
+    holding_signal = get_holding_voltage_signal(signal, rated_voltage=u_rated, cutaway=0.2)
     _, starttime = holding_signal.get_start_and_end_time()  # get endtime of holding signal as starttime for peak detection
 
     # holding voltage berechnen
     holding_voltage = polynomial_fit(holding_signal, order=0)
-    # calculate and plot fft for holding signal (not implemented jet)
-    from numpy.fft import fft, fftfreq
-    fft_values = fft(signal.get_data()["value"])
-    sampling_interval = data_loader.sampling_interval
-    freqs = fftfreq(len(signal.get_data()["time"]), sampling_interval)
-    fig, ax = subplots()
-    ax.plot(freqs, abs(fft_values))
-    ax.set_xlim(0, 0.5)
 
     peak_detection_signal = SignalCutter(signal).cut_time_range((starttime, inf))
+    peak_detection_signal.plot_signal()
 
     # Peak Detection
+    counter = 0
+    peak_found = False
     processor = PeakDetectionProcessor(peak_detection_signal, holding_signal, sigma_threshold=0.55)
-    processor.high_pass_filter()
-    processor.compute_standard_deviation()
-    peak_time, peak_value, peak_mean, threshold = processor.detect_peaks()
+    while not peak_found:
+        processor.high_pass_filter()
+        processor.compute_standard_deviation()
+        peak_index, peak_time, peak_value, peak_mean, threshold = processor.detect_peaks()
+        if peak_index > 0:
+            peak_found = True
+            print(f'Peak gefunden bei {peak_time} mit Wert {peak_value} nach {counter} Versuchen.')
+        else:
+            if counter > 50:
+                print(f'Abbruch nach {counter} Versuchen. Kein Peak gefunden.')
+            counter += 1
+            current_threshold = processor.sigma_threshold
+            processor.sigma_threshold = current_threshold * 0.9
+            print(f'Peak nicht gefunden. Neuer Threshold: {processor.sigma_threshold}')
+
     processor.plot_results()
     
     # Unloading Signal extrahieren
