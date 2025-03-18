@@ -35,7 +35,7 @@ def get_unloading_signal(signal: SignalData, rated_voltage, low_level=0.4, high_
     return third_cut
 
 
-def polynomial_fit(signal, order=2):
+def polynomial_fit(signal: SignalData, order=2):
     coeff = polyfit(signal.get_data()["time"], signal.get_data()["value"], order)
     return coeff
 
