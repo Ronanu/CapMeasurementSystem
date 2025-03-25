@@ -73,7 +73,7 @@ if __name__ == '__main__':
     unloading_signal.plot_signal()
 
     # Unloading Parameter berechnen
-    unloading_parameter = polynomial_fit(unloading_signal, order=5)
+    unloading_parameter = polynomial_fit(unloading_signal, order=3)
 
     # U3 berechnen
     peak_eval_value = evaluate_polynomial(unloading_parameter, peak_time)
