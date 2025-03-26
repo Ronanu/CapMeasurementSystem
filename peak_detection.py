@@ -42,46 +42,76 @@ class PeakDetectionProcessor:
             raise ValueError("Standardabweichung muss zuerst berechnet werden!")
 
         valid_values = []
-        anz_valids = 250
+        anz_valids = 15
         valid_offset = 2
+
         for i, value in enumerate(self.signal_data.data["value"]):
-            if len(valid_values) < anz_valids:  # Erste 10 Werte als Basis für Mittelwert
+            if len(valid_values) < anz_valids:
                 valid_values.append(value)
                 continue
-            
+
             mean_value = np.mean(valid_values[0:-valid_offset])
-            if mean_value - value > self.sigma_threshold * self.std_dev:
-                self.outliers.append((i, value))  # Index und Wert speichern
-            else:
-                valid_values.append(value)
-                valid_values.pop(0)
+            threshold = self.sigma_threshold * self.std_dev
+
+            if (mean_value - value) >= threshold:
+                self.outliers.append((i, value))
+            
+            # Fenster immer aktualisieren, egal ob Ausreißer oder nicht
+            valid_values.append(value)
+            valid_values.pop(0)
+
         # der peak wird detektiert, wenn wenn 100 outliners hintereinander sind
-        counter = 0
-        last_index = 0
-        ausreißerfolge = 100
-        
-        for o in self.outliers:
-            index, value = o
-            if index == last_index + 1:
-                counter += 1
+
+        print("number of outliers: ", len(self.outliers))
+
+###########
+        # Schritt 1: Indizes aus self.outliers extrahieren
+        outlier_indices = [idx for idx, _ in self.outliers]
+
+        # Schritt 2: Serien von aufeinanderfolgenden Indizes identifizieren
+        series_list = []
+        current_series = []
+
+        for idx in outlier_indices:
+            if not current_series:
+                current_series = [idx]
+            elif idx == current_series[-1] + 1:
+                current_series.append(idx)
             else:
-                counter = 0
-            if counter == ausreißerfolge:
-                break
-            last_index = index
-        
-        if counter < ausreißerfolge:
-            print("Kein Peak gefunden!")
+                series_list.append(current_series)
+                current_series = [idx]
+
+        # Vergiss nicht, die letzte Serie hinzuzufügen
+        if current_series:
+            series_list.append(current_series)
+
+        # Schritt 3: Serien nach Länge absteigend sortieren
+        series_list.sort(key=lambda s: len(s), reverse=True)
+
+        # Schritt 4: Längste Serie verwenden
+        if not series_list:
+            print("Kein Peak gefunden – keine zusammenhängende Serie von Ausreißern erkannt.")
             peak_index = 0
         else:
-            peak_index = index - ausreißerfolge - 1
+            longest_series = series_list[0]
+            peak_index = longest_series[0] - 1
+            print(f"Peak erkannt bei Index {peak_index}")
+
+            # Schritt 5: Top 3 Serien – Zeitpunkte ausgeben
+            print("Top 3 Ausreißer-Serien starten bei:")
+            for s in series_list[:20]:
+                start_index = s[0]
+                start_time = self.signal_data.data['time'][start_index]
+                print(f"t = {start_time:.2f} s")
+
+###########
         
         # peak_index = self.outliers[0][0] - 1
         peak_time = self.signal_data.data["time"][peak_index]
         peak_value = self.signal_data.data["value"][peak_index]
         peak_window = self.signal_data.data["value"][peak_index - 10: peak_index]
         peak_mean = np.mean(peak_window)
-        threshold = self.sigma_threshold * self.std_dev
+        
         self.peak = {"time": peak_time, "value": peak_value, "mean": peak_mean, "threshold": threshold}
         return peak_index, peak_time, peak_value, peak_mean, threshold
 

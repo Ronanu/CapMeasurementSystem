@@ -35,7 +35,7 @@ def cut_and_analyze(file_path: str, save_dir: str, u_rated: float = 3.0):
         # Peak Detection
         counter = 0
         peak_found = False
-        processor = PeakDetectionProcessor(peak_detection_signal, holding_signal, sigma_threshold=1)
+        processor = PeakDetectionProcessor(peak_detection_signal, holding_signal, sigma_threshold=0.8)
         while not peak_found:
             processor.high_pass_filter()
             processor.compute_standard_deviation()
@@ -44,7 +44,7 @@ def cut_and_analyze(file_path: str, save_dir: str, u_rated: float = 3.0):
                 peak_found = True
                 print(f'{file_name}: Peak gefunden bei {peak_time:.3f}s mit Wert {peak_value:.3f} nach {counter} Versuchen.')
             else:
-                if counter > 50:
+                if counter > 5:
                     print(f'{file_name}: Abbruch nach {counter} Versuchen. Kein Peak gefunden.')
                     return
                 counter += 1
