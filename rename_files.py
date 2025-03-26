@@ -23,7 +23,7 @@ def parse_filename(fname, file_extension=".picolog"):
 
     # Spezialfälle prüfen: "np" oder "p" am Anfang
     if name.startswith("np"):
-        special = "nach_Pressung"
+        special = "after_press"
         name = name[2:]  # "np" entfernen
     elif name.startswith("p"):
         special = "pressed"
@@ -31,23 +31,34 @@ def parse_filename(fname, file_extension=".picolog"):
 
     # Methode bestimmen
     if "A2esr" in name:
-        method = "A2esr"
+        method = "ESR_A2_Class2"
         name = name.replace("A2esr", "")
     elif "A2" in name:
-        method = "A2"
+        method = "C_A1_Class2"
         name = name.replace("A2", "")
     else:
-        method = "B2"
+        method = "C_B1"
 
     # Koppelkondensator-Nummer extrahieren
     match_nr = re.search(r"(\d+)", name)
     cap_nr = match_nr.group(1) if match_nr else "unknown"
 
+    if not special is None and 'ress' in special:
+        if cap_nr == 1:
+            cap_nr = 5
+        elif cap_nr == 2:
+            cap_nr = 3
+        elif cap_nr == 3:
+            cap_nr = 8
+
+    hersteller ='Vishay'
+    Cn = 50
+
     # Neuen Dateinamen erstellen
-    if special:
-        new_name = f"cap{cap_nr}_{method}_{special}{file_extension}"
+    if not special is None:
+        new_name = f"{method}_DUT{cap_nr}_V1_{hersteller}_{Cn}{file_extension}"
     else:
-        new_name = f"cap{cap_nr}_{method}{file_extension}"
+        new_name = f"{method}_DUT{cap_nr}_V1_{hersteller}_{special}_{Cn}{file_extension}"
 
     return cap_nr, method, special, new_name
 
