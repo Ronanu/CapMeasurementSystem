@@ -42,8 +42,8 @@ class PeakDetectionProcessor:
             raise ValueError("Standardabweichung muss zuerst berechnet werden!")
 
         valid_values = []
-        anz_valids = 15
-        valid_offset = 5
+        anz_valids = 250
+        valid_offset = 2
         for i, value in enumerate(self.signal_data.data["value"]):
             if len(valid_values) < anz_valids:  # Erste 10 Werte als Basis für Mittelwert
                 valid_values.append(value)
