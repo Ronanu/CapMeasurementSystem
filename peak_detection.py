@@ -55,10 +55,11 @@ class PeakDetectionProcessor:
             else:
                 valid_values.append(value)
                 valid_values.pop(0)
-        # der peak wird detektiert, wenn wenn 5 outliners hintereinander sind
+        # der peak wird detektiert, wenn wenn 100 outliners hintereinander sind
         counter = 0
         last_index = 0
         ausreißerfolge = 100
+        
         for o in self.outliers:
             index, value = o
             if index == last_index + 1:

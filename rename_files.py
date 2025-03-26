@@ -55,7 +55,7 @@ def parse_filename(fname, file_extension=".picolog"):
     Cn = 50
 
     # Neuen Dateinamen erstellen
-    if not special is None:
+    if special is None:
         new_name = f"{method}_DUT{cap_nr}_V1_{hersteller}_{Cn}{file_extension}"
     else:
         new_name = f"{method}_DUT{cap_nr}_V1_{hersteller}_{special}_{Cn}{file_extension}"

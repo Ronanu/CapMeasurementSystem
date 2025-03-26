@@ -90,7 +90,7 @@ class PositionClicker:
                 time.sleep(0.3)
                 print(f"Dateiname {v_msg} eingefügt.")
             elif action["type"] == "delay":
-                waittime = action["time"] * k_wait + 10
+                waittime = action["time"] * k_wait + 2
                 print(f"Warte {round(waittime, 2)}s ...")
                 time.sleep(waittime)
                 print("Wartezeit durchgeführt.")
@@ -121,7 +121,7 @@ class FileProcessor:
         
         for file in files:
             print(f"Öffne Datei: {file}")
-            filesize = get_file_size(os.path.join(self.folder_path, file))
+            filesize = float(get_file_size(os.path.join(self.folder_path, file)))
             os.startfile(os.path.join(self.folder_path, file))
             time.sleep(5)  # Warte 3 Sekunden
             filename = self.cleanup_filename(file)  # Dateiname bereinigen
