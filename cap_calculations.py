@@ -20,9 +20,22 @@ def cut_and_analyze(file_path: str, save_dir: str, u_rated: float = 3.0):
         data_loader = SignalDataLoader(file_path=file_path, name='Original_Signal', sampling_interval=0.01)
         signal = data_loader.signal_data
 
+        print(f'Signal geladen: {file_name}')
+
         # Holding Signal extrahieren
         holding_signal = get_holding_voltage_signal(signal, rated_voltage=u_rated, cutaway=0.2)
         _, starttime = holding_signal.get_start_and_end_time()
+
+        print(f'Holding Signal extrahiert.')
+
+        # unloaing:
+        unloading_signal = get_unloading_signal(signal, rated_voltage=u_rated, low_level=0.6, high_level=0.9)
+        # linear fit:
+        unloading_parameter = polynomial_fit(unloading_signal, order=1)
+        # get time, where fitted unload signal is rated voltage
+        rated_time = (u_rated - unloading_parameter[1]) / unloading_parameter[0]
+
+        print(f'Unloading Signal mit rated_time: {rated_time:.3f}s ')
 
         # holding voltage berechnen
         holding_voltage = polynomial_fit(holding_signal, order=0)
@@ -35,7 +48,7 @@ def cut_and_analyze(file_path: str, save_dir: str, u_rated: float = 3.0):
         # Peak Detection
         counter = 0
         peak_found = False
-        processor = PeakDetectionProcessor(peak_detection_signal, holding_signal, sigma_threshold=0.8)
+        processor = PeakDetectionProcessor(peak_detection_signal, holding_signal, rated_time=rated_time, sigma_threshold=0.85)
         while not peak_found:
             processor.high_pass_filter()
             processor.compute_standard_deviation()
@@ -144,5 +157,5 @@ def process_single_file():
 
 if __name__ == '__main__':
     # Hier kannst du steuern, welche Funktion ausgeführt werden soll:
-    # process_folder()
-    process_single_file()
+    process_folder()
+    #process_single_file()

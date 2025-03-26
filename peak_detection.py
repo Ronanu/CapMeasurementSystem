@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from signal_transformations import SignalData
 
 class PeakDetectionProcessor:
-    def __init__(self, signal_data: SignalData, ref_signal_data: SignalData, fs=100, cutoff=1.0, sigma_threshold=2):
+    def __init__(self, signal_data: SignalData, ref_signal_data: SignalData, fs=100, cutoff=1.0, rated_time=0, sigma_threshold=2):
         """
         Initialisiert die Klasse für die Peak-Erkennung.
         :param signal_data: Signal, an dem die Peak-Detection ausgeführt wird
@@ -22,6 +22,7 @@ class PeakDetectionProcessor:
         self.std_dev = None
         self.outliers = []
         self.peak = {}
+        self.rated_time = rated_time
 
     def high_pass_filter(self):
         """Wendet einen Butterworth-Hochpassfilter an, um Gleichspannung zu entfernen."""
@@ -42,8 +43,8 @@ class PeakDetectionProcessor:
             raise ValueError("Standardabweichung muss zuerst berechnet werden!")
 
         valid_values = []
-        anz_valids = 15
-        valid_offset = 2
+        anz_valids = 1000
+        valid_offset = 50
 
         for i, value in enumerate(self.signal_data.data["value"]):
             if len(valid_values) < anz_valids:
@@ -85,24 +86,65 @@ class PeakDetectionProcessor:
         if current_series:
             series_list.append(current_series)
 
-        # Schritt 3: Serien nach Länge absteigend sortieren
+        # Schritt 3: Serien nach Länge absteigend sortieren und kürzere abschneiden
+        min_series_factor = 10
         series_list.sort(key=lambda s: len(s), reverse=True)
+
+        if series_list:
+            max_len = len(series_list[0])
+            min_len = max_len / min_series_factor
+            for i, s in enumerate(series_list):
+                if len(s) < min_len:
+                    series_list = series_list[:i]
+                    break
 
         # Schritt 4: Längste Serie verwenden
         if not series_list:
             print("Kein Peak gefunden – keine zusammenhängende Serie von Ausreißern erkannt.")
             peak_index = 0
-        else:
-            longest_series = series_list[0]
-            peak_index = longest_series[0] - 1
-            print(f"Peak erkannt bei Index {peak_index}")
 
-            # Schritt 5: Top 3 Serien – Zeitpunkte ausgeben
-            print("Top 3 Ausreißer-Serien starten bei:")
-            for s in series_list[:20]:
-                start_index = s[0]
-                start_time = self.signal_data.data['time'][start_index]
-                print(f"t = {start_time:.2f} s")
+        # Schritt 5: Top 3 Serien – Zeitpunkte ausgeben
+        print("Ausreißer-Serien starten bei:")
+        for s in series_list[:20]:
+            start_index = s[0]
+            start_time = self.signal_data.data['time'][start_index]
+            print(f"t = {start_time:.2f} s, länge = {len(s)}")
+
+        
+        # Schritt 6: Wähle die Serie, deren Startzeitpunkt der rated_time am nächsten kommt
+
+        best_series = None
+        best_start_index = None
+        best_start_time = None
+        smallest_distance = float('inf')
+
+        for series in series_list:
+            start_index = series[0]
+            start_time = self.signal_data.data["time"][start_index]
+            distance = abs(start_time - self.rated_time)
+
+            if distance < smallest_distance:
+                smallest_distance = distance
+                best_series = series
+                best_start_index = start_index
+                best_start_time = start_time
+
+        if best_series is not None:
+            peak_index = best_start_index - 1  # eine Stelle vor dem Ausreißerbeginn
+            peak_time = self.signal_data.data["time"][peak_index]
+            print(f"Serie mit geringster Abweichung zu rated_time = {self.rated_time:.3f} s:")
+            print(f"→ Serienstart: t = {best_start_time:.3f} s (Index {best_start_index})")
+            print(f"→ Gewählter Peak: t = {peak_time:.3f} s (Index {peak_index})")
+            print(f"→ Abweichung: {smallest_distance:.6f} s")
+        else:
+            print("Keine gültige Serie gefunden.")
+            peak_index = 0
+
+        print(f"Peak gewählt bei Index {peak_index}")
+        print(f"Startzeitpunkt der Serie: {best_start_time:.2f} s")
+        print(f"Zielzeitpunkt (rated_time): {self.rated_time:.2f} s")
+        # print(f"Abweichung: {best_distance:.4f} s")
+    
 
 ###########
         
