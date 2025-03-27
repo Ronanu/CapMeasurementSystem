@@ -157,27 +157,7 @@ class PeakDetectionProcessor:
         self.peak = {"time": peak_time, "value": peak_value, "mean": peak_mean, "threshold": threshold}
         return peak_index, peak_time, peak_value, peak_mean, threshold
 
-    def plot_results(self):
-        """Visualisiert die Daten, gefilterten Werte und markiert Peaks."""
-        plt.figure(figsize=(10, 5))
-        plt.plot(self.signal_data.data["time"], self.signal_data.data["value"], label="Originaldaten", alpha=0.5)
-        plt.plot(self.filtered_data.data["time"], self.filtered_data.data["value"], label="Hochpass-gefiltert", linewidth=2)
-
-        if self.outliers:
-            outlier_indices, outlier_values = zip(*self.outliers)
-            plt.scatter(self.signal_data.data["time"][list(outlier_indices)], outlier_values, color='red', label="Peaks", zorder=3)
-
-        # Markierung des gefundenen Peaks
-        plt.axvline(self.peak["time"], color='green', linestyle='--', label="Peak-Zeitpunkt")
-        plt.axhline(self.peak["value"], color='green', linestyle='--', label="Peak-Wert")
-        plt.axhline(self.peak["mean"], color='blue', linestyle='--', label="Peak-Mittelwert")
-        plt.axhline(self.peak["mean"] + self.peak["threshold"], color='orange', linestyle='--', label="Threshold")
-        plt.axhline(self.peak["mean"] - self.peak["threshold"], color='orange', linestyle='--')
-        plt.legend()
-        plt.xlabel("Zeit (s)")
-        plt.ylabel("Signalwert")
-        plt.title("Peak-Detection mit Hochpassfilterung")
-        
+    
 
 if __name__ == '__main__': 
     # Beispiel-Nutzung:
@@ -194,7 +174,6 @@ if __name__ == '__main__':
     processor.high_pass_filter()
     processor.compute_standard_deviation()
     processor.detect_peaks()
-    processor.plot_results()
 
     print("Gefundene Peaks:", processor.outliers)
     plt.show()
