@@ -43,12 +43,10 @@ def cut_and_analyze(file_path: str, save_dir: str, u_rated: float = 3.0):
         holding_voltage = polynomial_fit(holding_signal, order=0)
 
         # seperiertes Signal für die Peak-Detection
-        peak_detection_signal = SignalCutter(signal).cut_time_range((starttime, inf))
+        peak_detection_signal = SignalCutter(signal).cut_time_range((rated_time - 10, inf))
 
         # Peak Detection
         processor = PeakDetectionProcessor(peak_detection_signal, holding_signal, rated_time=rated_time, sigma_threshold=0.85)
-        
-        processor.high_pass_filter()
         processor.compute_standard_deviation()
         peak_index, peak_time, peak_value, peak_mean, threshold = processor.detect_peaks()
         

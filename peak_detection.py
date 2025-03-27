@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from signal_transformations import SignalData
 
 class PeakDetectionProcessor:
-    def __init__(self, signal_data: SignalData, ref_signal_data: SignalData, fs=100, cutoff=1.0, rated_time=0, sigma_threshold=2):
+    def __init__(self, signal_data: SignalData, ref_signal_data: SignalData, rated_time=0, sigma_threshold=2):
         """
         Initialisiert die Klasse für die Peak-Erkennung.
         :param signal_data: Signal, an dem die Peak-Detection ausgeführt wird
@@ -15,23 +15,12 @@ class PeakDetectionProcessor:
         """
         self.signal_data = signal_data
         self.ref_signal_data = ref_signal_data
-        self.fs = fs
-        self.cutoff = cutoff
         self.sigma_threshold = sigma_threshold
         self.filtered_data = None
         self.std_dev = None
         self.outliers = []
         self.peak = {}
         self.rated_time = rated_time
-
-    def high_pass_filter(self):
-        """Wendet einen Butterworth-Hochpassfilter an, um Gleichspannung zu entfernen."""
-        nyquist = 0.5 * self.fs
-        normal_cutoff = self.cutoff / nyquist
-        b, a = signal.butter(4, normal_cutoff, btype='high', analog=False)
-        filtered_values = signal.filtfilt(b, a, self.signal_data.data["value"])
-        self.filtered_data = SignalData(self.signal_data.name + " (HP-Filtered)",
-                                        self.signal_data.data["time"], filtered_values)
 
     def compute_standard_deviation(self):
         """Berechnet die Standardabweichung aus dem separaten Referenzsignal."""

@@ -29,7 +29,7 @@ def get_holding_voltage_signal(signal, rated_voltage, limit=0.985, cutaway=0.5):
     return third_cut
 
 def get_unloading_signal(signal: SignalData, rated_voltage, low_level=0.4, high_level=0.8):
-    first_cut = SignalCutter(signal).cut_by_value("l>", 1.1* high_level * rated_voltage)
+    first_cut = SignalCutter(signal).cut_by_value("l>", 1.02* high_level * rated_voltage)
     second_cut = SignalCutter(first_cut).cut_by_value("r>", low_level * rated_voltage)
     third_cut = SignalCutter(second_cut).cut_by_value("l<", high_level * rated_voltage)
     return third_cut
