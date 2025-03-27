@@ -31,7 +31,7 @@ def cut_and_analyze(file_path: str, save_dir: str, u_rated: float = 3.0):
         print(f'Holding Signal extrahiert.')
 
         # unloaing:
-        unloading_signal = get_unloading_signal(signal, rated_voltage=u_rated, low_level=0.6, high_level=0.95)
+        unloading_signal = get_unloading_signal(signal, rated_voltage=u_rated, low_level=0.6, high_level=0.90)
         # linear fit:
         unloading_parameter = polynomial_fit(unloading_signal, order=1)
         # get time, where fitted unload signal is rated voltage
@@ -43,7 +43,7 @@ def cut_and_analyze(file_path: str, save_dir: str, u_rated: float = 3.0):
         holding_voltage = polynomial_fit(holding_signal, order=0)
 
         # seperiertes Signal für die Peak-Detection
-        peak_detection_signal = SignalCutter(signal).cut_time_range((rated_time - 10, inf))
+        peak_detection_signal = SignalCutter(signal).cut_time_range((rated_time - 30, inf))
 
         # Peak Detection
         processor = PeakDetectionProcessor(peak_detection_signal, holding_signal, rated_time=rated_time, sigma_threshold=0.85)
