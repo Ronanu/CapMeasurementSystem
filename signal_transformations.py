@@ -2,9 +2,11 @@
 from pandas import read_csv, DataFrame
 from csv import writer as csv_writer
 from numpy import gradient, arange, convolve, ones, polyfit
+from logger_config import get_logger
+logger = get_logger(__name__)
 from matplotlib.pyplot import subplots, tight_layout, show
 from scipy.signal import medfilt
-
+from os.path import join, dirname
 
 
 
@@ -21,13 +23,21 @@ class SignalDataLoader:
         self.signal_data = self.load_data(name)
 
     def load_data(self, name):
-        """Lädt die CSV-Datei und gibt ein SignalData-Objekt zurück."""
-        df = read_csv(self.file_path, delimiter=",", decimal=",", quotechar='"',
-                         skipinitialspace=True, usecols=[1], names=["value"], skiprows=1)
-        df["value"] = df["value"].astype(str).str.replace(",", ".").astype(float)
-        df.dropna(subset=["value"], inplace=True)
-        df["time"] = arange(len(df)) * self.sampling_interval
-        return SignalData(name, df["time"], df["value"])
+        try:
+            """Lädt die CSV-Datei und gibt ein SignalData-Objekt zurück."""
+            df = read_csv(self.file_path, delimiter=",", decimal=",", quotechar='"',
+                            skipinitialspace=True, usecols=[1], names=["value"], skiprows=1)
+            df["value"] = df["value"].astype(str).str.replace(",", ".").astype(float)
+            df.dropna(subset=["value"], inplace=True)
+            df["time"] = arange(len(df)) * self.sampling_interval
+            logger.info(f"Datei erfolgreich geladen: {self.file_path}")
+            return SignalData(name, df["time"], df["value"])
+        except FileNotFoundError:
+            logger.error(f"Datei nicht gefunden: {self.file_path}")
+            raise
+        except Exception as e:
+            logger.exception(f"Fehler beim Laden der Datei {self.file_path}: {e}")
+            raise
     
 
 class SignalData:
@@ -133,7 +143,7 @@ class SignalDataSaver:
         Speichert das SignalData-Objekt als CSV mit 10 Zeilen Header-Informationen.
         """
         if self.signal_data.data.empty:
-            print("Keine Signal-Daten zum Speichern.")
+            logger.debug("Keine Signal-Daten zum Speichern.")
             return
 
         with open(self.filename, mode="w", newline="") as file:
@@ -151,7 +161,7 @@ class SignalDataSaver:
             # Speichert das DataFrame mit Spaltennamen
             self.signal_data.data.to_csv(file, index=False)
 
-        print(f"SignalData erfolgreich in {self.filename} gespeichert.")
+        logger.info(f"SignalData erfolgreich in {self.filename} gespeichert.")
 
 
 class SignalCutter:
@@ -181,40 +191,40 @@ class SignalCutter:
             if first_idx is None:
                 raise ValueError(f"Kein Wert größer als {threshold} gefunden.")
             if first_idx == 0:
-                print(f"Warnung: Keine Datenpunkte wurden durch {direction} {threshold} entfernt.")
+                logger.warning(f"Warnung: Keine Datenpunkte wurden durch {direction} {threshold} entfernt.")
             df = df.loc[first_idx:].reset_index(drop=True)
             # print direction, last_idx and len(df) to debug
-            print(f"{direction} {first_idx} of {len(df)}")
+            logger.debug(f"{direction} {first_idx} of {len(df)}")
         
         elif direction == "l<":
             first_idx = df[df["value"] < threshold].index.min()
             if first_idx is None:
                 raise ValueError(f"Kein Wert kleiner als {threshold} gefunden.")
             if first_idx == 0:
-                print(f"Warnung: Keine Datenpunkte wurden durch {direction} {threshold} entfernt.")
+                logger.warning(f"Warnung: Keine Datenpunkte wurden durch {direction} {threshold} entfernt.")
             df = df.loc[first_idx:].reset_index(drop=True)
             # print direction, last_idx and len(df) to debug
-            print(f"{direction} {first_idx} of {len(df)}")
+            logger.debug(f"{direction} {first_idx} of {len(df)}")
         
         elif direction == "r>":
             last_idx = df[df["value"] > threshold].index.max()
             if last_idx is None:
                 raise ValueError(f"Kein Wert größer als {threshold} gefunden.")
             if last_idx == len(df) - 1:
-                print(f"Warnung: Keine Datenpunkte wurden durch {direction} {threshold} entfernt.")
+                logger.warning(f"Warnung: Keine Datenpunkte wurden durch {direction} {threshold} entfernt.")
             df = df.loc[:last_idx].reset_index(drop=True)
             # print direction, last_idx and len(df) to debug
-            print(f"{direction} {last_idx} of {len(df)}")
+            logger.debug(f"{direction} {last_idx} of {len(df)}")
         
         elif direction == "r<":
             last_idx = df[df["value"] < threshold].index.max()
             if last_idx is None:
                 raise ValueError(f"Kein Wert kleiner als {threshold} gefunden.")
             if last_idx == len(df) - 1:
-                print(f"Warnung: Keine Datenpunkte wurden durch {direction} {threshold} entfernt.")
+                logger.warning(f"Warnung: Keine Datenpunkte wurden durch {direction} {threshold} entfernt.")
             df = df.loc[:last_idx].reset_index(drop=True)
             # print direction, last_idx and len(df) to debug
-            print(f"{direction} {last_idx} of {len(df)}")
+            logger.debug(f"{direction} {last_idx} of {len(df)}")
         
         else:
             raise ValueError("Ungültige Richtung. Verwenden Sie 'l>', 'l<', 'r>' oder 'r<'.")
@@ -326,12 +336,13 @@ class CapacitorEvaluation:
             if (U_max - self.signal_data.data["value"].iloc[i]) > tolerance:
                 index_start_discharge = i - 1
                 return self.signal_data.data["time"].iloc[index_start_discharge], self.signal_data.data["value"].iloc[index_start_discharge], index_start_discharge
-        print("Fehler! Punkt, wo Entladevorgang startet, wurde nicht gefunden!")
+        logger.warning("Fehler! Punkt, wo Entladevorgang startet, wurde nicht gefunden!")
         return None, None, None
     
 
 def testing_signal_cutter():
-    file_path = "csv_files/MAL2_5A2esr.csv"
+    base_dir = dirname(__file__)  # Ordner, in dem das Skript liegt
+    file_path = join(base_dir, "processed_measurements", "full_csv", "C_A1_Class2_DUT1_V1_Vishay_50.csv")
     raw_signal = SignalDataLoader(file_path, "Original Signal").signal_data
     threshold = 1  # Beispiel-Schwellenwert für die Spannung
     signal_cutter = SignalCutter(raw_signal)    
