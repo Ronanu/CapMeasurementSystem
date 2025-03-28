@@ -6,6 +6,8 @@ from numpy import polyfit, polyval, poly1d
 from matplotlib.pyplot import show
 from matplotlib.pyplot import show, subplots, legend
 
+# wenn logger noch nicht importiert wurde, dann importieren
+
 def ideal_voltage(holding_voltage, unloading_coeff, time):
     value = evaluate_polynomial(unloading_coeff, time)
     if value > holding_voltage:

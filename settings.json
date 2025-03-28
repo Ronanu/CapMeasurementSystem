@@ -1,5 +1,24 @@
 {
-    "python.defaultInterpreterPath": "fxYogaVenv\\Scripts\\python.exe",
-    "python.terminal.activateEnvironment": true
-  }
-  
+  // 🔧 1. Interpreter aus deiner venv
+  "python.defaultInterpreterPath": "${workspaceFolder}/fxYogaVenv/Scripts/python.exe",
+
+  // 🔁 2. Venv automatisch im Terminal aktivieren
+  "python.terminal.activateEnvironment": true,
+
+  // 🧹 3a. Formatierung (z. B. mit black)
+  "python.formatting.provider": "black",
+  "editor.formatOnSave": true,
+
+  // 🔎 3b. Linter (z. B. pylint oder flake8)
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.flake8Enabled": false,
+
+  // 🧪 3c. Testing (optional)
+  "python.testing.unittestEnabled": true,
+  "python.testing.pytestEnabled": false,
+  "python.testing.nosetestsEnabled": false,
+
+  // 💬 Optional: Logging für Language Server
+  "python.analysis.logLevel": "Warning"
+}

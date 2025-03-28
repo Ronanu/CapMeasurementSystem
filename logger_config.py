@@ -40,7 +40,7 @@ def get_logger(name=__name__, level=logging.DEBUG, queue_length=22):
     logger.setLevel(level)
     
     custom_handler = CustomHandler(queue_length=queue_length)
-    custom_formatter = CustomFormatter('%(asctime)s - %(levelname)s - %(message)s')
+    custom_formatter = CustomFormatter('%(asctime)s \t %(levelname)s \t %(message)s') 
     custom_handler.setFormatter(custom_formatter)
     logger.addHandler(custom_handler)
     
