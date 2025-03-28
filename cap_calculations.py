@@ -14,7 +14,7 @@ import numpy as np
 # Zentraler Schalter für Plot-Ausgabe
 SHOW_PLOTS = True
 
-def cut_and_analyze(file_path: str, save_dir: str, u_rated: float = 3.0):
+def cut_and_analyze_peak(file_path: str, save_dir: str, u_rated: float = 3.0):
     try:
         file_name = basename(file_path)
 
@@ -156,7 +156,7 @@ def process_folder():
 
     for file_name in file_list:
         file_path = join(folder_path, file_name)
-        cut_and_analyze(file_path, save_dir=cut_data_folder)
+        cut_and_analyze_peak(file_path, save_dir=cut_data_folder)
 
     if SHOW_PLOTS:
         show()
@@ -177,7 +177,7 @@ def process_single_file():
     if not exists(cut_data_folder):
         makedirs(cut_data_folder)
 
-    cut_and_analyze(file_path, save_dir=cut_data_folder)
+    cut_and_analyze_peak(file_path, save_dir=cut_data_folder)
 
     if SHOW_PLOTS:
         show()

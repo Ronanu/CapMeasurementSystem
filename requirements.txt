@@ -3,3 +3,9 @@ matplotlib
 scipy
 pandas
 tk
+keyboard
+pyautogui
+pyperclip
+
+
+# pip install -r requirements.txt
