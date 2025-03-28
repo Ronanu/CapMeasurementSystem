@@ -6,6 +6,6 @@ tk
 keyboard
 pyautogui
 pyperclip
-
+colorama
 
 # pip install -r requirements.txt
