@@ -32,7 +32,7 @@ class CustomHandler(logging.Handler):
 class CustomFormatter(logging.Formatter):
     def format(self, record):
         if record.levelno == logging.DEBUG or record.levelno >= logging.WARNING:
-            record.msg = f"{record.msg} (File: {record.pathname}, Line: {record.lineno}, Function: {record.funcName})"
+            record.msg = f"{record.msg} (File: {record.module}, Line: {record.lineno}, Function: {record.funcName})"
         return super().format(record)
 
 def get_logger(name=__name__, level=logging.DEBUG, queue_length=22):
@@ -40,7 +40,7 @@ def get_logger(name=__name__, level=logging.DEBUG, queue_length=22):
     logger.setLevel(level)
     
     custom_handler = CustomHandler(queue_length=queue_length)
-    custom_formatter = CustomFormatter('%(asctime)s \t %(levelname)s \t %(message)s') 
+    custom_formatter = CustomFormatter('%(asctime)s - %(levelname)s - %(message)s') 
     custom_handler.setFormatter(custom_formatter)
     logger.addHandler(custom_handler)
     
@@ -48,8 +48,11 @@ def get_logger(name=__name__, level=logging.DEBUG, queue_length=22):
 
 if __name__ == "__main__":
     logger = get_logger(__name__, logging.DEBUG)
+    
     logger.debug("This is a debug message")
     logger.info("This is an info message")
     logger.warning("This is a warning message")
     logger.error("This is an error message")
     logger.critical("This is a critical message")
+    print(logger.handlers)  # Print the handlers to see the custom handler
+    print(logger.handlers[0].log_queue)  # Print the log queue to see the stored messages
