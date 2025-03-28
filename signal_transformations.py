@@ -6,7 +6,6 @@ from logger_config import get_logger
 logger = get_logger(__name__)
 from matplotlib.pyplot import subplots, tight_layout, show
 from scipy.signal import medfilt
-from os.path import join, dirname
 
 
 
@@ -341,6 +340,7 @@ class CapacitorEvaluation:
     
 
 def testing_signal_cutter():
+    from os.path import join, dirname
     base_dir = dirname(__file__)  # Ordner, in dem das Skript liegt
     file_path = join(base_dir, "processed_measurements", "full_csv", "C_A1_Class2_DUT1_V1_Vishay_50.csv")
     raw_signal = SignalDataLoader(file_path, "Original Signal").signal_data
