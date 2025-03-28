@@ -1,10 +1,10 @@
 from signal_transformations import SignalDataLoader, SignalData, SignalCutter
 from signal_transformations import PlotVoltageAndCurrent
 from signal_transformations import MedianFilter, MovingAverageFilter, ConvolutionSmoothingFilter
-from numpy import array, abs, argmax, inf
-from numpy import polyfit, polyval, poly1d
-from matplotlib.pyplot import show
+from numpy import array, abs, argmax, inf, polyfit, polyval, poly1d
 from matplotlib.pyplot import show, subplots, legend
+from logger_config import get_logger
+logger = get_logger(__name__)
 
 # wenn logger noch nicht importiert wurde, dann importieren
 
@@ -51,11 +51,11 @@ def interpolate_signal(x_values, y_values, order=2):
 def holding_and_unloading(signal: SignalData, u_rated: float, do_plot=True):
     holding_voltage_signal = get_holding_voltage_signal(signal, rated_voltage=u_rated)
     holding_voltage_coeff = polynomial_fit(holding_voltage_signal, order=0)
-    print(f'holding_voltage_coeff: {holding_voltage_coeff}')
+    logger.info(f'holding_voltage_coeff: {holding_voltage_coeff}')
 
     unloading_signal = get_unloading_signal(signal, rated_voltage=u_rated)
     unloading_coeff = polynomial_fit(unloading_signal, order=2)
-    print(f'unloading_coeff: {unloading_coeff}')
+    logger.info(f'unloading_coeff: {unloading_coeff}')
     
     if do_plot:
         PlotVoltageAndCurrent(
@@ -71,10 +71,10 @@ def difference_method(file, name, u_rated, order=3, plot=False):
     
     holding_signal = get_holding_voltage_signal(signal, rated_voltage=u_rated)
     holding_voltage = polynomial_fit(holding_signal, order=0)[0]
-    print(f'holding_voltage={holding_voltage}')
+    logger.info(f'holding_voltage={holding_voltage}')
     unloading_signal = get_unloading_signal(signal, rated_voltage=u_rated, low_level=0.4, high_level=0.8)
     unloading_parameter = polynomial_fit(unloading_signal, order=order)
-    print(f'unloading_parameter={unloading_parameter}')
+    logger.info(f'unloading_parameter={unloading_parameter}')
     
     holding_end_time = holding_signal.get_start_and_end_time()[1]
     unloading_end_time = unloading_signal.get_start_and_end_time()[1]
@@ -94,7 +94,7 @@ def difference_method(file, name, u_rated, order=3, plot=False):
     # zweiter fitting Durchggang
     new_unloading_signal_fit = SignalCutter(signal).cut_time_range((max_diff_time+0.0, unloading_end_time))
     new_unloading_parameter = polynomial_fit(new_unloading_signal_fit, order=order)
-    print(f'new_unloading_parameter={new_unloading_parameter}')
+    logger.info(f'new_unloading_parameter={new_unloading_parameter}')
     new_ideal_voltages = [ideal_voltage(holding_voltage, new_unloading_parameter, t) for t in interresting_time]
     new_difference = array(interresting_voltage) - array(new_ideal_voltages)
 
@@ -129,9 +129,10 @@ def difference_method(file, name, u_rated, order=3, plot=False):
 
 
 if __name__ == '__main__':
-    folder_path = 'csv_files/'
-    file_name = 'MAL2_5A2esr.csv'
-    file = folder_path + file_name
+    from os.path import join, dirname
+    
+    base_dir = dirname(__file__)  # Ordner, in dem das Skript liegt
+    file = join(base_dir, "processed_measurements", "full_csv", "C_A1_Class2_DUT1_V1_Vishay_50.csv")
     signal = SignalDataLoader(file, "Original Signal").signal_data
     u_rated = 3
     holding_and_unloading(signal=signal, u_rated=u_rated, do_plot=True)
