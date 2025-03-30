@@ -12,7 +12,7 @@ from os import listdir, makedirs
 import numpy as np
 
 # Zentraler Schalter für Plot-Ausgabe
-SHOW_PLOTS = True
+SHOW_PLOTS = False
 
 def cut_and_analyze_peak(file_path: str, save_dir: str, u_rated: float = 3.0):
     try:
@@ -89,10 +89,11 @@ def cut_and_analyze_peak(file_path: str, save_dir: str, u_rated: float = 3.0):
             header_info=header
         )
         saver.save_to_csv()
-        try:
-            plot_results(file_name, signal, processor.peak, processor.outliers, rated_time)
-        except Exception as e:
-            print(f"Fehler bei Plotten von {file_path}: {e}")
+        if SHOW_PLOTS:
+            try:
+                plot_results(file_name, signal, processor.peak, processor.outliers, rated_time)
+            except Exception as e:
+                print(f"Fehler bei Plotten von {file_path}: {e}")
 
     except Exception as e:
         print(f"Fehler bei Datei {file_path}: {e}")
@@ -185,5 +186,5 @@ def process_single_file():
 
 if __name__ == '__main__':
     # Hier kannst du steuern, welche Funktion ausgeführt werden soll:
-    # process_folder()
-    process_single_file()
+    process_folder()
+    #process_single_file()

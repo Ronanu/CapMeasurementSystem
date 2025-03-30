@@ -1,0 +1,235 @@
+2025-03-28 15:11:02,063 - INFO - Neue Messparameter gespeichert in 'Messparameter.xlsx'.
+2025-03-28 15:11:54,741 - DEBUG - Excel-Daten geladen: [['Spannung', '33', 'V'], ['Stromstärke', '52', 'A'], ['Kapazität', '28', 'F'], ['Temperatur', '9', '°C']] (File: excel_gui, Line: 48, Function: load_excel)
+2025-03-28 15:14:04,889 - DEBUG - Excel-Daten geladen: [['Spannung', 'Un', '33', 'V'], ['Stromstärke', 'I', '52', 'A'], ['Kapazität', 'Cn', '28', 'F'], ['Temperatur', 'T', '9', '°C']] (File: excel_gui, Line: 48, Function: load_excel)
+2025-03-31 01:26:35,351 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\C_A1_Class2_DUT1_V1_Vishay_50.csv
+2025-03-31 01:26:35,386 - DEBUG - l> 5707 of 440385 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:26:35,403 - DEBUG - r> 181733 of 181734 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:26:35,433 - DEBUG - l> 4982 of 441110 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:26:35,453 - DEBUG - r> 290506 of 290507 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:26:35,464 - DEBUG - l< 205624 of 84883 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:26:53,046 - DEBUG - r> 164739 of 164740 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:26:53,964 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT1_V1_Vishay_cut.csv gespeichert.
+2025-03-31 01:26:54,626 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\C_A1_Class2_DUT1_V1_Vishay_after_press_50.csv
+2025-03-31 01:26:54,667 - DEBUG - l> 5419 of 523405 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:26:54,690 - DEBUG - r> 208762 of 208763 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:26:54,729 - DEBUG - l> 4649 of 524175 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:26:54,758 - DEBUG - r> 318617 of 318618 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:26:54,771 - DEBUG - l< 232995 of 85623 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:27:17,650 - DEBUG - r> 165990 of 165991 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:27:19,286 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT1_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 01:27:20,224 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\C_A1_Class2_DUT2_V1_Vishay_50.csv
+2025-03-31 01:27:20,282 - DEBUG - l> 5731 of 471543 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:27:20,320 - DEBUG - r> 184786 of 184787 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:27:20,376 - DEBUG - l> 5035 of 472239 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:27:20,416 - DEBUG - r> 294472 of 294473 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:27:20,440 - DEBUG - l< 208975 of 85498 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:27:43,913 - DEBUG - r> 165949 of 165950 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:27:44,882 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT2_V1_Vishay_cut.csv gespeichert.
+2025-03-31 01:27:45,475 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\C_A1_Class2_DUT2_V1_Vishay_after_press_50.csv
+2025-03-31 01:27:45,522 - DEBUG - l> 5837 of 441314 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:27:45,546 - DEBUG - r> 182745 of 182746 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:27:45,584 - DEBUG - l> 5120 of 442031 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:27:45,611 - DEBUG - r> 291707 of 291708 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:27:45,624 - DEBUG - l< 206744 of 84964 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:28:03,858 - DEBUG - r> 164762 of 164763 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:28:04,981 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT2_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 01:28:05,668 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\C_A1_Class2_DUT2_V1_Vishay_pressed_50.csv
+2025-03-31 01:28:05,710 - DEBUG - l> 35716 of 554821 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:28:05,732 - DEBUG - r> 189745 of 189746 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:28:05,767 - DEBUG - l> 35017 of 555520 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:28:05,792 - DEBUG - r> 299492 of 299493 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:28:05,803 - DEBUG - l< 214034 of 85459 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:28:30,977 - DEBUG - r> 165712 of 165713 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:28:32,238 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT2_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 01:28:32,780 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\C_A1_Class2_DUT3_V1_Vishay_after_press_50.csv
+2025-03-31 01:28:32,818 - DEBUG - l> 5520 of 484555 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:28:32,839 - DEBUG - r> 188976 of 188977 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:28:32,872 - DEBUG - l> 4670 of 485405 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:28:32,893 - DEBUG - r> 298296 of 298297 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:28:32,904 - DEBUG - l< 213064 of 85233 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:28:53,787 - DEBUG - r> 165233 of 165234 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:28:55,022 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT3_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 01:28:55,816 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\C_A1_Class2_DUT3_V1_Vishay_pressed_50.csv
+2025-03-31 01:28:55,869 - DEBUG - l> 6824 of 501952 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:28:55,900 - DEBUG - r> 183578 of 183579 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:28:55,942 - DEBUG - l> 6085 of 502691 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:28:55,972 - DEBUG - r> 291071 of 291072 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:28:55,988 - DEBUG - l< 207166 of 83906 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:29:17,557 - DEBUG - r> 163002 of 163003 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:29:18,744 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT3_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 01:29:19,307 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\C_A1_Class2_DUT4_V1_Vishay_50.csv
+2025-03-31 01:29:19,345 - DEBUG - l> 6061 of 462283 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:29:19,365 - DEBUG - r> 178199 of 178200 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:29:19,395 - DEBUG - l> 5230 of 463114 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:29:19,417 - DEBUG - r> 287648 of 287649 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:29:19,428 - DEBUG - l< 202445 of 85204 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:29:39,220 - DEBUG - r> 165370 of 165371 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:29:40,314 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT4_V1_Vishay_cut.csv gespeichert.
+2025-03-31 01:29:40,833 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\C_A1_Class2_DUT5_V1_Vishay_50.csv
+2025-03-31 01:29:40,865 - DEBUG - l> 5436 of 459148 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:29:40,887 - DEBUG - r> 190763 of 190764 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:29:40,923 - DEBUG - l> 4731 of 459853 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:29:40,946 - DEBUG - r> 300516 of 300517 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:29:40,955 - DEBUG - l< 214969 of 85548 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:30:01,980 - DEBUG - r> 165997 of 165998 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:30:03,546 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT5_V1_Vishay_cut.csv gespeichert.
+2025-03-31 01:30:04,264 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\C_A1_Class2_DUT7_V1_Vishay_50.csv
+2025-03-31 01:30:04,319 - DEBUG - l> 6235 of 565322 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:30:04,349 - DEBUG - r> 188193 of 188194 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:30:04,402 - DEBUG - l> 5494 of 566063 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:30:04,440 - DEBUG - r> 297503 of 297504 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:30:04,457 - DEBUG - l< 212405 of 85099 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:30:34,658 - DEBUG - r> 165193 of 165194 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:30:36,387 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT7_V1_Vishay_cut.csv gespeichert.
+2025-03-31 01:30:36,993 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\C_A1_Class2_DUT8_V1_Vishay_50.csv
+2025-03-31 01:30:37,032 - DEBUG - l> 5422 of 462845 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:30:37,053 - DEBUG - r> 204590 of 204591 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:30:37,089 - DEBUG - l> 4717 of 463550 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:30:37,117 - DEBUG - r> 309920 of 309921 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:30:37,130 - DEBUG - l< 227688 of 82233 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:30:57,846 - DEBUG - r> 159874 of 159875 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:30:58,729 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT8_V1_Vishay_cut.csv gespeichert.
+2025-03-31 01:30:58,881 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\C_B1_DUT1_V1_Vishay_pressed_50.csv
+2025-03-31 01:30:58,888 - DEBUG - l> 17487 of 40529 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:30:58,893 - DEBUG - r> 32263 of 32264 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:30:58,902 - DEBUG - l> 16800 of 41216 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:30:58,908 - DEBUG - r> 34701 of 34702 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:30:58,912 - DEBUG - l< 33279 of 1423 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:30:59,831 - DEBUG - r> 2630 of 2631 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:30:59,873 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\C_B1_DUT1_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 01:30:59,964 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\C_B1_DUT2_V1_Vishay_after_press_50.csv
+2025-03-31 01:30:59,969 - DEBUG - l> 5334 of 42667 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:30:59,973 - DEBUG - r> 31148 of 31149 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:30:59,983 - DEBUG - l> 4615 of 43386 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:30:59,987 - DEBUG - r> 33644 of 33645 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:30:59,989 - DEBUG - l< 32226 of 1419 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:31:01,195 - DEBUG - r> 2654 of 2655 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:01,276 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\C_B1_DUT2_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 01:31:01,376 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\C_B1_DUT2_V1_Vishay_pressed_50.csv
+2025-03-31 01:31:01,382 - DEBUG - l> 6651 of 39516 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:01,386 - DEBUG - r> 30689 of 30690 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:01,394 - DEBUG - l> 5935 of 40232 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:01,398 - DEBUG - r> 33174 of 33175 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:01,401 - DEBUG - l< 31748 of 1427 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:31:02,306 - DEBUG - r> 2644 of 2645 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:02,362 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\C_B1_DUT2_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 01:31:02,497 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\C_B1_DUT3_V1_Vishay_after_press_50.csv
+2025-03-31 01:31:02,507 - DEBUG - l> 16719 of 62082 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:02,517 - DEBUG - r> 54779 of 54780 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:02,532 - DEBUG - l> 16008 of 62793 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:02,538 - DEBUG - r> 57232 of 57233 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:02,541 - DEBUG - l< 55828 of 1405 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:31:03,438 - DEBUG - r> 2617 of 2618 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:03,501 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\C_B1_DUT3_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 01:31:03,589 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\C_B1_DUT3_V1_Vishay_pressed_50.csv
+2025-03-31 01:31:03,595 - DEBUG - l> 5469 of 38905 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:03,598 - DEBUG - r> 30644 of 30645 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:03,605 - DEBUG - l> 4780 of 39594 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:03,609 - DEBUG - r> 33087 of 33088 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:03,611 - DEBUG - l< 31665 of 1423 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:31:04,439 - DEBUG - r> 2669 of 2670 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:04,483 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\C_B1_DUT3_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 01:31:04,610 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\C_B1_DUT8_V1_Vishay_50.csv
+2025-03-31 01:31:04,619 - DEBUG - l> 10888 of 79149 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:04,624 - DEBUG - r> 36226 of 36227 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:04,634 - DEBUG - l> 5915 of 84122 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:04,640 - DEBUG - r> 43041 of 43042 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:04,642 - DEBUG - l< 41587 of 1455 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:31:07,931 - DEBUG - r> 2728 of 2729 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:08,077 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\C_B1_DUT8_V1_Vishay_cut.csv gespeichert.
+2025-03-31 01:31:08,401 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\ESR_A2_Class2_DUT1_V1_Vishay_after_press_50.csv
+2025-03-31 01:31:08,424 - DEBUG - l> 5073 of 244757 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:08,440 - DEBUG - r> 209314 of 209315 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:08,469 - DEBUG - l> 4361 of 245469 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:08,486 - DEBUG - r> 220462 of 220463 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:08,494 - DEBUG - l< 212310 of 8153 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:31:11,649 - DEBUG - r> 15716 of 15717 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:11,821 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT1_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 01:31:12,178 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\ESR_A2_Class2_DUT1_V1_Vishay_pressed_50.csv
+2025-03-31 01:31:12,201 - DEBUG - l> 4964 of 206646 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:12,217 - DEBUG - r> 176472 of 176473 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:12,247 - DEBUG - l> 4273 of 207337 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:12,263 - DEBUG - r> 187617 of 187618 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:12,269 - DEBUG - l< 179480 of 8138 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:31:14,790 - DEBUG - r> 15680 of 15681 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:14,910 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT1_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 01:31:15,255 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\ESR_A2_Class2_DUT2_V1_Vishay_50.csv
+2025-03-31 01:31:15,279 - DEBUG - l> 5285 of 208748 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:15,294 - DEBUG - r> 179345 of 179346 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:15,325 - DEBUG - l> 4515 of 209518 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:15,341 - DEBUG - r> 190765 of 190766 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:15,349 - DEBUG - l< 182467 of 8299 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:31:17,652 - DEBUG - r> 16001 of 16002 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:17,771 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT2_V1_Vishay_cut.csv gespeichert.
+2025-03-31 01:31:18,065 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\ESR_A2_Class2_DUT2_V1_Vishay_after_press_50.csv
+2025-03-31 01:31:18,086 - DEBUG - l> 7121 of 215533 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:18,098 - DEBUG - r> 179710 of 179711 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:18,128 - DEBUG - l> 6344 of 216310 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:18,143 - DEBUG - r> 190914 of 190915 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:18,149 - DEBUG - l< 182783 of 8132 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:31:20,875 - DEBUG - r> 15697 of 15698 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:21,026 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT2_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 01:31:21,441 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\ESR_A2_Class2_DUT2_V1_Vishay_pressed_50.csv
+2025-03-31 01:31:21,467 - DEBUG - l> 3224 of 263935 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:21,485 - DEBUG - r> 223342 of 223343 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:21,519 - DEBUG - l> 2488 of 264671 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:21,538 - DEBUG - r> 234614 of 234615 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:21,547 - DEBUG - l< 226413 of 8202 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:31:24,985 - DEBUG - r> 15827 of 15828 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:25,186 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT2_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 01:31:25,514 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\ESR_A2_Class2_DUT3_V1_Vishay_50.csv
+2025-03-31 01:31:25,537 - DEBUG - l> 5209 of 213134 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:25,553 - DEBUG - r> 181982 of 181983 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:25,587 - DEBUG - l> 4554 of 213789 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:25,618 - DEBUG - r> 193201 of 193202 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:25,629 - DEBUG - l< 184977 of 8225 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:31:28,331 - DEBUG - r> 15874 of 15875 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:28,474 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT3_V1_Vishay_cut.csv gespeichert.
+2025-03-31 01:31:28,769 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\ESR_A2_Class2_DUT3_V1_Vishay_pressed_50.csv
+2025-03-31 01:31:28,791 - DEBUG - l> 7057 of 202706 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:28,805 - DEBUG - r> 175738 of 175739 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:28,831 - DEBUG - l> 6173 of 203590 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:28,846 - DEBUG - r> 186994 of 186995 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:28,855 - DEBUG - l< 178914 of 8081 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:31:31,182 - DEBUG - r> 15578 of 15579 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:31,299 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT3_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 01:31:31,678 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\ESR_A2_Class2_DUT4_V1_Vishay_50.csv
+2025-03-31 01:31:31,694 - DEBUG - l> 5877 of 239855 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:31,710 - DEBUG - r> 184840 of 184841 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:31,739 - DEBUG - l> 5100 of 240632 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:31,756 - DEBUG - r> 196265 of 196266 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:31,763 - DEBUG - l< 187977 of 8289 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:31:36,043 - DEBUG - r> 15980 of 15981 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:36,274 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT4_V1_Vishay_cut.csv gespeichert.
+2025-03-31 01:31:36,581 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\ESR_A2_Class2_DUT5_V1_Vishay_50.csv
+2025-03-31 01:31:36,603 - DEBUG - l> 7612 of 217922 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:36,618 - DEBUG - r> 185892 of 185893 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:36,649 - DEBUG - l> 6908 of 218626 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:36,665 - DEBUG - r> 197244 of 197245 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:36,672 - DEBUG - l< 188955 of 8290 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:31:39,350 - DEBUG - r> 15992 of 15993 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:39,479 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT5_V1_Vishay_cut.csv gespeichert.
+2025-03-31 01:31:39,818 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\ESR_A2_Class2_DUT6_V1_Vishay_50.csv
+2025-03-31 01:31:39,850 - DEBUG - l> 5614 of 213651 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:39,868 - DEBUG - r> 177741 of 177742 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:39,901 - DEBUG - l> 4905 of 214360 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:39,918 - DEBUG - r> 188911 of 188912 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:39,926 - DEBUG - l< 180765 of 8147 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:31:42,666 - DEBUG - r> 15754 of 15755 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:42,804 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT6_V1_Vishay_cut.csv gespeichert.
+2025-03-31 01:31:43,118 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\ESR_A2_Class2_DUT7_V1_Vishay_50.csv
+2025-03-31 01:31:43,144 - DEBUG - l> 6296 of 225887 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:43,161 - DEBUG - r> 194731 of 194732 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:43,199 - DEBUG - l> 5558 of 226625 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:43,218 - DEBUG - r> 205945 of 205946 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:43,228 - DEBUG - l< 197790 of 8156 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:31:45,713 - DEBUG - r> 15768 of 15769 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:45,854 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT7_V1_Vishay_cut.csv gespeichert.
+2025-03-31 01:31:46,090 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\ESR_A2_Class2_DUT8_V1_Vishay_50.csv
+2025-03-31 01:31:46,108 - DEBUG - l> 5206 of 153714 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:46,120 - DEBUG - r> 122229 of 122230 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:46,144 - DEBUG - l> 4246 of 154674 (File: signal_transformations, Line: 194, Function: cut_by_value)
+2025-03-31 01:31:46,156 - DEBUG - r> 133820 of 133821 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:46,172 - DEBUG - l< 125550 of 8271 (File: signal_transformations, Line: 204, Function: cut_by_value)
+2025-03-31 01:31:48,696 - DEBUG - r> 16063 of 16064 (File: signal_transformations, Line: 214, Function: cut_by_value)
+2025-03-31 01:31:48,805 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT8_V1_Vishay_cut.csv gespeichert.

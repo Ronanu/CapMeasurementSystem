@@ -3,9 +3,7 @@ from signal_transformations import PlotVoltageAndCurrent
 from signal_transformations import MedianFilter, MovingAverageFilter, ConvolutionSmoothingFilter
 from numpy import array, abs, argmax, inf, polyfit, polyval, poly1d
 from matplotlib.pyplot import show, subplots, legend
-from logger_config import get_logger
-logger = get_logger(__name__)
-
+from log import logger
 # wenn logger noch nicht importiert wurde, dann importieren
 
 def ideal_voltage(holding_voltage, unloading_coeff, time):

@@ -1,11 +1,9 @@
-
 from pandas import read_csv, DataFrame
 from csv import writer as csv_writer
 from numpy import gradient, arange, convolve, ones, polyfit
-from logger_config import get_logger
-logger = get_logger(__name__)
 from matplotlib.pyplot import subplots, tight_layout, show
 from scipy.signal import medfilt
+from log import logger
 
 
 

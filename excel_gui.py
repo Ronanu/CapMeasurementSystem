@@ -1,6 +1,7 @@
 import tkinter as tk
 from tksheet import Sheet
 from openpyxl import load_workbook
+from log import logger
 
 class MessGUI:
     def __init__(self, root):
@@ -44,6 +45,7 @@ class MessGUI:
 
             # Daten aus Excel-Tabelle extrahieren
             self.data = [list(row) for row in self.ws.iter_rows(min_row=2, values_only=True)]
+            logger.debug(f"Excel-Daten geladen: {self.data}")
 
             # Daten in die Tabelle setzen
             self.sheet.set_sheet_data(self.data)
@@ -82,7 +84,7 @@ class MessGUI:
         # Speichern der Datei mit den neuen Werten
         self.wb.save(self.file_path)
         self.wb.close()
-        print(f"Neue Messparameter gespeichert in '{self.file_path}'.")
+        logger.info(f"Neue Messparameter gespeichert in '{self.file_path}'.")
 
 if __name__ == "__main__":
     root = tk.Tk()
