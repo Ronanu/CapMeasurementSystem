@@ -13,6 +13,8 @@ from os import listdir, makedirs
 import numpy as np
 from matplotlib.backends.backend_pdf import PdfPages
 
+std_def_factor = 2.0
+
 SHOW_PLOTS = True
 PLOT_PAGES = []
 PDF_OUTPUT_PATH = "alle_peaks.pdf"
@@ -30,8 +32,10 @@ def cut_and_analyze_peak(file_path: str, save_dir: str, u_rated: float = 3.0):
         # Holding Signal extrahieren
         holding_signal = get_holding_voltage_signal(signal, rated_voltage=u_rated, cutaway=0.2)
         _, starttime = holding_signal.get_start_and_end_time()
+        # holding voltage berechnen
+        holding_voltage = polynomial_fit(holding_signal, order=0)[0]
 
-        logger.info(f'Holding Signal extrahiert.')
+        logger.info(f'Holding Signal extrahiert. Holding Voltage: {holding_voltage:.3f}V')
 
         # unloaing:
         unloading_signal = get_unloading_signal(signal, rated_voltage=u_rated, low_level=0.6, high_level=0.90)
@@ -42,16 +46,29 @@ def cut_and_analyze_peak(file_path: str, save_dir: str, u_rated: float = 3.0):
 
         logger.info(f'Unloading Signal mit rated_time: {rated_time:.3f}s ')
 
-        # holding voltage berechnen
-        holding_voltage = polynomial_fit(holding_signal, order=0)
-
+    
         # seperiertes Signal für die Peak-Detection
-        peak_detection_signal = SignalCutter(signal).cut_time_range((rated_time - 30, inf))
+        peak_detection_signal = SignalCutter(signal).cut_time_range((rated_time - 30, rated_time))
+        std_dev = np.std(peak_detection_signal.data["value"])	
+        peak_linear_function = polynomial_fit(peak_detection_signal, order=1)
 
-        # Peak Detection
-        processor = PeakDetectionProcessor(peak_detection_signal, holding_signal, rated_time=rated_time, sigma_threshold=0.85)
-        processor.compute_standard_deviation()
-        peak_index, peak_time, peak_value, peak_mean, threshold = processor.detect_peaks()
+        signal_to_cut = SignalCutter(signal).cut_time_range((rated_time - 30, inf))
+        signal_to_cut.get_derivative()
+        # nun soll das signal_to_cut von hinten nach vorne durchsucht werden, um den peak zu finden
+
+        limit_reached = False
+
+        for t, val , dval in zip(reversed(signal_to_cut.data["time"]), reversed(signal_to_cut.data["value"]), reversed(signal_to_cut.data["derivative"])):
+            limit_value = evaluate_polynomial(peak_linear_function, t)
+            if not limit_reached and val > limit_value - std_def_factor * std_dev:
+                limit_reached = True
+            if limit_reached:
+                if dval < 0:
+                    continue
+                else:
+                    peak_time = t
+                    peak_value = val
+                    break
         
         logger.info(f'{file_name}: Peak gefunden bei {peak_time:.3f}s mit Wert {peak_value:.3f}.')
 
@@ -197,5 +214,5 @@ def process_single_file():
 
 if __name__ == '__main__':
     # Hier kannst du steuern, welche Funktion ausgeführt werden soll:
-    process_folder()
-    #process_single_file()
+    #process_folder()
+    process_single_file()

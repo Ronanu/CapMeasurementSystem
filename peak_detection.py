@@ -1,10 +1,10 @@
 import numpy as np
 import scipy.signal as signal
 import matplotlib.pyplot as plt
-from signal_transformations import SignalData
+from signal_transformations import SignalData, SignalCutter
 
 class PeakDetectionProcessor:
-    def __init__(self, signal_data: SignalData, ref_signal_data: SignalData, rated_time=0, sigma_threshold=2):
+    def __init__(self, signal_data: SignalData, ref_signal_data: SignalData, rated_time=0, sigma_factor=2):
         """
         Initialisiert die Klasse für die Peak-Erkennung.
         :param signal_data: Signal, an dem die Peak-Detection ausgeführt wird
@@ -15,16 +15,14 @@ class PeakDetectionProcessor:
         """
         self.signal_data = signal_data
         self.ref_signal_data = ref_signal_data
-        self.sigma_threshold = sigma_threshold
-        self.filtered_data = None
-        self.std_dev = None
-        self.outliers = []
+        self.sigma_threshold = sigma_factor
+        self.std_dev = self.compute_standard_deviation()
         self.peak = {}
         self.rated_time = rated_time
 
     def compute_standard_deviation(self):
         """Berechnet die Standardabweichung aus dem separaten Referenzsignal."""
-        self.std_dev = np.std(self.ref_signal_data.data["value"])
+        return np.std(self.ref_signal_data.data["value"])
 
     def detect_peaks(self):
         """Erkennt Peaks anhand der 2-Sigma-Regel."""
@@ -159,7 +157,7 @@ if __name__ == '__main__':
     signal_data = SignalData("Test-Signal", time, values)
     ref_signal_data = SignalData("Referenz-Signal", time[:500], values[:500])  # Erste 500 Werte als Referenz
 
-    processor = PeakDetectionProcessor(signal_data, ref_signal_data, sigma_threshold=4)
+    processor = PeakDetectionProcessor(signal_data, ref_signal_data, sigma_factor=4)
     processor.high_pass_filter()
     processor.compute_standard_deviation()
     processor.detect_peaks()

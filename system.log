@@ -1512,3 +1512,30 @@
 2025-03-31 16:11:25,468 - INFO - ESR_A2_Class2_DUT8_V1_Vishay_50.csv: Peak gefunden bei 1270.540s mit Wert 3.010.
 2025-03-31 16:11:25,545 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT8_V1_Vishay_cut.csv gespeichert.
 2025-03-31 16:11:35,047 - INFO - Alle Plots gespeichert in: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\alle_peaks.pdf
+2025-03-31 16:55:17,954 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/ESR_A2_Class2_DUT5_V1_Vishay_50.csv
+2025-03-31 16:55:17,960 - INFO - Signal geladen: ESR_A2_Class2_DUT5_V1_Vishay_50.csv
+2025-03-31 16:55:18,058 - WARNING - Fehler bei Datei C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/ESR_A2_Class2_DUT5_V1_Vishay_50.csv: unsupported format string passed to numpy.ndarray.__format__ (File: cap_calculations, Line: 117, Function: cut_and_analyze_peak)
+2025-03-31 16:55:38,297 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/ESR_A2_Class2_DUT8_V1_Vishay_50.csv
+2025-03-31 16:55:38,300 - INFO - Signal geladen: ESR_A2_Class2_DUT8_V1_Vishay_50.csv
+2025-03-31 16:55:38,340 - WARNING - Fehler bei Datei C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/ESR_A2_Class2_DUT8_V1_Vishay_50.csv: unsupported format string passed to numpy.ndarray.__format__ (File: cap_calculations, Line: 117, Function: cut_and_analyze_peak)
+2025-03-31 16:56:48,925 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/C_A1_Class2_DUT1_V1_Vishay_50.csv
+2025-03-31 16:56:48,931 - INFO - Signal geladen: C_A1_Class2_DUT1_V1_Vishay_50.csv
+2025-03-31 16:56:49,004 - WARNING - Fehler bei Datei C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/C_A1_Class2_DUT1_V1_Vishay_50.csv: unsupported format string passed to numpy.ndarray.__format__ (File: cap_calculations, Line: 117, Function: cut_and_analyze_peak)
+2025-03-31 16:57:06,061 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/C_A1_Class2_DUT1_V1_Vishay_50.csv
+2025-03-31 16:57:06,067 - INFO - Signal geladen: C_A1_Class2_DUT1_V1_Vishay_50.csv
+2025-03-31 16:57:06,150 - WARNING - Fehler bei Datei C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/C_A1_Class2_DUT1_V1_Vishay_50.csv: unsupported format string passed to numpy.ndarray.__format__ (File: cap_calculations, Line: 117, Function: cut_and_analyze_peak)
+2025-03-31 16:59:38,476 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/ESR_A2_Class2_DUT5_V1_Vishay_50.csv
+2025-03-31 16:59:38,482 - INFO - Signal geladen: ESR_A2_Class2_DUT5_V1_Vishay_50.csv
+2025-03-31 17:01:01,696 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/C_A1_Class2_DUT3_V1_Vishay_pressed_50.csv
+2025-03-31 17:01:01,705 - INFO - Signal geladen: C_A1_Class2_DUT3_V1_Vishay_pressed_50.csv
+2025-03-31 17:01:01,800 - INFO - Holding Signal extrahiert. Holding Voltage: 2.989V
+2025-03-31 17:01:01,880 - INFO - Unloading Signal mit rated_time: 1850.617s 
+2025-03-31 17:01:38,000 - WARNING - Fehler bei Datei C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/C_A1_Class2_DUT3_V1_Vishay_pressed_50.csv: 'zip' object is not reversible (File: cap_calculations, Line: 117, Function: cut_and_analyze_peak)
+2025-03-31 17:03:14,875 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/C_A1_Class2_DUT1_V1_Vishay_50.csv
+2025-03-31 17:03:14,883 - INFO - Signal geladen: C_A1_Class2_DUT1_V1_Vishay_50.csv
+2025-03-31 17:03:14,995 - INFO - Holding Signal extrahiert. Holding Voltage: 2.986V
+2025-03-31 17:03:15,075 - INFO - Unloading Signal mit rated_time: 1820.848s 
+2025-03-31 17:05:39,045 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/C_A1_Class2_DUT1_V1_Vishay_50.csv
+2025-03-31 17:05:39,053 - INFO - Signal geladen: C_A1_Class2_DUT1_V1_Vishay_50.csv
+2025-03-31 17:05:39,145 - INFO - Holding Signal extrahiert. Holding Voltage: 2.986V
+2025-03-31 17:05:39,223 - INFO - Unloading Signal mit rated_time: 1820.848s 
