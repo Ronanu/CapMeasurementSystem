@@ -234,3 +234,14 @@
 2025-03-31 01:31:48,696 - DEBUG - r> 16063 of 16064 (File: signal_transformations, Line: 214, Function: cut_by_value)
 2025-03-31 01:31:48,805 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT8_V1_Vishay_cut.csv gespeichert.
 2025-03-31 12:44:03,357 - DEBUG - Excel-Daten geladen: [['Spannung', 'Un', '33', 'V'], ['Stromstärke', 'I', '52', 'A'], ['Kapazität', 'Cn', '28', 'F'], ['Temperatur', 'T', '9', '°C']] (File: excel_gui, Line: 48, Function: load_excel)
+2025-03-31 12:53:02,599 - DEBUG - Debug-Test (File: log, Line: 46, Function: <module>)
+2025-03-31 12:53:02,599 - INFO - Info-Test
+2025-03-31 12:53:02,599 - WARNING - Warnung-Test (File: log, Line: 48, Function: <module>)
+2025-03-31 12:53:02,600 - ERROR - Fehler-Test (File: log, Line: 49, Function: <module>)
+2025-03-31 12:53:02,600 - CRITICAL - Kritisch-Test (File: log, Line: 50, Function: <module>)
+2025-03-31 12:53:02,600 - ERROR - Division durch Null (File: log, Line: 55, Function: <module>)
+Traceback (most recent call last):
+  File "c:\Users\rodi9\Dropbox\InstitutGR\HESS4MRA\Testing\CapMeasurementSystem\log.py", line 53, in <module>
+    1 / 0
+    ~~^~~
+ZeroDivisionError: division by zero
