@@ -4,13 +4,14 @@ import time
 import pyperclip
 import yaml
 import os
+from log import logger
 
 class PositionLogger:
     def __init__(self, output_file):
         self.output_file = output_file
-        self.actions = []  # Speichert Aktionen als Dicts
+        self.actions = []
         self.start_time = None
-        
+
     def log_position(self):
         x, y = pyautogui.position()
         timestamp = time.time()
@@ -23,8 +24,8 @@ class PositionLogger:
             "time": timestamp - self.start_time
         })
         self.start_time = timestamp
-        print(f"Mausposition gespeichert: ({x}, {y})")
-    
+        logger.info(f"Mausposition gespeichert: ({x}, {y})")
+
     def log_paste(self):
         timestamp = time.time()
         if not self.start_time:
@@ -34,8 +35,8 @@ class PositionLogger:
             "time": timestamp - self.start_time
         })
         self.start_time = timestamp
-        print("Einfügeaktion (V) gespeichert.")
-    
+        logger.info("Einfügeaktion (V) gespeichert.")
+
     def log_delay(self):
         timestamp = time.time()
         if not self.start_time:
@@ -45,15 +46,15 @@ class PositionLogger:
             "time": timestamp - self.start_time
         })
         self.start_time = timestamp
-        print("Eingabe-Wartezeit gespeichert.")
-        
+        logger.info("Eingabe-Wartezeit gespeichert.")
+
     def save_positions(self):
         with open(self.output_file, 'w') as f:
             yaml.dump(self.actions, f)
-        print(f"Aktionen gespeichert in {self.output_file}.")
-    
+        logger.info(f"Aktionen gespeichert in {self.output_file}.")
+
     def run(self):
-        print("Drücke SPACE für Position, V für Einfügen, ENTER für Wartezeit, ESC zum Beenden und Speichern.")
+        logger.info("Drücke SPACE für Position, V für Einfügen, ENTER für Wartezeit, ESC zum Beenden und Speichern.")
         while True:
             event = keyboard.read_event()
             if event.event_type == keyboard.KEY_DOWN:
@@ -72,71 +73,66 @@ class PositionClicker:
         self.input_file = input_file
         self.actions = []
         self._load_positions()
-    
+
     def _load_positions(self):
         with open(self.input_file, 'r') as f:
             self.actions = yaml.safe_load(f)
-    
+
     def click_positions(self, v_msg='filename.csv', k_wait=1):
         for action in self.actions:
             if action["type"] == "click":
                 pyautogui.click(action["x"], action["y"])
                 time.sleep(0.3)
-                print(f"Klick an Position: ({action['x']}, {action['y']})")
+                logger.info(f"Klick an Position: ({action['x']}, {action['y']})")
             elif action["type"] == "paste":
                 pyperclip.copy(v_msg)
                 time.sleep(0.1)
                 pyautogui.hotkey('ctrl', 'v')
                 time.sleep(0.3)
-                print(f"Dateiname {v_msg} eingefügt.")
+                logger.info(f"Dateiname '{v_msg}' eingefügt.")
             elif action["type"] == "delay":
                 waittime = action["time"] * k_wait + 2
-                print(f"Warte {round(waittime, 2)}s ...")
+                logger.info(f"Warte {round(waittime, 2)}s ...")
                 time.sleep(waittime)
-                print("Wartezeit durchgeführt.")
+                logger.info("Wartezeit durchgeführt.")
 
 class FileProcessor:
     def __init__(self, folder_path, logger_file):
         self.folder_path = folder_path
         self.logger_file = logger_file
-    
-    def process_files(self):    
-        # Liste aller Dateien im Ordner
-        all_files = os.listdir(self.folder_path)
-        # Filtere nur Dateien mit der Endung '.picolog'
-        picolog_files = [f for f in all_files if f.endswith('.picolog')]
-        # Sortiere die Dateien nach Größe (absteigend)
-        files = sorted(picolog_files, key=lambda f: os.path.getsize(os.path.join(self.folder_path, f)), reverse=True)
-        def get_file_size(file_path):
-            """Gibt die Größe einer Datei in Bytes zurück."""
-            return os.path.getsize(file_path)
-        biggest_size = get_file_size(os.path.join(self.folder_path, files[0])) if files else 0
 
+    def process_files(self):
+        all_files = os.listdir(self.folder_path)
+        picolog_files = [f for f in all_files if f.endswith('.picolog')]
+        files = sorted(picolog_files, key=lambda f: os.path.getsize(os.path.join(self.folder_path, f)), reverse=True)
+
+        def get_file_size(file_path):
+            return os.path.getsize(file_path)
 
         if not files:
-            print("Keine Dateien gefunden.")
+            logger.warning("Keine .picolog-Dateien gefunden.")
             return
-        
+
+        biggest_size = get_file_size(os.path.join(self.folder_path, files[0]))
         clicker = PositionClicker(self.logger_file)
-        
+
         for file in files:
-            print(f"Öffne Datei: {file}")
+            logger.info(f"Öffne Datei: {file}")
             filesize = float(get_file_size(os.path.join(self.folder_path, file)))
             os.startfile(os.path.join(self.folder_path, file))
-            time.sleep(5)  # Warte 3 Sekunden
-            filename = self.cleanup_filename(file)  # Dateiname bereinigen
+            time.sleep(5)
+            filename = self.cleanup_filename(file)
             clicker.click_positions(filename, filesize / biggest_size)
             time.sleep(2)
 
     def cleanup_filename(self, filename):
-        # filename hat .picolog am ende. ersetze mit csv
         return filename.replace('.picolog', '.csv')
 
 if __name__ == "__main__":
     mode = input("(L)ogger oder (C)licker oder (P)rozess? ").strip().lower()
     if mode == 'l':
-        logger = PositionLogger("mouse_positions.yaml")
-        logger.run()
+        logger_instance = PositionLogger("mouse_positions.yaml")
+        logger_instance.run()
     elif mode == 'c':
         clicker = PositionClicker("mouse_positions.yaml")
         clicker.click_positions()
@@ -145,4 +141,5 @@ if __name__ == "__main__":
         processor = FileProcessor(folder, "mouse_positions.yaml")
         processor.process_files()
     else:
-        print("Ungültiger Modus.")
+        logger.warning("Ungültiger Modus.")
+        
