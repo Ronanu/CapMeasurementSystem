@@ -2,6 +2,7 @@ from cap_signal_processing import get_holding_voltage_signal, get_unloading_sign
 from cap_signal_processing import polynomial_fit, evaluate_polynomial
 from signal_transformations import SignalDataLoader, SignalCutter, SignalDataSaver
 from peak_detection import PeakDetectionProcessor
+from log import logger
 
 from matplotlib.pyplot import show
 import matplotlib.pyplot as plt
@@ -10,9 +11,11 @@ from numpy import inf
 from tkinter import filedialog, Tk
 from os import listdir, makedirs
 import numpy as np
+from matplotlib.backends.backend_pdf import PdfPages
 
-# Zentraler Schalter für Plot-Ausgabe
-SHOW_PLOTS = False
+SHOW_PLOTS = True
+PLOT_PAGES = []
+PDF_OUTPUT_PATH = "alle_peaks.pdf"
 
 def cut_and_analyze_peak(file_path: str, save_dir: str, u_rated: float = 3.0):
     try:
@@ -22,13 +25,13 @@ def cut_and_analyze_peak(file_path: str, save_dir: str, u_rated: float = 3.0):
         data_loader = SignalDataLoader(file_path=file_path, name='Original_Signal', sampling_interval=0.01)
         signal = data_loader.signal_data
 
-        print(f'Signal geladen: {file_name}')
+        logger.info(f'Signal geladen: {file_name}')
 
         # Holding Signal extrahieren
         holding_signal = get_holding_voltage_signal(signal, rated_voltage=u_rated, cutaway=0.2)
         _, starttime = holding_signal.get_start_and_end_time()
 
-        print(f'Holding Signal extrahiert.')
+        logger.info(f'Holding Signal extrahiert.')
 
         # unloaing:
         unloading_signal = get_unloading_signal(signal, rated_voltage=u_rated, low_level=0.6, high_level=0.90)
@@ -37,7 +40,7 @@ def cut_and_analyze_peak(file_path: str, save_dir: str, u_rated: float = 3.0):
         # get time, where fitted unload signal is rated voltage
         rated_time = (u_rated - unloading_parameter[1]) / unloading_parameter[0]
 
-        print(f'Unloading Signal mit rated_time: {rated_time:.3f}s ')
+        logger.info(f'Unloading Signal mit rated_time: {rated_time:.3f}s ')
 
         # holding voltage berechnen
         holding_voltage = polynomial_fit(holding_signal, order=0)
@@ -50,7 +53,7 @@ def cut_and_analyze_peak(file_path: str, save_dir: str, u_rated: float = 3.0):
         processor.compute_standard_deviation()
         peak_index, peak_time, peak_value, peak_mean, threshold = processor.detect_peaks()
         
-        print(f'{file_name}: Peak gefunden bei {peak_time:.3f}s mit Wert {peak_value:.3f}.')
+        logger.info(f'{file_name}: Peak gefunden bei {peak_time:.3f}s mit Wert {peak_value:.3f}.')
 
         # Unloading Signal extrahieren
         after_peak_signal = SignalCutter(signal).cut_time_range((peak_time, inf))
@@ -93,10 +96,10 @@ def cut_and_analyze_peak(file_path: str, save_dir: str, u_rated: float = 3.0):
             try:
                 plot_results(file_name, signal, processor.peak, processor.outliers, rated_time)
             except Exception as e:
-                print(f"Fehler bei Plotten von {file_path}: {e}")
+                logger.warning(f"Fehler bei Plotten von {file_path}: {e}")
 
     except Exception as e:
-        print(f"Fehler bei Datei {file_path}: {e}")
+        logger.warning(f"Fehler bei Datei {file_path}: {e}")
 
 
 def plot_results(file, signal, peak, outliers, rated_time):
@@ -112,8 +115,8 @@ def plot_results(file, signal, peak, outliers, rated_time):
                 if range_idx > 1:
                     break
         relevant_value_range = [signal.data["value"][relevant_indizes[0]], signal.data["value"][relevant_indizes[1]]]
-        print(f'relevant_time_range: {relevant_time_range}')
-        print(f'relevant_value_range: {relevant_value_range}')  
+        logger.debug(f'relevant_time_range: {relevant_time_range}')
+        logger.debug(f'relevant_value_range: {relevant_value_range}')  
 
         plt.figure(figsize=(10, 5))
 
@@ -138,6 +141,9 @@ def plot_results(file, signal, peak, outliers, rated_time):
         plt.ylabel("Signalwert")
         plt.title("Peak-Detection für {}".format(file))
 
+        fig = plt.gcf()
+        PLOT_PAGES.append(fig)
+
 
 def process_folder():
     # Tkinter Dialog initialisieren und verstecken
@@ -146,7 +152,7 @@ def process_folder():
 
     folder_path = filedialog.askdirectory()
     if not folder_path:
-        print("Kein Ordner ausgewählt. Programm wird beendet.")
+        logger.warning("Kein Ordner ausgewählt. Programm wird beendet.")
         return
 
     cut_data_folder = join(folder_path, "cut_data")
@@ -159,8 +165,13 @@ def process_folder():
         file_path = join(folder_path, file_name)
         cut_and_analyze_peak(file_path, save_dir=cut_data_folder)
 
-    if SHOW_PLOTS:
-        show()
+    if PLOT_PAGES:
+        pdf_path = join(cut_data_folder, PDF_OUTPUT_PATH)
+        with PdfPages(pdf_path) as pdf:
+            for fig in PLOT_PAGES:
+                pdf.savefig(fig)
+                plt.close(fig)
+        logger.info(f"Alle Plots gespeichert in: {pdf_path}")
 
 
 def process_single_file():
@@ -170,7 +181,7 @@ def process_single_file():
 
     file_path = filedialog.askopenfilename(filetypes=[("CSV files", "*.csv")])
     if not file_path:
-        print("Keine Datei ausgewählt. Programm wird beendet.")
+        logger.warning("Keine Datei ausgewählt. Programm wird beendet.")
         return
 
     folder_path = dirname(file_path)

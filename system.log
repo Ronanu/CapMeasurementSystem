@@ -1000,3 +1000,515 @@
 2025-03-31 15:37:06,891 - INFO - Warte 16.52s ...
 2025-03-31 15:37:23,417 - INFO - Wartezeit durchgeführt.
 2025-03-31 15:37:23,819 - INFO - Klick an Position: (7647, -1766)
+2025-03-31 15:45:52,057 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT1_V1_Vishay_50.csv
+2025-03-31 15:45:52,068 - INFO - Signal geladen: C_A1_Class2_DUT1_V1_Vishay_50.csv
+2025-03-31 15:45:52,188 - INFO - Holding Signal extrahiert.
+2025-03-31 15:45:52,282 - INFO - Unloading Signal mit rated_time: 1820.848s 
+2025-03-31 15:46:10,944 - INFO - C_A1_Class2_DUT1_V1_Vishay_50.csv: Peak gefunden bei 1850.000s mit Wert 2.985.
+2025-03-31 15:46:11,753 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT1_V1_Vishay_cut.csv gespeichert.
+2025-03-31 15:46:12,295 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT1_V1_Vishay_after_press_50.csv
+2025-03-31 15:46:12,303 - INFO - Signal geladen: C_A1_Class2_DUT1_V1_Vishay_after_press_50.csv
+2025-03-31 15:46:12,392 - INFO - Holding Signal extrahiert.
+2025-03-31 15:46:12,487 - INFO - Unloading Signal mit rated_time: 2089.629s 
+2025-03-31 15:46:31,484 - INFO - C_A1_Class2_DUT1_V1_Vishay_after_press_50.csv: Peak gefunden bei 2113.430s mit Wert 2.990.
+2025-03-31 15:46:32,570 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT1_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 15:46:33,042 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT1_V1_Vishay_pressed_50.csv
+2025-03-31 15:46:33,049 - INFO - Signal geladen: C_A1_Class2_DUT1_V1_Vishay_pressed_50.csv
+2025-03-31 15:46:33,131 - INFO - Holding Signal extrahiert.
+2025-03-31 15:46:33,220 - INFO - Unloading Signal mit rated_time: 2169.709s 
+2025-03-31 15:46:48,546 - INFO - C_A1_Class2_DUT1_V1_Vishay_pressed_50.csv: Peak gefunden bei 2193.960s mit Wert 2.987.
+2025-03-31 15:46:49,715 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT1_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 15:46:50,337 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT2_V1_Vishay_50.csv
+2025-03-31 15:46:50,346 - INFO - Signal geladen: C_A1_Class2_DUT2_V1_Vishay_50.csv
+2025-03-31 15:46:50,432 - INFO - Holding Signal extrahiert.
+2025-03-31 15:46:50,515 - INFO - Unloading Signal mit rated_time: 1853.256s 
+2025-03-31 15:47:02,040 - INFO - C_A1_Class2_DUT2_V1_Vishay_50.csv: Peak gefunden bei 1878.240s mit Wert 2.987.
+2025-03-31 15:47:02,735 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT2_V1_Vishay_cut.csv gespeichert.
+2025-03-31 15:47:03,229 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT2_V1_Vishay_after_press_50.csv
+2025-03-31 15:47:03,236 - INFO - Signal geladen: C_A1_Class2_DUT2_V1_Vishay_after_press_50.csv
+2025-03-31 15:47:03,316 - INFO - Holding Signal extrahiert.
+2025-03-31 15:47:03,392 - INFO - Unloading Signal mit rated_time: 2035.340s 
+2025-03-31 15:47:20,556 - INFO - C_A1_Class2_DUT2_V1_Vishay_after_press_50.csv: Peak gefunden bei 2054.660s mit Wert 2.988.
+2025-03-31 15:47:24,772 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT2_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 15:47:25,449 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT2_V1_Vishay_pressed_50.csv
+2025-03-31 15:47:25,457 - INFO - Signal geladen: C_A1_Class2_DUT2_V1_Vishay_pressed_50.csv
+2025-03-31 15:47:25,569 - INFO - Holding Signal extrahiert.
+2025-03-31 15:47:25,742 - INFO - Unloading Signal mit rated_time: 2203.835s 
+2025-03-31 15:47:51,694 - INFO - C_A1_Class2_DUT2_V1_Vishay_pressed_50.csv: Peak gefunden bei 2225.800s mit Wert 2.988.
+2025-03-31 15:47:53,205 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT2_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 15:47:53,779 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT3_V1_Vishay_50.csv
+2025-03-31 15:47:53,789 - INFO - Signal geladen: C_A1_Class2_DUT3_V1_Vishay_50.csv
+2025-03-31 15:47:53,896 - INFO - Holding Signal extrahiert.
+2025-03-31 15:47:54,010 - INFO - Unloading Signal mit rated_time: 1756.565s 
+2025-03-31 15:48:06,385 - INFO - C_A1_Class2_DUT3_V1_Vishay_50.csv: Peak gefunden bei 1763.880s mit Wert 3.009.
+2025-03-31 15:48:07,392 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT3_V1_Vishay_cut.csv gespeichert.
+2025-03-31 15:48:08,164 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT3_V1_Vishay_after_press_50.csv
+2025-03-31 15:48:08,173 - INFO - Signal geladen: C_A1_Class2_DUT3_V1_Vishay_after_press_50.csv
+2025-03-31 15:48:08,270 - INFO - Holding Signal extrahiert.
+2025-03-31 15:48:08,373 - INFO - Unloading Signal mit rated_time: 1891.526s 
+2025-03-31 15:48:29,477 - INFO - C_A1_Class2_DUT3_V1_Vishay_after_press_50.csv: Peak gefunden bei 1917.530s mit Wert 2.989.
+2025-03-31 15:48:30,560 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT3_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 15:48:31,012 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT3_V1_Vishay_pressed_50.csv
+2025-03-31 15:48:31,019 - INFO - Signal geladen: C_A1_Class2_DUT3_V1_Vishay_pressed_50.csv
+2025-03-31 15:48:31,101 - INFO - Holding Signal extrahiert.
+2025-03-31 15:48:31,188 - INFO - Unloading Signal mit rated_time: 1850.617s 
+2025-03-31 15:48:46,579 - INFO - C_A1_Class2_DUT3_V1_Vishay_pressed_50.csv: Peak gefunden bei 1876.960s mit Wert 2.988.
+2025-03-31 15:48:47,481 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT3_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 15:48:47,873 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT4_V1_Vishay_50.csv
+2025-03-31 15:48:47,879 - INFO - Signal geladen: C_A1_Class2_DUT4_V1_Vishay_50.csv
+2025-03-31 15:48:47,949 - INFO - Holding Signal extrahiert.
+2025-03-31 15:48:48,034 - INFO - Unloading Signal mit rated_time: 1791.395s 
+2025-03-31 15:49:00,198 - INFO - C_A1_Class2_DUT4_V1_Vishay_50.csv: Peak gefunden bei 1814.550s mit Wert 2.988.
+2025-03-31 15:49:01,002 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT4_V1_Vishay_cut.csv gespeichert.
+2025-03-31 15:49:01,405 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT5_V1_Vishay_50.csv
+2025-03-31 15:49:01,411 - INFO - Signal geladen: C_A1_Class2_DUT5_V1_Vishay_50.csv
+2025-03-31 15:49:01,486 - INFO - Holding Signal extrahiert.
+2025-03-31 15:49:01,562 - INFO - Unloading Signal mit rated_time: 1910.788s 
+2025-03-31 15:49:13,645 - INFO - C_A1_Class2_DUT5_V1_Vishay_50.csv: Peak gefunden bei 1933.280s mit Wert 2.988.
+2025-03-31 15:49:14,502 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT5_V1_Vishay_cut.csv gespeichert.
+2025-03-31 15:49:14,944 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT6_V1_Vishay_50.csv
+2025-03-31 15:49:14,953 - INFO - Signal geladen: C_A1_Class2_DUT6_V1_Vishay_50.csv
+2025-03-31 15:49:15,033 - INFO - Holding Signal extrahiert.
+2025-03-31 15:49:15,110 - INFO - Unloading Signal mit rated_time: 1847.681s 
+2025-03-31 15:49:25,936 - INFO - C_A1_Class2_DUT6_V1_Vishay_50.csv: Peak gefunden bei 1851.810s mit Wert 3.009.
+2025-03-31 15:49:26,563 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT6_V1_Vishay_cut.csv gespeichert.
+2025-03-31 15:49:26,988 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT7_V1_Vishay_50.csv
+2025-03-31 15:49:26,994 - INFO - Signal geladen: C_A1_Class2_DUT7_V1_Vishay_50.csv
+2025-03-31 15:49:27,077 - INFO - Holding Signal extrahiert.
+2025-03-31 15:49:27,155 - INFO - Unloading Signal mit rated_time: 1894.298s 
+2025-03-31 15:49:42,564 - INFO - C_A1_Class2_DUT7_V1_Vishay_50.csv: Peak gefunden bei 1918.040s mit Wert 2.986.
+2025-03-31 15:49:43,570 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT7_V1_Vishay_cut.csv gespeichert.
+2025-03-31 15:49:43,929 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT8_V1_Vishay_50.csv
+2025-03-31 15:49:43,935 - INFO - Signal geladen: C_A1_Class2_DUT8_V1_Vishay_50.csv
+2025-03-31 15:49:44,003 - INFO - Holding Signal extrahiert.
+2025-03-31 15:49:44,076 - INFO - Unloading Signal mit rated_time: 2047.092s 
+2025-03-31 15:49:54,732 - INFO - C_A1_Class2_DUT8_V1_Vishay_50.csv: Peak gefunden bei 2076.110s mit Wert 2.986.
+2025-03-31 15:49:55,367 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT8_V1_Vishay_cut.csv gespeichert.
+2025-03-31 15:49:55,431 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT1_V1_Vishay_50.csv
+2025-03-31 15:49:55,433 - INFO - Signal geladen: C_B1_DUT1_V1_Vishay_50.csv
+2025-03-31 15:49:55,440 - INFO - Holding Signal extrahiert.
+2025-03-31 15:49:55,449 - INFO - Unloading Signal mit rated_time: 282.373s 
+2025-03-31 15:49:56,186 - INFO - C_B1_DUT1_V1_Vishay_50.csv: Peak gefunden bei 277.120s mit Wert 2.983.
+2025-03-31 15:49:56,251 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT1_V1_Vishay_cut.csv gespeichert.
+2025-03-31 15:49:56,318 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT1_V1_Vishay_after_press_50.csv
+2025-03-31 15:49:56,320 - INFO - Signal geladen: C_B1_DUT1_V1_Vishay_after_press_50.csv
+2025-03-31 15:49:56,333 - INFO - Holding Signal extrahiert.
+2025-03-31 15:49:56,345 - INFO - Unloading Signal mit rated_time: 396.530s 
+2025-03-31 15:49:57,957 - INFO - C_B1_DUT1_V1_Vishay_after_press_50.csv: Peak gefunden bei 397.680s mit Wert 2.988.
+2025-03-31 15:49:58,048 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT1_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 15:49:58,102 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT1_V1_Vishay_pressed_50.csv
+2025-03-31 15:49:58,104 - INFO - Signal geladen: C_B1_DUT1_V1_Vishay_pressed_50.csv
+2025-03-31 15:49:58,114 - INFO - Holding Signal extrahiert.
+2025-03-31 15:49:58,123 - INFO - Unloading Signal mit rated_time: 495.867s 
+2025-03-31 15:49:58,583 - INFO - C_B1_DUT1_V1_Vishay_pressed_50.csv: Peak gefunden bei 497.290s mit Wert 2.985.
+2025-03-31 15:49:58,612 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT1_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 15:49:58,689 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT2_V1_Vishay_50.csv
+2025-03-31 15:49:58,691 - INFO - Signal geladen: C_B1_DUT2_V1_Vishay_50.csv
+2025-03-31 15:49:58,704 - INFO - Holding Signal extrahiert.
+2025-03-31 15:49:58,717 - INFO - Unloading Signal mit rated_time: 409.766s 
+2025-03-31 15:50:00,232 - INFO - C_B1_DUT2_V1_Vishay_50.csv: Peak gefunden bei 404.060s mit Wert 2.984.
+2025-03-31 15:50:00,339 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT2_V1_Vishay_cut.csv gespeichert.
+2025-03-31 15:50:00,385 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT2_V1_Vishay_after_press_50.csv
+2025-03-31 15:50:00,386 - INFO - Signal geladen: C_B1_DUT2_V1_Vishay_after_press_50.csv
+2025-03-31 15:50:00,395 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:00,405 - INFO - Unloading Signal mit rated_time: 363.687s 
+2025-03-31 15:50:01,013 - INFO - C_B1_DUT2_V1_Vishay_after_press_50.csv: Peak gefunden bei 364.810s mit Wert 2.989.
+2025-03-31 15:50:01,045 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT2_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 15:50:01,089 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT2_V1_Vishay_pressed_50.csv
+2025-03-31 15:50:01,090 - INFO - Signal geladen: C_B1_DUT2_V1_Vishay_pressed_50.csv
+2025-03-31 15:50:01,099 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:01,107 - INFO - Unloading Signal mit rated_time: 372.089s 
+2025-03-31 15:50:01,542 - INFO - C_B1_DUT2_V1_Vishay_pressed_50.csv: Peak gefunden bei 373.400s mit Wert 2.988.
+2025-03-31 15:50:01,572 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT2_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 15:50:01,629 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT3_V1_Vishay_50.csv
+2025-03-31 15:50:01,630 - INFO - Signal geladen: C_B1_DUT3_V1_Vishay_50.csv
+2025-03-31 15:50:01,641 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:01,653 - INFO - Unloading Signal mit rated_time: 375.153s 
+2025-03-31 15:50:02,349 - INFO - C_B1_DUT3_V1_Vishay_50.csv: Peak gefunden bei 374.400s mit Wert 2.985.
+2025-03-31 15:50:02,397 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT3_V1_Vishay_cut.csv gespeichert.
+2025-03-31 15:50:02,465 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT3_V1_Vishay_after_press_50.csv
+2025-03-31 15:50:02,467 - INFO - Signal geladen: C_B1_DUT3_V1_Vishay_after_press_50.csv
+2025-03-31 15:50:02,483 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:02,495 - INFO - Unloading Signal mit rated_time: 676.889s 
+2025-03-31 15:50:02,889 - INFO - C_B1_DUT3_V1_Vishay_after_press_50.csv: Peak gefunden bei 678.210s mit Wert 2.991.
+2025-03-31 15:50:02,913 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT3_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 15:50:02,954 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT3_V1_Vishay_pressed_50.csv
+2025-03-31 15:50:02,956 - INFO - Signal geladen: C_B1_DUT3_V1_Vishay_pressed_50.csv
+2025-03-31 15:50:02,967 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:02,977 - INFO - Unloading Signal mit rated_time: 359.707s 
+2025-03-31 15:50:03,424 - INFO - C_B1_DUT3_V1_Vishay_pressed_50.csv: Peak gefunden bei 360.780s mit Wert 2.991.
+2025-03-31 15:50:03,446 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT3_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 15:50:03,497 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT4_V1_Vishay_50.csv
+2025-03-31 15:50:03,498 - INFO - Signal geladen: C_B1_DUT4_V1_Vishay_50.csv
+2025-03-31 15:50:03,506 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:03,515 - INFO - Unloading Signal mit rated_time: 381.683s 
+2025-03-31 15:50:04,110 - INFO - C_B1_DUT4_V1_Vishay_50.csv: Peak gefunden bei 379.920s mit Wert 2.984.
+2025-03-31 15:50:04,155 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT4_V1_Vishay_cut.csv gespeichert.
+2025-03-31 15:50:04,229 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT5_V1_Vishay_50.csv
+2025-03-31 15:50:04,231 - INFO - Signal geladen: C_B1_DUT5_V1_Vishay_50.csv
+2025-03-31 15:50:04,241 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:04,255 - INFO - Unloading Signal mit rated_time: 362.984s 
+2025-03-31 15:50:05,660 - INFO - C_B1_DUT5_V1_Vishay_50.csv: Peak gefunden bei 361.220s mit Wert 2.984.
+2025-03-31 15:50:05,759 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT5_V1_Vishay_cut.csv gespeichert.
+2025-03-31 15:50:05,822 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT6_V1_Vishay_50.csv
+2025-03-31 15:50:05,824 - INFO - Signal geladen: C_B1_DUT6_V1_Vishay_50.csv
+2025-03-31 15:50:05,834 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:05,846 - INFO - Unloading Signal mit rated_time: 396.610s 
+2025-03-31 15:50:06,974 - INFO - C_B1_DUT6_V1_Vishay_50.csv: Peak gefunden bei 391.370s mit Wert 2.987.
+2025-03-31 15:50:07,054 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT6_V1_Vishay_cut.csv gespeichert.
+2025-03-31 15:50:07,122 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT7_V1_Vishay_50.csv
+2025-03-31 15:50:07,124 - INFO - Signal geladen: C_B1_DUT7_V1_Vishay_50.csv
+2025-03-31 15:50:07,136 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:07,148 - INFO - Unloading Signal mit rated_time: 430.640s 
+2025-03-31 15:50:08,421 - INFO - C_B1_DUT7_V1_Vishay_50.csv: Peak gefunden bei 430.470s mit Wert 2.986.
+2025-03-31 15:50:08,502 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT7_V1_Vishay_cut.csv gespeichert.
+2025-03-31 15:50:08,577 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT8_V1_Vishay_50.csv
+2025-03-31 15:50:08,579 - INFO - Signal geladen: C_B1_DUT8_V1_Vishay_50.csv
+2025-03-31 15:50:08,594 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:08,608 - INFO - Unloading Signal mit rated_time: 470.197s 
+2025-03-31 15:50:10,367 - INFO - C_B1_DUT8_V1_Vishay_50.csv: Peak gefunden bei 471.090s mit Wert 3.006.
+2025-03-31 15:50:10,475 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT8_V1_Vishay_cut.csv gespeichert.
+2025-03-31 15:50:10,862 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT1_V1_Vishay_50.csv
+2025-03-31 15:50:10,868 - INFO - Signal geladen: ESR_A2_Class2_DUT1_V1_Vishay_50.csv
+2025-03-31 15:50:10,981 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:11,039 - INFO - Unloading Signal mit rated_time: 1776.823s 
+2025-03-31 15:50:21,951 - INFO - ESR_A2_Class2_DUT1_V1_Vishay_50.csv: Peak gefunden bei 1779.070s mit Wert 2.986.
+2025-03-31 15:50:22,632 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT1_V1_Vishay_cut.csv gespeichert.
+2025-03-31 15:50:22,836 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT1_V1_Vishay_after_press_50.csv
+2025-03-31 15:50:22,840 - INFO - Signal geladen: ESR_A2_Class2_DUT1_V1_Vishay_after_press_50.csv
+2025-03-31 15:50:22,893 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:22,934 - INFO - Unloading Signal mit rated_time: 2139.417s 
+2025-03-31 15:50:24,568 - INFO - ESR_A2_Class2_DUT1_V1_Vishay_after_press_50.csv: Peak gefunden bei 2142.310s mit Wert 2.987.
+2025-03-31 15:50:24,654 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT1_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 15:50:24,832 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT1_V1_Vishay_pressed_50.csv
+2025-03-31 15:50:24,836 - INFO - Signal geladen: ESR_A2_Class2_DUT1_V1_Vishay_pressed_50.csv
+2025-03-31 15:50:24,888 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:24,929 - INFO - Unloading Signal mit rated_time: 1810.403s 
+2025-03-31 15:50:26,222 - INFO - ESR_A2_Class2_DUT1_V1_Vishay_pressed_50.csv: Peak gefunden bei 1812.830s mit Wert 2.986.
+2025-03-31 15:50:26,300 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT1_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 15:50:26,492 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT2_V1_Vishay_50.csv
+2025-03-31 15:50:26,496 - INFO - Signal geladen: ESR_A2_Class2_DUT2_V1_Vishay_50.csv
+2025-03-31 15:50:26,548 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:26,592 - INFO - Unloading Signal mit rated_time: 1842.279s 
+2025-03-31 15:50:27,967 - INFO - ESR_A2_Class2_DUT2_V1_Vishay_50.csv: Peak gefunden bei 1844.420s mit Wert 2.988.
+2025-03-31 15:50:28,067 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT2_V1_Vishay_cut.csv gespeichert.
+2025-03-31 15:50:28,263 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT2_V1_Vishay_after_press_50.csv
+2025-03-31 15:50:28,267 - INFO - Signal geladen: ESR_A2_Class2_DUT2_V1_Vishay_after_press_50.csv
+2025-03-31 15:50:28,329 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:28,372 - INFO - Unloading Signal mit rated_time: 1864.183s 
+2025-03-31 15:50:30,032 - INFO - ESR_A2_Class2_DUT2_V1_Vishay_after_press_50.csv: Peak gefunden bei 1866.290s mit Wert 2.989.
+2025-03-31 15:50:30,141 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT2_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 15:50:30,375 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT2_V1_Vishay_pressed_50.csv
+2025-03-31 15:50:30,380 - INFO - Signal geladen: ESR_A2_Class2_DUT2_V1_Vishay_pressed_50.csv
+2025-03-31 15:50:30,453 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:30,505 - INFO - Unloading Signal mit rated_time: 2261.656s 
+2025-03-31 15:50:32,315 - INFO - ESR_A2_Class2_DUT2_V1_Vishay_pressed_50.csv: Peak gefunden bei 2263.960s mit Wert 2.988.
+2025-03-31 15:50:32,436 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT2_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 15:50:32,639 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT3_V1_Vishay_50.csv
+2025-03-31 15:50:32,644 - INFO - Signal geladen: ESR_A2_Class2_DUT3_V1_Vishay_50.csv
+2025-03-31 15:50:32,708 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:32,754 - INFO - Unloading Signal mit rated_time: 1867.947s 
+2025-03-31 15:50:34,156 - INFO - ESR_A2_Class2_DUT3_V1_Vishay_50.csv: Peak gefunden bei 1870.050s mit Wert 2.988.
+2025-03-31 15:50:34,242 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT3_V1_Vishay_cut.csv gespeichert.
+2025-03-31 15:50:34,438 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT3_V1_Vishay_after_press_50.csv
+2025-03-31 15:50:34,442 - INFO - Signal geladen: ESR_A2_Class2_DUT3_V1_Vishay_after_press_50.csv
+2025-03-31 15:50:34,520 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:34,562 - INFO - Unloading Signal mit rated_time: 1907.441s 
+2025-03-31 15:50:35,814 - INFO - ESR_A2_Class2_DUT3_V1_Vishay_after_press_50.csv: Peak gefunden bei 1910.240s mit Wert 2.989.
+2025-03-31 15:50:35,883 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT3_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 15:50:36,055 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT3_V1_Vishay_pressed_50.csv
+2025-03-31 15:50:36,058 - INFO - Signal geladen: ESR_A2_Class2_DUT3_V1_Vishay_pressed_50.csv
+2025-03-31 15:50:36,103 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:36,142 - INFO - Unloading Signal mit rated_time: 1823.909s 
+2025-03-31 15:50:37,317 - INFO - ESR_A2_Class2_DUT3_V1_Vishay_pressed_50.csv: Peak gefunden bei 1826.390s mit Wert 2.988.
+2025-03-31 15:50:37,382 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT3_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 15:50:37,583 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT4_V1_Vishay_50.csv
+2025-03-31 15:50:37,587 - INFO - Signal geladen: ESR_A2_Class2_DUT4_V1_Vishay_50.csv
+2025-03-31 15:50:37,639 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:37,683 - INFO - Unloading Signal mit rated_time: 1903.207s 
+2025-03-31 15:50:40,249 - INFO - ESR_A2_Class2_DUT4_V1_Vishay_50.csv: Peak gefunden bei 1905.370s mit Wert 2.988.
+2025-03-31 15:50:40,402 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT4_V1_Vishay_cut.csv gespeichert.
+2025-03-31 15:50:40,618 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT5_V1_Vishay_50.csv
+2025-03-31 15:50:40,624 - INFO - Signal geladen: ESR_A2_Class2_DUT5_V1_Vishay_50.csv
+2025-03-31 15:50:40,687 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:40,737 - INFO - Unloading Signal mit rated_time: 1930.999s 
+2025-03-31 15:50:42,351 - INFO - ESR_A2_Class2_DUT5_V1_Vishay_50.csv: Peak gefunden bei 1933.310s mit Wert 2.987.
+2025-03-31 15:50:42,458 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT5_V1_Vishay_cut.csv gespeichert.
+2025-03-31 15:50:42,651 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT6_V1_Vishay_50.csv
+2025-03-31 15:50:42,655 - INFO - Signal geladen: ESR_A2_Class2_DUT6_V1_Vishay_50.csv
+2025-03-31 15:50:42,702 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:42,744 - INFO - Unloading Signal mit rated_time: 1829.503s 
+2025-03-31 15:50:44,481 - INFO - ESR_A2_Class2_DUT6_V1_Vishay_50.csv: Peak gefunden bei 1831.660s mit Wert 2.988.
+2025-03-31 15:50:44,573 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT6_V1_Vishay_cut.csv gespeichert.
+2025-03-31 15:50:44,814 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT7_V1_Vishay_50.csv
+2025-03-31 15:50:44,818 - INFO - Signal geladen: ESR_A2_Class2_DUT7_V1_Vishay_50.csv
+2025-03-31 15:50:44,891 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:44,934 - INFO - Unloading Signal mit rated_time: 2006.319s 
+2025-03-31 15:50:46,347 - INFO - ESR_A2_Class2_DUT7_V1_Vishay_50.csv: Peak gefunden bei 2008.330s mit Wert 2.988.
+2025-03-31 15:50:46,440 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT7_V1_Vishay_cut.csv gespeichert.
+2025-03-31 15:50:46,590 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT8_V1_Vishay_50.csv
+2025-03-31 15:50:46,593 - INFO - Signal geladen: ESR_A2_Class2_DUT8_V1_Vishay_50.csv
+2025-03-31 15:50:46,628 - INFO - Holding Signal extrahiert.
+2025-03-31 15:50:46,665 - INFO - Unloading Signal mit rated_time: 1270.483s 
+2025-03-31 15:50:48,021 - INFO - ESR_A2_Class2_DUT8_V1_Vishay_50.csv: Peak gefunden bei 1270.540s mit Wert 3.010.
+2025-03-31 15:50:48,102 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT8_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:07:07,074 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT1_V1_Vishay_50.csv
+2025-03-31 16:07:07,081 - INFO - Signal geladen: C_A1_Class2_DUT1_V1_Vishay_50.csv
+2025-03-31 16:07:07,147 - INFO - Holding Signal extrahiert.
+2025-03-31 16:07:07,224 - INFO - Unloading Signal mit rated_time: 1820.848s 
+2025-03-31 16:07:18,349 - INFO - C_A1_Class2_DUT1_V1_Vishay_50.csv: Peak gefunden bei 1850.000s mit Wert 2.985.
+2025-03-31 16:07:19,050 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT1_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:07:20,887 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT1_V1_Vishay_after_press_50.csv
+2025-03-31 16:07:20,893 - INFO - Signal geladen: C_A1_Class2_DUT1_V1_Vishay_after_press_50.csv
+2025-03-31 16:07:20,961 - INFO - Holding Signal extrahiert.
+2025-03-31 16:07:21,050 - INFO - Unloading Signal mit rated_time: 2089.629s 
+2025-03-31 16:07:34,836 - INFO - C_A1_Class2_DUT1_V1_Vishay_after_press_50.csv: Peak gefunden bei 2113.430s mit Wert 2.990.
+2025-03-31 16:07:35,759 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT1_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 16:07:36,259 - WARNING - Fehler bei Plotten von C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT1_V1_Vishay_after_press_50.csv: '[255740, 255741, 255742, 255743, 255744, 255745, 255746, 255747, 255748, 255749, 255750, 255751, 255752, 255753, 255754, 255755, 255756, 255757, 255758, 255759, 255760, 255761, 255762, 255763, 255764, 255765, 255766, 255767, 255768, 255769, 255770, 255771, 255772, 255773, 255774, 255775, 255776, 255777, 255778, 255779, 255780, 255781, 255782, 255783, 255784, 255785, 255786, 255787, 255788, 255789, 255790, 255791] not in index' (File: cap_calculations, Line: 99, Function: cut_and_analyze_peak)
+2025-03-31 16:07:36,702 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT1_V1_Vishay_pressed_50.csv
+2025-03-31 16:07:36,716 - INFO - Signal geladen: C_A1_Class2_DUT1_V1_Vishay_pressed_50.csv
+2025-03-31 16:07:36,801 - INFO - Holding Signal extrahiert.
+2025-03-31 16:07:36,880 - INFO - Unloading Signal mit rated_time: 2169.709s 
+2025-03-31 16:07:49,320 - INFO - C_A1_Class2_DUT1_V1_Vishay_pressed_50.csv: Peak gefunden bei 2193.960s mit Wert 2.987.
+2025-03-31 16:07:50,055 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT1_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 16:07:51,270 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT2_V1_Vishay_50.csv
+2025-03-31 16:07:51,277 - INFO - Signal geladen: C_A1_Class2_DUT2_V1_Vishay_50.csv
+2025-03-31 16:07:51,353 - INFO - Holding Signal extrahiert.
+2025-03-31 16:07:51,436 - INFO - Unloading Signal mit rated_time: 1853.256s 
+2025-03-31 16:08:03,449 - INFO - C_A1_Class2_DUT2_V1_Vishay_50.csv: Peak gefunden bei 1878.240s mit Wert 2.987.
+2025-03-31 16:08:04,205 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT2_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:08:04,667 - WARNING - Fehler bei Plotten von C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT2_V1_Vishay_50.csv: '[34105, 34106, 34107, 34108, 34109, 34110, 34111, 34112, 34113, 34114, 34115, 34116, 34117, 34118, 34119, 34120, 34121, 34122, 34123, 34124, 34125, 34126, 34127, 34128, 34129, 34130, 34131, 34132, 34133, 34134, 34135, 34136, 34137, 34138, 34139, 34140, 34141, 34142, 34143, 34144, 34145, 34146, 34147, 34148, 34149, 34150, 34151, 34152, 34153, 34154, 34155, 34156, 34157, 34158, 34159, 34160, 34161, 34162, 34163, 34164, 34165, 34166, 34167, 34168, 34169, 34170, 34171, 34172, 34173, 34174, 34175, 34176, 34177, 34178, 34179, 34180, 34181, 34182, 34183, 34184, 34185, 34186, 34187, 34188, 34189, 34190, 34191, 34192, 34193, 34194, 34195, 34196, 34197, 34198, 34199] not in index' (File: cap_calculations, Line: 99, Function: cut_and_analyze_peak)
+2025-03-31 16:08:05,223 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT2_V1_Vishay_after_press_50.csv
+2025-03-31 16:08:05,233 - INFO - Signal geladen: C_A1_Class2_DUT2_V1_Vishay_after_press_50.csv
+2025-03-31 16:08:05,356 - INFO - Holding Signal extrahiert.
+2025-03-31 16:08:05,457 - INFO - Unloading Signal mit rated_time: 2035.340s 
+2025-03-31 16:08:22,495 - INFO - C_A1_Class2_DUT2_V1_Vishay_after_press_50.csv: Peak gefunden bei 2054.660s mit Wert 2.988.
+2025-03-31 16:08:23,417 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT2_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 16:08:23,846 - WARNING - Fehler bei Plotten von C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT2_V1_Vishay_after_press_50.csv: '[86432, 86433, 86434, 86435, 86436, 86437, 86438, 86439, 86440, 86441, 86442, 86443, 86444, 86445, 86446, 86447, 86448, 86449, 86450, 86451, 86452, 86453, 86454, 86455, 86456, 86457, 86458, 86459, 86460, 86461, 86462, 86463, 86464, 86465, 86466, 86467, 86468, 86469, 86470, 86471, 86472, 86473, 86474, 86475, 86476, 86477, 86478, 86479, 86480] not in index' (File: cap_calculations, Line: 99, Function: cut_and_analyze_peak)
+2025-03-31 16:08:24,321 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT2_V1_Vishay_pressed_50.csv
+2025-03-31 16:08:24,328 - INFO - Signal geladen: C_A1_Class2_DUT2_V1_Vishay_pressed_50.csv
+2025-03-31 16:08:24,412 - INFO - Holding Signal extrahiert.
+2025-03-31 16:08:24,490 - INFO - Unloading Signal mit rated_time: 2203.835s 
+2025-03-31 16:08:39,269 - INFO - C_A1_Class2_DUT2_V1_Vishay_pressed_50.csv: Peak gefunden bei 2225.800s mit Wert 2.988.
+2025-03-31 16:08:40,175 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT2_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 16:08:40,514 - WARNING - Fehler bei Plotten von C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT2_V1_Vishay_pressed_50.csv: '[27533] not in index' (File: cap_calculations, Line: 99, Function: cut_and_analyze_peak)
+2025-03-31 16:08:40,861 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT3_V1_Vishay_50.csv
+2025-03-31 16:08:40,865 - INFO - Signal geladen: C_A1_Class2_DUT3_V1_Vishay_50.csv
+2025-03-31 16:08:40,923 - INFO - Holding Signal extrahiert.
+2025-03-31 16:08:40,996 - INFO - Unloading Signal mit rated_time: 1756.565s 
+2025-03-31 16:08:51,071 - INFO - C_A1_Class2_DUT3_V1_Vishay_50.csv: Peak gefunden bei 1763.880s mit Wert 3.009.
+2025-03-31 16:08:51,636 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT3_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:08:51,969 - WARNING - Fehler bei Plotten von C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT3_V1_Vishay_50.csv: '[172141, 172142, 172143, 172144, 172145, 172146, 172147, 172148, 172149, 172150, 172151, 172152, 172153, 172154, 172155, 172156, 172157, 172158, 172159, 172160, 172161, 172162, 172163, 172164, 172165, 172166, 172167, 172168, 172169, 172170, 172171, 172172, 172173, 172174, 172175, 172176, 172177, 172178, 172179, 172180, 172181, 172182, 172183, 172184, 172185, 172186, 172187, 172188] not in index' (File: cap_calculations, Line: 99, Function: cut_and_analyze_peak)
+2025-03-31 16:08:52,375 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT3_V1_Vishay_after_press_50.csv
+2025-03-31 16:08:52,381 - INFO - Signal geladen: C_A1_Class2_DUT3_V1_Vishay_after_press_50.csv
+2025-03-31 16:08:52,431 - INFO - Holding Signal extrahiert.
+2025-03-31 16:08:52,497 - INFO - Unloading Signal mit rated_time: 1891.526s 
+2025-03-31 16:09:04,476 - INFO - C_A1_Class2_DUT3_V1_Vishay_after_press_50.csv: Peak gefunden bei 1917.530s mit Wert 2.989.
+2025-03-31 16:09:05,210 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT3_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 16:09:06,425 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT3_V1_Vishay_pressed_50.csv
+2025-03-31 16:09:06,430 - INFO - Signal geladen: C_A1_Class2_DUT3_V1_Vishay_pressed_50.csv
+2025-03-31 16:09:06,497 - INFO - Holding Signal extrahiert.
+2025-03-31 16:09:06,551 - INFO - Unloading Signal mit rated_time: 1850.617s 
+2025-03-31 16:09:19,098 - INFO - C_A1_Class2_DUT3_V1_Vishay_pressed_50.csv: Peak gefunden bei 1876.960s mit Wert 2.988.
+2025-03-31 16:09:19,857 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT3_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 16:09:21,054 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT4_V1_Vishay_50.csv
+2025-03-31 16:09:21,062 - INFO - Signal geladen: C_A1_Class2_DUT4_V1_Vishay_50.csv
+2025-03-31 16:09:21,131 - INFO - Holding Signal extrahiert.
+2025-03-31 16:09:21,189 - INFO - Unloading Signal mit rated_time: 1791.395s 
+2025-03-31 16:09:32,388 - INFO - C_A1_Class2_DUT4_V1_Vishay_50.csv: Peak gefunden bei 1814.550s mit Wert 2.988.
+2025-03-31 16:09:33,134 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT4_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:09:34,366 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT5_V1_Vishay_50.csv
+2025-03-31 16:09:34,374 - INFO - Signal geladen: C_A1_Class2_DUT5_V1_Vishay_50.csv
+2025-03-31 16:09:34,440 - INFO - Holding Signal extrahiert.
+2025-03-31 16:09:34,509 - INFO - Unloading Signal mit rated_time: 1910.788s 
+2025-03-31 16:09:46,560 - INFO - C_A1_Class2_DUT5_V1_Vishay_50.csv: Peak gefunden bei 1933.280s mit Wert 2.988.
+2025-03-31 16:09:47,249 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT5_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:09:48,442 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT6_V1_Vishay_50.csv
+2025-03-31 16:09:48,450 - INFO - Signal geladen: C_A1_Class2_DUT6_V1_Vishay_50.csv
+2025-03-31 16:09:48,542 - INFO - Holding Signal extrahiert.
+2025-03-31 16:09:48,610 - INFO - Unloading Signal mit rated_time: 1847.681s 
+2025-03-31 16:09:59,960 - INFO - C_A1_Class2_DUT6_V1_Vishay_50.csv: Peak gefunden bei 1851.810s mit Wert 3.009.
+2025-03-31 16:10:00,560 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT6_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:10:01,863 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT7_V1_Vishay_50.csv
+2025-03-31 16:10:01,869 - INFO - Signal geladen: C_A1_Class2_DUT7_V1_Vishay_50.csv
+2025-03-31 16:10:01,929 - INFO - Holding Signal extrahiert.
+2025-03-31 16:10:01,995 - INFO - Unloading Signal mit rated_time: 1894.298s 
+2025-03-31 16:10:16,998 - INFO - C_A1_Class2_DUT7_V1_Vishay_50.csv: Peak gefunden bei 1918.040s mit Wert 2.986.
+2025-03-31 16:10:17,943 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT7_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:10:19,232 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT8_V1_Vishay_50.csv
+2025-03-31 16:10:19,237 - INFO - Signal geladen: C_A1_Class2_DUT8_V1_Vishay_50.csv
+2025-03-31 16:10:19,298 - INFO - Holding Signal extrahiert.
+2025-03-31 16:10:19,348 - INFO - Unloading Signal mit rated_time: 2047.092s 
+2025-03-31 16:10:29,673 - INFO - C_A1_Class2_DUT8_V1_Vishay_50.csv: Peak gefunden bei 2076.110s mit Wert 2.986.
+2025-03-31 16:10:30,212 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT8_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:10:31,140 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT1_V1_Vishay_50.csv
+2025-03-31 16:10:31,141 - INFO - Signal geladen: C_B1_DUT1_V1_Vishay_50.csv
+2025-03-31 16:10:31,149 - INFO - Holding Signal extrahiert.
+2025-03-31 16:10:31,156 - INFO - Unloading Signal mit rated_time: 282.373s 
+2025-03-31 16:10:31,859 - INFO - C_B1_DUT1_V1_Vishay_50.csv: Peak gefunden bei 277.120s mit Wert 2.983.
+2025-03-31 16:10:31,911 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT1_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:10:32,100 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT1_V1_Vishay_after_press_50.csv
+2025-03-31 16:10:32,101 - INFO - Signal geladen: C_B1_DUT1_V1_Vishay_after_press_50.csv
+2025-03-31 16:10:32,112 - INFO - Holding Signal extrahiert.
+2025-03-31 16:10:32,123 - INFO - Unloading Signal mit rated_time: 396.530s 
+2025-03-31 16:10:33,667 - INFO - C_B1_DUT1_V1_Vishay_after_press_50.csv: Peak gefunden bei 397.680s mit Wert 2.988.
+2025-03-31 16:10:33,758 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT1_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 16:10:33,945 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT1_V1_Vishay_pressed_50.csv
+2025-03-31 16:10:33,946 - INFO - Signal geladen: C_B1_DUT1_V1_Vishay_pressed_50.csv
+2025-03-31 16:10:33,955 - INFO - Holding Signal extrahiert.
+2025-03-31 16:10:33,964 - INFO - Unloading Signal mit rated_time: 495.867s 
+2025-03-31 16:10:34,391 - INFO - C_B1_DUT1_V1_Vishay_pressed_50.csv: Peak gefunden bei 497.290s mit Wert 2.985.
+2025-03-31 16:10:34,413 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT1_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 16:10:34,597 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT2_V1_Vishay_50.csv
+2025-03-31 16:10:34,599 - INFO - Signal geladen: C_B1_DUT2_V1_Vishay_50.csv
+2025-03-31 16:10:34,607 - INFO - Holding Signal extrahiert.
+2025-03-31 16:10:34,617 - INFO - Unloading Signal mit rated_time: 409.766s 
+2025-03-31 16:10:36,042 - INFO - C_B1_DUT2_V1_Vishay_50.csv: Peak gefunden bei 404.060s mit Wert 2.984.
+2025-03-31 16:10:36,143 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT2_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:10:36,298 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT2_V1_Vishay_after_press_50.csv
+2025-03-31 16:10:36,299 - INFO - Signal geladen: C_B1_DUT2_V1_Vishay_after_press_50.csv
+2025-03-31 16:10:36,306 - INFO - Holding Signal extrahiert.
+2025-03-31 16:10:36,313 - INFO - Unloading Signal mit rated_time: 363.687s 
+2025-03-31 16:10:36,882 - INFO - C_B1_DUT2_V1_Vishay_after_press_50.csv: Peak gefunden bei 364.810s mit Wert 2.989.
+2025-03-31 16:10:36,923 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT2_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 16:10:37,090 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT2_V1_Vishay_pressed_50.csv
+2025-03-31 16:10:37,092 - INFO - Signal geladen: C_B1_DUT2_V1_Vishay_pressed_50.csv
+2025-03-31 16:10:37,100 - INFO - Holding Signal extrahiert.
+2025-03-31 16:10:37,109 - INFO - Unloading Signal mit rated_time: 372.089s 
+2025-03-31 16:10:37,524 - INFO - C_B1_DUT2_V1_Vishay_pressed_50.csv: Peak gefunden bei 373.400s mit Wert 2.988.
+2025-03-31 16:10:37,551 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT2_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 16:10:37,738 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT3_V1_Vishay_50.csv
+2025-03-31 16:10:37,740 - INFO - Signal geladen: C_B1_DUT3_V1_Vishay_50.csv
+2025-03-31 16:10:37,758 - INFO - Holding Signal extrahiert.
+2025-03-31 16:10:37,774 - INFO - Unloading Signal mit rated_time: 375.153s 
+2025-03-31 16:10:38,452 - INFO - C_B1_DUT3_V1_Vishay_50.csv: Peak gefunden bei 374.400s mit Wert 2.985.
+2025-03-31 16:10:38,504 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT3_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:10:38,702 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT3_V1_Vishay_after_press_50.csv
+2025-03-31 16:10:38,704 - INFO - Signal geladen: C_B1_DUT3_V1_Vishay_after_press_50.csv
+2025-03-31 16:10:38,716 - INFO - Holding Signal extrahiert.
+2025-03-31 16:10:38,728 - INFO - Unloading Signal mit rated_time: 676.889s 
+2025-03-31 16:10:39,122 - INFO - C_B1_DUT3_V1_Vishay_after_press_50.csv: Peak gefunden bei 678.210s mit Wert 2.991.
+2025-03-31 16:10:39,143 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT3_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 16:10:39,303 - WARNING - Fehler bei Plotten von C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT3_V1_Vishay_after_press_50.csv: '[1441, 1669, 1758, 1808, 1851, 1860, 1864, 1875, 1886, 1892, 1907, 1914, 1931, 2228, 2292, 2324, 2339, 2375, 2388, 2611, 2615, 2628, 2697, 2734, 2896, 3006, 3019, 3028, 3043, 3054, 3056, 3058, 3060, 3062, 3069, 3080, 3082, 3084, 3086, 3093, 3097, 3099, 3101, 3108, 3112, 3116, 3121, 3123, 3125, 3134, 3136, 3137, 3138, 3140, 3144, 3145, 3146, 3147, 3148, 3150, 3151, 3152, 3154, 3156, 3157, 3158, 3159, 3160, 3162, 3164, 3166, 3167, 3168, 3169, 3170, 3172, 3174, 3176, 3177, 3182, 3184, 3185, 3186, 3187, 3189, 3190, 3191, 3194, 3195, 3197, 3198, 3200, 3206, 3208, 3209, 3210, 3211, 3213, 3214, 3215, 3219, 3220, 3223, 3224, 3226, 3228, 3230, 3232, 3233, 3234, 3236, 3241, 3243, 3244, 3245, 3246, 3248, 3250, 3252, 3256, 3259, 3260, 3262, 3263, 3266, 3268, 3271, 3272, 3273, 3274, 3276, 3281, 3282, 3284, 3286, 3287, 3288, 3289, 3292, 3295, 3296, 3297, 3298, 3299, 3300, 3304, 3309, 3311, 3312, 3313, 3314, 3322, 3324, 3327, 3332, 3333, 3338, 3343, 3344, 3350, 3351, 3354, 3356, 3359, 3360, 3361, 3367, 3371, 3374, 3376, 3378, 3379, 3380, 3382, 3388, 3389, 3391, 3392, 3393, 3394, 3398, 3399, 3400, 3401, 3402, 3404, 3408, 3409, 3410, 3415, 3420, 3422, 3426, 3427, 3435, 3436, 3439, 3440, 3442, 3443, 3444, 3446, 3447, 3448, 3450, 3451, 3456, 3458, 3460, 3461, 3464, 3465, 3466, 3469, 3470, 3471, 3472, 3473, 3476, 3478, 3479, 3480, 3482, 3483, 3484, 3485, 3486, 3487, 3488, 3495, 3496, 3497, 3498, 3499, 3500, 3501, 3502, 3504, 3505, 3506, 3507, 3508, 3510, 3512, 3514, 3515, 3518, 3519, 3520, 3522, 3525, 3526, 3529, 3532, 3534, 3535, 3536, 3537, 3538, 3539, 3542, 3543, 3546, 3547, 3548, 3550, 3551, 3554, 3555, 3558, 3559, 3564, 3572, 3574, 3576, 3577, 3582, 3583, 3586, 3587, 3588, 3591, 3594, 3595, 3596, 3598, 3599, 3602, 3603, 3605, 3606, 3608, 3610, 3612, 3613, 3615, 3616, 3622, 3623, 3624, 3625, 3627, 3631, 3633, 3638, 3639, 3642, 3644, 3646, 3648, 3650, 3651, 3654, 3658, 3659, 3660, 3663, 3664, 3666, 3672, 3673, 3674, 3675, 3676, 3679, 3683, 3684, 3685, 3689, 3690, 3692, 3694, 3695, 3698, 3704, 3706, 3708, 3710, 3711, 3712, 3714, 3720, 3721, 3722, 3724, 3725, 3726, 3730, 3734, 3735, 3737, 3739, 3740, 3742, 3746, 3747, 3748, 3749, 3751, 3752, 3758, 3760, 3761, 3762, 3763, 3764, 3765, 3770, 3772, 3773, 3775, 3776, 3779, 3780, 3784, 3786, 3790, 3794, 3795, 3796, 3799, 3800, 3802, 3803, 3804, 3811, 3814, 3815, 3818, 3821, 3822, 3825, 3826, 3828, 3829, 3834, 3836, 3837, 3839, 3842, 3843, 3844, 3847, 3848, 3849, 3850, 3851, 3852, 3854, 3855, 3858, 3860, 3862, 3866, 3867, 3868, 3869, 3871, 3872, 3873, 3874, 3877, 3878, 3879, 3880, 3883, 3885, 3886, 3890, 3891, 3892, 3897, 3898, 3900, 3901, 3903, 3904, 3906, 3908, 3909, 3912, 3913, 3914, 3918, 3919, 3925, 3927, 3930, 3931, 3933, 3934, 3938, 3939, 3940, 3941, 3942, 3944, 3945, 3946, 3947, 3948, 3950, 3951, 3952, 3954, 3956, 3958, 3960, 3961, 3963, 3964, 3967, 3971, 3972, 3974, 3976, 3978, 3988, 3991, 3992, 3993, 4000, 4002, 4003, 4005, 4009, 4010, 4011, 4012, 4013, 4014, 4017, 4023, 4024, 4025, 4027, 4028, 4029, 4030, 4031, 4034, 4036, 4042, 4044, 4048, 4050, 4053, 4054, 4055, 4058, 4063, 4064, 4066, 4068, 4070, 4071, 4072, 4074, 4075, 4078, 4080, 4083, 4087, 4089, 4090, 4092, 4096, 4097, 4104, 4112, 4113, 4115, 4116, 4121, 4124, 4126, 4127, 4128, 4130, 4131, 4135, 4136, 4139, 4140, 4141, 4143, 4144, 4148, 4153, 4154, 4155, 4156, 4163, 4164, 4167, 4168, 4172, 4173, 4174, 4187, 4188, 4192, 4199, 4200, 4201, 4202, 4203, 4205, 4206, 4207, 4208, 4209, 4214, 4215, 4216, 4218, 4224, 4226, 4228, 4231, 4232, 4233, 4235, 4236, 4240, 4241, 4243, 4244, 4246, 4252, 4253, 4254, 4256, 4258, 4259, 4261, 4264, 4266, 4268, 4269, 4271, 4274, 4275, 4277, 4279, 4282, 4286, 4287, 4288, 4292, 4295, 4298, 4300, 4308, 4312, 4313, 4316, 4317, 4320, 4322, 4327, 4328, 4330, 4331, 4332, 4336, 4339, 4340, 4344, 4345, 4346, 4348, 4350, 4351, 4352, 4354, 4358, 4359, 4362, 4364, 4365, 4366, 4370, 4373, 4374, 4376, 4378, 4379, 4382, 4383, 4386, 4390, 4401, 4404, 4406, 4407, 4408, 4409, 4410, 4411, 4412, 4413, 4419, 4421, 4424, 4432, 4433, 4434, 4436, 4438, 4439, 4440, 4443, 4444, 4446, 4447, 4448, 4451, 4452, 4454, 4458, 4462, 4464, 4467, 4471, 4475, 4476, 4478, 4480, 4482, 4484, 4487, 4488, 4489, 4490, 4494, 4498, 4502, 4506, 4508, 4509, 4510, 4514, 4519, 4521, 4522, 4523, 4528, 4530, 4531, 4533, 4534, 4536, 4540, 4545, 4548, 4550, 4552, 4553, 4557, 4558, 4559, 4562, 4564, 4567, 4571, 4574, 4575, 4579, 4584, 4588, 4590, 4595, 4599, 4600, 4604, 4607, 4608, 4614, 4615, 4618, 4619, 4620, 4621, 4622, 4624, 4630, 4631, 4632, 4634, 4637, 4638, 4642, 4644, 4646, 4648, 4650, 4651, 4652, 4657, 4659, 4660, 4661, 4662, 4663, 4664, 4666, 4668, 4670, 4671, 4672, 4673, 4675, 4677, 4678, 4680, 4684, 4686, 4692, 4696, 4697, 4699, 4700, 4701, 4702, 4708, 4711, 4712, 4723, 4725, 4727, 4728, 4733, 4734, 4735, 4736, 4738, 4739, 4740, 4742, 4746, 4747, 4750, 4751, 4752, 4753, 4754, 4757, 4760, 4762, 4763, 4764, 4765, 4766, 4772, 4773, 4774, 4777, 4778, 4784, 4786, 4787, 4790, 4791, 4794, 4795, 4796, 4797, 4799, 4800, 4801, 4808, 4810, 4811, 4812, 4814, 4815, 4819, 4820, 4822, 4823, 4824, 4826, 4828, 4839, 4840, 4841, 4842, 4844, 4846, 4849, 4850, 4854, 4858, 4859, 4860, 4862, 4864, 4865, 4866, 4870, 4873, 4876, 4877, 4878, 4882, 4883, 4884, 4885, 4887, 4889, 4890, 4892, 4894, 4897, 4900, 4902, 4904, 4906, 4908, 4912, 4914, 4917, 4918, 4920, 4923, 4924, 4925, 4926, 4927, 4930, 4932, 4934, 4936, 4939, 4940, 4942, 4944, 4946, 4948, 4949, 4950, 4951, 4952, 4953, 4955, 4956, 4957, 4958, 4959, 4960, 4961, 4964, 4972, 4973, 4974, 4975, 4977, 4978, 4981, 4982, 4984, 4987, 4988, 4989, 4990, 4991, 4992, 4997, 4998, 4999, 5000, 5002, 5003, 5006, 5011, 5012, 5014, 5016, 5018, 5021, 5022, 5024, 5026, 5028, 5029, 5030, 5032, 5034, 5035, 5036, 5037, 5038, 5039, 5040, 5042, 5045, 5046, 5048, 5050, 5051, 5052, 5053, 5054, 5056, 5060, 5065, 5066, 5068, 5073, 5074, 5075, 5076, 5077, 5078, 5080, 5082, 5087, 5088, 5089, 5093, 5094, 5098, 5099, 5100, 5101, 5102, 5104, 5106, 5108, 5110, 5116, 5117, 5118, 5120, 5121, 5122, 5123, 5124, 5125, 5126, 5127, 5129, 5130, 5131, 5135, 5138, 5140, 5143, 5145, 5147, 5149, 5150, 5153, 5159, 5160, 5162, 5165, 5172, 5173, 5175, 5176, 5179, 5182, 5184, 5185, 5187, 5188, 5189, 5190, 5191, 5192, 5195, 5196, 5198, 5199, 5200, 5201, 5202, 5203, 5205, 5207, 5208, 5212, 5213, 5216, 5219, 5220, 5222, 5223, 5225, 5226, 5228, 5229, 5230, 5232, 5234, 5236, 5237, 5239, 5240, 5242, 5243, 5248, 5251, 5254, 5256, 5259, 5260, 5261, 5262, 5263, 5265, 5266, 5275, 5276, 5277, 5278, 5288, 5290, 5291, 5293, 5294, 5296, 5298, 5299, 5300, 5302, 5305, 5310, 5312, 5313, 5315, 5317, 5322, 5326, 5327, 5330, 5332, 5334, 5338, 5341, 5342, 5343, 5344, 5348, 5349, 5350, 5353, 5354, 5360, 5361, 5362, 5367, 5368, 5374, 5375, 5376, 5378, 5379, 5380, 5392, 5394, 5398, 5399, 5400, 5401, 5402, 5406, 5407, 5408, 5410, 5413, 5414, 5415, 5416, 5424, 5427, 5428, 5430, 5431, 5438, 5440, 5444, 5446, 5450, 5454, 5456, 5460, 5462, 5464, 5466, 5476, 5477, 5479, 5481, 5482, 5484, 5485, 5486, 5490, 5491, 5492, 5493, 5494, 5496, 5498, 5500, 5502, 5504, 5505, 5508, 5510, 5511, 5512, 5513, 5518, 5522, 5523, 5526, 5528, 5530, 5531, 5533, 5534, 5536, 5537, 5540, 5542, 5543, 5544, 5546, 5548, 5554, 5556, 5559, 5562, 5563, 5564, 5566, 5568, 5574, 5575, 5577, 5580, 5581, 5584, 5586, 5588, 5589, 5591, 5592, 5593, 5597, 5598, 5599, 5600, 5602, 5606, 5608, 5615, 5616, 5617, 5618, 5624, 5626, 5627, 5628, 5630, 5631, 5632, 5638, 5646, 5648, 5650, 5651, 5656, 5658, 5662, 5663, 5666, 5667, 5668, 5672, 5676, 5677, 5681, 5687, 5690, 5691, 5693, 5695, 5696, 5698, 5700, 5701, 5704, 5706, 5707, 5708, 5709, 5710, 5711, 5712, 5713, 5714, 5715, 5716, 5717, 5718, 5719, 5720, 5721, 5722, 5723, 5724, 5725, 5726, 5727, 5728, 5729, 5730, 5731, 5732, 5733, 5734, 5735, 5736, 5737, 5738, 5739, 5740, 5741, 5742, 5743, 5744, 5745, 5746, 5747, 5748, 5749, 5750, 5751, 5752, 5753, 5754, 5755, 5756, 5757, 5758, 5759, 5760, 5761, 5762, 5763, 5764, 5765, 5766, 5767, 5768, 5769, 5770, 5771, 5772, 5773, 5774, 5775, 5776, 5777, 5778, 5779, 5780, 5781, 5782, 5783, 5784, 5785, 5786, 5787, 5788, 5789, 5790, 5791, 5792, 5793, 5794, 5795, 5796, 5797, 5798, 5799, 5800, 5801, 5802, 5803, 5804, 5805, 5806, 5807, 5808, 5809, 5810, 5811, 5812, 5813, 5814, 5815, 5816, 5817, 5818, 5819, 5820, 5821, 5822, 5823, 5824, 5825, 5826, 5827, 5828, 5829, 5830, 5831, 5832, 5833, 5834, 5835, 5836, 5837, 5838, 5839, 5840, 5841, 5842, 5843, 5844, 5845, 5846, 5847, 5848, 5849, 5850, 5851, 5852, 5853, 5854, 5855, 5856, 5857, 5858, 5859, 5860, 5861, 5862, 5863, 5864, 5865, 5866, 5867, 5868, 5869, 5870, 5871, 5872, 5873, 5874, 5875, 5876, 5877, 5878, 5879, 5880, 5881, 5882, 5883, 5884, 5885, 5886, 5887, 5888, 5889, 5890, 5891, 5892, 5893, 5894, 5895, 5896, 5897, 5898, 5899, 5900, 5901, 5902, 5903, 5904, 5905, 5906, 5907, 5908, 5909, 5910, 5911, 5912, 5913, 5914, 5915, 5916, 5917, 5918, 5919, 5920, 5921, 5922, 5923, 5924, 5925, 5926, 5927, 5928, 5929, 5930, 5931, 5932, 5933, 5934, 5935, 5936, 5937, 5938, 5939, 5940, 5941, 5942, 5943, 5944, 5945, 5946, 5947, 5948, 5949, 5950, 5951, 5952, 5953, 5954, 5955, 5956, 5957, 5958, 5959, 5960, 5961, 5962, 5963, 5964, 5965, 5966, 5967, 5968, 5969, 5970, 5971, 5972, 5973, 5974, 5975, 5976, 5977, 5978, 5979, 5980, 5981, 5982, 5983, 5984, 5985, 5986, 5987, 5988, 5989, 5990, 5991, 5992, 5993, 5994, 5995, 5996, 5997, 5998, 5999, 6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012, 6013, 6014, 6015, 6016, 6017, 6018, 6019, 6020, 6021, 6022, 6023, 6024, 6025, 6026, 6027, 6028, 6029, 6030, 6031, 6032, 6033, 6034, 6035, 6036, 6037, 6038, 6039, 6040, 6041, 6042, 6043, 6044, 6045, 6046, 6047, 6048, 6049, 6050, 6051, 6052, 6053, 6054, 6055, 6056, 6057, 6058, 6059, 6060, 6061, 6062, 6063, 6064, 6065, 6066, 6067, 6068, 6069, 6070, 6071, 6072, 6073, 6074, 6075, 6076, 6077, 6078, 6079, 6080, 6081, 6082, 6083, 6084, 6085, 6086, 6087, 6088, 6089, 6090, 6091, 6092, 6093, 6094, 6095, 6096, 6097, 6098, 6099, 6100, 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109, 6110, 6111, 6112, 6113, 6114, 6115, 6116, 6117, 6118, 6119, 6120, 6121, 6123, 6124, 6125, 6126, 6127, 6128, 6129, 6130, 6132, 6134, 6136, 6137, 6138, 6139, 6140, 6143, 6144, 6145, 6148, 6150, 6151, 6152, 6153, 6154, 6155, 6156, 6157, 6158, 6160, 6161, 6162, 6163, 6164, 6166, 6167, 6168, 6170, 6171, 6174, 6176, 6178, 6179, 6180, 6181, 6182, 6183, 6186, 6188, 6190, 6191, 6192, 6200, 6202, 6203, 6204, 6207, 6208, 6209, 6212, 6213, 6214, 6215, 6216, 6217, 6218, 6219, 6220, 6221, 6222, 6223, 6224, 6225, 6226, 6227, 6228, 6229, 6230, 6231, 6232, 6233, 6234, 6235, 6236, 6237, 6238, 6239, 6240, 6241, 6242, 6243, 6244, 6245, 6246, 6247, 6248, 6249, 6250, 6251, 6252, 6253, 6254, 6255, 6256, 6257, 6258, 6259, 6260, 6261, 6262, 6263, 6264, 6265, 6266, 6267, 6268, 6269, 6270, 6271, 6272, 6273, 6274, 6275, 6276, 6277, 6278, 6279, 6280, 6281, 6282, 6283, 6284, 6285, 6286, 6287, 6288, 6289, 6290, 6291, 6292, 6293, 6294, 6295, 6296, 6297, 6298, 6299, 6300, 6301, 6302, 6303, 6304, 6305, 6306, 6307, 6308, 6309, 6310, 6311, 6312, 6313, 6314, 6315, 6316, 6317, 6318, 6319, 6320, 6321, 6322, 6323, 6324, 6325, 6326, 6327, 6328, 6329, 6330, 6331, 6332, 6333, 6334, 6335, 6336, 6337, 6338, 6339, 6340, 6341, 6342, 6343, 6344, 6345, 6346, 6347, 6348, 6349, 6350, 6351, 6352, 6353, 6354, 6355, 6356, 6357, 6358, 6359, 6360, 6361, 6362, 6363, 6364, 6365, 6366, 6367, 6368, 6369, 6370, 6371, 6372, 6373, 6374, 6375, 6376, 6377, 6378, 6379, 6380, 6381, 6382, 6383, 6384, 6385, 6386, 6387, 6388, 6389, 6390, 6391, 6392, 6393, 6394, 6395, 6396, 6397, 6398, 6399, 6400, 6401, 6402, 6403, 6404, 6405, 6406, 6407, 6408, 6409, 6410, 6411, 6412, 6413, 6414, 6415, 6416, 6417, 6419, 6420, 6422, 6423, 6425, 6426, 6428, 6432, 6433, 6434, 6436, 6437, 6439, 6440, 6441, 6442, 6443, 6444, 6445, 6446, 6447, 6448, 6450, 6452, 6453, 6454, 6455, 6456, 6457, 6458, 6459, 6460, 6461, 6462, 6463, 6464, 6467, 6473, 6474, 6476, 6480, 6481, 6482, 6486, 6487, 6488, 6490, 6491, 6492, 6493, 6494, 6495, 6496, 6497, 6498, 6500, 6502, 6503, 6504, 6505, 6506, 6507, 6508, 6509, 6510, 6511, 6512, 6513, 6516, 6520, 6521, 6522, 6524, 6525, 6526, 6528, 6529, 6530, 6533, 6534, 6535, 6536, 6538, 6539, 6540, 6541, 6543, 6545, 6547, 6550, 6551, 6552, 6553, 6556, 6557, 6558, 6559, 6560, 6561, 6562, 6563, 6564, 6566, 6569, 6570, 6572, 6573, 6574, 6575, 6576, 6578, 6582, 6583, 6585, 6586, 6588, 6589, 6591, 6592, 6593, 6596, 6597, 6599, 6602, 6603, 6604, 6605, 6606, 6607, 6608, 6609, 6612, 6613, 6614, 6619, 6621, 6623, 6625, 6626, 6628, 6629, 6631, 6633, 6634, 6635, 6636, 6639, 6640, 6641, 6645, 6646, 6647, 6650, 6651, 6652, 6653, 6656, 6658, 6660, 6662, 6663, 6664, 6668, 6670, 6671, 6672, 6673, 6676, 6677, 6678, 6679, 6683, 6684, 6685, 6687, 6689, 6692, 6695, 6699, 6700, 6701, 6703, 6705, 6706, 6708, 6709, 6710, 6711, 6712, 6714, 6715, 6716, 6717, 6721, 6722, 6724, 6727, 6728, 6729, 6731, 6732, 6737, 6738, 6739, 6740, 6741, 6742, 6743, 6746, 6747, 6748, 6750, 6751, 6752, 6753, 6756, 6758, 6760, 6761, 6762, 6765, 6771, 6772, 6773, 6776, 6777, 6778, 6779, 6783, 6784, 6785, 6786, 6787, 6790, 6791, 6792, 6793, 6795, 6797, 6798, 6800, 6801, 6802, 6803, 6805, 6806, 6808, 6809, 6810, 6811, 6812, 6813, 6814, 6815, 6816, 6818, 6820, 6823, 6824, 6825, 6827, 6828, 6830, 6834, 6836, 6837, 6838, 6839, 6840, 6841, 6842, 6844, 6845, 6847, 6848, 6849, 6850, 6852, 6853, 6858, 6860, 6861, 6862, 6863, 6864, 6866, 6867, 6868, 6870, 6871, 6872, 6873, 6874, 6875, 6876, 6877, 6880, 6884, 6885, 6886, 6887, 6888, 6889, 6890, 6892, 6896, 6897, 6898, 6899, 6900, 6901, 6903, 6904, 6907, 6908, 6909, 6910, 6911, 6912, 6914, 6915, 6916, 6919, 6920, 6924, 6925, 6926, 6927, 6928, 6933, 6934, 6935, 6936, 6938, 6939, 6941, 6944, 6945, 6947, 6948, 6949, 6950, 6951, 6952, 6954, 6955, 6956, 6958, 6959, 6960, 6961, 6962, 6963, 6964, 6965, 6966, 6967, 6968, 6970, 6971, 6973, 6974, 6975, 6976, 6977, 6978, 6979, 6980, 6981, 6982, 6983, 6984, 6986, 6987, 6989, 6990, 6991, 6995, 6997, 6999, 7000, 7002, 7005, 7008, 7011, 7012, 7013, 7015, 7020, 7022, 7023, 7024, 7028, 7030, 7031, 7034, 7036, 7037, 7038, 7039, 7040, 7041, 7043, 7046, 7049, 7050, 7051, 7052, 7053, 7054, 7055, 7058, 7060, 7063, 7064, 7065, 7067, 7068, 7075, 7076, 7078, 7079, 7081, 7083, 7086, 7088, 7090, 7091, 7092, 7094, 7095, 7098, 7100, 7103, 7108, 7109, 7110, 7111, 7112, 7114, 7117, 7120, 7122, 7127, 7128, 7129, 7132, 7134, 7135, 7137, 7139, 7140, 7141, 7142, 7146, 7148, 7150, 7151, 7152, 7153, 7155, 7156, 7158, 7159, 7160, 7164, 7165, 7166, 7172, 7173, 7174, 7175, 7177, 7178, 7179, 7180, 7181, 7184, 7185, 7186, 7187, 7188, 7190, 7191, 7192, 7194, 7195, 7196, 7197, 7198, 7200, 7201, 7203, 7204, 7205, 7207, 7208, 7209, 7210, 7212, 7213, 7215, 7216, 7219, 7220, 7221, 7222, 7225, 7227, 7228, 7229, 7230, 7235, 7236, 7237, 7238, 7239, 7240, 7241, 7242, 7245, 7247, 7248, 7249, 7250, 7253, 7262, 7264, 7266, 7267, 7269, 7271, 7272, 7274, 7278, 7280, 7284, 7285, 7287, 7288, 7289, 7291, 7293, 7294, 7295, 7296, 7298, 7299, 7300, 7301, 7304, 7308, 7309, 7310, 7311, 7312, 7313, 7316, 7318, 7322, 7323, 7325, 7326, 7327, 7328, 7333, 7334, 7335, 7338, 7339, 7340, 7341, 7344, 7346, 7347, 7348, 7350, 7352, 7354, 7355, 7361, 7362, 7363, 7365, 7367, 7369, 7370, 7371, 7372, 7374, 7376, 7377, 7378, 7379, 7382, 7383, 7384, 7385, 7386, 7387, 7390, 7392, 7396, 7397, 7399, 7400, 7401, 7402, 7403, 7404, 7405, 7411, 7412, 7413, 7414, 7415, 7416, 7420, 7423, 7425, 7428, 7429, 7430, 7432, 7436, 7437, 7438, 7439, 7440, 7441, 7446, 7447, 7448, 7449, 7451, 7452, 7453, 7456, 7460, 7461, 7462, 7463, 7464, 7468, 7473, 7474, 7476, 7477, 7478, 7481, 7482, 7486, 7488, 7491, 7492, 7495, 7497, 7498, 7499, 7500, 7502, 7503, 7504, 7509, 7510, 7514, 7518, 7519, 7524, 7527, 7528, 7529, 7530, 7534, 7535, 7536, 7537, 7538, 7539, 7540, 7541, 7546, 7548, 7549, 7550, 7552, 7555, 7560, 7563, 7564, 7566, 7569, 7572, 7575, 7576, 7578, 7579, 7584, 7587, 7588, 7589, 7592, 7598, 7599, 7600, 7601, 7603, 7604, 7605, 7606, 7608, 7610, 7611, 7612, 7613, 7614, 7615, 7616, 7617, 7618, 7619, 7620, 7622, 7624, 7625, 7626, 7627, 7628, 7636, 7640, 7641, 7645, 7646, 7647, 7648, 7650, 7651, 7652, 7653, 7654, 7658, 7660, 7661, 7663, 7664, 7665, 7666, 7667, 7670, 7671, 7672, 7673, 7674, 7677, 7678, 7680, 7683, 7684, 7685, 7687, 7688, 7689, 7690, 7692, 7693, 7697, 7702, 7703, 7706, 7708, 7711, 7712, 7713, 7714, 7718, 7719, 7720, 7721, 7722, 7723, 7724, 7725, 7726, 7728, 7731, 7737, 7740, 7748, 7749, 7750, 7751, 7752, 7754, 7755, 7757, 7759, 7761, 7762, 7763, 7764, 7766, 7767, 7770, 7771, 7774, 7775, 7777, 7778, 7781, 7787, 7788, 7789, 7791, 7793, 7795, 7798, 7799, 7800, 7801, 7803, 7809, 7810, 7811, 7812, 7813, 7814, 7815, 7816, 7817, 7818, 7819, 7824, 7825, 7834, 7840, 7842, 7846, 7847, 7849, 7851, 7853, 7854, 7860, 7861, 7862, 7865, 7869, 7870, 7873, 7875, 7877, 7879, 7880, 7885, 7886, 7887, 7888, 7889, 7890, 7894, 7895, 7897, 7899, 7900, 7902, 7904, 7905, 7906, 7907, 7910, 7912, 7914, 7916, 7917, 7920, 7921, 7922, 7924, 7926, 7927, 7928, 7934, 7935, 7938, 7939, 7940, 7942, 7944, 7947, 7948, 7951, 7952, 7953, 7955, 7958, 7959, 7961, 7962, 7964, 7965, 7966, 7969, 7971, 7972, 7973, 7974, 7975, 7976, 7977, 7980, 7981, 7984, 7986, 7988, 7990, 7991, 7992, 7993, 7996, 7997, 7999, 8000, 8003, 8004, 8008, 8011, 8012, 8015, 8020, 8022, 8023, 8026, 8027, 8028, 8029, 8032, 8033, 8037] not in index' (File: cap_calculations, Line: 99, Function: cut_and_analyze_peak)
+2025-03-31 16:10:39,372 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT3_V1_Vishay_pressed_50.csv
+2025-03-31 16:10:39,374 - INFO - Signal geladen: C_B1_DUT3_V1_Vishay_pressed_50.csv
+2025-03-31 16:10:39,383 - INFO - Holding Signal extrahiert.
+2025-03-31 16:10:39,392 - INFO - Unloading Signal mit rated_time: 359.707s 
+2025-03-31 16:10:39,828 - INFO - C_B1_DUT3_V1_Vishay_pressed_50.csv: Peak gefunden bei 360.780s mit Wert 2.991.
+2025-03-31 16:10:39,858 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT3_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 16:10:40,107 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT4_V1_Vishay_50.csv
+2025-03-31 16:10:40,108 - INFO - Signal geladen: C_B1_DUT4_V1_Vishay_50.csv
+2025-03-31 16:10:40,118 - INFO - Holding Signal extrahiert.
+2025-03-31 16:10:40,132 - INFO - Unloading Signal mit rated_time: 381.683s 
+2025-03-31 16:10:40,714 - INFO - C_B1_DUT4_V1_Vishay_50.csv: Peak gefunden bei 379.920s mit Wert 2.984.
+2025-03-31 16:10:40,754 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT4_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:10:40,936 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT5_V1_Vishay_50.csv
+2025-03-31 16:10:40,938 - INFO - Signal geladen: C_B1_DUT5_V1_Vishay_50.csv
+2025-03-31 16:10:40,953 - INFO - Holding Signal extrahiert.
+2025-03-31 16:10:40,963 - INFO - Unloading Signal mit rated_time: 362.984s 
+2025-03-31 16:10:42,376 - INFO - C_B1_DUT5_V1_Vishay_50.csv: Peak gefunden bei 361.220s mit Wert 2.984.
+2025-03-31 16:10:42,499 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT5_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:10:42,683 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT6_V1_Vishay_50.csv
+2025-03-31 16:10:42,684 - INFO - Signal geladen: C_B1_DUT6_V1_Vishay_50.csv
+2025-03-31 16:10:42,693 - INFO - Holding Signal extrahiert.
+2025-03-31 16:10:42,703 - INFO - Unloading Signal mit rated_time: 396.610s 
+2025-03-31 16:10:43,803 - INFO - C_B1_DUT6_V1_Vishay_50.csv: Peak gefunden bei 391.370s mit Wert 2.987.
+2025-03-31 16:10:43,888 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT6_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:10:44,086 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT7_V1_Vishay_50.csv
+2025-03-31 16:10:44,087 - INFO - Signal geladen: C_B1_DUT7_V1_Vishay_50.csv
+2025-03-31 16:10:44,098 - INFO - Holding Signal extrahiert.
+2025-03-31 16:10:44,108 - INFO - Unloading Signal mit rated_time: 430.640s 
+2025-03-31 16:10:45,327 - INFO - C_B1_DUT7_V1_Vishay_50.csv: Peak gefunden bei 430.470s mit Wert 2.986.
+2025-03-31 16:10:45,409 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT7_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:10:45,602 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT8_V1_Vishay_50.csv
+2025-03-31 16:10:45,604 - INFO - Signal geladen: C_B1_DUT8_V1_Vishay_50.csv
+2025-03-31 16:10:45,614 - INFO - Holding Signal extrahiert.
+2025-03-31 16:10:45,625 - INFO - Unloading Signal mit rated_time: 470.197s 
+2025-03-31 16:10:47,319 - INFO - C_B1_DUT8_V1_Vishay_50.csv: Peak gefunden bei 471.090s mit Wert 3.006.
+2025-03-31 16:10:47,421 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT8_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:10:47,942 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT1_V1_Vishay_50.csv
+2025-03-31 16:10:47,945 - INFO - Signal geladen: ESR_A2_Class2_DUT1_V1_Vishay_50.csv
+2025-03-31 16:10:47,988 - INFO - Holding Signal extrahiert.
+2025-03-31 16:10:48,017 - INFO - Unloading Signal mit rated_time: 1776.823s 
+2025-03-31 16:10:58,823 - INFO - ESR_A2_Class2_DUT1_V1_Vishay_50.csv: Peak gefunden bei 1779.070s mit Wert 2.986.
+2025-03-31 16:10:59,477 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT1_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:11:00,012 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT1_V1_Vishay_after_press_50.csv
+2025-03-31 16:11:00,014 - INFO - Signal geladen: ESR_A2_Class2_DUT1_V1_Vishay_after_press_50.csv
+2025-03-31 16:11:00,047 - INFO - Holding Signal extrahiert.
+2025-03-31 16:11:00,071 - INFO - Unloading Signal mit rated_time: 2139.417s 
+2025-03-31 16:11:01,619 - INFO - ESR_A2_Class2_DUT1_V1_Vishay_after_press_50.csv: Peak gefunden bei 2142.310s mit Wert 2.987.
+2025-03-31 16:11:01,699 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT1_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 16:11:02,042 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT1_V1_Vishay_pressed_50.csv
+2025-03-31 16:11:02,044 - INFO - Signal geladen: ESR_A2_Class2_DUT1_V1_Vishay_pressed_50.csv
+2025-03-31 16:11:02,069 - INFO - Holding Signal extrahiert.
+2025-03-31 16:11:02,090 - INFO - Unloading Signal mit rated_time: 1810.403s 
+2025-03-31 16:11:03,318 - INFO - ESR_A2_Class2_DUT1_V1_Vishay_pressed_50.csv: Peak gefunden bei 1812.830s mit Wert 2.986.
+2025-03-31 16:11:03,384 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT1_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 16:11:03,790 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT2_V1_Vishay_50.csv
+2025-03-31 16:11:03,792 - INFO - Signal geladen: ESR_A2_Class2_DUT2_V1_Vishay_50.csv
+2025-03-31 16:11:03,815 - INFO - Holding Signal extrahiert.
+2025-03-31 16:11:03,836 - INFO - Unloading Signal mit rated_time: 1842.279s 
+2025-03-31 16:11:05,065 - INFO - ESR_A2_Class2_DUT2_V1_Vishay_50.csv: Peak gefunden bei 1844.420s mit Wert 2.988.
+2025-03-31 16:11:05,139 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT2_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:11:05,519 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT2_V1_Vishay_after_press_50.csv
+2025-03-31 16:11:05,521 - INFO - Signal geladen: ESR_A2_Class2_DUT2_V1_Vishay_after_press_50.csv
+2025-03-31 16:11:05,551 - INFO - Holding Signal extrahiert.
+2025-03-31 16:11:05,575 - INFO - Unloading Signal mit rated_time: 1864.183s 
+2025-03-31 16:11:07,130 - INFO - ESR_A2_Class2_DUT2_V1_Vishay_after_press_50.csv: Peak gefunden bei 1866.290s mit Wert 2.989.
+2025-03-31 16:11:07,228 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT2_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 16:11:07,787 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT2_V1_Vishay_pressed_50.csv
+2025-03-31 16:11:07,789 - INFO - Signal geladen: ESR_A2_Class2_DUT2_V1_Vishay_pressed_50.csv
+2025-03-31 16:11:07,824 - INFO - Holding Signal extrahiert.
+2025-03-31 16:11:07,854 - INFO - Unloading Signal mit rated_time: 2261.656s 
+2025-03-31 16:11:09,647 - INFO - ESR_A2_Class2_DUT2_V1_Vishay_pressed_50.csv: Peak gefunden bei 2263.960s mit Wert 2.988.
+2025-03-31 16:11:09,755 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT2_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 16:11:10,121 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT3_V1_Vishay_50.csv
+2025-03-31 16:11:10,123 - INFO - Signal geladen: ESR_A2_Class2_DUT3_V1_Vishay_50.csv
+2025-03-31 16:11:10,150 - INFO - Holding Signal extrahiert.
+2025-03-31 16:11:10,170 - INFO - Unloading Signal mit rated_time: 1867.947s 
+2025-03-31 16:11:11,451 - INFO - ESR_A2_Class2_DUT3_V1_Vishay_50.csv: Peak gefunden bei 1870.050s mit Wert 2.988.
+2025-03-31 16:11:11,540 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT3_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:11:11,918 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT3_V1_Vishay_after_press_50.csv
+2025-03-31 16:11:11,920 - INFO - Signal geladen: ESR_A2_Class2_DUT3_V1_Vishay_after_press_50.csv
+2025-03-31 16:11:11,945 - INFO - Holding Signal extrahiert.
+2025-03-31 16:11:11,966 - INFO - Unloading Signal mit rated_time: 1907.441s 
+2025-03-31 16:11:13,168 - INFO - ESR_A2_Class2_DUT3_V1_Vishay_after_press_50.csv: Peak gefunden bei 1910.240s mit Wert 2.989.
+2025-03-31 16:11:13,240 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT3_V1_Vishay_after_press_cut.csv gespeichert.
+2025-03-31 16:11:13,460 - WARNING - Fehler bei Plotten von C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT3_V1_Vishay_after_press_50.csv: '[21334, 21335, 21336, 21337, 21338, 21339, 21340, 21341, 21342, 21343, 21344, 21345, 21346, 21347, 21348, 21349, 21350, 21351, 21352, 21353, 21354, 21355, 21356, 21357, 21358, 21359, 21360, 21361, 21362, 21363, 21364, 21365, 21366, 21367, 21368, 21369, 21370, 21371, 21372, 21373, 21374, 21375, 21376, 21377, 21378, 21379, 21380, 21381, 21382, 21383, 21384, 21385, 21386, 21387, 21388, 21389, 21390, 21391, 21392, 21393, 21394, 21395, 21396, 21397, 21398, 21399, 21400, 21401, 21402, 21403, 21404, 21405, 21406, 21407, 21408, 21409, 21410, 21411, 21412, 21413, 21414, 21415, 21416, 21417, 21418, 21419, 21420, 21421, 21422, 21423, 21424, 21425, 21426, 21427, 22832, 22833, 22834, 22835, 22836, 22837, 22838, 22839, 22840, 22841, 22842, 22843, 22844, 22845, 22846, 22847, 22848, 22849, 22850, 22851, 22852, 22853, 22854, 22855, 22856, 22857, 22858, 22859, 22860, 22861, 22862, 22863, 22864, 22865, 22866, 22867, 22868, 22869, 22870, 22871, 22872, 22873, 22874, 22875, 22876, 22877, 22878, 22879, 22880, 22881, 22882, 22883, 22884, 22885, 22886, 22887, 22888, 22889, 22890, 22891, 22892, 22893, 22894, 22895, 22896, 22897, 22898, 22899, 22900, 22901, 22902, 22903, 22904, 22905, 22906, 22907, 22908, 22909, 22910, 22911, 22912, 22913, 22914, 22915, 22916, 22917, 22918, 22919, 22920, 22921, 22922, 22923, 22924, 22925, 22926, 22927, 22928, 22929, 22930, 22931, 23030, 23031, 23032, 23033, 23034, 23035, 23036, 23037, 23038, 23039, 23040, 23041, 23042, 23043, 23044, 23045, 23046, 23047, 23048, 23049, 23050, 23051, 23052, 23053, 23054, 23055, 23056, 23057, 23058, 23059, 23060, 23061, 23062, 23063, 23064, 23065, 23066, 23067, 23068, 23069, 23070, 23071, 23072, 23073, 23074, 23075, 23076, 23077, 23078, 23079, 23080, 23081, 23082, 23083, 23084, 23085, 23086, 23087, 23088, 23089, 23090, 23091, 23092, 23093, 23094, 23095, 23096, 23097, 23098, 23099, 23100, 23101, 23102, 23103, 23104, 23105, 23106, 23107, 23108, 23109, 23110, 23111, 23112, 23113, 23114, 23115, 23116, 23117, 23118, 23119, 23120, 23121, 23122, 23123, 23124, 23125, 23126, 23127, 23128, 23129, 23130, 25034, 25035, 25036, 25037, 25038, 25039, 25040, 25041, 25042, 25043, 25044, 25045, 25046, 25047, 25048, 25049, 25050, 25051, 25052, 25053, 25054, 25055, 25056, 25057, 25058, 25059, 25060, 25061, 25062, 25063, 25064, 25065, 25066, 25067, 25068, 25069, 25070, 25071, 25072, 25073, 25074, 25075, 25076, 25077, 25078, 25079, 25080, 25081, 25082, 25083, 25084, 25085, 25086, 25087, 25088, 25089, 25090, 25091, 25092, 25093, 25094, 25095, 25096, 25097, 25098, 25099, 25100, 25101, 25102, 25103, 25104, 25105, 25106, 25107, 25108, 25109, 25110, 25111, 25112, 25113, 25114, 25115, 25116, 25117, 25118, 25119, 25120, 25121, 25122, 25123, 25124, 25125, 25126, 25127, 25128, 25129, 25130, 25131, 25132, 25133, 25232, 25233, 25234, 25235, 25236, 25237, 25238, 25239, 25240, 25241, 25242, 25243, 25244, 25245, 25246, 25247, 25248, 25249, 25250, 25251, 25252, 25253, 25254, 25255, 25256, 25257, 25258, 25259, 25260, 25261, 25262, 25263, 25264, 25265, 25266, 25267, 25268, 25269, 25270, 25271, 25272, 25273, 25274, 25275, 25276, 25277, 25278, 25279, 25280, 25281, 25282, 25283, 25284, 25285, 25286, 25287, 25288, 25289, 25290, 25291, 25292, 25293, 25294, 25295, 25296, 25297, 25298, 25299, 25300, 25301, 25302, 25303, 25304, 25305, 25306, 25307, 25308, 25309, 25310, 25311, 25312, 25313, 25314, 25315, 25316, 25317, 25318, 25319, 25320, 25321, 25322, 25323, 25324, 25325, 25326, 25327, 25328, 25329, 25330, 25331, 26629, 26630, 26631, 26632, 26633, 26634, 26635, 26636, 26637, 26638, 26639, 26640, 26641, 26642, 26643, 26644, 26645, 26646, 26647, 26648, 26649, 26650, 26651, 26652, 26653, 26654, 26655, 26656, 26657, 26658, 26659, 26660, 26661, 26662, 26663, 26664, 26665, 26666, 26667, 26668, 26669, 26670, 26671, 26672, 26673, 26674, 26675, 26676, 26677, 26678, 26679, 26680, 26681, 26682, 26683, 26684, 26685, 26686, 26687, 26688, 26689, 26690, 26691, 26692, 26693, 26694, 26695, 26696, 26697, 26698, 26699, 26700, 26701, 26702, 26703, 26704, 26705, 26706, 26707, 26708, 26709, 26710, 26711, 26712, 26713, 26714, 26715, 26716, 26717, 26718, 26719, 26720, 26721, 26722, 26723, 26724, 26725, 26726, 26727, 26728, 26729, 26730, 26731, 26732, 26733, 26832, 26833, 26834, 26835, 26836, 26837, 26838, 26839, 26840, 26841, 26842, 26843, 26844, 26845, 26846, 26847, 26848, 26849, 26850, 26851, 26852, 26853, 26854, 26855, 26856, 26857, 26858, 26859, 26860, 26861, 26862, 26863, 26864, 26865, 26866, 26867, 26868, 26869, 26870, 26871, 26872, 26873, 26874, 26875, 26876, 26877, 26878, 26879, 26880, 26881, 26882, 26883, 26884, 26885, 26886, 26887, 26888, 26889, 26890, 26891, 26892, 26893, 26894, 26895, 26896, 26897, 26898, 26899, 26900, 26901, 26902, 26903, 26904, 26905, 26906, 26907, 26908, 26909, 26910, 26911, 26912, 26913, 26914, 26915, 26916, 26917, 26918, 26919, 26920, 26921, 26922, 26923, 26924, 26925, 26926, 26927, 26928, 26929, 26930, 26931, 27030, 27031, 27032, 27033, 27034, 27035, 27036, 27037, 27038, 27039, 27040, 27041, 27042, 27043, 27044, 27045, 27046, 27047, 27048, 27049, 27050, 27051, 27052, 27053, 27054, 27055, 27056, 27057, 27058, 27059, 27060, 27061, 27062, 27063, 27064, 27065, 27066, 27067, 27068, 27069, 27070, 27071, 27072, 27073, 27074, 27075, 27076, 27077, 27078, 27079, 27080, 27081, 27082, 27083, 27084, 27085, 27086, 27087, 27088, 27089, 27090, 27091, 27092, 27093, 27094, 27095, 27096, 27097, 27098, 27099, 27100, 27101, 27102, 27103, 27104, 27105, 27106, 27107, 27108, 27109, 27110, 27111, 27112, 27113, 27114, 27115, 27116, 27117, 27118, 27119, 27120, 27121, 27122, 27123, 27124, 27125, 27126, 27127, 27128, 27129, 27130, 27235, 27236, 27237, 27238, 27239, 27240, 27241, 27242, 27243, 27244, 27245, 27246, 27247, 27248, 27249, 27250, 27251, 27252, 27253, 27254, 27255, 27256, 27257, 27258, 27259, 27260, 27261, 27262, 27263, 27264, 27265, 27266, 27267, 27268, 27269, 27270, 27271, 27272, 27273, 27274, 27275, 27276, 27277, 27278, 27279, 27280, 27281, 27282, 27283, 27284, 27285, 27286, 27287, 27288, 27289, 27290, 27291, 27292, 27293, 27294, 27295, 27296, 27297, 27298, 27299, 27300, 27301, 27302, 27303, 27304, 27305, 27306, 27307, 27308, 27309, 27310, 27311, 27312, 27313, 27314, 27315, 27316, 27317, 27318, 27319, 27320, 27321, 27322, 27323, 27324, 27325, 27326, 27327, 27328, 27434, 27435, 27436, 27437, 27438, 27439, 27440, 27441, 27442, 27443, 27444, 27445, 27446, 27447, 27448, 27449, 27450, 27451, 27452, 27453, 27454, 27455, 27456, 27457, 27458, 27459, 27460, 27461, 27462, 27463, 27464, 27465, 27466, 27467, 27468, 27469, 27470, 27471, 27472, 27473, 27474, 27475, 27476, 27477, 27478, 27479, 27480, 27481, 27482, 27483, 27484, 27485, 27486, 27487, 27488, 27489, 27490, 27491, 27492, 27493, 27494, 27495, 27496, 27497, 27498, 27499, 27500, 27501, 27502, 27503, 27504, 27505, 27506, 27507, 27508, 27509, 27510, 27511, 27512, 27513, 27514, 27515, 27516, 27517, 27518, 27519, 27520, 27521, 27522, 27523, 27524, 27525, 27526, 27527, 27629, 27630, 27631, 27632, 27633, 27634, 27635, 27636, 27637, 27638, 27639, 27640, 27641, 27642, 27643, 27644, 27645, 27646, 27647, 27648, 27649, 27650, 27651, 27652, 27653, 27654, 27655, 27656, 27657, 27658, 27659, 27660, 27661, 27662, 27663, 27664, 27665, 27666, 27667, 27668, 27669, 27670, 27671, 27672, 27673, 27674, 27675, 27676, 27677, 27678, 27679, 27680, 27681, 27682, 27683, 27684, 27685, 27686, 27687, 27688, 27689, 27690, 27691, 27692, 27693, 27694, 27695, 27696, 27697, 27698, 27699, 27700, 27701, 27702, 27703, 27704, 27705, 27706, 27707, 27708, 27709, 27710, 27711, 27712, 27713, 27714, 27715, 27716, 27717, 27718, 27719, 27720, 27721, 27722, 27723, 27724, 27725, 27726, 27727, 27728, 27729, 27730, 27731, 27830, 27831, 27832, 27833, 27834, 27835, 27836, 27837, 27838, 27839, 27840, 27841, 27842, 27843, 27844, 27845, 27846, 27847, 27848, 27849, 27850, 27851, 27852, 27853, 27854, 27855, 27856, 27857, 27858, 27859, 27860, 27861, 27862, 27863, 27864, 27865, 27866, 27867, 27868, 27869, 27870, 27871, 27872, 27873, 27874, 27875, 27876, 27877, 27878, 27879, 27880, 27881, 27882, 27883, 27884, 27885, 27886, 27887, 27888, 27889, 27890, 27891, 27892, 27893, 27894, 27895, 27896, 27897, 27898, 27899, 27900, 27901, 27902, 27903, 27904, 27905, 27906, 27907, 27908, 27909, 27910, 27911, 27912, 27913, 27914, 27915, 27916, 27917, 27918, 27919, 27920, 27921, 27922, 27923, 27924, 27925, 27926, 27927, 27928, 27929, 27930, 28835, 28836, 28837, 28838, 28839, 28840, 28841, 28842, 28843, 28844, 28845, 28846, 28847, 28848, 28849, 28850, 28851, 28852, 28853, 28854, 28855, 28856, 28857, 28858, 28859, 28860, 28861, 28862, 28863, 28864, 28865, 28866, 28867, 28868, 28869, 28870, 28871, 28872, 28873, 28874, 28875, 28876, 28877, 28878, 28879, 28880, 28881, 28882, 28883, 28884, 28885, 28886, 28887, 28888, 28889, 28890, 28891, 28892, 28893, 28894, 28895, 28896, 28897, 28898, 28899, 28900, 28901, 28902, 28903, 28904, 28905, 28906, 28907, 28908, 28909, 28910, 28911, 28912, 28913, 28914, 28915, 28916, 28917, 28918, 28919, 28920, 28921, 28922, 28923, 28924, 28925, 28926, 28927, 28928, 29034, 29035, 29036, 29037, 29038, 29039, 29040, 29041, 29042, 29043, 29044, 29045, 29046, 29047, 29048, 29049, 29050, 29051, 29052, 29053, 29054, 29055, 29056, 29057, 29058, 29059, 29060, 29061, 29062, 29063, 29064, 29065, 29066, 29067, 29068, 29069, 29070, 29071, 29072, 29073, 29074, 29075, 29076, 29077, 29078, 29079, 29080, 29081, 29082, 29083, 29084, 29085, 29086, 29087, 29088, 29089, 29090, 29091, 29092, 29093, 29094, 29095, 29096, 29097, 29098, 29099, 29100, 29101, 29102, 29103, 29104, 29105, 29106, 29107, 29108, 29109, 29110, 29111, 29112, 29113, 29114, 29115, 29116, 29117, 29118, 29119, 29120, 29121, 29122, 29123, 29124, 29125, 29126, 29127, 29128, 29129, 29130, 29131, 29132, 29133, 29232, 29233, 29234, 29235, 29236, 29237, 29238, 29239, 29240, 29241, 29242, 29243, 29244, 29245, 29246, 29247, 29248, 29249, 29250, 29251, 29252, 29253, 29254, 29255, 29256, 29257, 29258, 29259, 29260, 29261, 29262, 29263, 29264, 29265, 29266, 29267, 29268, 29269, 29270, 29271, 29272, 29273, 29274, 29275, 29276, 29277, 29278, 29279, 29280, 29281, 29282, 29283, 29284, 29285, 29286, 29287, 29288, 29289, 29290, 29291, 29292, 29293, 29294, 29295, 29296, 29297, 29298, 29299, 29300, 29301, 29302, 29303, 29304, 29305, 29306, 29307, 29308, 29309, 29310, 29311, 29312, 29313, 29314, 29315, 29316, 29317, 29318, 29319, 29320, 29321, 29322, 29323, 29324, 29325, 29326, 29327, 29328, 29329, 29330, 29331, 29629, 29630, 29631, 29632, 30134, 30135, 30136, 30137, 30138, 30139, 30140, 30141, 30142, 30143, 30144, 30145, 30146, 30147, 30149, 30150, 30151, 30152, 30153, 30154, 30155, 30156, 30157, 30158, 30159, 30160, 30161, 30162, 30163, 30164, 30165, 30166, 30167, 30168, 30169, 30170, 30171, 30172, 30173, 30174, 30175, 30176, 30177, 30178, 30179, 30180, 30181, 30182, 30183, 30184, 30185, 30186, 30187, 30188, 30189, 30190, 30191, 30192, 30193, 30194, 30195, 30196, 30197, 30198, 30199, 30200, 30201, 30202, 30203, 30204, 30205, 30206, 30207, 30208, 30209, 30210, 30211, 30212, 30214, 30215, 30216, 30217, 30218, 30219, 30220, 30221, 30222, 30223, 30224, 30225, 30226, 30227, 30333, 30334, 30335, 30336, 30337, 30338, 30339, 30340, 30341, 30342, 30343, 30344, 30345, 30346, 30347, 30348, 30349, 30350, 30351, 30352, 30353, 30354, 30355, 30356, 30357, 30358, 30359, 30360, 30361, 30362, 30363, 30364, 30365, 30366, 30367, 30368, 30369, 30370, 30371, 30372, 30373, 30374, 30375, 30376, 30377, 30378, 30379, 30380, 30381, 30382, 30383, 30384, 30385, 30386, 30387, 30388, 30389, 30390, 30391, 30392, 30393, 30394, 30395, 30396, 30397, 30398, 30399, 30400, 30401, 30402, 30403, 30404, 30405, 30406, 30407, 30408, 30409, 30410, 30411, 30412, 30413, 30414, 30415, 30416, 30417, 30418, 30419, 30420, 30421, 30422, 30423, 30424, 30425, 30426, 30427, 30428, 30429, 30430, 30431, 30432, 30433, 30434, 30435, 30436, 30437, 30438, 30439, 30440, 30441, 30442, 30443, 30444, 30445, 30446, 30447, 30448, 30449, 30450, 30451, 30452, 30453, 30655, 30723, 30724] not in index' (File: cap_calculations, Line: 99, Function: cut_and_analyze_peak)
+2025-03-31 16:11:13,679 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT3_V1_Vishay_pressed_50.csv
+2025-03-31 16:11:13,681 - INFO - Signal geladen: ESR_A2_Class2_DUT3_V1_Vishay_pressed_50.csv
+2025-03-31 16:11:13,710 - INFO - Holding Signal extrahiert.
+2025-03-31 16:11:13,732 - INFO - Unloading Signal mit rated_time: 1823.909s 
+2025-03-31 16:11:14,870 - INFO - ESR_A2_Class2_DUT3_V1_Vishay_pressed_50.csv: Peak gefunden bei 1826.390s mit Wert 2.988.
+2025-03-31 16:11:14,939 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT3_V1_Vishay_pressed_cut.csv gespeichert.
+2025-03-31 16:11:15,312 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT4_V1_Vishay_50.csv
+2025-03-31 16:11:15,314 - INFO - Signal geladen: ESR_A2_Class2_DUT4_V1_Vishay_50.csv
+2025-03-31 16:11:15,345 - INFO - Holding Signal extrahiert.
+2025-03-31 16:11:15,375 - INFO - Unloading Signal mit rated_time: 1903.207s 
+2025-03-31 16:11:17,806 - INFO - ESR_A2_Class2_DUT4_V1_Vishay_50.csv: Peak gefunden bei 1905.370s mit Wert 2.988.
+2025-03-31 16:11:17,954 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT4_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:11:18,400 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT5_V1_Vishay_50.csv
+2025-03-31 16:11:18,403 - INFO - Signal geladen: ESR_A2_Class2_DUT5_V1_Vishay_50.csv
+2025-03-31 16:11:18,435 - INFO - Holding Signal extrahiert.
+2025-03-31 16:11:18,458 - INFO - Unloading Signal mit rated_time: 1930.999s 
+2025-03-31 16:11:19,769 - INFO - ESR_A2_Class2_DUT5_V1_Vishay_50.csv: Peak gefunden bei 1933.310s mit Wert 2.987.
+2025-03-31 16:11:19,847 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT5_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:11:20,196 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT6_V1_Vishay_50.csv
+2025-03-31 16:11:20,198 - INFO - Signal geladen: ESR_A2_Class2_DUT6_V1_Vishay_50.csv
+2025-03-31 16:11:20,228 - INFO - Holding Signal extrahiert.
+2025-03-31 16:11:20,252 - INFO - Unloading Signal mit rated_time: 1829.503s 
+2025-03-31 16:11:21,735 - INFO - ESR_A2_Class2_DUT6_V1_Vishay_50.csv: Peak gefunden bei 1831.660s mit Wert 2.988.
+2025-03-31 16:11:21,841 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT6_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:11:22,255 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT7_V1_Vishay_50.csv
+2025-03-31 16:11:22,257 - INFO - Signal geladen: ESR_A2_Class2_DUT7_V1_Vishay_50.csv
+2025-03-31 16:11:22,289 - INFO - Holding Signal extrahiert.
+2025-03-31 16:11:22,315 - INFO - Unloading Signal mit rated_time: 2006.319s 
+2025-03-31 16:11:23,605 - INFO - ESR_A2_Class2_DUT7_V1_Vishay_50.csv: Peak gefunden bei 2008.330s mit Wert 2.988.
+2025-03-31 16:11:23,685 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT7_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:11:24,096 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT8_V1_Vishay_50.csv
+2025-03-31 16:11:24,097 - INFO - Signal geladen: ESR_A2_Class2_DUT8_V1_Vishay_50.csv
+2025-03-31 16:11:24,120 - INFO - Holding Signal extrahiert.
+2025-03-31 16:11:24,138 - INFO - Unloading Signal mit rated_time: 1270.483s 
+2025-03-31 16:11:25,468 - INFO - ESR_A2_Class2_DUT8_V1_Vishay_50.csv: Peak gefunden bei 1270.540s mit Wert 3.010.
+2025-03-31 16:11:25,545 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT8_V1_Vishay_cut.csv gespeichert.
+2025-03-31 16:11:35,047 - INFO - Alle Plots gespeichert in: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\alle_peaks.pdf
