@@ -11,7 +11,7 @@ logger = get_logger(name="CapSystem", level=logging.DEBUG)
 file_handler = RotatingFileHandler("system.log", maxBytes=1_000_000, backupCount=3)
 file_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 file_handler.setFormatter(file_formatter)
-file_handler.setLevel(logging.DEBUG)  # Datei bekommt ALLES
+file_handler.setLevel(logging.INFO)  # Datei bekommt ALLES
 logger.addHandler(file_handler)
 
 # 🧯 Globaler Fehler-Handler

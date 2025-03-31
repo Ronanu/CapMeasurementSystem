@@ -55,6 +55,7 @@ def parse_filename(fname, file_extension=".picolog"):
 
     return cap_nr, method, special, new_name
 
+
 def process_files(file_extension=".picolog"):
     root = tk.Tk()
     root.withdraw()
@@ -79,11 +80,15 @@ def process_files(file_extension=".picolog"):
 
     filenames = [f for f in os.listdir(src_folder) if f.endswith(user_extension)]
 
-    if not filenames:
+    total_files = len(filenames)
+    if total_files == 0:
         logger.info(f"Keine Dateien mit der Endung {user_extension} gefunden.")
         return
 
-    logger.info(f"{len(filenames)} Dateien mit Endung {user_extension} gefunden. Beginne Verarbeitung …")
+    logger.info(f"{total_files} Dateien mit Endung {user_extension} gefunden. Beginne Verarbeitung …")
+
+    success_count = 0
+    saved_files = []  # Merkliste für neue Dateinamen
 
     for fname in filenames:
         old_path = os.path.join(src_folder, fname)
@@ -91,12 +96,27 @@ def process_files(file_extension=".picolog"):
         try:
             cap_nr, method, special, new_name = parse_filename(fname, user_extension)
             new_path = os.path.join(dst_folder, new_name)
+
+            if new_name in saved_files:
+                logger.warning(f"Dateiname {new_name} bereits gespeichert. Vorgang übersprungen.")
+                continue
+
+            if os.path.exists(new_path):
+                logger.warning(f"Datei {new_name} existiert bereits im Zielordner. Vorgang übersprungen.")
+                continue
+
             shutil.copy2(old_path, new_path)
             logger.debug(f"Datei kopiert: {fname} -> {new_name}")
+            saved_files.append(new_name)
+            success_count += 1
+
         except Exception as e:
             logger.error(f"Fehler bei Verarbeitung von {fname}: {e}")
 
-    logger.info(f"Verarbeitung abgeschlossen. Dateien gespeichert in: {dst_folder}")
+    logger.info(f"{success_count} von {total_files} Dateien wurden erfolgreich umbenannt und gespeichert.")
+    logger.info(f"Zielordner: {dst_folder}")
+
+
 
 if __name__ == "__main__":
     process_files()
