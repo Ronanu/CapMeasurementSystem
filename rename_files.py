@@ -49,7 +49,7 @@ def parse_filename(fname, file_extension=".picolog"):
         new_name = f"{method}_DUT{cap_nr}_V1_{hersteller}_{special}_{Cn}{file_extension}"
 
     logger.debug(
-        f"Dateiname '{fname}' analysiert → "
+        f"Dateiname {fname} analysiert -> "
         f"CapNr: {cap_nr}, Method: {method}, Special: {special}, Neuer Name: {new_name}"
     )
 
@@ -80,10 +80,10 @@ def process_files(file_extension=".picolog"):
     filenames = [f for f in os.listdir(src_folder) if f.endswith(user_extension)]
 
     if not filenames:
-        logger.info(f"Keine Dateien mit der Endung '{user_extension}' gefunden.")
+        logger.info(f"Keine Dateien mit der Endung {user_extension} gefunden.")
         return
 
-    logger.info(f"{len(filenames)} Dateien mit Endung '{user_extension}' gefunden. Beginne Verarbeitung …")
+    logger.info(f"{len(filenames)} Dateien mit Endung {user_extension} gefunden. Beginne Verarbeitung …")
 
     for fname in filenames:
         old_path = os.path.join(src_folder, fname)
@@ -92,9 +92,9 @@ def process_files(file_extension=".picolog"):
             cap_nr, method, special, new_name = parse_filename(fname, user_extension)
             new_path = os.path.join(dst_folder, new_name)
             shutil.copy2(old_path, new_path)
-            logger.debug(f"Datei kopiert: '{fname}' → '{new_name}'")
+            logger.debug(f"Datei kopiert: {fname} -> {new_name}")
         except Exception as e:
-            logger.error(f"Fehler bei Verarbeitung von '{fname}': {e}")
+            logger.error(f"Fehler bei Verarbeitung von {fname}: {e}")
 
     logger.info(f"Verarbeitung abgeschlossen. Dateien gespeichert in: {dst_folder}")
 
