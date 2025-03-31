@@ -233,3 +233,4 @@
 2025-03-31 01:31:46,172 - DEBUG - l< 125550 of 8271 (File: signal_transformations, Line: 204, Function: cut_by_value)
 2025-03-31 01:31:48,696 - DEBUG - r> 16063 of 16064 (File: signal_transformations, Line: 214, Function: cut_by_value)
 2025-03-31 01:31:48,805 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/fx/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT8_V1_Vishay_cut.csv gespeichert.
+2025-03-31 12:44:03,357 - DEBUG - Excel-Daten geladen: [['Spannung', 'Un', '33', 'V'], ['Stromstärke', 'I', '52', 'A'], ['Kapazität', 'Cn', '28', 'F'], ['Temperatur', 'T', '9', '°C']] (File: excel_gui, Line: 48, Function: load_excel)
