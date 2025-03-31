@@ -1,0 +1,8 @@
+2025-03-31 14:40:59,737 - WARNING - Kein Ordner ausgewählt. Vorgang abgebrochen. (File: rename_files, Line: 65, Function: process_files)
+2025-03-31 14:41:25,331 - INFO - 36 Dateien mit Endung .picolog gefunden. Beginne Verarbeitung …
+2025-03-31 14:41:25,424 - WARNING - Dateiname C_A1_Class2_DUT2_V1_Vishay_after_press_50.picolog bereits gespeichert. Vorgang übersprungen. (File: rename_files, Line: 101, Function: process_files)
+2025-03-31 14:41:25,465 - INFO - 35 von 36 Dateien wurden erfolgreich umbenannt und gespeichert.
+2025-03-31 14:41:25,465 - INFO - Zielordner: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/picolog_files_original\processed_files
+2025-03-31 14:41:48,799 - INFO - 7 Dateien mit Endung .picolog gefunden. Beginne Verarbeitung …
+2025-03-31 14:41:48,832 - INFO - 7 von 7 Dateien wurden erfolgreich umbenannt und gespeichert.
+2025-03-31 14:41:48,834 - INFO - Zielordner: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/picolog_files_original/andrada_pc\processed_files
