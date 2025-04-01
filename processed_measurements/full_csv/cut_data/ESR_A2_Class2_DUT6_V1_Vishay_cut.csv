@@ -1,10 +1,10 @@
 Signal Name,Original_Signal (Time Cut)
-holding_voltage,[2.98767067]
+holding_voltage,2.9876706729593723
 unloading_parameter,[-4.07574520e-08  2.29758926e-04 -4.42671103e-01  2.93425619e+02]
 peak_time,1831.66
 peak_value,2.988
-peak_mean,2.9873000000000003
-plus_minus_toleranz,0.0005431775277846075
+peak_mean,2.987704772475028
+plus_minus_toleranz,0.0013714135043813684
 U3,0.010974730339797123
 
 

@@ -1539,3 +1539,607 @@
 2025-03-31 17:05:39,053 - INFO - Signal geladen: C_A1_Class2_DUT1_V1_Vishay_50.csv
 2025-03-31 17:05:39,145 - INFO - Holding Signal extrahiert. Holding Voltage: 2.986V
 2025-03-31 17:05:39,223 - INFO - Unloading Signal mit rated_time: 1820.848s 
+2025-04-01 10:44:23,100 - WARNING - Kein Ordner ausgewählt. Programm wird beendet. (File: cap_calculations, Line: 181, Function: process_folder)
+2025-04-01 10:44:44,882 - WARNING - Kein Ordner ausgewählt. Programm wird beendet. (File: cap_calculations, Line: 181, Function: process_folder)
+2025-04-01 10:45:02,189 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/C_A1_Class2_DUT1_V1_Vishay_50.csv
+2025-04-01 10:45:02,197 - INFO - Signal geladen: C_A1_Class2_DUT1_V1_Vishay_50.csv
+2025-04-01 10:45:02,284 - INFO - Holding Signal extrahiert. Holding Voltage: 2.986V
+2025-04-01 10:45:02,354 - INFO - Unloading Signal mit rated_time: 1820.848s 
+2025-04-01 10:45:04,611 - INFO - C_A1_Class2_DUT1_V1_Vishay_50.csv: Peak gefunden bei 1850.350s mit Wert 2.984.
+2025-04-01 10:45:05,263 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT1_V1_Vishay_cut.csv gespeichert.
+2025-04-01 10:47:08,741 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/ESR_A2_Class2_DUT1_V1_Vishay_50.csv
+2025-04-01 10:47:08,746 - INFO - Signal geladen: ESR_A2_Class2_DUT1_V1_Vishay_50.csv
+2025-04-01 10:47:08,839 - INFO - Holding Signal extrahiert. Holding Voltage: 2.987V
+2025-04-01 10:47:08,889 - INFO - Unloading Signal mit rated_time: 1776.823s 
+2025-04-01 10:47:11,173 - INFO - ESR_A2_Class2_DUT1_V1_Vishay_50.csv: Peak gefunden bei 1779.050s mit Wert 2.987.
+2025-04-01 10:47:11,808 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT1_V1_Vishay_cut.csv gespeichert.
+2025-04-01 10:50:13,645 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/ESR_A2_Class2_DUT1_V1_Vishay_50.csv
+2025-04-01 10:50:13,651 - INFO - Signal geladen: ESR_A2_Class2_DUT1_V1_Vishay_50.csv
+2025-04-01 10:50:13,728 - INFO - Holding Signal extrahiert. Holding Voltage: 2.987V
+2025-04-01 10:50:13,780 - INFO - Unloading Signal mit rated_time: 1776.823s 
+2025-04-01 10:50:16,082 - INFO - ESR_A2_Class2_DUT1_V1_Vishay_50.csv: Peak gefunden bei 1779.050s mit Wert 2.987.
+2025-04-01 10:50:16,747 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT1_V1_Vishay_cut.csv gespeichert.
+2025-04-01 10:51:01,722 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/ESR_A2_Class2_DUT1_V1_Vishay_50.csv
+2025-04-01 10:51:01,728 - INFO - Signal geladen: ESR_A2_Class2_DUT1_V1_Vishay_50.csv
+2025-04-01 10:51:01,807 - INFO - Holding Signal extrahiert. Holding Voltage: 2.987V
+2025-04-01 10:51:01,871 - INFO - Unloading Signal mit rated_time: 1776.823s 
+2025-04-01 10:51:04,125 - INFO - ESR_A2_Class2_DUT1_V1_Vishay_50.csv: Peak gefunden bei 1779.050s mit Wert 2.987.
+2025-04-01 10:51:04,785 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT1_V1_Vishay_cut.csv gespeichert.
+2025-04-01 10:51:37,620 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/ESR_A2_Class2_DUT1_V1_Vishay_50.csv
+2025-04-01 10:51:37,628 - INFO - Signal geladen: ESR_A2_Class2_DUT1_V1_Vishay_50.csv
+2025-04-01 10:51:37,702 - INFO - Holding Signal extrahiert. Holding Voltage: 2.987V
+2025-04-01 10:51:37,756 - INFO - Unloading Signal mit rated_time: 1776.823s 
+2025-04-01 10:51:40,047 - INFO - ESR_A2_Class2_DUT1_V1_Vishay_50.csv: Peak gefunden bei 1779.050s mit Wert 2.987.
+2025-04-01 10:51:40,714 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT1_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:02:35,036 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/C_B1_DUT3_V1_Vishay_50.csv
+2025-04-01 16:02:35,039 - INFO - Signal geladen: C_B1_DUT3_V1_Vishay_50.csv
+2025-04-01 16:02:35,065 - INFO - Holding Signal extrahiert. Holding Voltage: 2.984V
+2025-04-01 16:02:35,076 - INFO - Unloading Signal mit rated_time: 375.153s 
+2025-04-01 16:02:35,212 - INFO - C_B1_DUT3_V1_Vishay_50.csv: Peak gefunden bei 374.400s mit Wert 2.985.
+2025-04-01 16:02:35,273 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT3_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:07:56,470 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/C_B1_DUT2_V1_Vishay_50.csv
+2025-04-01 16:07:56,472 - INFO - Signal geladen: C_B1_DUT2_V1_Vishay_50.csv
+2025-04-01 16:07:56,485 - INFO - Holding Signal extrahiert. Holding Voltage: 2.984V
+2025-04-01 16:07:56,502 - INFO - Unloading Signal mit rated_time: 409.766s 
+2025-04-01 16:07:56,838 - INFO - C_B1_DUT2_V1_Vishay_50.csv: Peak gefunden bei 411.170s mit Wert 2.976.
+2025-04-01 16:07:56,940 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT2_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:08:36,417 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/C_B1_DUT2_V1_Vishay_50.csv
+2025-04-01 16:08:36,420 - INFO - Signal geladen: C_B1_DUT2_V1_Vishay_50.csv
+2025-04-01 16:08:36,433 - INFO - Holding Signal extrahiert. Holding Voltage: 2.984V
+2025-04-01 16:08:36,449 - INFO - Unloading Signal mit rated_time: 409.766s 
+2025-04-01 16:08:36,749 - INFO - C_B1_DUT2_V1_Vishay_50.csv: Peak gefunden bei 411.170s mit Wert 2.976.
+2025-04-01 16:08:36,850 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT2_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:13:24,825 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/C_B1_DUT1_V1_Vishay_50.csv
+2025-04-01 16:13:24,827 - INFO - Signal geladen: C_B1_DUT1_V1_Vishay_50.csv
+2025-04-01 16:13:24,836 - INFO - Holding Signal extrahiert. Holding Voltage: 2.982V
+2025-04-01 16:13:24,854 - INFO - Unloading Signal mit rated_time: 282.373s 
+2025-04-01 16:13:25,020 - INFO - C_B1_DUT1_V1_Vishay_50.csv: Peak gefunden bei 283.760s mit Wert 2.974.
+2025-04-01 16:13:25,069 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT1_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:15:09,358 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/C_B1_DUT1_V1_Vishay_50.csv
+2025-04-01 16:15:09,360 - INFO - Signal geladen: C_B1_DUT1_V1_Vishay_50.csv
+2025-04-01 16:15:09,369 - INFO - Holding Signal extrahiert. Holding Voltage: 2.982V
+2025-04-01 16:15:09,381 - INFO - Unloading Signal mit rated_time: 282.373s 
+2025-04-01 16:15:09,536 - INFO - C_B1_DUT1_V1_Vishay_50.csv: Peak gefunden bei 283.770s mit Wert 2.974.
+2025-04-01 16:15:09,585 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT1_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:16:03,703 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/C_B1_DUT1_V1_Vishay_50.csv
+2025-04-01 16:16:03,705 - INFO - Signal geladen: C_B1_DUT1_V1_Vishay_50.csv
+2025-04-01 16:16:03,714 - INFO - Holding Signal extrahiert. Holding Voltage: 2.982V
+2025-04-01 16:16:03,725 - INFO - Unloading Signal mit rated_time: 282.373s 
+2025-04-01 16:16:03,889 - INFO - C_B1_DUT1_V1_Vishay_50.csv: Peak gefunden bei 283.780s mit Wert 2.974.
+2025-04-01 16:16:03,941 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT1_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:16:33,878 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/C_A1_Class2_DUT1_V1_Vishay_50.csv
+2025-04-01 16:16:33,884 - INFO - Signal geladen: C_A1_Class2_DUT1_V1_Vishay_50.csv
+2025-04-01 16:16:33,969 - INFO - Holding Signal extrahiert. Holding Voltage: 2.986V
+2025-04-01 16:16:34,045 - INFO - Unloading Signal mit rated_time: 1820.848s 
+2025-04-01 16:16:36,426 - INFO - C_A1_Class2_DUT1_V1_Vishay_50.csv: Peak gefunden bei 1850.000s mit Wert 2.985.
+2025-04-01 16:16:37,057 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT1_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:18:24,116 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/ESR_A2_Class2_DUT3_V1_Vishay_50.csv
+2025-04-01 16:18:24,120 - INFO - Signal geladen: ESR_A2_Class2_DUT3_V1_Vishay_50.csv
+2025-04-01 16:18:24,188 - INFO - Holding Signal extrahiert. Holding Voltage: 2.989V
+2025-04-01 16:18:24,231 - INFO - Unloading Signal mit rated_time: 1867.947s 
+2025-04-01 16:18:24,554 - INFO - ESR_A2_Class2_DUT3_V1_Vishay_50.csv: Peak gefunden bei 1870.040s mit Wert 2.988.
+2025-04-01 16:18:24,642 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT3_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:19:00,240 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT1_V1_Vishay_50.csv
+2025-04-01 16:19:00,246 - INFO - Signal geladen: C_A1_Class2_DUT1_V1_Vishay_50.csv
+2025-04-01 16:19:00,327 - INFO - Holding Signal extrahiert. Holding Voltage: 2.986V
+2025-04-01 16:19:00,401 - INFO - Unloading Signal mit rated_time: 1820.848s 
+2025-04-01 16:19:02,654 - INFO - C_A1_Class2_DUT1_V1_Vishay_50.csv: Peak gefunden bei 1850.000s mit Wert 2.985.
+2025-04-01 16:19:03,317 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT1_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:19:03,965 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT1_V1_Vishay_after_press_50.csv
+2025-04-01 16:19:03,970 - INFO - Signal geladen: C_A1_Class2_DUT1_V1_Vishay_after_press_50.csv
+2025-04-01 16:19:04,053 - INFO - Holding Signal extrahiert. Holding Voltage: 2.989V
+2025-04-01 16:19:04,128 - INFO - Unloading Signal mit rated_time: 2089.629s 
+2025-04-01 16:19:06,865 - INFO - C_A1_Class2_DUT1_V1_Vishay_after_press_50.csv: Peak gefunden bei 2115.740s mit Wert 2.985.
+2025-04-01 16:19:07,749 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT1_V1_Vishay_after_press_cut.csv gespeichert.
+2025-04-01 16:19:08,378 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT1_V1_Vishay_pressed_50.csv
+2025-04-01 16:19:08,383 - INFO - Signal geladen: C_A1_Class2_DUT1_V1_Vishay_pressed_50.csv
+2025-04-01 16:19:08,453 - INFO - Holding Signal extrahiert. Holding Voltage: 2.986V
+2025-04-01 16:19:08,536 - INFO - Unloading Signal mit rated_time: 2169.709s 
+2025-04-01 16:19:11,053 - INFO - C_A1_Class2_DUT1_V1_Vishay_pressed_50.csv: Peak gefunden bei 2193.950s mit Wert 2.987.
+2025-04-01 16:19:11,733 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT1_V1_Vishay_pressed_cut.csv gespeichert.
+2025-04-01 16:19:12,300 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT2_V1_Vishay_50.csv
+2025-04-01 16:19:12,305 - INFO - Signal geladen: C_A1_Class2_DUT2_V1_Vishay_50.csv
+2025-04-01 16:19:12,385 - INFO - Holding Signal extrahiert. Holding Voltage: 2.989V
+2025-04-01 16:19:12,485 - INFO - Unloading Signal mit rated_time: 1853.256s 
+2025-04-01 16:19:14,956 - INFO - C_A1_Class2_DUT2_V1_Vishay_50.csv: Peak gefunden bei 1878.240s mit Wert 2.987.
+2025-04-01 16:19:15,676 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT2_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:19:16,376 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT2_V1_Vishay_after_press_50.csv
+2025-04-01 16:19:16,385 - INFO - Signal geladen: C_A1_Class2_DUT2_V1_Vishay_after_press_50.csv
+2025-04-01 16:19:16,513 - INFO - Holding Signal extrahiert. Holding Voltage: 2.988V
+2025-04-01 16:19:16,602 - INFO - Unloading Signal mit rated_time: 2035.340s 
+2025-04-01 16:19:20,120 - INFO - C_A1_Class2_DUT2_V1_Vishay_after_press_50.csv: Peak gefunden bei 2054.660s mit Wert 2.988.
+2025-04-01 16:19:21,028 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT2_V1_Vishay_after_press_cut.csv gespeichert.
+2025-04-01 16:19:21,827 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT2_V1_Vishay_pressed_50.csv
+2025-04-01 16:19:21,838 - INFO - Signal geladen: C_A1_Class2_DUT2_V1_Vishay_pressed_50.csv
+2025-04-01 16:19:21,955 - INFO - Holding Signal extrahiert. Holding Voltage: 2.989V
+2025-04-01 16:19:22,046 - INFO - Unloading Signal mit rated_time: 2203.835s 
+2025-04-01 16:19:25,333 - INFO - C_A1_Class2_DUT2_V1_Vishay_pressed_50.csv: Peak gefunden bei 2225.630s mit Wert 2.989.
+2025-04-01 16:19:26,162 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT2_V1_Vishay_pressed_cut.csv gespeichert.
+2025-04-01 16:19:26,728 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT3_V1_Vishay_50.csv
+2025-04-01 16:19:26,733 - INFO - Signal geladen: C_A1_Class2_DUT3_V1_Vishay_50.csv
+2025-04-01 16:19:26,791 - INFO - Holding Signal extrahiert. Holding Voltage: 3.009V
+2025-04-01 16:19:26,839 - INFO - Unloading Signal mit rated_time: 1756.565s 
+2025-04-01 16:19:29,061 - INFO - C_A1_Class2_DUT3_V1_Vishay_50.csv: Peak gefunden bei 1763.870s mit Wert 3.009.
+2025-04-01 16:19:29,609 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT3_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:19:30,137 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT3_V1_Vishay_after_press_50.csv
+2025-04-01 16:19:30,142 - INFO - Signal geladen: C_A1_Class2_DUT3_V1_Vishay_after_press_50.csv
+2025-04-01 16:19:30,185 - INFO - Holding Signal extrahiert. Holding Voltage: 2.989V
+2025-04-01 16:19:30,234 - INFO - Unloading Signal mit rated_time: 1891.526s 
+2025-04-01 16:19:32,855 - INFO - C_A1_Class2_DUT3_V1_Vishay_after_press_50.csv: Peak gefunden bei 1920.000s mit Wert 2.985.
+2025-04-01 16:19:33,639 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT3_V1_Vishay_after_press_cut.csv gespeichert.
+2025-04-01 16:19:34,243 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT3_V1_Vishay_pressed_50.csv
+2025-04-01 16:19:34,249 - INFO - Signal geladen: C_A1_Class2_DUT3_V1_Vishay_pressed_50.csv
+2025-04-01 16:19:34,314 - INFO - Holding Signal extrahiert. Holding Voltage: 2.989V
+2025-04-01 16:19:34,375 - INFO - Unloading Signal mit rated_time: 1850.617s 
+2025-04-01 16:19:37,194 - INFO - C_A1_Class2_DUT3_V1_Vishay_pressed_50.csv: Peak gefunden bei 1867.030s mit Wert 2.990.
+2025-04-01 16:19:37,963 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT3_V1_Vishay_pressed_cut.csv gespeichert.
+2025-04-01 16:19:38,478 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT4_V1_Vishay_50.csv
+2025-04-01 16:19:38,483 - INFO - Signal geladen: C_A1_Class2_DUT4_V1_Vishay_50.csv
+2025-04-01 16:19:38,535 - INFO - Holding Signal extrahiert. Holding Voltage: 2.988V
+2025-04-01 16:19:38,589 - INFO - Unloading Signal mit rated_time: 1791.395s 
+2025-04-01 16:19:41,134 - INFO - C_A1_Class2_DUT4_V1_Vishay_50.csv: Peak gefunden bei 1814.870s mit Wert 2.987.
+2025-04-01 16:19:41,830 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT4_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:19:42,350 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT5_V1_Vishay_50.csv
+2025-04-01 16:19:42,355 - INFO - Signal geladen: C_A1_Class2_DUT5_V1_Vishay_50.csv
+2025-04-01 16:19:42,416 - INFO - Holding Signal extrahiert. Holding Voltage: 2.987V
+2025-04-01 16:19:42,461 - INFO - Unloading Signal mit rated_time: 1910.788s 
+2025-04-01 16:19:44,866 - INFO - C_A1_Class2_DUT5_V1_Vishay_50.csv: Peak gefunden bei 1934.850s mit Wert 2.986.
+2025-04-01 16:19:45,555 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT5_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:19:46,087 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT6_V1_Vishay_50.csv
+2025-04-01 16:19:46,093 - INFO - Signal geladen: C_A1_Class2_DUT6_V1_Vishay_50.csv
+2025-04-01 16:19:46,148 - INFO - Holding Signal extrahiert. Holding Voltage: 3.009V
+2025-04-01 16:19:46,194 - INFO - Unloading Signal mit rated_time: 1847.681s 
+2025-04-01 16:19:48,626 - INFO - C_A1_Class2_DUT6_V1_Vishay_50.csv: Peak gefunden bei 1852.720s mit Wert 3.007.
+2025-04-01 16:19:49,229 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT6_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:19:49,862 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT7_V1_Vishay_50.csv
+2025-04-01 16:19:49,869 - INFO - Signal geladen: C_A1_Class2_DUT7_V1_Vishay_50.csv
+2025-04-01 16:19:49,947 - INFO - Holding Signal extrahiert. Holding Voltage: 2.986V
+2025-04-01 16:19:50,004 - INFO - Unloading Signal mit rated_time: 1894.298s 
+2025-04-01 16:19:53,407 - INFO - C_A1_Class2_DUT7_V1_Vishay_50.csv: Peak gefunden bei 1917.840s mit Wert 2.987.
+2025-04-01 16:19:54,303 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT7_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:19:54,870 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT8_V1_Vishay_50.csv
+2025-04-01 16:19:54,876 - INFO - Signal geladen: C_A1_Class2_DUT8_V1_Vishay_50.csv
+2025-04-01 16:19:54,935 - INFO - Holding Signal extrahiert. Holding Voltage: 2.986V
+2025-04-01 16:19:54,984 - INFO - Unloading Signal mit rated_time: 2047.092s 
+2025-04-01 16:19:57,568 - INFO - C_A1_Class2_DUT8_V1_Vishay_50.csv: Peak gefunden bei 2076.300s mit Wert 2.985.
+2025-04-01 16:19:58,225 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT8_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:19:58,474 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT1_V1_Vishay_50.csv
+2025-04-01 16:19:58,476 - INFO - Signal geladen: C_B1_DUT1_V1_Vishay_50.csv
+2025-04-01 16:19:58,484 - INFO - Holding Signal extrahiert. Holding Voltage: 2.982V
+2025-04-01 16:19:58,491 - INFO - Unloading Signal mit rated_time: 282.373s 
+2025-04-01 16:19:58,636 - INFO - C_B1_DUT1_V1_Vishay_50.csv: Peak gefunden bei 283.780s mit Wert 2.974.
+2025-04-01 16:19:58,685 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT1_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:19:58,858 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT1_V1_Vishay_after_press_50.csv
+2025-04-01 16:19:58,859 - INFO - Signal geladen: C_B1_DUT1_V1_Vishay_after_press_50.csv
+2025-04-01 16:19:58,875 - INFO - Holding Signal extrahiert. Holding Voltage: 2.988V
+2025-04-01 16:19:58,887 - INFO - Unloading Signal mit rated_time: 396.530s 
+2025-04-01 16:19:59,225 - INFO - C_B1_DUT1_V1_Vishay_after_press_50.csv: Peak gefunden bei 397.670s mit Wert 2.988.
+2025-04-01 16:19:59,313 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT1_V1_Vishay_after_press_cut.csv gespeichert.
+2025-04-01 16:19:59,487 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT1_V1_Vishay_pressed_50.csv
+2025-04-01 16:19:59,489 - INFO - Signal geladen: C_B1_DUT1_V1_Vishay_pressed_50.csv
+2025-04-01 16:19:59,502 - INFO - Holding Signal extrahiert. Holding Voltage: 2.985V
+2025-04-01 16:19:59,512 - INFO - Unloading Signal mit rated_time: 495.867s 
+2025-04-01 16:19:59,600 - INFO - C_B1_DUT1_V1_Vishay_pressed_50.csv: Peak gefunden bei 497.280s mit Wert 2.985.
+2025-04-01 16:19:59,631 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT1_V1_Vishay_pressed_cut.csv gespeichert.
+2025-04-01 16:19:59,899 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT2_V1_Vishay_50.csv
+2025-04-01 16:19:59,900 - INFO - Signal geladen: C_B1_DUT2_V1_Vishay_50.csv
+2025-04-01 16:19:59,910 - INFO - Holding Signal extrahiert. Holding Voltage: 2.984V
+2025-04-01 16:19:59,919 - INFO - Unloading Signal mit rated_time: 409.766s 
+2025-04-01 16:20:00,254 - INFO - C_B1_DUT2_V1_Vishay_50.csv: Peak gefunden bei 411.170s mit Wert 2.976.
+2025-04-01 16:20:00,356 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT2_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:20:00,506 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT2_V1_Vishay_after_press_50.csv
+2025-04-01 16:20:00,508 - INFO - Signal geladen: C_B1_DUT2_V1_Vishay_after_press_50.csv
+2025-04-01 16:20:00,516 - INFO - Holding Signal extrahiert. Holding Voltage: 2.989V
+2025-04-01 16:20:00,524 - INFO - Unloading Signal mit rated_time: 363.687s 
+2025-04-01 16:20:00,627 - INFO - C_B1_DUT2_V1_Vishay_after_press_50.csv: Peak gefunden bei 364.800s mit Wert 2.988.
+2025-04-01 16:20:00,666 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT2_V1_Vishay_after_press_cut.csv gespeichert.
+2025-04-01 16:20:00,823 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT2_V1_Vishay_pressed_50.csv
+2025-04-01 16:20:00,824 - INFO - Signal geladen: C_B1_DUT2_V1_Vishay_pressed_50.csv
+2025-04-01 16:20:00,832 - INFO - Holding Signal extrahiert. Holding Voltage: 2.987V
+2025-04-01 16:20:00,841 - INFO - Unloading Signal mit rated_time: 372.089s 
+2025-04-01 16:20:00,923 - INFO - C_B1_DUT2_V1_Vishay_pressed_50.csv: Peak gefunden bei 373.390s mit Wert 2.988.
+2025-04-01 16:20:00,949 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT2_V1_Vishay_pressed_cut.csv gespeichert.
+2025-04-01 16:20:01,114 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT3_V1_Vishay_50.csv
+2025-04-01 16:20:01,116 - INFO - Signal geladen: C_B1_DUT3_V1_Vishay_50.csv
+2025-04-01 16:20:01,127 - INFO - Holding Signal extrahiert. Holding Voltage: 2.984V
+2025-04-01 16:20:01,138 - INFO - Unloading Signal mit rated_time: 375.153s 
+2025-04-01 16:20:01,274 - INFO - C_B1_DUT3_V1_Vishay_50.csv: Peak gefunden bei 376.430s mit Wert 2.982.
+2025-04-01 16:20:01,321 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT3_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:20:01,518 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT3_V1_Vishay_after_press_50.csv
+2025-04-01 16:20:01,520 - INFO - Signal geladen: C_B1_DUT3_V1_Vishay_after_press_50.csv
+2025-04-01 16:20:01,539 - INFO - Holding Signal extrahiert. Holding Voltage: 2.992V
+2025-04-01 16:20:01,552 - INFO - Unloading Signal mit rated_time: 676.889s 
+2025-04-01 16:20:01,628 - INFO - C_B1_DUT3_V1_Vishay_after_press_50.csv: Peak gefunden bei 678.210s mit Wert 2.991.
+2025-04-01 16:20:01,669 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT3_V1_Vishay_after_press_cut.csv gespeichert.
+2025-04-01 16:20:01,884 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT3_V1_Vishay_pressed_50.csv
+2025-04-01 16:20:01,887 - INFO - Signal geladen: C_B1_DUT3_V1_Vishay_pressed_50.csv
+2025-04-01 16:20:01,903 - INFO - Holding Signal extrahiert. Holding Voltage: 2.991V
+2025-04-01 16:20:01,922 - INFO - Unloading Signal mit rated_time: 359.707s 
+2025-04-01 16:20:02,056 - INFO - C_B1_DUT3_V1_Vishay_pressed_50.csv: Peak gefunden bei 361.110s mit Wert 2.990.
+2025-04-01 16:20:02,100 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT3_V1_Vishay_pressed_cut.csv gespeichert.
+2025-04-01 16:20:02,307 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT4_V1_Vishay_50.csv
+2025-04-01 16:20:02,309 - INFO - Signal geladen: C_B1_DUT4_V1_Vishay_50.csv
+2025-04-01 16:20:02,318 - INFO - Holding Signal extrahiert. Holding Voltage: 2.983V
+2025-04-01 16:20:02,327 - INFO - Unloading Signal mit rated_time: 381.683s 
+2025-04-01 16:20:02,520 - INFO - C_B1_DUT4_V1_Vishay_50.csv: Peak gefunden bei 382.980s mit Wert 2.981.
+2025-04-01 16:20:02,577 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT4_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:20:02,773 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT5_V1_Vishay_50.csv
+2025-04-01 16:20:02,775 - INFO - Signal geladen: C_B1_DUT5_V1_Vishay_50.csv
+2025-04-01 16:20:02,786 - INFO - Holding Signal extrahiert. Holding Voltage: 2.984V
+2025-04-01 16:20:02,796 - INFO - Unloading Signal mit rated_time: 362.984s 
+2025-04-01 16:20:03,126 - INFO - C_B1_DUT5_V1_Vishay_50.csv: Peak gefunden bei 364.300s mit Wert 2.981.
+2025-04-01 16:20:03,253 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT5_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:20:03,496 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT6_V1_Vishay_50.csv
+2025-04-01 16:20:03,498 - INFO - Signal geladen: C_B1_DUT6_V1_Vishay_50.csv
+2025-04-01 16:20:03,508 - INFO - Holding Signal extrahiert. Holding Voltage: 2.985V
+2025-04-01 16:20:03,516 - INFO - Unloading Signal mit rated_time: 396.610s 
+2025-04-01 16:20:03,748 - INFO - C_B1_DUT6_V1_Vishay_50.csv: Peak gefunden bei 397.790s mit Wert 2.982.
+2025-04-01 16:20:03,841 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT6_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:20:04,040 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT7_V1_Vishay_50.csv
+2025-04-01 16:20:04,042 - INFO - Signal geladen: C_B1_DUT7_V1_Vishay_50.csv
+2025-04-01 16:20:04,053 - INFO - Holding Signal extrahiert. Holding Voltage: 2.986V
+2025-04-01 16:20:04,062 - INFO - Unloading Signal mit rated_time: 430.640s 
+2025-04-01 16:20:04,325 - INFO - C_B1_DUT7_V1_Vishay_50.csv: Peak gefunden bei 431.750s mit Wert 2.985.
+2025-04-01 16:20:04,513 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT7_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:20:04,776 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT8_V1_Vishay_50.csv
+2025-04-01 16:20:04,778 - INFO - Signal geladen: C_B1_DUT8_V1_Vishay_50.csv
+2025-04-01 16:20:04,792 - INFO - Holding Signal extrahiert. Holding Voltage: 3.005V
+2025-04-01 16:20:04,804 - INFO - Unloading Signal mit rated_time: 470.197s 
+2025-04-01 16:20:05,205 - INFO - C_B1_DUT8_V1_Vishay_50.csv: Peak gefunden bei 471.080s mit Wert 3.005.
+2025-04-01 16:20:05,438 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT8_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:20:05,964 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT1_V1_Vishay_50.csv
+2025-04-01 16:20:05,968 - INFO - Signal geladen: ESR_A2_Class2_DUT1_V1_Vishay_50.csv
+2025-04-01 16:20:06,049 - INFO - Holding Signal extrahiert. Holding Voltage: 2.987V
+2025-04-01 16:20:06,082 - INFO - Unloading Signal mit rated_time: 1776.823s 
+2025-04-01 16:20:08,960 - INFO - ESR_A2_Class2_DUT1_V1_Vishay_50.csv: Peak gefunden bei 1779.050s mit Wert 2.987.
+2025-04-01 16:20:09,604 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT1_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:20:09,988 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT1_V1_Vishay_after_press_50.csv
+2025-04-01 16:20:09,991 - INFO - Signal geladen: ESR_A2_Class2_DUT1_V1_Vishay_after_press_50.csv
+2025-04-01 16:20:10,034 - INFO - Holding Signal extrahiert. Holding Voltage: 2.986V
+2025-04-01 16:20:10,067 - INFO - Unloading Signal mit rated_time: 2139.417s 
+2025-04-01 16:20:10,387 - INFO - ESR_A2_Class2_DUT1_V1_Vishay_after_press_50.csv: Peak gefunden bei 2142.300s mit Wert 2.987.
+2025-04-01 16:20:10,472 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT1_V1_Vishay_after_press_cut.csv gespeichert.
+2025-04-01 16:20:10,781 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT1_V1_Vishay_pressed_50.csv
+2025-04-01 16:20:10,783 - INFO - Signal geladen: ESR_A2_Class2_DUT1_V1_Vishay_pressed_50.csv
+2025-04-01 16:20:10,811 - INFO - Holding Signal extrahiert. Holding Voltage: 2.986V
+2025-04-01 16:20:10,831 - INFO - Unloading Signal mit rated_time: 1810.403s 
+2025-04-01 16:20:11,111 - INFO - ESR_A2_Class2_DUT1_V1_Vishay_pressed_50.csv: Peak gefunden bei 1812.820s mit Wert 2.986.
+2025-04-01 16:20:11,194 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT1_V1_Vishay_pressed_cut.csv gespeichert.
+2025-04-01 16:20:11,510 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT2_V1_Vishay_50.csv
+2025-04-01 16:20:11,512 - INFO - Signal geladen: ESR_A2_Class2_DUT2_V1_Vishay_50.csv
+2025-04-01 16:20:11,540 - INFO - Holding Signal extrahiert. Holding Voltage: 2.987V
+2025-04-01 16:20:11,559 - INFO - Unloading Signal mit rated_time: 1842.279s 
+2025-04-01 16:20:11,820 - INFO - ESR_A2_Class2_DUT2_V1_Vishay_50.csv: Peak gefunden bei 1844.410s mit Wert 2.988.
+2025-04-01 16:20:11,899 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT2_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:20:12,231 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT2_V1_Vishay_after_press_50.csv
+2025-04-01 16:20:12,234 - INFO - Signal geladen: ESR_A2_Class2_DUT2_V1_Vishay_after_press_50.csv
+2025-04-01 16:20:12,276 - INFO - Holding Signal extrahiert. Holding Voltage: 2.989V
+2025-04-01 16:20:12,300 - INFO - Unloading Signal mit rated_time: 1864.183s 
+2025-04-01 16:20:12,616 - INFO - ESR_A2_Class2_DUT2_V1_Vishay_after_press_50.csv: Peak gefunden bei 1866.280s mit Wert 2.989.
+2025-04-01 16:20:12,714 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT2_V1_Vishay_after_press_cut.csv gespeichert.
+2025-04-01 16:20:13,154 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT2_V1_Vishay_pressed_50.csv
+2025-04-01 16:20:13,158 - INFO - Signal geladen: ESR_A2_Class2_DUT2_V1_Vishay_pressed_50.csv
+2025-04-01 16:20:13,194 - INFO - Holding Signal extrahiert. Holding Voltage: 2.987V
+2025-04-01 16:20:13,219 - INFO - Unloading Signal mit rated_time: 2261.656s 
+2025-04-01 16:20:13,575 - INFO - ESR_A2_Class2_DUT2_V1_Vishay_pressed_50.csv: Peak gefunden bei 2263.950s mit Wert 2.988.
+2025-04-01 16:20:13,687 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT2_V1_Vishay_pressed_cut.csv gespeichert.
+2025-04-01 16:20:14,012 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT3_V1_Vishay_50.csv
+2025-04-01 16:20:14,013 - INFO - Signal geladen: ESR_A2_Class2_DUT3_V1_Vishay_50.csv
+2025-04-01 16:20:14,049 - INFO - Holding Signal extrahiert. Holding Voltage: 2.989V
+2025-04-01 16:20:14,071 - INFO - Unloading Signal mit rated_time: 1867.947s 
+2025-04-01 16:20:14,355 - INFO - ESR_A2_Class2_DUT3_V1_Vishay_50.csv: Peak gefunden bei 1870.040s mit Wert 2.988.
+2025-04-01 16:20:14,442 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT3_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:20:14,834 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT3_V1_Vishay_after_press_50.csv
+2025-04-01 16:20:14,836 - INFO - Signal geladen: ESR_A2_Class2_DUT3_V1_Vishay_after_press_50.csv
+2025-04-01 16:20:14,877 - INFO - Holding Signal extrahiert. Holding Voltage: 2.989V
+2025-04-01 16:20:14,903 - INFO - Unloading Signal mit rated_time: 1907.441s 
+2025-04-01 16:20:15,217 - INFO - ESR_A2_Class2_DUT3_V1_Vishay_after_press_50.csv: Peak gefunden bei 1910.230s mit Wert 2.989.
+2025-04-01 16:20:15,285 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT3_V1_Vishay_after_press_cut.csv gespeichert.
+2025-04-01 16:20:15,628 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT3_V1_Vishay_pressed_50.csv
+2025-04-01 16:20:15,632 - INFO - Signal geladen: ESR_A2_Class2_DUT3_V1_Vishay_pressed_50.csv
+2025-04-01 16:20:15,665 - INFO - Holding Signal extrahiert. Holding Voltage: 2.988V
+2025-04-01 16:20:15,684 - INFO - Unloading Signal mit rated_time: 1823.909s 
+2025-04-01 16:20:15,931 - INFO - ESR_A2_Class2_DUT3_V1_Vishay_pressed_50.csv: Peak gefunden bei 1826.380s mit Wert 2.988.
+2025-04-01 16:20:16,001 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT3_V1_Vishay_pressed_cut.csv gespeichert.
+2025-04-01 16:20:16,366 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT4_V1_Vishay_50.csv
+2025-04-01 16:20:16,368 - INFO - Signal geladen: ESR_A2_Class2_DUT4_V1_Vishay_50.csv
+2025-04-01 16:20:16,407 - INFO - Holding Signal extrahiert. Holding Voltage: 2.987V
+2025-04-01 16:20:16,433 - INFO - Unloading Signal mit rated_time: 1903.207s 
+2025-04-01 16:20:16,940 - INFO - ESR_A2_Class2_DUT4_V1_Vishay_50.csv: Peak gefunden bei 1905.360s mit Wert 2.988.
+2025-04-01 16:20:17,082 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT4_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:20:17,455 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT5_V1_Vishay_50.csv
+2025-04-01 16:20:17,458 - INFO - Signal geladen: ESR_A2_Class2_DUT5_V1_Vishay_50.csv
+2025-04-01 16:20:17,508 - INFO - Holding Signal extrahiert. Holding Voltage: 2.987V
+2025-04-01 16:20:17,532 - INFO - Unloading Signal mit rated_time: 1930.999s 
+2025-04-01 16:20:17,812 - INFO - ESR_A2_Class2_DUT5_V1_Vishay_50.csv: Peak gefunden bei 1933.300s mit Wert 2.987.
+2025-04-01 16:20:17,887 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT5_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:20:18,216 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT6_V1_Vishay_50.csv
+2025-04-01 16:20:18,219 - INFO - Signal geladen: ESR_A2_Class2_DUT6_V1_Vishay_50.csv
+2025-04-01 16:20:18,252 - INFO - Holding Signal extrahiert. Holding Voltage: 2.988V
+2025-04-01 16:20:18,273 - INFO - Unloading Signal mit rated_time: 1829.503s 
+2025-04-01 16:20:18,593 - INFO - ESR_A2_Class2_DUT6_V1_Vishay_50.csv: Peak gefunden bei 1831.660s mit Wert 2.988.
+2025-04-01 16:20:18,683 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT6_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:20:19,008 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT7_V1_Vishay_50.csv
+2025-04-01 16:20:19,009 - INFO - Signal geladen: ESR_A2_Class2_DUT7_V1_Vishay_50.csv
+2025-04-01 16:20:19,042 - INFO - Holding Signal extrahiert. Holding Voltage: 2.988V
+2025-04-01 16:20:19,068 - INFO - Unloading Signal mit rated_time: 2006.319s 
+2025-04-01 16:20:19,345 - INFO - ESR_A2_Class2_DUT7_V1_Vishay_50.csv: Peak gefunden bei 2008.320s mit Wert 2.988.
+2025-04-01 16:20:19,425 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT7_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:20:19,709 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT8_V1_Vishay_50.csv
+2025-04-01 16:20:19,711 - INFO - Signal geladen: ESR_A2_Class2_DUT8_V1_Vishay_50.csv
+2025-04-01 16:20:19,741 - INFO - Holding Signal extrahiert. Holding Voltage: 3.009V
+2025-04-01 16:20:19,764 - INFO - Unloading Signal mit rated_time: 1270.483s 
+2025-04-01 16:20:20,049 - INFO - ESR_A2_Class2_DUT8_V1_Vishay_50.csv: Peak gefunden bei 1270.540s mit Wert 3.010.
+2025-04-01 16:20:20,123 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT8_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:20:24,622 - INFO - Alle Plots gespeichert in: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\alle_peaks.pdf
+2025-04-01 16:25:29,962 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/C_B1_DUT5_V1_Vishay_50.csv
+2025-04-01 16:25:29,965 - INFO - Signal geladen: C_B1_DUT5_V1_Vishay_50.csv
+2025-04-01 16:25:29,979 - INFO - Holding Signal extrahiert. Holding Voltage: 2.984V
+2025-04-01 16:25:29,993 - INFO - Unloading Signal mit rated_time: 362.984s 
+2025-04-01 16:25:30,326 - INFO - C_B1_DUT5_V1_Vishay_50.csv: Peak gefunden bei 364.300s mit Wert 2.981.
+2025-04-01 16:25:30,424 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT5_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:27:09,806 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/ESR_A2_Class2_DUT2_V1_Vishay_pressed_50.csv
+2025-04-01 16:27:09,810 - INFO - Signal geladen: ESR_A2_Class2_DUT2_V1_Vishay_pressed_50.csv
+2025-04-01 16:27:09,882 - INFO - Holding Signal extrahiert. Holding Voltage: 2.987V
+2025-04-01 16:27:09,933 - INFO - Unloading Signal mit rated_time: 2261.656s 
+2025-04-01 16:27:10,288 - INFO - ESR_A2_Class2_DUT2_V1_Vishay_pressed_50.csv: Peak gefunden bei 2263.950s mit Wert 2.988.
+2025-04-01 16:27:10,414 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT2_V1_Vishay_pressed_cut.csv gespeichert.
+2025-04-01 16:29:54,146 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv/C_B1_DUT7_V1_Vishay_50.csv
+2025-04-01 16:29:54,148 - INFO - Signal geladen: C_B1_DUT7_V1_Vishay_50.csv
+2025-04-01 16:29:54,162 - INFO - Holding Signal extrahiert. Holding Voltage: 2.986V
+2025-04-01 16:29:54,179 - INFO - Unloading Signal mit rated_time: 430.640s 
+2025-04-01 16:29:54,443 - INFO - C_B1_DUT7_V1_Vishay_50.csv: Peak gefunden bei 431.750s mit Wert 2.985.
+2025-04-01 16:29:54,547 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT7_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:30:30,395 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT1_V1_Vishay_50.csv
+2025-04-01 16:30:30,402 - INFO - Signal geladen: C_A1_Class2_DUT1_V1_Vishay_50.csv
+2025-04-01 16:30:30,470 - INFO - Holding Signal extrahiert. Holding Voltage: 2.986V
+2025-04-01 16:30:30,532 - INFO - Unloading Signal mit rated_time: 1820.848s 
+2025-04-01 16:30:32,729 - INFO - C_A1_Class2_DUT1_V1_Vishay_50.csv: Peak gefunden bei 1850.000s mit Wert 2.985.
+2025-04-01 16:30:33,366 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT1_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:30:34,032 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT1_V1_Vishay_after_press_50.csv
+2025-04-01 16:30:34,037 - INFO - Signal geladen: C_A1_Class2_DUT1_V1_Vishay_after_press_50.csv
+2025-04-01 16:30:34,111 - INFO - Holding Signal extrahiert. Holding Voltage: 2.989V
+2025-04-01 16:30:34,190 - INFO - Unloading Signal mit rated_time: 2089.629s 
+2025-04-01 16:30:36,899 - INFO - C_A1_Class2_DUT1_V1_Vishay_after_press_50.csv: Peak gefunden bei 2115.740s mit Wert 2.985.
+2025-04-01 16:30:37,694 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT1_V1_Vishay_after_press_cut.csv gespeichert.
+2025-04-01 16:30:38,308 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT1_V1_Vishay_pressed_50.csv
+2025-04-01 16:30:38,313 - INFO - Signal geladen: C_A1_Class2_DUT1_V1_Vishay_pressed_50.csv
+2025-04-01 16:30:38,369 - INFO - Holding Signal extrahiert. Holding Voltage: 2.986V
+2025-04-01 16:30:38,443 - INFO - Unloading Signal mit rated_time: 2169.709s 
+2025-04-01 16:30:40,836 - INFO - C_A1_Class2_DUT1_V1_Vishay_pressed_50.csv: Peak gefunden bei 2193.950s mit Wert 2.987.
+2025-04-01 16:30:41,466 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT1_V1_Vishay_pressed_cut.csv gespeichert.
+2025-04-01 16:30:42,054 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT2_V1_Vishay_50.csv
+2025-04-01 16:30:42,059 - INFO - Signal geladen: C_A1_Class2_DUT2_V1_Vishay_50.csv
+2025-04-01 16:30:42,119 - INFO - Holding Signal extrahiert. Holding Voltage: 2.989V
+2025-04-01 16:30:42,173 - INFO - Unloading Signal mit rated_time: 1853.256s 
+2025-04-01 16:30:44,669 - INFO - C_A1_Class2_DUT2_V1_Vishay_50.csv: Peak gefunden bei 1878.240s mit Wert 2.987.
+2025-04-01 16:30:45,308 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT2_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:30:45,968 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT2_V1_Vishay_after_press_50.csv
+2025-04-01 16:30:45,974 - INFO - Signal geladen: C_A1_Class2_DUT2_V1_Vishay_after_press_50.csv
+2025-04-01 16:30:46,041 - INFO - Holding Signal extrahiert. Holding Voltage: 2.988V
+2025-04-01 16:30:46,102 - INFO - Unloading Signal mit rated_time: 2035.340s 
+2025-04-01 16:30:49,512 - INFO - C_A1_Class2_DUT2_V1_Vishay_after_press_50.csv: Peak gefunden bei 2054.660s mit Wert 2.988.
+2025-04-01 16:30:50,379 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT2_V1_Vishay_after_press_cut.csv gespeichert.
+2025-04-01 16:30:51,083 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT2_V1_Vishay_pressed_50.csv
+2025-04-01 16:30:51,089 - INFO - Signal geladen: C_A1_Class2_DUT2_V1_Vishay_pressed_50.csv
+2025-04-01 16:30:51,163 - INFO - Holding Signal extrahiert. Holding Voltage: 2.989V
+2025-04-01 16:30:51,228 - INFO - Unloading Signal mit rated_time: 2203.835s 
+2025-04-01 16:30:54,325 - INFO - C_A1_Class2_DUT2_V1_Vishay_pressed_50.csv: Peak gefunden bei 2225.630s mit Wert 2.989.
+2025-04-01 16:30:55,175 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT2_V1_Vishay_pressed_cut.csv gespeichert.
+2025-04-01 16:30:55,741 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT3_V1_Vishay_50.csv
+2025-04-01 16:30:55,746 - INFO - Signal geladen: C_A1_Class2_DUT3_V1_Vishay_50.csv
+2025-04-01 16:30:55,797 - INFO - Holding Signal extrahiert. Holding Voltage: 3.009V
+2025-04-01 16:30:55,843 - INFO - Unloading Signal mit rated_time: 1756.565s 
+2025-04-01 16:30:57,900 - INFO - C_A1_Class2_DUT3_V1_Vishay_50.csv: Peak gefunden bei 1763.870s mit Wert 3.009.
+2025-04-01 16:30:58,426 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT3_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:30:58,980 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT3_V1_Vishay_after_press_50.csv
+2025-04-01 16:30:58,985 - INFO - Signal geladen: C_A1_Class2_DUT3_V1_Vishay_after_press_50.csv
+2025-04-01 16:30:59,028 - INFO - Holding Signal extrahiert. Holding Voltage: 2.989V
+2025-04-01 16:30:59,080 - INFO - Unloading Signal mit rated_time: 1891.526s 
+2025-04-01 16:31:01,638 - INFO - C_A1_Class2_DUT3_V1_Vishay_after_press_50.csv: Peak gefunden bei 1920.000s mit Wert 2.985.
+2025-04-01 16:31:02,366 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT3_V1_Vishay_after_press_cut.csv gespeichert.
+2025-04-01 16:31:02,956 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT3_V1_Vishay_pressed_50.csv
+2025-04-01 16:31:02,960 - INFO - Signal geladen: C_A1_Class2_DUT3_V1_Vishay_pressed_50.csv
+2025-04-01 16:31:03,016 - INFO - Holding Signal extrahiert. Holding Voltage: 2.989V
+2025-04-01 16:31:03,064 - INFO - Unloading Signal mit rated_time: 1850.617s 
+2025-04-01 16:31:05,683 - INFO - C_A1_Class2_DUT3_V1_Vishay_pressed_50.csv: Peak gefunden bei 1867.030s mit Wert 2.990.
+2025-04-01 16:31:06,431 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT3_V1_Vishay_pressed_cut.csv gespeichert.
+2025-04-01 16:31:06,974 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT4_V1_Vishay_50.csv
+2025-04-01 16:31:06,977 - INFO - Signal geladen: C_A1_Class2_DUT4_V1_Vishay_50.csv
+2025-04-01 16:31:07,025 - INFO - Holding Signal extrahiert. Holding Voltage: 2.988V
+2025-04-01 16:31:07,079 - INFO - Unloading Signal mit rated_time: 1791.395s 
+2025-04-01 16:31:09,456 - INFO - C_A1_Class2_DUT4_V1_Vishay_50.csv: Peak gefunden bei 1814.870s mit Wert 2.987.
+2025-04-01 16:31:10,121 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT4_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:31:10,659 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT5_V1_Vishay_50.csv
+2025-04-01 16:31:10,661 - INFO - Signal geladen: C_A1_Class2_DUT5_V1_Vishay_50.csv
+2025-04-01 16:31:10,718 - INFO - Holding Signal extrahiert. Holding Voltage: 2.987V
+2025-04-01 16:31:10,766 - INFO - Unloading Signal mit rated_time: 1910.788s 
+2025-04-01 16:31:12,984 - INFO - C_A1_Class2_DUT5_V1_Vishay_50.csv: Peak gefunden bei 1934.850s mit Wert 2.986.
+2025-04-01 16:31:13,603 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT5_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:31:14,133 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT6_V1_Vishay_50.csv
+2025-04-01 16:31:14,136 - INFO - Signal geladen: C_A1_Class2_DUT6_V1_Vishay_50.csv
+2025-04-01 16:31:14,186 - INFO - Holding Signal extrahiert. Holding Voltage: 3.009V
+2025-04-01 16:31:14,222 - INFO - Unloading Signal mit rated_time: 1847.681s 
+2025-04-01 16:31:16,345 - INFO - C_A1_Class2_DUT6_V1_Vishay_50.csv: Peak gefunden bei 1852.720s mit Wert 3.007.
+2025-04-01 16:31:16,956 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT6_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:31:17,562 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT7_V1_Vishay_50.csv
+2025-04-01 16:31:17,567 - INFO - Signal geladen: C_A1_Class2_DUT7_V1_Vishay_50.csv
+2025-04-01 16:31:17,661 - INFO - Holding Signal extrahiert. Holding Voltage: 2.986V
+2025-04-01 16:31:17,752 - INFO - Unloading Signal mit rated_time: 1894.298s 
+2025-04-01 16:31:20,922 - INFO - C_A1_Class2_DUT7_V1_Vishay_50.csv: Peak gefunden bei 1917.840s mit Wert 2.987.
+2025-04-01 16:31:21,800 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT7_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:31:22,445 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_A1_Class2_DUT8_V1_Vishay_50.csv
+2025-04-01 16:31:22,448 - INFO - Signal geladen: C_A1_Class2_DUT8_V1_Vishay_50.csv
+2025-04-01 16:31:22,518 - INFO - Holding Signal extrahiert. Holding Voltage: 2.986V
+2025-04-01 16:31:22,572 - INFO - Unloading Signal mit rated_time: 2047.092s 
+2025-04-01 16:31:24,713 - INFO - C_A1_Class2_DUT8_V1_Vishay_50.csv: Peak gefunden bei 2076.300s mit Wert 2.985.
+2025-04-01 16:31:25,340 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT8_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:31:25,611 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT1_V1_Vishay_50.csv
+2025-04-01 16:31:25,613 - INFO - Signal geladen: C_B1_DUT1_V1_Vishay_50.csv
+2025-04-01 16:31:25,621 - INFO - Holding Signal extrahiert. Holding Voltage: 2.982V
+2025-04-01 16:31:25,628 - INFO - Unloading Signal mit rated_time: 282.373s 
+2025-04-01 16:31:25,791 - INFO - C_B1_DUT1_V1_Vishay_50.csv: Peak gefunden bei 283.780s mit Wert 2.974.
+2025-04-01 16:31:25,840 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT1_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:31:26,011 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT1_V1_Vishay_after_press_50.csv
+2025-04-01 16:31:26,013 - INFO - Signal geladen: C_B1_DUT1_V1_Vishay_after_press_50.csv
+2025-04-01 16:31:26,024 - INFO - Holding Signal extrahiert. Holding Voltage: 2.988V
+2025-04-01 16:31:26,034 - INFO - Unloading Signal mit rated_time: 396.530s 
+2025-04-01 16:31:26,346 - INFO - C_B1_DUT1_V1_Vishay_after_press_50.csv: Peak gefunden bei 397.670s mit Wert 2.988.
+2025-04-01 16:31:26,434 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT1_V1_Vishay_after_press_cut.csv gespeichert.
+2025-04-01 16:31:26,660 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT1_V1_Vishay_pressed_50.csv
+2025-04-01 16:31:26,662 - INFO - Signal geladen: C_B1_DUT1_V1_Vishay_pressed_50.csv
+2025-04-01 16:31:26,671 - INFO - Holding Signal extrahiert. Holding Voltage: 2.985V
+2025-04-01 16:31:26,680 - INFO - Unloading Signal mit rated_time: 495.867s 
+2025-04-01 16:31:26,763 - INFO - C_B1_DUT1_V1_Vishay_pressed_50.csv: Peak gefunden bei 497.280s mit Wert 2.985.
+2025-04-01 16:31:26,786 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT1_V1_Vishay_pressed_cut.csv gespeichert.
+2025-04-01 16:31:26,970 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT2_V1_Vishay_50.csv
+2025-04-01 16:31:26,972 - INFO - Signal geladen: C_B1_DUT2_V1_Vishay_50.csv
+2025-04-01 16:31:26,982 - INFO - Holding Signal extrahiert. Holding Voltage: 2.984V
+2025-04-01 16:31:26,993 - INFO - Unloading Signal mit rated_time: 409.766s 
+2025-04-01 16:31:27,286 - INFO - C_B1_DUT2_V1_Vishay_50.csv: Peak gefunden bei 411.170s mit Wert 2.976.
+2025-04-01 16:31:27,395 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT2_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:31:27,569 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT2_V1_Vishay_after_press_50.csv
+2025-04-01 16:31:27,571 - INFO - Signal geladen: C_B1_DUT2_V1_Vishay_after_press_50.csv
+2025-04-01 16:31:27,583 - INFO - Holding Signal extrahiert. Holding Voltage: 2.989V
+2025-04-01 16:31:27,591 - INFO - Unloading Signal mit rated_time: 363.687s 
+2025-04-01 16:31:27,702 - INFO - C_B1_DUT2_V1_Vishay_after_press_50.csv: Peak gefunden bei 364.800s mit Wert 2.988.
+2025-04-01 16:31:27,738 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT2_V1_Vishay_after_press_cut.csv gespeichert.
+2025-04-01 16:31:27,912 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT2_V1_Vishay_pressed_50.csv
+2025-04-01 16:31:27,914 - INFO - Signal geladen: C_B1_DUT2_V1_Vishay_pressed_50.csv
+2025-04-01 16:31:27,925 - INFO - Holding Signal extrahiert. Holding Voltage: 2.987V
+2025-04-01 16:31:27,936 - INFO - Unloading Signal mit rated_time: 372.089s 
+2025-04-01 16:31:28,038 - INFO - C_B1_DUT2_V1_Vishay_pressed_50.csv: Peak gefunden bei 373.390s mit Wert 2.988.
+2025-04-01 16:31:28,064 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT2_V1_Vishay_pressed_cut.csv gespeichert.
+2025-04-01 16:31:28,217 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT3_V1_Vishay_50.csv
+2025-04-01 16:31:28,219 - INFO - Signal geladen: C_B1_DUT3_V1_Vishay_50.csv
+2025-04-01 16:31:28,227 - INFO - Holding Signal extrahiert. Holding Voltage: 2.984V
+2025-04-01 16:31:28,235 - INFO - Unloading Signal mit rated_time: 375.153s 
+2025-04-01 16:31:28,368 - INFO - C_B1_DUT3_V1_Vishay_50.csv: Peak gefunden bei 376.430s mit Wert 2.982.
+2025-04-01 16:31:28,417 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT3_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:31:28,611 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT3_V1_Vishay_after_press_50.csv
+2025-04-01 16:31:28,613 - INFO - Signal geladen: C_B1_DUT3_V1_Vishay_after_press_50.csv
+2025-04-01 16:31:28,641 - INFO - Holding Signal extrahiert. Holding Voltage: 2.992V
+2025-04-01 16:31:28,655 - INFO - Unloading Signal mit rated_time: 676.889s 
+2025-04-01 16:31:28,720 - INFO - C_B1_DUT3_V1_Vishay_after_press_50.csv: Peak gefunden bei 678.210s mit Wert 2.991.
+2025-04-01 16:31:28,742 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT3_V1_Vishay_after_press_cut.csv gespeichert.
+2025-04-01 16:31:28,894 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT3_V1_Vishay_pressed_50.csv
+2025-04-01 16:31:28,896 - INFO - Signal geladen: C_B1_DUT3_V1_Vishay_pressed_50.csv
+2025-04-01 16:31:28,904 - INFO - Holding Signal extrahiert. Holding Voltage: 2.991V
+2025-04-01 16:31:28,911 - INFO - Unloading Signal mit rated_time: 359.707s 
+2025-04-01 16:31:28,989 - INFO - C_B1_DUT3_V1_Vishay_pressed_50.csv: Peak gefunden bei 361.110s mit Wert 2.990.
+2025-04-01 16:31:29,013 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT3_V1_Vishay_pressed_cut.csv gespeichert.
+2025-04-01 16:31:29,175 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT4_V1_Vishay_50.csv
+2025-04-01 16:31:29,176 - INFO - Signal geladen: C_B1_DUT4_V1_Vishay_50.csv
+2025-04-01 16:31:29,189 - INFO - Holding Signal extrahiert. Holding Voltage: 2.983V
+2025-04-01 16:31:29,204 - INFO - Unloading Signal mit rated_time: 381.683s 
+2025-04-01 16:31:29,315 - INFO - C_B1_DUT4_V1_Vishay_50.csv: Peak gefunden bei 382.980s mit Wert 2.981.
+2025-04-01 16:31:29,352 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT4_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:31:29,548 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT5_V1_Vishay_50.csv
+2025-04-01 16:31:29,549 - INFO - Signal geladen: C_B1_DUT5_V1_Vishay_50.csv
+2025-04-01 16:31:29,562 - INFO - Holding Signal extrahiert. Holding Voltage: 2.984V
+2025-04-01 16:31:29,572 - INFO - Unloading Signal mit rated_time: 362.984s 
+2025-04-01 16:31:29,901 - INFO - C_B1_DUT5_V1_Vishay_50.csv: Peak gefunden bei 364.300s mit Wert 2.981.
+2025-04-01 16:31:29,992 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT5_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:31:30,178 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT6_V1_Vishay_50.csv
+2025-04-01 16:31:30,180 - INFO - Signal geladen: C_B1_DUT6_V1_Vishay_50.csv
+2025-04-01 16:31:30,190 - INFO - Holding Signal extrahiert. Holding Voltage: 2.985V
+2025-04-01 16:31:30,200 - INFO - Unloading Signal mit rated_time: 396.610s 
+2025-04-01 16:31:30,415 - INFO - C_B1_DUT6_V1_Vishay_50.csv: Peak gefunden bei 397.790s mit Wert 2.982.
+2025-04-01 16:31:30,486 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT6_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:31:30,662 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT7_V1_Vishay_50.csv
+2025-04-01 16:31:30,664 - INFO - Signal geladen: C_B1_DUT7_V1_Vishay_50.csv
+2025-04-01 16:31:30,687 - INFO - Holding Signal extrahiert. Holding Voltage: 2.986V
+2025-04-01 16:31:30,704 - INFO - Unloading Signal mit rated_time: 430.640s 
+2025-04-01 16:31:30,952 - INFO - C_B1_DUT7_V1_Vishay_50.csv: Peak gefunden bei 431.750s mit Wert 2.985.
+2025-04-01 16:31:31,030 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT7_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:31:31,204 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\C_B1_DUT8_V1_Vishay_50.csv
+2025-04-01 16:31:31,206 - INFO - Signal geladen: C_B1_DUT8_V1_Vishay_50.csv
+2025-04-01 16:31:31,216 - INFO - Holding Signal extrahiert. Holding Voltage: 3.005V
+2025-04-01 16:31:31,228 - INFO - Unloading Signal mit rated_time: 470.197s 
+2025-04-01 16:31:31,577 - INFO - C_B1_DUT8_V1_Vishay_50.csv: Peak gefunden bei 471.080s mit Wert 3.005.
+2025-04-01 16:31:31,671 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_B1_DUT8_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:31:32,121 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT1_V1_Vishay_50.csv
+2025-04-01 16:31:32,130 - INFO - Signal geladen: ESR_A2_Class2_DUT1_V1_Vishay_50.csv
+2025-04-01 16:31:32,213 - INFO - Holding Signal extrahiert. Holding Voltage: 2.987V
+2025-04-01 16:31:32,239 - INFO - Unloading Signal mit rated_time: 1776.823s 
+2025-04-01 16:31:34,664 - INFO - ESR_A2_Class2_DUT1_V1_Vishay_50.csv: Peak gefunden bei 1779.050s mit Wert 2.987.
+2025-04-01 16:31:35,389 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT1_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:31:35,843 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT1_V1_Vishay_after_press_50.csv
+2025-04-01 16:31:35,846 - INFO - Signal geladen: ESR_A2_Class2_DUT1_V1_Vishay_after_press_50.csv
+2025-04-01 16:31:35,893 - INFO - Holding Signal extrahiert. Holding Voltage: 2.986V
+2025-04-01 16:31:35,924 - INFO - Unloading Signal mit rated_time: 2139.417s 
+2025-04-01 16:31:36,296 - INFO - ESR_A2_Class2_DUT1_V1_Vishay_after_press_50.csv: Peak gefunden bei 2142.300s mit Wert 2.987.
+2025-04-01 16:31:36,385 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT1_V1_Vishay_after_press_cut.csv gespeichert.
+2025-04-01 16:31:36,709 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT1_V1_Vishay_pressed_50.csv
+2025-04-01 16:31:36,711 - INFO - Signal geladen: ESR_A2_Class2_DUT1_V1_Vishay_pressed_50.csv
+2025-04-01 16:31:36,745 - INFO - Holding Signal extrahiert. Holding Voltage: 2.986V
+2025-04-01 16:31:36,767 - INFO - Unloading Signal mit rated_time: 1810.403s 
+2025-04-01 16:31:37,037 - INFO - ESR_A2_Class2_DUT1_V1_Vishay_pressed_50.csv: Peak gefunden bei 1812.820s mit Wert 2.986.
+2025-04-01 16:31:37,107 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT1_V1_Vishay_pressed_cut.csv gespeichert.
+2025-04-01 16:31:37,468 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT2_V1_Vishay_50.csv
+2025-04-01 16:31:37,470 - INFO - Signal geladen: ESR_A2_Class2_DUT2_V1_Vishay_50.csv
+2025-04-01 16:31:37,513 - INFO - Holding Signal extrahiert. Holding Voltage: 2.987V
+2025-04-01 16:31:37,533 - INFO - Unloading Signal mit rated_time: 1842.279s 
+2025-04-01 16:31:37,787 - INFO - ESR_A2_Class2_DUT2_V1_Vishay_50.csv: Peak gefunden bei 1844.410s mit Wert 2.988.
+2025-04-01 16:31:37,856 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT2_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:31:38,280 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT2_V1_Vishay_after_press_50.csv
+2025-04-01 16:31:38,281 - INFO - Signal geladen: ESR_A2_Class2_DUT2_V1_Vishay_after_press_50.csv
+2025-04-01 16:31:38,318 - INFO - Holding Signal extrahiert. Holding Voltage: 2.989V
+2025-04-01 16:31:38,339 - INFO - Unloading Signal mit rated_time: 1864.183s 
+2025-04-01 16:31:38,640 - INFO - ESR_A2_Class2_DUT2_V1_Vishay_after_press_50.csv: Peak gefunden bei 1866.280s mit Wert 2.989.
+2025-04-01 16:31:38,741 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT2_V1_Vishay_after_press_cut.csv gespeichert.
+2025-04-01 16:31:39,142 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT2_V1_Vishay_pressed_50.csv
+2025-04-01 16:31:39,145 - INFO - Signal geladen: ESR_A2_Class2_DUT2_V1_Vishay_pressed_50.csv
+2025-04-01 16:31:39,191 - INFO - Holding Signal extrahiert. Holding Voltage: 2.987V
+2025-04-01 16:31:39,225 - INFO - Unloading Signal mit rated_time: 2261.656s 
+2025-04-01 16:31:39,623 - INFO - ESR_A2_Class2_DUT2_V1_Vishay_pressed_50.csv: Peak gefunden bei 2263.950s mit Wert 2.988.
+2025-04-01 16:31:39,727 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT2_V1_Vishay_pressed_cut.csv gespeichert.
+2025-04-01 16:31:40,092 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT3_V1_Vishay_50.csv
+2025-04-01 16:31:40,094 - INFO - Signal geladen: ESR_A2_Class2_DUT3_V1_Vishay_50.csv
+2025-04-01 16:31:40,131 - INFO - Holding Signal extrahiert. Holding Voltage: 2.989V
+2025-04-01 16:31:40,161 - INFO - Unloading Signal mit rated_time: 1867.947s 
+2025-04-01 16:31:40,427 - INFO - ESR_A2_Class2_DUT3_V1_Vishay_50.csv: Peak gefunden bei 1870.040s mit Wert 2.988.
+2025-04-01 16:31:40,504 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT3_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:31:40,871 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT3_V1_Vishay_after_press_50.csv
+2025-04-01 16:31:40,873 - INFO - Signal geladen: ESR_A2_Class2_DUT3_V1_Vishay_after_press_50.csv
+2025-04-01 16:31:40,924 - INFO - Holding Signal extrahiert. Holding Voltage: 2.989V
+2025-04-01 16:31:40,952 - INFO - Unloading Signal mit rated_time: 1907.441s 
+2025-04-01 16:31:41,200 - INFO - ESR_A2_Class2_DUT3_V1_Vishay_after_press_50.csv: Peak gefunden bei 1910.230s mit Wert 2.989.
+2025-04-01 16:31:41,263 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT3_V1_Vishay_after_press_cut.csv gespeichert.
+2025-04-01 16:31:41,662 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT3_V1_Vishay_pressed_50.csv
+2025-04-01 16:31:41,664 - INFO - Signal geladen: ESR_A2_Class2_DUT3_V1_Vishay_pressed_50.csv
+2025-04-01 16:31:41,697 - INFO - Holding Signal extrahiert. Holding Voltage: 2.988V
+2025-04-01 16:31:41,717 - INFO - Unloading Signal mit rated_time: 1823.909s 
+2025-04-01 16:31:41,955 - INFO - ESR_A2_Class2_DUT3_V1_Vishay_pressed_50.csv: Peak gefunden bei 1826.380s mit Wert 2.988.
+2025-04-01 16:31:42,023 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT3_V1_Vishay_pressed_cut.csv gespeichert.
+2025-04-01 16:31:42,382 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT4_V1_Vishay_50.csv
+2025-04-01 16:31:42,384 - INFO - Signal geladen: ESR_A2_Class2_DUT4_V1_Vishay_50.csv
+2025-04-01 16:31:42,412 - INFO - Holding Signal extrahiert. Holding Voltage: 2.987V
+2025-04-01 16:31:42,441 - INFO - Unloading Signal mit rated_time: 1903.207s 
+2025-04-01 16:31:42,907 - INFO - ESR_A2_Class2_DUT4_V1_Vishay_50.csv: Peak gefunden bei 1905.360s mit Wert 2.988.
+2025-04-01 16:31:43,038 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT4_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:31:43,453 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT5_V1_Vishay_50.csv
+2025-04-01 16:31:43,455 - INFO - Signal geladen: ESR_A2_Class2_DUT5_V1_Vishay_50.csv
+2025-04-01 16:31:43,515 - INFO - Holding Signal extrahiert. Holding Voltage: 2.987V
+2025-04-01 16:31:43,537 - INFO - Unloading Signal mit rated_time: 1930.999s 
+2025-04-01 16:31:43,839 - INFO - ESR_A2_Class2_DUT5_V1_Vishay_50.csv: Peak gefunden bei 1933.300s mit Wert 2.987.
+2025-04-01 16:31:43,924 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT5_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:31:44,280 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT6_V1_Vishay_50.csv
+2025-04-01 16:31:44,282 - INFO - Signal geladen: ESR_A2_Class2_DUT6_V1_Vishay_50.csv
+2025-04-01 16:31:44,325 - INFO - Holding Signal extrahiert. Holding Voltage: 2.988V
+2025-04-01 16:31:44,354 - INFO - Unloading Signal mit rated_time: 1829.503s 
+2025-04-01 16:31:44,709 - INFO - ESR_A2_Class2_DUT6_V1_Vishay_50.csv: Peak gefunden bei 1831.660s mit Wert 2.988.
+2025-04-01 16:31:44,824 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT6_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:31:45,156 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT7_V1_Vishay_50.csv
+2025-04-01 16:31:45,159 - INFO - Signal geladen: ESR_A2_Class2_DUT7_V1_Vishay_50.csv
+2025-04-01 16:31:45,204 - INFO - Holding Signal extrahiert. Holding Voltage: 2.988V
+2025-04-01 16:31:45,229 - INFO - Unloading Signal mit rated_time: 2006.319s 
+2025-04-01 16:31:45,507 - INFO - ESR_A2_Class2_DUT7_V1_Vishay_50.csv: Peak gefunden bei 2008.320s mit Wert 2.988.
+2025-04-01 16:31:45,596 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT7_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:31:45,940 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\ESR_A2_Class2_DUT8_V1_Vishay_50.csv
+2025-04-01 16:31:45,943 - INFO - Signal geladen: ESR_A2_Class2_DUT8_V1_Vishay_50.csv
+2025-04-01 16:31:45,988 - INFO - Holding Signal extrahiert. Holding Voltage: 3.009V
+2025-04-01 16:31:46,012 - INFO - Unloading Signal mit rated_time: 1270.483s 
+2025-04-01 16:31:46,286 - INFO - ESR_A2_Class2_DUT8_V1_Vishay_50.csv: Peak gefunden bei 1270.540s mit Wert 3.010.
+2025-04-01 16:31:46,360 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\ESR_A2_Class2_DUT8_V1_Vishay_cut.csv gespeichert.
+2025-04-01 16:31:50,657 - INFO - Alle Plots gespeichert in: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\alle_peaks.pdf
