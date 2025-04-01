@@ -253,5 +253,5 @@ def process_single_file():
 
 if __name__ == '__main__':
     # Hier kannst du steuern, welche Funktion ausgeführt werden soll:
-    process_folder()
-    # process_single_file()
+    # process_folder()
+    process_single_file()
