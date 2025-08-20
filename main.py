@@ -5,8 +5,6 @@ from getFileNameInfos import getFileNameInfos
 
 
 
-
-
 # Testaufruf    
 filename = "ESR_B1_DUT2_V1_WuerthElektronik_Testaufbau_25F_29-07-2025"
 manufacturer, capacitance, typ, methode, klass = getFileNameInfos(filename)

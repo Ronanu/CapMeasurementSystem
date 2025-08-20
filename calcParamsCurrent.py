@@ -39,8 +39,7 @@ def get_U_R(manufacturer):
     try:
         return U_R[manufacturer]
     except KeyError:
-        print("1")
-        return None
+        raise ValueError(f"Rated voltage for {manufacturer} not found.")
     
 def get_esr(manufacturer, capacitance):
     
@@ -54,8 +53,7 @@ def get_esr(manufacturer, capacitance):
     try:
         return ESR[manufacturer][capacitance]
     except KeyError:
-        print("2")
-        return None
+        raise ValueError(f"ESR value for {manufacturer} with capacitance {capacitance} not found.")
     
 
 
@@ -64,7 +62,11 @@ def calc_charge_current(manuf, cap):
     Calculate the charge current for a capacitor.
     I_c = U_R/(38*ESR)
     """ 
-    return  round(U_R[manuf] / (38 * get_esr(manuf, cap)), 3)   
+    try:
+      I_c = round(U_R[manuf] / (38 * get_esr(manuf, cap)), 3)
+    except:
+        raise ValueError(f"Error calculating charge current")  
+    return  I_c
 
 
 
@@ -73,12 +75,21 @@ def calc_discharge_current(manuf, cap, typ, methode, klass):
     Calculate the discharge current for a capacitor.
     """
     if methode == "B":
-        return round(U_R[manuf] / (40 * get_esr(manuf, cap)), 3)
+        try:
+          I_dc = round(U_R[manuf] / (40 * get_esr(manuf, cap)), 3)
+        except:
+          raise ValueError(f"Error calculating discharge current for 1B method")
+        return I_dc
     else:
         U_sp = get_U_R(manuf)
         C_n = cap
-        expr = sp.sympify(norm_A[typ][klass])   # Formel parsen
-        return round(float(expr.evalf(subs={"C_n": C_n, "U_R": U_sp})/1000), 5)
+        try:
+          expr = sp.sympify(norm_A[typ][klass])  # Parse the formula
+          I_dc = round(float(expr.evalf(subs={"C_n": C_n, "U_R": U_sp})/1000), 5)
+        except:
+          raise ValueError(f"Error calculating discharge current for A method")
+        return I_dc
+
 
     
 
