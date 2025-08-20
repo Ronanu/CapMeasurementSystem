@@ -3,12 +3,12 @@ U_sp, C_n = sp.symbols('U_R C_n')
 
 # Manufacturer's ESR values for different capacitances
 # TODO: Add ESR values for more capacitances
-ESR = {"Vishay" : {"25" : 0.034}, 
-       "Maxwell" : {"25" : 0.025}, 
-       "Sech" : {"25" : 0.025},
+ESR = {"Vishay" : {"25" : 0.034, "50": 0.022}, 
+       "Maxwell" : {"25" : 0.025, "50": 0.01}, 
+       "Sech" : {"25" : 0.025, "50": 0.015},
        "Eaton" : {"25" : 0.018},
-       "WuerthElektronik" : {"25" : 0.025},
-       "Kyocera" : {"25" : 0.05}
+       "WuerthElektronik" : {"25" : 0.025, "50": 0.02},
+       "Kyocera" : {"25" : 0.05, "50": 0.02}
        }
 # Manufacturer's rated voltage for different capacitors
 U_R = {"Vishay" : 3, 
