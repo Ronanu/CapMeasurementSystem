@@ -4,12 +4,12 @@ U_sp, C_n = sp.symbols('U_R C_n')
 
 # Manufacturer's ESR values for different capacitances
 # TODO: Add ESR values for more capacitances
-ESR = {"Vishay" : {"15F" : 0.034}, 
-       "Maxwell" : {"15F" : 0.025}, 
-       "Sech" : {"15F" : 0.025},
-       "Eaton" : {"15F" : 0.018},
-       "Würth Elektronik" : {"15F" : 0.025},
-       "Kyocera" : {"15F" : 0.05}
+ESR = {"Vishay" : {"25F" : 0.034}, 
+       "Maxwell" : {"25F" : 0.025}, 
+       "Sech" : {"25F" : 0.025},
+       "Eaton" : {"25F" : 0.018},
+       "Würth Elektronik" : {"25F" : 0.025},
+       "Kyocera" : {"25F" : 0.05}
        }
 # Manufacturer's rated voltage for different capacitors
 U_R = {"Vishay" : 3, 
@@ -20,6 +20,18 @@ U_R = {"Vishay" : 3,
        "Kyocera" : 3
        }
 
+def get_U_R(manufacturer):
+    """
+    Get the rated voltage for a given manufacturer.
+    
+    :param manufacturer: Manufacturer name as a string.
+    :return: Rated voltage as a float, or None if not found.
+    """
+    try:
+        return U_R[manufacturer]
+    except KeyError:
+        return None
+    
 def get_esr(manufacturer, capacitance):
     
     """
@@ -34,14 +46,7 @@ def get_esr(manufacturer, capacitance):
     except KeyError:
         return None
     
-norm_A = {"C": {"1": "1*C_n",
-                "2": "0.4*C_n*U_R",
-                "3": "4*C_n*U_R",
-                "4": "40*C_n*U_R"},
-        "ESR": {"1": "10*C_n",
-                "2": "4*C_n*U_R",
-                "3": "40*C_n*U_R",
-                "4": "400*C_n*U_R"}}
+
 
 
 
@@ -52,26 +57,38 @@ def calc_charge_current(manuf, cap):
     """ 
     return  U_R[manuf] / (38 * get_esr(manuf, cap))   
 
-def calc_discharge_current(manuf, cap, method, klass):
+norm_A = {"C": {"1": "1*C_n",
+                "2": "0.4*C_n*U_R",
+                "3": "4*C_n*U_R",
+                "4": "40*C_n*U_R"},
+        "ESR": {"1": "10*C_n",
+                "2": "4*C_n*U_R",
+                "3": "40*C_n*U_R",
+                "4": "400*C_n*U_R"}}
+
+def calc_discharge_current(manuf, cap, typ, methode, klass):
     """
     Calculate the discharge current for a capacitor.
     """
-    if method == "B":
+    if methode == "B":
         return U_R[manuf] / (40 * get_esr(manuf, cap))
     else:
-        pass  # TODO
-    return 
+        U_sp = get_U_R(manuf)
+        C_n = cap
+        expr = sp.sympify(norm_A[typ][klass])   # Formel parsen
+        return float(expr.evalf(subs={"C_n": C_n, "U_R": U_sp})/1000) 
 
+    
 
 
 
 
 
 if __name__ == "__main__":
-    pass
-    # Example usage
-    # manufacturer = "Maxwell"
-    # capacitance = "15F"
+    
+    # manufacturer = "Würth Elektronik"
+    # capacitance = "25F"
+    # print(str(calc_discharge_current(manufacturer, 25, "C", "A", "1")) + "A")
     
     # esr_value = get_esr(manufacturer, capacitance)
     # if esr_value is not None:
@@ -80,3 +97,4 @@ if __name__ == "__main__":
     #     print(f"Charge current: {charge_current:.3f} A")
     # else:
     #     print(f"ESR value for {manufacturer} {capacitance} not found.")
+    pass
