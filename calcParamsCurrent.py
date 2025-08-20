@@ -7,7 +7,7 @@ ESR = {"Vishay" : {"25" : 0.034},
        "Maxwell" : {"25" : 0.025}, 
        "Sech" : {"25" : 0.025},
        "Eaton" : {"25" : 0.018},
-       "Würth Elektronik" : {"25" : 0.025},
+       "WuerthElektronik" : {"25" : 0.025},
        "Kyocera" : {"25" : 0.05}
        }
 # Manufacturer's rated voltage for different capacitors
@@ -15,7 +15,7 @@ U_R = {"Vishay" : 3,
        "Maxwell" : 3, 
        "Sech" : 3,
        "Eaton" : 3,
-       "Würth Elektronik" : 2.7,
+       "WuerthElektronik" : 2.7,
        "Kyocera" : 3
        }
 
