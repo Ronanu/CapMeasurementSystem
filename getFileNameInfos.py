@@ -19,8 +19,18 @@ def getFileNameInfos(filename):
     if "B1" in part:
       methode = part[0]
       klass = part[1]
+    
+  for part in nameparts:
+    if "DUT".lower() in part.lower():
+      dut = part[3:]  # Extract DUT number
+      break
+
+  for part in nameparts:
+    if part.startswith("V") and part[1:].isdigit():
+      version = part[1:]  # Extract version number
+      break 
 
 
-  return manufacturer, str(capacitance), typ, methode, klass
+  return manufacturer, str(capacitance), typ, methode, klass, dut, version
 
 

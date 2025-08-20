@@ -6,7 +6,7 @@ U_sp, C_n = sp.symbols('U_R C_n')
 ESR = {"vishay" : {"25" : 0.034, "50": 0.022}, 
        "maxwell" : {"25" : 0.025, "50": 0.01}, 
        "sech" : {"25" : 0.025, "50": 0.015},
-       "eaton" : {"25" : 0.018},
+       "eaton" : {"25" : 0.018},  #no 50F value available
        "wuerthelektronik" : {"25" : 0.025, "50": 0.02},
        "kyocera" : {"25" : 0.05, "50": 0.02}
        }
@@ -19,7 +19,7 @@ U_R = {"vishay" : 3,
        "kyocera" : 3
        }
 
-
+# formulas for the discharge current according to the norm
 norm_A = {"C": {"1": "1*C_n",
                 "2": "0.4*C_n*U_R",
                 "3": "4*C_n*U_R",
