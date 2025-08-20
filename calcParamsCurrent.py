@@ -15,7 +15,7 @@ U_R = {"vishay" : 3,
        "maxwell" : 3, 
        "sech" : 3,
        "eaton" : 3,
-       "wuerthElektronik" : 2.7,
+       "wuerthelektronik" : 2.7,
        "kyocera" : 3
        }
 
