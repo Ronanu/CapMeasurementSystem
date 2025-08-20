@@ -2149,3 +2149,32 @@
 2025-04-01 16:38:48,637 - INFO - Unloading Signal mit rated_time: 2089.629s 
 2025-04-01 16:38:51,402 - INFO - C_A1_Class2_DUT1_V1_Vishay_after_press_50.csv: Peak gefunden bei 2115.740s mit Wert 2.985.
 2025-04-01 16:38:52,236 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapMeasurementSystem/processed_measurements/full_csv\cut_data\C_A1_Class2_DUT1_V1_Vishay_after_press_cut.csv gespeichert.
+2025-08-20 11:09:37,424 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT1_V1_Eaton_25F_06-08-2025.csv
+2025-08-20 11:09:37,431 - INFO - Signal geladen: C_A2_DUT1_V1_Eaton_25F_06-08-2025.csv
+2025-08-20 11:09:37,523 - INFO - Holding Signal extrahiert. Holding Voltage: 2.993V
+2025-08-20 11:09:37,605 - INFO - Unloading Signal mit rated_time: 1803.144s 
+2025-08-20 11:09:40,973 - INFO - C_A2_DUT1_V1_Eaton_25F_06-08-2025.csv: Peak gefunden bei 1838.060s mit Wert 2.989.
+2025-08-20 11:09:42,130 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F\cut_data\C_A2_DUT1_V1_Eaton_25F_cut.csv gespeichert.
+2025-08-20 11:44:58,993 - WARNING - Keine Datei ausgewählt. Programm wird beendet. (File: cap_calculations, Line: 240, Function: process_single_file)
+2025-08-20 12:09:04,538 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_B1_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-20 12:09:04,541 - INFO - Signal geladen: C_B1_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-20 12:09:04,563 - INFO - Holding Signal extrahiert. Holding Voltage: 2.986V
+2025-08-20 12:09:04,574 - INFO - Unloading Signal mit rated_time: 342.683s 
+2025-08-20 12:09:04,627 - INFO - C_B1_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv: Peak gefunden bei 343.370s mit Wert 2.986.
+2025-08-20 12:09:04,649 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F\cut_data\C_B1_DUT3_V1_EATON_25F_cut.csv gespeichert.
+2025-08-20 12:12:20,953 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-20 12:12:20,959 - INFO - Signal geladen: ESR_A2_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-20 12:12:21,037 - INFO - Holding Signal extrahiert. Holding Voltage: 2.987V
+2025-08-20 12:12:21,090 - INFO - Unloading Signal mit rated_time: 1861.820s 
+2025-08-20 12:12:21,526 - INFO - ESR_A2_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv: Peak gefunden bei 1864.310s mit Wert 2.986.
+2025-08-20 12:12:21,654 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F\cut_data\ESR_A2_DUT3_V1_EATON_25F_cut.csv gespeichert.
+2025-08-20 12:22:58,572 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT1_V1_Eaton_25F_06-08-2025.csv
+2025-08-20 12:22:58,579 - INFO - Analyse gestartet: Original_Signal
+2025-08-20 12:23:01,694 - INFO - Peak gefunden bei t=1838.060s, Wert=2.989
+2025-08-20 12:24:03,128 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F\cut_data\C_A2_DUT1_V1_Eaton_25F_cut.csv gespeichert.
+2025-08-20 12:24:03,128 - INFO - Gespeichert: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F\cut_data\C_A2_DUT1_V1_Eaton_25F_cut.csv
+2025-08-20 12:25:01,913 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F\cut_data\C_A2_DUT1_V1_Eaton_25F_cut.csv gespeichert.
+2025-08-20 12:25:01,913 - INFO - Gespeichert: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F\cut_data\C_A2_DUT1_V1_Eaton_25F_cut.csv
+2025-08-20 12:52:35,380 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT1_V1_Eaton_25F_06-08-2025.csv
+2025-08-20 12:52:35,393 - INFO - Analyse gestartet: Original_Signal
+2025-08-20 12:52:38,328 - INFO - Peak gefunden bei t=1838.060s, Wert=2.989

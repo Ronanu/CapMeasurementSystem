@@ -169,7 +169,7 @@ if __name__ == "__main__":
 
     # Rauschen
     rng = np.random.default_rng(42)
-    noise_data = rng.normal(0, 0.05, len(system.t_solution))
+    noise_data = rng.normal(0, 0.0005, len(system.t_solution))
     def noise_func(t_array):
         # t_array shape=(n,)
         # => Return noise in same shape
@@ -179,8 +179,9 @@ if __name__ == "__main__":
 
     # 2) Beobachter
     alpha = 10.0/(R*C)
-    L1 = 2*alpha
-    L2 = alpha**2 / (L1*R - 1.0/C)
+    f = 0.0050
+    L1 = f * 2*alpha
+    L2 = f * alpha**2 / (L1*R - 1.0/C)
 
     observer = RCObserver(C, R, L1, L2)
     observer.set_measurement(t_meas, y_meas)
