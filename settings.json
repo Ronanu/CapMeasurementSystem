@@ -1,6 +1,6 @@
 {
   // 🔧 1. Interpreter aus deiner venv
-  "python.defaultInterpreterPath": "${workspaceFolder}/fxYogaVenv/Scripts/python.exe",
+  "python.defaultInterpreterPath": "${workspaceFolder}/venv/Scripts/python.exe",
 
   // 🔁 2. Venv automatisch im Terminal aktivieren
   "python.terminal.activateEnvironment": true,
