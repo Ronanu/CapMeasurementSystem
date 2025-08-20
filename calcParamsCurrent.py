@@ -92,23 +92,3 @@ def calc_discharge_current(manuf, cap, typ, methode, klass):
 
 
     
-
-
-
-
-
-
-# if __name__ == "__main__":
-    
-#     # manufacturer = "Würth Elektronik"
-#     # capacitance = "25F"
-#     # print(str(calc_discharge_current(manufacturer, 25, "C", "A", "1")) + "A")
-    
-#     # esr_value = get_esr(manufacturer, capacitance)
-#     # if esr_value is not None:
-#     #     charge_current = calc_charge_current(manufacturer, capacitance)
-#     #     print(f"ESR for {manufacturer} {capacitance}: {esr_value} Ohms")
-#     #     print(f"Charge current: {charge_current:.3f} A")
-#     # else:
-#     #     print(f"ESR value for {manufacturer} {capacitance} not found.")
-#     pass

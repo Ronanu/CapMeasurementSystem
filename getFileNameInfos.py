@@ -26,6 +26,3 @@ def getFileNameInfos(filename):
   return manufacturer, str(capacitance), typ, methode, klass
 
 
-if __name__ == "__main__":
-  print(getFileNameInfos("C_A2_DUT1_V1_Vishay_25F_05-08-2025"))
-  pass
