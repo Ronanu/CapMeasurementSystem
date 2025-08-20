@@ -1,13 +1,11 @@
-
-
-Manufacturers = ["Vishay", "WuerthElektronik", "Eaton", "Sech", "Kyocera", "Maxwell"]  # All manufacturers
+Manufacturers = ["vishay", "wuerthElektronik", "eaton", "sech", "kyocera", "maxwell"]  # All manufacturers
 
 def getFileNameInfos(filename):
   nameparts = filename.split("_")
   typ = nameparts[0]  # e.g., "C" or "ESR"
   for part in nameparts:
-    if part in Manufacturers:
-      manufacturer = part
+    if part.lower() in Manufacturers:
+      manufacturer = part.lower()
       break
   for part in nameparts:
     if part.endswith("F"):

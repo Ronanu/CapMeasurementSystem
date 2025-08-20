@@ -5,7 +5,7 @@ from getFileNameInfos import getFileNameInfos
 
 
 # Testaufruf    
-filename = "ESR_B1_DUT2_V1_WuerthElektronik_Testaufbau_25F_29-07-2025"
+filename = "ESR_A4_DUT1_V1_EATON_Testaufbau_25F_01-07-2025"
 manufacturer, capacitance, typ, methode, klass = getFileNameInfos(filename)
 if manufacturer is None or capacitance is None or typ is None or methode is None or klass is None:
     raise ValueError("Invalid filename format. Please ckeck the filename structure.")
