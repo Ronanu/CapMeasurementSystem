@@ -94,22 +94,46 @@ class SingleFileApp:
         self.save_dir: Optional[str] = None
 
         self.root.title("Cap Unloading – Single File Analyse")
-        self.root.geometry("1000x700")
+        self.root.geometry("1100x720")
 
         self._build_widgets()
         self._layout_widgets()
 
     def _build_widgets(self):
+        # Top bar
         self.top_frame = ttk.Frame(self.root)
         self.btn_open = ttk.Button(self.top_frame, text="Datei öffnen", command=self.on_open_file)
         self.lbl_filename = ttk.Label(self.top_frame, text="Keine Datei geladen", width=60)
         self.lbl_status = ttk.Label(self.top_frame, text="", foreground="#555")
 
+        # Plot and side info
         self.plot_frame = ttk.Frame(self.root)
         self.figure: Optional[Figure] = None
         self.canvas: Optional[FigureCanvasTkAgg] = None
         self.toolbar: Optional[NavigationToolbar2Tk] = None
 
+        # Right-side results panel
+        self.info_frame = ttk.LabelFrame(self.root, text="Ergebnisse")
+        # map of result keys to pretty labels
+        self._result_fields = [
+            ("holding_voltage", "Holding [V]"),
+            ("rated_time", "Rated time [s]"),
+            ("peak_time", "Peak time [s]"),
+            ("peak_value", "Peak value [V]"),
+            ("peak_mean", "Mean before peak [V]"),
+            ("threshold", "Threshold [V]"),
+            ("U3", "U3 [V]"),
+        ]
+        self.result_labels: Dict[str, ttk.Label] = {}
+        row = 0
+        for key, label in self._result_fields:
+            ttk.Label(self.info_frame, text=label + ":").grid(row=row, column=0, sticky="w", padx=(8, 6), pady=4)
+            val_label = ttk.Label(self.info_frame, text="—", width=18)
+            val_label.grid(row=row, column=1, sticky="e", padx=(0, 8), pady=4)
+            self.result_labels[key] = val_label
+            row += 1
+
+        # Controls
         self.ctrl_frame = ttk.Frame(self.root)
         self.lbl_peak = ttk.Label(self.ctrl_frame, text="Peak-Zeit [s]:")
         self.entry_peak = ttk.Entry(self.ctrl_frame, width=12)
@@ -118,18 +142,24 @@ class SingleFileApp:
         self.btn_reset = ttk.Button(self.ctrl_frame, text="Reset Peak", command=self.on_reset_peak, state="disabled")
 
     def _layout_widgets(self):
-        self.root.columnconfigure(0, weight=1)
-        self.root.rowconfigure(1, weight=1)
+        # Grid
+        self.root.columnconfigure(0, weight=1)  # plot column grows
+        self.root.columnconfigure(1, weight=0)  # info panel fixed
+        self.root.rowconfigure(1, weight=1)     # central row grows
 
-        self.top_frame.grid(row=0, column=0, sticky="ew", padx=10, pady=8)
+        # Top
+        self.top_frame.grid(row=0, column=0, columnspan=2, sticky="ew", padx=10, pady=8)
         self.top_frame.columnconfigure(2, weight=1)
         self.btn_open.grid(row=0, column=0, padx=(0, 8))
         self.lbl_filename.grid(row=0, column=1, sticky="w")
         self.lbl_status.grid(row=0, column=2, sticky="e")
 
-        self.plot_frame.grid(row=1, column=0, sticky="nsew", padx=10, pady=6)
+        # Center: plot (left) and info (right)
+        self.plot_frame.grid(row=1, column=0, sticky="nsew", padx=(10, 6), pady=6)
+        self.info_frame.grid(row=1, column=1, sticky="ns", padx=(6, 10), pady=6)
 
-        self.ctrl_frame.grid(row=2, column=0, sticky="ew", padx=10, pady=8)
+        # Bottom controls
+        self.ctrl_frame.grid(row=2, column=0, columnspan=2, sticky="ew", padx=10, pady=8)
         self.ctrl_frame.columnconfigure(4, weight=1)
         self.lbl_peak.grid(row=0, column=0, sticky="w")
         self.entry_peak.grid(row=0, column=1, sticky="w", padx=(6, 18))
@@ -137,6 +167,7 @@ class SingleFileApp:
         self.btn_save.grid(row=0, column=3, padx=(0, 6))
         self.btn_reset.grid(row=0, column=4, sticky="w")
 
+        # Shortcuts
         self.root.bind("<Return>", lambda e: self.on_replot_clicked())
         self.root.bind("<Control-s>", lambda e: self.on_save_clicked())
 
@@ -165,11 +196,14 @@ class SingleFileApp:
 
             self.orig_signal, self.results = cut_and_analyze_peak(self.orig_signal, self.params)
 
+            # Peak entry
             self.entry_peak.configure(state="normal")
             self.entry_peak.delete(0, tk.END)
             self.entry_peak.insert(0, f"{self.results['peak_time']:.6f}")
 
+            # Render
             self._render_current_plot()
+            self._update_results_panel(self.results)
 
             self._set_status("Signal geladen und analysiert.")
             self._set_controls_state(enabled=True)
@@ -184,6 +218,7 @@ class SingleFileApp:
             self._set_controls_state(enabled=False)
 
     def on_replot_clicked(self):
+        """Rechnet results mit manuell eingegebener Peak-Time neu und zeichnet dann neu."""
         if self.orig_signal is None:
             return
         peak_time = self._parse_peak_entry()
@@ -192,7 +227,8 @@ class SingleFileApp:
         try:
             self.results = recompute_from_peak(self.orig_signal, peak_time, self.params, base_results=self.results)
             self._render_current_plot()
-            self._set_status("Darstellung aktualisiert.")
+            self._update_results_panel(self.results)
+            self._set_status("Darstellung aktualisiert (manuelle Peak-Zeit).")
         except Exception as e:
             logger.warning(f"Replot-Fehler: {e}")
             messagebox.showerror("Fehler", f"Neuplotten fehlgeschlagen:\n{e}")
@@ -214,16 +250,27 @@ class SingleFileApp:
             messagebox.showerror("Fehler", f"Speichern fehlgeschlagen:\n{e}")
 
     def on_reset_peak(self):
-        if self.results is None:
+        """Automatische Peak-Bestimmung via Analyse und komplettes Refresh der Results/Anzeige."""
+        if self.orig_signal is None:
             return
         try:
+            # Vollständige Analyse erneut ausführen (ermittelt Peak automatisch)
+            self.orig_signal, self.results = cut_and_analyze_peak(self.orig_signal, self.params)
+
+            # Peak Entry aktualisieren
             auto_peak = float(self.results.get("peak_time", 0.0))
             self.entry_peak.configure(state="normal")
             self.entry_peak.delete(0, tk.END)
             self.entry_peak.insert(0, f"{auto_peak:.6f}")
-            self.on_replot_clicked()
+
+            # Anzeige aktualisieren
+            self._render_current_plot()
+            self._update_results_panel(self.results)
+            self._set_status("Peak zurückgesetzt (automatisch ermittelt).")
+
         except Exception as e:
             logger.warning(f"Reset-Fehler: {e}")
+            messagebox.showerror("Fehler", f"Reset Peak fehlgeschlagen:\n{e}")
 
     # ---------- Helpers ----------
 
@@ -236,7 +283,6 @@ class SingleFileApp:
             return None
 
         if self.orig_signal is not None:
-            import numpy as np
             tmin = float(np.min(self.orig_signal.data["time"]))
             tmax = float(np.max(self.orig_signal.data["time"]))
             if not (tmin <= t <= tmax):
@@ -268,6 +314,26 @@ class SingleFileApp:
 
         self.toolbar = NavigationToolbar2Tk(self.canvas, self.plot_frame)
         self.toolbar.update()
+
+    def _update_results_panel(self, results: Dict[str, Any]):
+        """Zeigt die wichtigsten Kennwerte rechts neben dem Plot an."""
+        def fmt(v):
+            try:
+                if v is None:
+                    return "—"
+                if isinstance(v, (list, tuple, dict)):
+                    return "…"
+                if isinstance(v, float):
+                    return f"{v:.6g}"
+                return str(v)
+            except Exception:
+                return str(v)
+
+        for key, _label in self._result_fields:
+            if key in results:
+                self.result_labels[key].configure(text=fmt(results[key]))
+            else:
+                self.result_labels[key].configure(text="—")
 
     def _set_status(self, text: str):
         self.lbl_status.configure(text=text)
