@@ -1,3 +1,5 @@
+
+
 Manufacturers = ["Vishay", "WürthElectronic", "Eaton", "Sech", "Kyocera", "Maxwell"]  # All manufacturers
 
 def getFileNameInfos(filename):
@@ -21,7 +23,7 @@ def getFileNameInfos(filename):
       klass = part[1]
 
 
-  return manufacturer, capacitance, typ, methode, klass
+  return manufacturer, str(capacitance), typ, methode, klass
 
 
 if __name__ == "__main__":
