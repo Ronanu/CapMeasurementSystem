@@ -15,7 +15,7 @@ from log import logger
 
 @dataclass
 class AnalysisParams:
-    rated_voltage: float = 3.0
+    rated_voltage: float = 3.0   # eigentlich holding voltage
     sampling_interval: float = 0.01
     window_time: float = 10.0            # Zeitfenster vor rated_time für Peak-Find
     std_factor: float = 3.0              # Threshold-Multiplikator
