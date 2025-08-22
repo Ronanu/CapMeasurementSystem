@@ -29,3 +29,24 @@ Traceback (most recent call last):
   File "c:\Users\rodi9\Dropbox\InstitutGR\HESS4MRA\Testing\CapMeasurementSystem\calcParamsCurrent.py", line 1, in <module>
     import sympy as sp
 ModuleNotFoundError: No module named 'sympy'
+2025-08-22 10:10:45,957 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-22 10:10:45,961 - INFO - Analyse gestartet: Original_Signal
+2025-08-22 10:10:46,411 - INFO - Peak gefunden bei t=1813.220s, Wert=2.988
+2025-08-22 10:11:30,957 - INFO - Analyse gestartet: Original_Signal
+2025-08-22 10:11:31,381 - INFO - Peak gefunden bei t=1813.220s, Wert=2.988
+2025-08-22 10:11:48,397 - INFO - Analyse gestartet: Original_Signal
+2025-08-22 10:11:48,821 - INFO - Peak gefunden bei t=1813.220s, Wert=2.988
+2025-08-22 10:11:58,589 - INFO - Analyse gestartet: Original_Signal
+2025-08-22 10:11:58,959 - INFO - Peak gefunden bei t=1813.220s, Wert=2.988
+2025-08-22 10:12:03,749 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT1_V1_Eaton_25F_06-08-2025.csv
+2025-08-22 10:12:03,756 - INFO - Analyse gestartet: Original_Signal
+2025-08-22 10:12:07,675 - INFO - Peak gefunden bei t=1838.060s, Wert=2.989
+2025-08-22 10:53:56,023 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT1_V1_Eaton_25F_06-08-2025.csv
+2025-08-22 10:53:56,030 - INFO - Analyse gestartet: Original_Signal
+2025-08-22 10:53:58,816 - INFO - Peak gefunden bei t=1838.060s, Wert=2.989
+2025-08-22 10:55:23,943 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A4_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-22 10:55:23,947 - INFO - Analyse gestartet: Original_Signal
+2025-08-22 10:55:24,070 - INFO - Peak gefunden bei t=1830.790s, Wert=2.985
+2025-08-22 11:16:38,977 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-22 11:16:38,981 - INFO - Analyse gestartet: Original_Signal
+2025-08-22 11:16:39,347 - INFO - Peak gefunden bei t=1813.220s, Wert=2.988

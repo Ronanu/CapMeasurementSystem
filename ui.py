@@ -16,70 +16,7 @@ from cap_calculations import AnalysisParams, cut_and_analyze_peak, recompute_fro
 from io_ops import load_signal, ensure_save_dir, make_save_name, save_results
 from log import logger
 
-
-def make_figure(signal, results: Dict[str, Any]) -> Figure:
-    """Erstellt eine Matplotlib-Figure aus Originalsignal + Ergebnissen (ohne neue Analyse)."""
-    peak_time = results["peak_time"]
-    peak_value = results["peak_value"]
-    peak_mean = results["peak_mean"]
-    threshold = results["threshold"]
-    rated_time = results["rated_time"]
-    outliers = results.get("outliers", [])
-    relevant_time_window = results.get("relevant_time_window", (rated_time, rated_time + 10.0))
-
-    if signal.data["derivative"].isnull().all():
-        signal.get_derivative()
-
-    smoothed_der = results.get("smoothed_derivative_signal", None)
-
-    fig = Figure(figsize=(8.5, 4.8), dpi=100)
-    ax1 = fig.add_subplot(111)
-    ax2 = ax1.twinx()
-
-    ax1.set_xlim(relevant_time_window)
-
-    tmin, tmax = relevant_time_window
-    times = np.asarray(signal.data["time"], dtype=float)
-    values = np.asarray(signal.data["value"], dtype=float)
-    mask = (times >= tmin) & (times <= tmax)
-    if np.any(mask):
-        vmin = float(np.min(values[mask]))
-        vmax = float(np.max(values[mask]))
-        margin = 0.002 * (vmax - vmin if vmax > vmin else 1.0)
-        ax1.set_ylim(vmin - margin, vmax + margin)
-
-    ax1.plot(signal.data["time"], signal.data["value"], label="Originaldaten", alpha=1.0, linewidth=1.5)
-    ax2.plot(signal.data["time"], signal.data["derivative"], label="Ableitung", alpha=0.3, linewidth=0.5)
-
-    if smoothed_der is not None:
-        ax2.plot(smoothed_der.data["time"], smoothed_der.data["value"], label=f"moving average", linewidth=1.2)
-
-    if outliers:
-        outlier_times, outlier_values = zip(*outliers)
-        ax1.scatter(outlier_times, outlier_values, label="Ausreißer", s=10)
-        ax1.scatter(peak_time, peak_value, label="Peak", s=20)
-
-    ax1.axvline(peak_time, linestyle='--', label="Peak-Zeitpunkt")
-    ax1.axhline(peak_value, linestyle='--', label="Peak-Wert")
-    if not np.isnan(peak_mean):
-        ax1.axhline(peak_mean, linestyle='--', label="Peak-Mittelwert")
-        ax1.axhline(peak_mean - threshold, linestyle='--', label="Threshold")
-
-    ax1.set_xlabel("Zeit (s)")
-    ax1.set_ylabel("Signalwert (V)")
-    ax2.set_ylabel("Ableitung (V/s)")
-
-    ax1.grid(True)
-    ax2.grid(False)
-
-    ax1.legend(loc='upper left')
-    ax2.legend(loc='upper right')
-
-    title = f"{results.get('file_name', 'Signal')} Peak-Detection"
-    fig.suptitle(title)
-
-    fig.tight_layout()
-    return fig
+from gui_fig import make_figure
 
 
 class SingleFileApp:
