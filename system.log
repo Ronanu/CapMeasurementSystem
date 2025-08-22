@@ -22,3 +22,10 @@
 2025-08-20 15:06:17,085 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
 2025-08-20 15:06:17,088 - INFO - Analyse gestartet: Original_Signal
 2025-08-20 15:06:17,540 - INFO - Peak gefunden bei t=1813.220s, Wert=2.988
+2025-08-20 18:12:21,328 - CRITICAL - Unbehandelte Ausnahme (File: log, Line: 22, Function: handle_exception)
+Traceback (most recent call last):
+  File "c:\Users\rodi9\Dropbox\InstitutGR\HESS4MRA\Testing\CapMeasurementSystem\main.py", line 9, in <module>
+    from calcParamsCurrent import *
+  File "c:\Users\rodi9\Dropbox\InstitutGR\HESS4MRA\Testing\CapMeasurementSystem\calcParamsCurrent.py", line 1, in <module>
+    import sympy as sp
+ModuleNotFoundError: No module named 'sympy'

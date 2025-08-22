@@ -27,4 +27,5 @@ tk==0.1.0
 tzdata==2025.2
 tksheet
 openpyxl
+sympy
 
