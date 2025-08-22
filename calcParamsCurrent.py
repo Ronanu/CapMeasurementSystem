@@ -1,6 +1,6 @@
 import sympy as sp
 U_sp, C_n = sp.symbols('U_R C_n')
-
+#TEST pull
 # Manufacturer's ESR values for different capacitances
 # TODO: Add ESR values for more capacitances
 ESR = {"vishay" : {"25" : 0.034, "50": 0.022}, 
