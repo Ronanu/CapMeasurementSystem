@@ -16,7 +16,7 @@ from cap_calculations import AnalysisParams, cut_and_analyze_peak, recompute_fro
 from io_ops import load_signal, ensure_save_dir, make_save_name, save_results
 from log import logger
 
-from gui_fig import make_figure
+from gui_fig import DischargePlot
 
 
 class SingleFileApp:
@@ -46,6 +46,7 @@ class SingleFileApp:
         # Plot and side info
         self.plot_frame = ttk.Frame(self.root)
         self.figure: Optional[Figure] = None
+        self.plot: Optional[DischargePlot] = None
         self.canvas: Optional[FigureCanvasTkAgg] = None
         self.toolbar: Optional[NavigationToolbar2Tk] = None
 
@@ -243,7 +244,22 @@ class SingleFileApp:
             self.toolbar.destroy()
             self.toolbar = None
 
-        fig = make_figure(self.orig_signal, self.results)
+        # Initialize or redraw using DischargePlot
+        if self.plot is None:
+            self.plot = DischargePlot(self.orig_signal, self.results)
+            fig = self.plot.draw(view="window")
+        else:
+            # Preserve current view if available, then update results
+            try:
+                view = self.plot.get_view()
+                self.plot.update_results(self.results)
+                self.plot.set_xlim(*view["xlim"])
+                fig = self.plot.fig
+            except Exception:
+                # Fallback: recreate
+                self.plot = DischargePlot(self.orig_signal, self.results)
+                fig = self.plot.draw(view="window")
+
         self.figure = fig
         self.canvas = FigureCanvasTkAgg(fig, master=self.plot_frame)
         self.canvas.draw()
