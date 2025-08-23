@@ -1,4 +1,3 @@
-
 from __future__ import annotations
 
 import tkinter as tk
@@ -14,9 +13,8 @@ import numpy as np
 
 from cap_calculations import AnalysisParams, cut_and_analyze_peak, recompute_from_peak
 from io_ops import load_signal, ensure_save_dir, make_save_name, save_results
-from log import logger
-
 from gui_fig import DischargePlot
+from log import logger
 
 
 class SingleFileApp:
@@ -30,11 +28,22 @@ class SingleFileApp:
         self.file_name: Optional[str] = None
         self.save_dir: Optional[str] = None
 
+        self.figure: Optional[Figure] = None
+        self.canvas: Optional[FigureCanvasTkAgg] = None
+        self.toolbar: Optional[NavigationToolbar2Tk] = None
+        self.plot: Optional[DischargePlot] = None
+
         self.root.title("Cap Unloading – Single File Analyse")
-        self.root.geometry("1100x720")
+        self.root.geometry("1200x760")
 
         self._build_widgets()
         self._layout_widgets()
+        self._bind_shortcuts()
+
+        # initial: controls disabled
+        self._set_controls_state(enabled=False)
+
+    # ---------- UI Aufbau ----------
 
     def _build_widgets(self):
         # Top bar
@@ -43,16 +52,11 @@ class SingleFileApp:
         self.lbl_filename = ttk.Label(self.top_frame, text="Keine Datei geladen", width=60)
         self.lbl_status = ttk.Label(self.top_frame, text="", foreground="#555")
 
-        # Plot and side info
+        # Center: plot + results panel
         self.plot_frame = ttk.Frame(self.root)
-        self.figure: Optional[Figure] = None
-        self.plot: Optional[DischargePlot] = None
-        self.canvas: Optional[FigureCanvasTkAgg] = None
-        self.toolbar: Optional[NavigationToolbar2Tk] = None
-
-        # Right-side results panel
         self.info_frame = ttk.LabelFrame(self.root, text="Ergebnisse")
-        # map of result keys to pretty labels
+
+        # Results panel fields
         self._result_fields = [
             ("holding_voltage", "Holding [V]"),
             ("rated_time", "Rated time [s]"),
@@ -63,53 +67,74 @@ class SingleFileApp:
             ("U3", "U3 [V]"),
         ]
         self.result_labels: Dict[str, ttk.Label] = {}
-        row = 0
-        for key, label in self._result_fields:
-            ttk.Label(self.info_frame, text=label + ":").grid(row=row, column=0, sticky="w", padx=(8, 6), pady=4)
+        for r, (key, label) in enumerate(self._result_fields):
+            ttk.Label(self.info_frame, text=label + ":").grid(row=r, column=0, sticky="w", padx=(8, 6), pady=4)
             val_label = ttk.Label(self.info_frame, text="—", width=18)
-            val_label.grid(row=row, column=1, sticky="e", padx=(0, 8), pady=4)
+            val_label.grid(row=r, column=1, sticky="e", padx=(0, 8), pady=4)
             self.result_labels[key] = val_label
-            row += 1
 
-        # Controls
+        # Matplotlib fig elements (created on demand)
+        self.figure = None
+        self.canvas = None
+        self.toolbar = None
+
+        # Bottom controls: peak + compute/save
         self.ctrl_frame = ttk.Frame(self.root)
         self.lbl_peak = ttk.Label(self.ctrl_frame, text="Peak-Zeit [s]:")
-        self.entry_peak = ttk.Entry(self.ctrl_frame, width=12)
+        self.entry_peak = ttk.Entry(self.ctrl_frame, width=14)
         self.btn_replot = ttk.Button(self.ctrl_frame, text="Neu plotten", command=self.on_replot_clicked)
         self.btn_save = ttk.Button(self.ctrl_frame, text="Speichern", command=self.on_save_clicked)
         self.btn_reset = ttk.Button(self.ctrl_frame, text="Reset Peak", command=self.on_reset_peak, state="disabled")
 
+        # View controls: Window/Full + Zoom/Pan
+        self.view_ctrl = ttk.LabelFrame(self.root, text="Ansicht")
+        self.btn_view_window = ttk.Button(self.view_ctrl, text="Window", command=self.on_view_window)
+        self.btn_view_full = ttk.Button(self.view_ctrl, text="Full", command=self.on_view_full)
+        self.btn_zoom_in = ttk.Button(self.view_ctrl, text="Zoom +", command=lambda: self._zoom(0.8))
+        self.btn_zoom_out = ttk.Button(self.view_ctrl, text="Zoom −", command=lambda: self._zoom(1.25))
+        self.btn_pan_left = ttk.Button(self.view_ctrl, text="← Pan", command=lambda: self._pan(-2.0))
+        self.btn_pan_right = ttk.Button(self.view_ctrl, text="Pan →", command=lambda: self._pan(2.0))
+
     def _layout_widgets(self):
-        # Grid
-        self.root.columnconfigure(0, weight=1)  # plot column grows
-        self.root.columnconfigure(1, weight=0)  # info panel fixed
+        # Grid weights
+        self.root.columnconfigure(0, weight=1)  # plot column
+        self.root.columnconfigure(1, weight=0)  # info column
         self.root.rowconfigure(1, weight=1)     # central row grows
 
         # Top
-        self.top_frame.grid(row=0, column=0, columnspan=2, sticky="ew", padx=10, pady=8)
+        self.top_frame.grid(row=0, column=0, columnspan=2, sticky="ew", padx=10, pady=(10, 6))
         self.top_frame.columnconfigure(2, weight=1)
         self.btn_open.grid(row=0, column=0, padx=(0, 8))
         self.lbl_filename.grid(row=0, column=1, sticky="w")
         self.lbl_status.grid(row=0, column=2, sticky="e")
 
-        # Center: plot (left) and info (right)
+        # Center
         self.plot_frame.grid(row=1, column=0, sticky="nsew", padx=(10, 6), pady=6)
         self.info_frame.grid(row=1, column=1, sticky="ns", padx=(6, 10), pady=6)
 
-        # Bottom controls
-        self.ctrl_frame.grid(row=2, column=0, columnspan=2, sticky="ew", padx=10, pady=8)
-        self.ctrl_frame.columnconfigure(4, weight=1)
+        # Bottom: controls + view controls
+        self.ctrl_frame.grid(row=2, column=0, sticky="ew", padx=10, pady=(6, 10))
+        self.ctrl_frame.columnconfigure(6, weight=1)
         self.lbl_peak.grid(row=0, column=0, sticky="w")
         self.entry_peak.grid(row=0, column=1, sticky="w", padx=(6, 18))
         self.btn_replot.grid(row=0, column=2, padx=(0, 6))
         self.btn_save.grid(row=0, column=3, padx=(0, 6))
-        self.btn_reset.grid(row=0, column=4, sticky="w")
+        self.btn_reset.grid(row=0, column=4, padx=(0, 6))
 
-        # Shortcuts
+        self.view_ctrl.grid(row=2, column=1, sticky="ew", padx=(6, 10), pady=(6, 10))
+        for c, w in enumerate([self.btn_view_window, self.btn_view_full, self.btn_zoom_in,
+                               self.btn_zoom_out, self.btn_pan_left, self.btn_pan_right]):
+            w.grid(row=0, column=c, padx=4, pady=6)
+
+    def _bind_shortcuts(self):
         self.root.bind("<Return>", lambda e: self.on_replot_clicked())
         self.root.bind("<Control-s>", lambda e: self.on_save_clicked())
-
-        self._set_controls_state(enabled=False)
+        # Zoom shortcuts
+        self.root.bind("<Control-equal>", lambda e: self._zoom(0.8))   # Ctrl+= → zoom in
+        self.root.bind("<Control-minus>", lambda e: self._zoom(1.25))  # Ctrl+- → zoom out
+        # Pan shortcuts (arrow keys)
+        self.root.bind("<Left>", lambda e: self._pan(-2.0))
+        self.root.bind("<Right>", lambda e: self._pan(2.0))
 
     def _set_controls_state(self, enabled: bool):
         state = "normal" if enabled else "disabled"
@@ -117,6 +142,12 @@ class SingleFileApp:
         self.btn_replot.configure(state=state)
         self.btn_save.configure(state=state)
         self.btn_reset.configure(state=state)
+        self.btn_view_window.configure(state=state)
+        self.btn_view_full.configure(state=state)
+        self.btn_zoom_in.configure(state=state)
+        self.btn_zoom_out.configure(state=state)
+        self.btn_pan_left.configure(state=state)
+        self.btn_pan_right.configure(state=state)
 
     # ---------- Callbacks ----------
 
@@ -132,6 +163,7 @@ class SingleFileApp:
             base_dir = "/".join(path.split("/")[:-1])
             self.save_dir = ensure_save_dir(base_dir)
 
+            # Analyse (liefert signal & results)
             self.orig_signal, self.results = cut_and_analyze_peak(self.orig_signal, self.params)
 
             # Peak entry
@@ -140,13 +172,12 @@ class SingleFileApp:
             self.entry_peak.insert(0, f"{self.results['peak_time']:.6f}")
 
             # Render
-            self._render_current_plot()
+            self._render_current_plot(initial_view="window")
             self._update_results_panel(self.results)
 
             self._set_status("Signal geladen und analysiert.")
             self._set_controls_state(enabled=True)
             self.btn_reset.configure(state="normal")
-
             self.lbl_filename.configure(text=self.file_name)
 
         except Exception as e:
@@ -156,15 +187,15 @@ class SingleFileApp:
             self._set_controls_state(enabled=False)
 
     def on_replot_clicked(self):
-        """Rechnet results mit manuell eingegebener Peak-Time neu und zeichnet dann neu."""
         if self.orig_signal is None:
             return
         peak_time = self._parse_peak_entry()
         if peak_time is None:
             return
         try:
+            # results anhand manuell eingegebener Peak-Zeit neu berechnen
             self.results = recompute_from_peak(self.orig_signal, peak_time, self.params, base_results=self.results)
-            self._render_current_plot()
+            self._render_current_plot(keep_view=True)
             self._update_results_panel(self.results)
             self._set_status("Darstellung aktualisiert (manuelle Peak-Zeit).")
         except Exception as e:
@@ -188,11 +219,10 @@ class SingleFileApp:
             messagebox.showerror("Fehler", f"Speichern fehlgeschlagen:\n{e}")
 
     def on_reset_peak(self):
-        """Automatische Peak-Bestimmung via Analyse und komplettes Refresh der Results/Anzeige."""
         if self.orig_signal is None:
             return
         try:
-            # Vollständige Analyse erneut ausführen (ermittelt Peak automatisch)
+            # automatische Peak-Ermittlung & komplette Results neu
             self.orig_signal, self.results = cut_and_analyze_peak(self.orig_signal, self.params)
 
             # Peak Entry aktualisieren
@@ -201,14 +231,40 @@ class SingleFileApp:
             self.entry_peak.delete(0, tk.END)
             self.entry_peak.insert(0, f"{auto_peak:.6f}")
 
-            # Anzeige aktualisieren
-            self._render_current_plot()
+            # Anzeige aktualisieren (Defaultansicht: Window)
+            self._render_current_plot(initial_view="window")
             self._update_results_panel(self.results)
             self._set_status("Peak zurückgesetzt (automatisch ermittelt).")
 
         except Exception as e:
             logger.warning(f"Reset-Fehler: {e}")
             messagebox.showerror("Fehler", f"Reset Peak fehlgeschlagen:\n{e}")
+
+    # --- View controls ---
+
+    def on_view_window(self):
+        if self.plot is None:
+            return
+        self.plot.zoom_window()
+        self._redraw_canvas()
+
+    def on_view_full(self):
+        if self.plot is None:
+            return
+        self.plot.zoom_full()
+        self._redraw_canvas()
+
+    def _zoom(self, factor: float):
+        if self.plot is None:
+            return
+        self.plot.zoom(factor)
+        self._redraw_canvas()
+
+    def _pan(self, delta_s: float):
+        if self.plot is None:
+            return
+        self.plot.pan(delta_s)
+        self._redraw_canvas()
 
     # ---------- Helpers ----------
 
@@ -236,7 +292,8 @@ class SingleFileApp:
         except Exception:
             pass
 
-    def _render_current_plot(self):
+    def _render_current_plot(self, initial_view: str | None = None, keep_view: bool = False):
+        # clear old canvas/toolbar
         if self.canvas is not None:
             self.canvas.get_tk_widget().destroy()
             self.canvas = None
@@ -244,49 +301,56 @@ class SingleFileApp:
             self.toolbar.destroy()
             self.toolbar = None
 
-        # Initialize or redraw using DischargePlot
+        # prepare / update DischargePlot
         if self.plot is None:
             self.plot = DischargePlot(self.orig_signal, self.results)
-            fig = self.plot.draw(view="window")
+            fig = self.plot.draw(initial_view=initial_view or "window")
         else:
-            # Preserve current view if available, then update results
-            try:
-                view = self.plot.get_view()
-                self.plot.update_results(self.results)
-                self.plot.set_xlim(*view["xlim"])
+            if keep_view:
+                # behalten: aktuelle Ansicht sichern
+                try:
+                    cur = self.plot.get_view()
+                except Exception:
+                    cur = None
+                self.plot.update_results(self.results, keep_view=True)
+                if cur is not None:
+                    self.plot.set_xlim(*cur["xlim"])
                 fig = self.plot.fig
-            except Exception:
-                # Fallback: recreate
+            else:
+                # neu aufbauen mit gewünschter Initialansicht
                 self.plot = DischargePlot(self.orig_signal, self.results)
-                fig = self.plot.draw(view="window")
+                fig = self.plot.draw(initial_view=initial_view or "window")
 
+        # embed canvas
         self.figure = fig
         self.canvas = FigureCanvasTkAgg(fig, master=self.plot_frame)
         self.canvas.draw()
         self.canvas.get_tk_widget().pack(fill="both", expand=True)
 
+        # toolbar
         self.toolbar = NavigationToolbar2Tk(self.canvas, self.plot_frame)
         self.toolbar.update()
 
+    def _redraw_canvas(self):
+        if self.canvas is not None and self.plot is not None:
+            # re-draw without rebuilding the figure
+            self.canvas.draw()
+
     def _update_results_panel(self, results: Dict[str, Any]):
-        """Zeigt die wichtigsten Kennwerte rechts neben dem Plot an."""
         def fmt(v):
             try:
                 if v is None:
                     return "—"
-                if isinstance(v, (list, tuple, dict)):
-                    return "…"
                 if isinstance(v, float):
                     return f"{v:.6g}"
+                if isinstance(v, (list, tuple, dict)):
+                    return "…"
                 return str(v)
             except Exception:
                 return str(v)
 
         for key, _label in self._result_fields:
-            if key in results:
-                self.result_labels[key].configure(text=fmt(results[key]))
-            else:
-                self.result_labels[key].configure(text="—")
+            self.result_labels.get(key, ttk.Label()).configure(text=fmt(results.get(key)))
 
     def _set_status(self, text: str):
         self.lbl_status.configure(text=text)
