@@ -1,4 +1,4 @@
-Manufacturers = ["vishay", "wuerthElektronik", "eaton", "sech", "kyocera", "maxwell"]  # All manufacturers
+Manufacturers = ["vishay", "wuerthelektronik", "eaton", "sech", "kyocera", "maxwell"]  # All manufacturers
 
 def getFileNameInfos(filename):
   nameparts = filename.split("_")
