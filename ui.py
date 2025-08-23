@@ -34,13 +34,12 @@ class SingleFileApp:
         self.plot: Optional[DischargePlot] = None
 
         self.root.title("Cap Unloading – Single File Analyse")
-        self.root.geometry("1200x760")
+        self.root.geometry("1200x780")
 
         self._build_widgets()
         self._layout_widgets()
         self._bind_shortcuts()
 
-        # initial: controls disabled
         self._set_controls_state(enabled=False)
 
     # ---------- UI Aufbau ----------
@@ -56,7 +55,7 @@ class SingleFileApp:
         self.plot_frame = ttk.Frame(self.root)
         self.info_frame = ttk.LabelFrame(self.root, text="Ergebnisse")
 
-        # Results panel fields
+        # Results fields
         self._result_fields = [
             ("holding_voltage", "Holding [V]"),
             ("rated_time", "Rated time [s]"),
@@ -73,33 +72,32 @@ class SingleFileApp:
             val_label.grid(row=r, column=1, sticky="e", padx=(0, 8), pady=4)
             self.result_labels[key] = val_label
 
-        # Matplotlib fig elements (created on demand)
+        # Matplotlib fig elements
         self.figure = None
         self.canvas = None
         self.toolbar = None
 
-        # Bottom controls: peak + compute/save
-        self.ctrl_frame = ttk.Frame(self.root)
+        # Combined controls: Ansicht + Peak
+        self.ctrl_frame = ttk.LabelFrame(self.root, text="Ansicht & Peak")
+        # View buttons
+        self.btn_view_window = ttk.Button(self.ctrl_frame, text="Window", command=self.on_view_window)
+        self.btn_view_full = ttk.Button(self.ctrl_frame, text="Full", command=self.on_view_full)
+        self.btn_zoom_in = ttk.Button(self.ctrl_frame, text="Zoom +", command=lambda: self._zoom(0.8))
+        self.btn_zoom_out = ttk.Button(self.ctrl_frame, text="Zoom −", command=lambda: self._zoom(1.25))
+        self.btn_pan_left = ttk.Button(self.ctrl_frame, text="← Pan", command=lambda: self._pan_relative(-0.2))
+        self.btn_pan_right = ttk.Button(self.ctrl_frame, text="Pan →", command=lambda: self._pan_relative(+0.2))
+        # Peak controls
         self.lbl_peak = ttk.Label(self.ctrl_frame, text="Peak-Zeit [s]:")
         self.entry_peak = ttk.Entry(self.ctrl_frame, width=14)
         self.btn_replot = ttk.Button(self.ctrl_frame, text="Neu plotten", command=self.on_replot_clicked)
+        self.btn_reset = ttk.Button(self.ctrl_frame, text="Reset Peak", command=self.on_reset_peak)
         self.btn_save = ttk.Button(self.ctrl_frame, text="Speichern", command=self.on_save_clicked)
-        self.btn_reset = ttk.Button(self.ctrl_frame, text="Reset Peak", command=self.on_reset_peak, state="disabled")
-
-        # View controls: Window/Full + Zoom/Pan
-        self.view_ctrl = ttk.LabelFrame(self.root, text="Ansicht")
-        self.btn_view_window = ttk.Button(self.view_ctrl, text="Window", command=self.on_view_window)
-        self.btn_view_full = ttk.Button(self.view_ctrl, text="Full", command=self.on_view_full)
-        self.btn_zoom_in = ttk.Button(self.view_ctrl, text="Zoom +", command=lambda: self._zoom(0.8))
-        self.btn_zoom_out = ttk.Button(self.view_ctrl, text="Zoom −", command=lambda: self._zoom(1.25))
-        self.btn_pan_left = ttk.Button(self.view_ctrl, text="← Pan", command=lambda: self._pan(-2.0))
-        self.btn_pan_right = ttk.Button(self.view_ctrl, text="Pan →", command=lambda: self._pan(2.0))
 
     def _layout_widgets(self):
         # Grid weights
         self.root.columnconfigure(0, weight=1)  # plot column
         self.root.columnconfigure(1, weight=0)  # info column
-        self.root.rowconfigure(1, weight=1)     # central row grows
+        self.root.rowconfigure(1, weight=1)
 
         # Top
         self.top_frame.grid(row=0, column=0, columnspan=2, sticky="ew", padx=10, pady=(10, 6))
@@ -112,19 +110,30 @@ class SingleFileApp:
         self.plot_frame.grid(row=1, column=0, sticky="nsew", padx=(10, 6), pady=6)
         self.info_frame.grid(row=1, column=1, sticky="ns", padx=(6, 10), pady=6)
 
-        # Bottom: controls + view controls
-        self.ctrl_frame.grid(row=2, column=0, sticky="ew", padx=10, pady=(6, 10))
-        self.ctrl_frame.columnconfigure(6, weight=1)
-        self.lbl_peak.grid(row=0, column=0, sticky="w")
-        self.entry_peak.grid(row=0, column=1, sticky="w", padx=(6, 18))
-        self.btn_replot.grid(row=0, column=2, padx=(0, 6))
-        self.btn_save.grid(row=0, column=3, padx=(0, 6))
-        self.btn_reset.grid(row=0, column=4, padx=(0, 6))
+        # Bottom: combined control frame
+        self.ctrl_frame.grid(row=2, column=0, columnspan=2, sticky="ew", padx=10, pady=(6, 10))
+        for i in range(12):
+            self.ctrl_frame.columnconfigure(i, weight=0)
+        self.ctrl_frame.columnconfigure(11, weight=1)
 
-        self.view_ctrl.grid(row=2, column=1, sticky="ew", padx=(6, 10), pady=(6, 10))
-        for c, w in enumerate([self.btn_view_window, self.btn_view_full, self.btn_zoom_in,
-                               self.btn_zoom_out, self.btn_pan_left, self.btn_pan_right]):
-            w.grid(row=0, column=c, padx=4, pady=6)
+        # Row 0: View controls
+        c = 0
+        self.btn_view_window.grid(row=0, column=c, padx=4, pady=6); c += 1
+        self.btn_view_full.grid(row=0, column=c, padx=4, pady=6); c += 1
+        self.btn_zoom_in.grid(row=0, column=c, padx=4, pady=6); c += 1
+        self.btn_zoom_out.grid(row=0, column=c, padx=4, pady=6); c += 1
+        self.btn_pan_left.grid(row=0, column=c, padx=4, pady=6); c += 1
+        self.btn_pan_right.grid(row=0, column=c, padx=4, pady=6); c += 1
+
+        # Spacer
+        ttk.Label(self.ctrl_frame, text=" ").grid(row=0, column=c, padx=10); c += 1
+
+        # Row 0: Peak controls
+        self.lbl_peak.grid(row=0, column=c, sticky="e"); c += 1
+        self.entry_peak.grid(row=0, column=c, sticky="w", padx=(6, 18)); c += 1
+        self.btn_replot.grid(row=0, column=c, padx=4); c += 1
+        self.btn_reset.grid(row=0, column=c, padx=4); c += 1
+        self.btn_save.grid(row=0, column=c, padx=4); c += 1
 
     def _bind_shortcuts(self):
         self.root.bind("<Return>", lambda e: self.on_replot_clicked())
@@ -132,22 +141,18 @@ class SingleFileApp:
         # Zoom shortcuts
         self.root.bind("<Control-equal>", lambda e: self._zoom(0.8))   # Ctrl+= → zoom in
         self.root.bind("<Control-minus>", lambda e: self._zoom(1.25))  # Ctrl+- → zoom out
-        # Pan shortcuts (arrow keys)
-        self.root.bind("<Left>", lambda e: self._pan(-2.0))
-        self.root.bind("<Right>", lambda e: self._pan(2.0))
+        # Pan shortcuts: 1/5 Fensterbreite
+        self.root.bind("<Left>", lambda e: self._pan_relative(-0.2))
+        self.root.bind("<Right>", lambda e: self._pan_relative(+0.2))
 
     def _set_controls_state(self, enabled: bool):
         state = "normal" if enabled else "disabled"
-        self.entry_peak.configure(state=state)
-        self.btn_replot.configure(state=state)
-        self.btn_save.configure(state=state)
-        self.btn_reset.configure(state=state)
-        self.btn_view_window.configure(state=state)
-        self.btn_view_full.configure(state=state)
-        self.btn_zoom_in.configure(state=state)
-        self.btn_zoom_out.configure(state=state)
-        self.btn_pan_left.configure(state=state)
-        self.btn_pan_right.configure(state=state)
+        for w in (
+            self.entry_peak, self.btn_replot, self.btn_save, self.btn_reset,
+            self.btn_view_window, self.btn_view_full,
+            self.btn_zoom_in, self.btn_zoom_out, self.btn_pan_left, self.btn_pan_right
+        ):
+            w.configure(state=state)
 
     # ---------- Callbacks ----------
 
@@ -171,13 +176,12 @@ class SingleFileApp:
             self.entry_peak.delete(0, tk.END)
             self.entry_peak.insert(0, f"{self.results['peak_time']:.6f}")
 
-            # Render
+            # Render (Default: Window)
             self._render_current_plot(initial_view="window")
             self._update_results_panel(self.results)
 
             self._set_status("Signal geladen und analysiert.")
             self._set_controls_state(enabled=True)
-            self.btn_reset.configure(state="normal")
             self.lbl_filename.configure(text=self.file_name)
 
         except Exception as e:
@@ -193,7 +197,6 @@ class SingleFileApp:
         if peak_time is None:
             return
         try:
-            # results anhand manuell eingegebener Peak-Zeit neu berechnen
             self.results = recompute_from_peak(self.orig_signal, peak_time, self.params, base_results=self.results)
             self._render_current_plot(keep_view=True)
             self._update_results_panel(self.results)
@@ -222,20 +225,14 @@ class SingleFileApp:
         if self.orig_signal is None:
             return
         try:
-            # automatische Peak-Ermittlung & komplette Results neu
             self.orig_signal, self.results = cut_and_analyze_peak(self.orig_signal, self.params)
-
-            # Peak Entry aktualisieren
             auto_peak = float(self.results.get("peak_time", 0.0))
             self.entry_peak.configure(state="normal")
             self.entry_peak.delete(0, tk.END)
             self.entry_peak.insert(0, f"{auto_peak:.6f}")
-
-            # Anzeige aktualisieren (Defaultansicht: Window)
             self._render_current_plot(initial_view="window")
             self._update_results_panel(self.results)
             self._set_status("Peak zurückgesetzt (automatisch ermittelt).")
-
         except Exception as e:
             logger.warning(f"Reset-Fehler: {e}")
             messagebox.showerror("Fehler", f"Reset Peak fehlgeschlagen:\n{e}")
@@ -260,10 +257,17 @@ class SingleFileApp:
         self.plot.zoom(factor)
         self._redraw_canvas()
 
-    def _pan(self, delta_s: float):
+    def _pan_relative(self, frac: float):
+        """Pan um frac * Fensterbreite (frac kann ± sein, z. B. ±0.2)."""
         if self.plot is None:
             return
-        self.plot.pan(delta_s)
+        xlim = self.plot.get_xlim()
+        if not xlim:
+            return
+        a, b = xlim
+        width = max(1e-9, b - a)
+        delta = float(frac) * width
+        self.plot.pan(delta)
         self._redraw_canvas()
 
     # ---------- Helpers ----------
@@ -307,7 +311,6 @@ class SingleFileApp:
             fig = self.plot.draw(initial_view=initial_view or "window")
         else:
             if keep_view:
-                # behalten: aktuelle Ansicht sichern
                 try:
                     cur = self.plot.get_view()
                 except Exception:
@@ -317,7 +320,6 @@ class SingleFileApp:
                     self.plot.set_xlim(*cur["xlim"])
                 fig = self.plot.fig
             else:
-                # neu aufbauen mit gewünschter Initialansicht
                 self.plot = DischargePlot(self.orig_signal, self.results)
                 fig = self.plot.draw(initial_view=initial_view or "window")
 
@@ -333,7 +335,6 @@ class SingleFileApp:
 
     def _redraw_canvas(self):
         if self.canvas is not None and self.plot is not None:
-            # re-draw without rebuilding the figure
             self.canvas.draw()
 
     def _update_results_panel(self, results: Dict[str, Any]):
