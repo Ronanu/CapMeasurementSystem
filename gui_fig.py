@@ -66,6 +66,7 @@ class DischargePlot:
         peak_time = float(r["peak_time"])
         rated_t = float(r["rated_time"])
         U3 = float(r["U3"])
+        peak_mean = float(r["peak_mean"])
         coeffs = r["post_peak_unloading_fit"]
 
         # X-Initialisierung
@@ -103,6 +104,7 @@ class DischargePlot:
         if self.show_u3:
             self.ax_top.axhline(y_fit_at_peak, linestyle="--", linewidth=1.0)
             self.ax_top.axhline(y_fit_plus_u3, linestyle="--", linewidth=1.0)
+            self.ax_top.axhline(peak_mean, linestyle=":", linewidth=1, label="Peak Mean")
             # Dummy-Handle für Legende
             dummy_u3 = Line2D([0], [0], linestyle="--", color=self.ax_top.lines[-1].get_color(), label="U3")
         else:

@@ -254,3 +254,15 @@ ImportError: cannot import name 'DischargePlot' from 'gui_fig' (c:\Users\rodi9\D
 2025-08-25 20:01:22,826 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A4_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv
 2025-08-25 20:01:22,832 - INFO - Analyse gestartet: Original_Signal
 2025-08-25 20:01:22,984 - INFO - Peak gefunden bei t=1849.960s, Wert=2.986
+2025-08-25 20:07:59,754 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_B1_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-25 20:07:59,756 - INFO - Analyse gestartet: Original_Signal
+2025-08-25 20:07:59,830 - INFO - Peak gefunden bei t=343.370s, Wert=2.986
+2025-08-25 20:08:20,550 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT3_V1_Eaton_25F_06-08-2025.csv
+2025-08-25 20:08:20,560 - INFO - Analyse gestartet: Original_Signal
+2025-08-25 20:08:23,472 - INFO - Peak gefunden bei t=1836.950s, Wert=2.993
+2025-08-25 20:10:02,704 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A4_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-25 20:10:02,708 - INFO - Analyse gestartet: Original_Signal
+2025-08-25 20:10:02,863 - INFO - Peak gefunden bei t=1832.910s, Wert=2.987
+2025-08-25 20:10:56,554 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT1_V1_Eaton_25F_06-08-2025.csv
+2025-08-25 20:10:56,561 - INFO - Analyse gestartet: Original_Signal
+2025-08-25 20:10:59,438 - INFO - Peak gefunden bei t=1836.360s, Wert=2.991
