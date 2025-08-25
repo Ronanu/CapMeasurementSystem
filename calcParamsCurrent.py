@@ -3,7 +3,9 @@ U_sp, C_n = sp.symbols('U_R C_n')
 #TEST pull
 # Manufacturer's ESR values for different capacitances
 # TODO: Add ESR values for more capacitances
-ESR = {"vishay" : {"25" : 0.034, "50": 0.022}, 
+ESR = {"vishay" : {"5": 0.074, "7": 0.06, "8": 0.058,"10": 0.046, "12":0.041, "15": 0.034,
+                    "20":0.038, "25" : 0.034, "30": 0.026, 
+                    "35": 0.024, "40": 0.024, "50": 0.022, "60": 0.022}, 
        "maxwell" : {"25" : 0.025, "50": 0.01}, 
        "sech" : {"25" : 0.025, "50": 0.015},
        "eaton" : {"25" : 0.018},  #no 50F value available
