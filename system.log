@@ -50,3 +50,207 @@ ModuleNotFoundError: No module named 'sympy'
 2025-08-22 11:16:38,977 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
 2025-08-22 11:16:38,981 - INFO - Analyse gestartet: Original_Signal
 2025-08-22 11:16:39,347 - INFO - Peak gefunden bei t=1813.220s, Wert=2.988
+2025-08-22 11:24:28,682 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_B1_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-22 11:24:28,683 - INFO - Analyse gestartet: Original_Signal
+2025-08-22 11:24:28,743 - INFO - Peak gefunden bei t=345.800s, Wert=2.988
+2025-08-22 11:25:07,249 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A4_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-22 11:25:07,252 - INFO - Analyse gestartet: Original_Signal
+2025-08-22 11:25:07,389 - INFO - Peak gefunden bei t=1830.790s, Wert=2.985
+2025-08-22 11:25:31,245 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT2_V1_Eaton_25F_06-08-2025.csv
+2025-08-22 11:25:31,253 - INFO - Analyse gestartet: Original_Signal
+2025-08-22 11:25:34,202 - INFO - Peak gefunden bei t=1838.420s, Wert=2.988
+2025-08-22 11:25:55,507 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT1_V1_Eaton_25F_06-08-2025.csv
+2025-08-22 11:25:55,515 - INFO - Analyse gestartet: Original_Signal
+2025-08-22 11:25:58,434 - INFO - Peak gefunden bei t=1838.060s, Wert=2.989
+2025-08-22 11:28:38,427 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-22 11:28:38,432 - INFO - Analyse gestartet: Original_Signal
+2025-08-22 11:28:38,832 - INFO - Peak gefunden bei t=1864.310s, Wert=2.986
+2025-08-22 11:30:54,407 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A4_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-22 11:30:54,411 - INFO - Analyse gestartet: Original_Signal
+2025-08-22 11:30:54,545 - INFO - Peak gefunden bei t=1830.790s, Wert=2.985
+2025-08-22 11:31:15,068 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT3_V1_Eaton_25F_06-08-2025.csv
+2025-08-22 11:31:15,090 - INFO - Analyse gestartet: Original_Signal
+2025-08-22 11:31:18,051 - INFO - Peak gefunden bei t=1838.600s, Wert=2.990
+2025-08-22 11:34:30,241 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-22 11:34:30,244 - INFO - Analyse gestartet: Original_Signal
+2025-08-22 11:34:30,564 - INFO - Peak gefunden bei t=1829.450s, Wert=2.988
+2025-08-22 11:34:37,461 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A4_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-22 11:34:37,464 - INFO - Analyse gestartet: Original_Signal
+2025-08-22 11:34:37,596 - INFO - Peak gefunden bei t=1832.840s, Wert=2.986
+2025-08-22 11:35:39,245 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A4_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-22 11:35:39,249 - INFO - Analyse gestartet: Original_Signal
+2025-08-22 11:35:39,404 - INFO - Peak gefunden bei t=1849.960s, Wert=2.986
+2025-08-22 11:35:48,376 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-22 11:35:48,380 - INFO - Analyse gestartet: Original_Signal
+2025-08-22 11:35:48,745 - INFO - Peak gefunden bei t=1864.310s, Wert=2.986
+2025-08-22 11:36:38,524 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT1_V1_Eaton_25F_06-08-2025.csv
+2025-08-22 11:36:38,531 - INFO - Analyse gestartet: Original_Signal
+2025-08-22 11:36:41,362 - INFO - Peak gefunden bei t=1838.060s, Wert=2.989
+2025-08-22 11:40:58,234 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT1_V1_Eaton_25F_06-08-2025.csv
+2025-08-22 11:40:58,241 - INFO - Analyse gestartet: Original_Signal
+2025-08-22 11:41:00,953 - INFO - Peak gefunden bei t=1838.060s, Wert=2.989
+2025-08-22 11:41:07,441 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-22 11:41:07,443 - INFO - Analyse gestartet: Original_Signal
+2025-08-22 11:41:07,736 - INFO - Peak gefunden bei t=1829.450s, Wert=2.988
+2025-08-23 11:27:25,342 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A4_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-23 11:27:25,346 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 11:27:25,495 - INFO - Peak gefunden bei t=1832.910s, Wert=2.987
+2025-08-23 11:30:49,840 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A4_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-23 11:30:49,844 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 11:30:49,994 - INFO - Peak gefunden bei t=1830.790s, Wert=2.985
+2025-08-23 11:30:57,117 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT2_V1_Eaton_25F_06-08-2025.csv
+2025-08-23 11:30:57,124 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 11:31:00,037 - INFO - Peak gefunden bei t=1838.420s, Wert=2.988
+2025-08-23 11:53:16,810 - CRITICAL - Unbehandelte Ausnahme (File: log, Line: 22, Function: handle_exception)
+Traceback (most recent call last):
+  File "c:\Users\rodi9\Dropbox\InstitutGR\HESS4MRA\Testing\CapMeasurementSystem\main.py", line 2, in <module>
+    from ui import run_app
+  File "c:\Users\rodi9\Dropbox\InstitutGR\HESS4MRA\Testing\CapMeasurementSystem\ui.py", line 19, in <module>
+    from gui_fig import DischargePlot
+ImportError: cannot import name 'DischargePlot' from 'gui_fig' (c:\Users\rodi9\Dropbox\InstitutGR\HESS4MRA\Testing\CapMeasurementSystem\gui_fig.py)
+2025-08-23 11:53:49,975 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A4_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-23 11:53:49,979 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 11:53:50,105 - INFO - Peak gefunden bei t=1849.960s, Wert=2.986
+2025-08-23 11:54:27,886 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT2_V1_Eaton_25F_06-08-2025.csv
+2025-08-23 11:54:27,891 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 11:54:30,829 - INFO - Peak gefunden bei t=1838.420s, Wert=2.988
+2025-08-23 11:54:44,893 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT1_V1_Eaton_25F_06-08-2025.csv
+2025-08-23 11:54:44,901 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 11:54:47,735 - INFO - Peak gefunden bei t=1838.060s, Wert=2.989
+2025-08-23 11:54:50,811 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-23 11:54:50,814 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 11:54:51,185 - INFO - Peak gefunden bei t=1864.310s, Wert=2.986
+2025-08-23 11:55:05,619 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 11:55:05,941 - INFO - Peak gefunden bei t=1864.310s, Wert=2.986
+2025-08-23 11:56:00,673 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A4_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-23 11:56:00,677 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 11:56:00,783 - INFO - Peak gefunden bei t=1832.910s, Wert=2.987
+2025-08-23 11:56:07,375 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 11:56:07,499 - INFO - Peak gefunden bei t=1832.910s, Wert=2.987
+2025-08-23 12:04:49,244 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-23 12:04:49,247 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 12:04:49,580 - INFO - Peak gefunden bei t=1829.450s, Wert=2.988
+2025-08-23 12:10:20,216 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT3_V1_Eaton_25F_06-08-2025.csv
+2025-08-23 12:10:20,225 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 12:10:23,286 - INFO - Peak gefunden bei t=1838.600s, Wert=2.990
+2025-08-23 13:58:24,626 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_B1_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-23 13:58:24,628 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 13:58:24,706 - INFO - Peak gefunden bei t=340.720s, Wert=2.986
+2025-08-23 13:58:24,716 - WARNING - Fehler beim Öffnen: DischargePlot.draw() got an unexpected keyword argument 'view' (File: ui, Line: 153, Function: on_open_file)
+2025-08-23 14:04:21,599 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A4_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-23 14:04:21,603 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 14:04:21,758 - INFO - Peak gefunden bei t=1832.910s, Wert=2.987
+2025-08-23 14:09:38,389 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-23 14:09:38,392 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 14:09:38,766 - INFO - Peak gefunden bei t=1864.310s, Wert=2.986
+2025-08-23 14:12:40,698 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT1_V1_Eaton_25F_06-08-2025.csv
+2025-08-23 14:12:40,715 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 14:12:44,061 - INFO - Peak gefunden bei t=1838.060s, Wert=2.989
+2025-08-23 14:32:11,134 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT1_V1_Eaton_25F_06-08-2025.csv
+2025-08-23 14:32:11,142 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 14:32:14,299 - INFO - Peak gefunden bei t=1837.580s, Wert=2.990
+2025-08-23 14:33:06,744 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT1_V1_Eaton_25F_06-08-2025.csv
+2025-08-23 14:33:06,752 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 14:33:09,529 - INFO - Peak gefunden bei t=1837.580s, Wert=2.990
+2025-08-23 14:34:44,693 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A4_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-23 14:34:44,698 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 14:34:44,818 - INFO - Peak gefunden bei t=1830.790s, Wert=2.985
+2025-08-23 14:40:59,547 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A4_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-23 14:40:59,566 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 14:40:59,789 - INFO - Peak gefunden bei t=1830.790s, Wert=2.985
+2025-08-23 14:41:49,113 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT1_V1_Eaton_25F_06-08-2025.csv
+2025-08-23 14:41:49,120 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 14:41:52,000 - INFO - Peak gefunden bei t=1836.360s, Wert=2.991
+2025-08-23 14:42:10,114 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_B1_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-23 14:42:10,116 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 14:42:10,193 - INFO - Peak gefunden bei t=340.720s, Wert=2.986
+2025-08-23 14:43:23,181 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT3_V1_Eaton_25F_06-08-2025.csv
+2025-08-23 14:43:23,189 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 14:43:26,086 - INFO - Peak gefunden bei t=1836.950s, Wert=2.993
+2025-08-23 14:45:21,853 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-23 14:45:21,855 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 14:45:22,151 - INFO - Peak gefunden bei t=1813.220s, Wert=2.988
+2025-08-23 14:45:49,533 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-23 14:45:49,547 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 14:45:49,858 - INFO - Peak gefunden bei t=1813.220s, Wert=2.988
+2025-08-23 14:45:55,673 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-23 14:45:55,676 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 14:45:55,998 - INFO - Peak gefunden bei t=1864.310s, Wert=2.986
+2025-08-23 14:46:00,215 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-23 14:46:00,217 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 14:46:00,541 - INFO - Peak gefunden bei t=1813.220s, Wert=2.988
+2025-08-23 14:46:06,031 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_B1_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-23 14:46:06,032 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 14:46:06,108 - INFO - Peak gefunden bei t=340.720s, Wert=2.986
+2025-08-23 14:51:22,080 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT1_V1_Eaton_25F_06-08-2025.csv
+2025-08-23 14:51:22,085 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 14:51:24,794 - INFO - Peak gefunden bei t=1836.360s, Wert=2.991
+2025-08-23 15:03:01,955 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-23 15:03:01,957 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 15:03:02,272 - INFO - Peak gefunden bei t=1813.220s, Wert=2.988
+2025-08-23 15:24:07,155 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A4_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-23 15:24:07,161 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 15:24:07,345 - INFO - Peak gefunden bei t=1832.910s, Wert=2.987
+2025-08-23 15:26:06,372 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT1_V1_Eaton_25F_06-08-2025.csv
+2025-08-23 15:26:06,380 - INFO - Analyse gestartet: Original_Signal
+2025-08-23 15:26:09,794 - INFO - Peak gefunden bei t=1836.360s, Wert=2.991
+2025-08-25 18:24:33,046 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A4_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-25 18:24:33,054 - INFO - Analyse gestartet: Original_Signal
+2025-08-25 18:24:33,201 - INFO - Peak gefunden bei t=1849.960s, Wert=2.986
+2025-08-25 18:24:48,336 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT2_V1_Eaton_25F_06-08-2025.csv
+2025-08-25 18:24:48,343 - INFO - Analyse gestartet: Original_Signal
+2025-08-25 18:24:51,255 - INFO - Peak gefunden bei t=1838.630s, Wert=2.988
+2025-08-25 18:26:17,953 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A4_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-25 18:26:17,956 - INFO - Analyse gestartet: Original_Signal
+2025-08-25 18:26:18,062 - INFO - Peak gefunden bei t=1830.790s, Wert=2.985
+2025-08-25 19:22:05,798 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A4_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-25 19:22:05,802 - INFO - Analyse gestartet: Original_Signal
+2025-08-25 19:22:05,975 - INFO - Peak gefunden bei t=1832.910s, Wert=2.987
+2025-08-25 19:32:46,992 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_B1_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-25 19:32:46,993 - INFO - Analyse gestartet: Original_Signal
+2025-08-25 19:32:47,079 - INFO - Peak gefunden bei t=343.370s, Wert=2.986
+2025-08-25 19:32:55,974 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A4_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-25 19:32:55,978 - INFO - Analyse gestartet: Original_Signal
+2025-08-25 19:32:56,103 - INFO - Peak gefunden bei t=1830.790s, Wert=2.985
+2025-08-25 19:33:01,991 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT2_V1_Eaton_25F_06-08-2025.csv
+2025-08-25 19:33:01,997 - INFO - Analyse gestartet: Original_Signal
+2025-08-25 19:33:04,934 - INFO - Peak gefunden bei t=1838.630s, Wert=2.988
+2025-08-25 19:33:25,197 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT2_V1_Eaton_25F_06-08-2025.csv
+2025-08-25 19:33:25,200 - INFO - Analyse gestartet: Original_Signal
+2025-08-25 19:33:28,002 - INFO - Peak gefunden bei t=1838.630s, Wert=2.988
+2025-08-25 19:35:47,402 - INFO - SignalData erfolgreich in C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F\cut_data\C_A2_DUT2_V1_Eaton_25F_cut.csv gespeichert.
+2025-08-25 19:35:47,403 - INFO - Gespeichert: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F\cut_data\C_A2_DUT2_V1_Eaton_25F_cut.csv
+2025-08-25 19:36:36,143 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-25 19:36:36,145 - INFO - Analyse gestartet: Original_Signal
+2025-08-25 19:36:36,462 - INFO - Peak gefunden bei t=1813.220s, Wert=2.988
+2025-08-25 19:45:11,809 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_B1_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-25 19:45:11,810 - INFO - Analyse gestartet: Original_Signal
+2025-08-25 19:45:11,867 - INFO - Peak gefunden bei t=345.800s, Wert=2.988
+2025-08-25 19:45:11,878 - INFO - Analyseergebnisse: {'holding_voltage': 2.990190746454666, 'rated_time': 345.12790776630607, 'peak_time': 345.8, 'peak_value': 2.987758, 'peak_mean': 2.98880665926748, 'threshold': 0.0011465282060883117, 'U3': 0.07172866965699187, 'pre_peak_unloading_fit': array([-5.79737200e-05,  3.00854907e+00]), 'post_peak_unloading_fit': array([-8.15950853e-09,  1.14905351e-05, -5.05844693e-03,  2.50907737e-03,
+        6.25410685e+02, -1.76203669e+05,  1.55081191e+07]), 'after_peak_signal': <signal_transformations.SignalData object at 0x000001C3DADF3010>, 'unloading_signal': <signal_transformations.SignalData object at 0x000001C3FBE5E510>, 'peak_detection_signal': <signal_transformations.SignalData object at 0x000001C3FABE9550>, 'outliers': [(np.float64(345.81), np.float64(2.987989)), (np.float64(345.81), np.float64(2.987989))], 'smoothed_derivative_signal': <signal_transformations.SignalData object at 0x000001C3FBE5D1D0>, 'relevant_time_window': (345.12790776630607, 346.47209223369396), 'file_name': 'Original_Signal', 'params_used': {'rated_voltage': 3.0, 'sampling_interval': 0.01, 'window_time': 10.0, 'std_factor': 3.0, 'derivative_smooth_n': 8, 'post_peak_cut_ratio': 0.4, 'unload_fit_order': 6, 'rated_fit_order': 1, 'holding_fit_order': 0, 'cutaway': 0.2, 'unloading_low_high': (0.6, 0.95), 'min_derivative_neg': -0.04}}
+2025-08-25 19:47:45,824 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-25 19:47:45,828 - INFO - Analyse gestartet: Original_Signal
+2025-08-25 19:47:46,179 - INFO - Peak gefunden bei t=1813.220s, Wert=2.988
+2025-08-25 19:47:46,228 - INFO - Analyseergebnisse: {'holding_voltage': 2.9870533435924362, 'rated_time': 1810.4662523706738, 'peak_time': 1813.22, 'peak_value': 2.988221, 'peak_mean': 2.9875022108768032, 'threshold': 0.0023106253576412866, 'U3': 0.007478292346082771, 'pre_peak_unloading_fit': array([-1.47802786e-05,  3.01422405e+00]), 'post_peak_unloading_fit': array([-1.70915554e-16,  1.34077175e-12, -3.31163255e-09,  1.77473120e-07,
+        1.21617834e-02, -1.92627675e+01,  9.47953430e+03]), 'after_peak_signal': <signal_transformations.SignalData object at 0x00000255AF340210>, 'unloading_signal': <signal_transformations.SignalData object at 0x00000255AF353150>, 'peak_detection_signal': <signal_transformations.SignalData object at 0x00000255AF331ED0>, 'outliers': [(np.float64(1813.24), np.float64(2.985752)), (np.float64(1813.24), np.float64(2.985752)), (np.float64(1813.23), np.float64(2.986986))], 'smoothed_derivative_signal': <signal_transformations.SignalData object at 0x00000255B365C150>, 'relevant_time_window': (1810.4662523706738, 1815.9737476293262), 'file_name': 'Original_Signal', 'params_used': {'rated_voltage': 3.0, 'sampling_interval': 0.01, 'window_time': 10.0, 'std_factor': 3.0, 'derivative_smooth_n': 8, 'post_peak_cut_ratio': 0.4, 'unload_fit_order': 6, 'rated_fit_order': 1, 'holding_fit_order': 0, 'cutaway': 0.2, 'unloading_low_high': (0.6, 0.95), 'min_derivative_neg': -0.04}}
+2025-08-25 19:48:23,968 - INFO - Analyse gestartet: Original_Signal
+2025-08-25 19:48:24,287 - INFO - Peak gefunden bei t=1813.220s, Wert=2.988
+2025-08-25 19:51:05,253 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-25 19:51:05,257 - INFO - Analyse gestartet: Original_Signal
+2025-08-25 19:51:05,644 - INFO - Peak gefunden bei t=1864.310s, Wert=2.986
+2025-08-25 19:51:05,672 - INFO - U3 Mean: 0.006 V
+2025-08-25 19:51:05,778 - INFO - Analyseergebnisse: {'holding_voltage': 2.9867261881574896, 'rated_time': 1861.8345470760366, 'peak_time': 1864.31, 'peak_value': 2.986137, 'peak_mean': 2.986247426193119, 'threshold': 0.002311331426868698, 'U3': 0.0059173261980878245, 'pre_peak_unloading_fit': array([-6.10139164e-05,  3.09958810e+00]), 'post_peak_unloading_fit': array([-8.14141908e-17,  6.65641270e-13, -1.71912088e-09,  1.39263848e-07,
+        6.70434273e-03, -1.11074743e+01,  5.70093541e+03]), 'after_peak_signal': <signal_transformations.SignalData object at 0x000002B4B1339610>, 'unloading_signal': <signal_transformations.SignalData object at 0x000002B4B1354E50>, 'peak_detection_signal': <signal_transformations.SignalData object at 0x000002B491FA65D0>, 'outliers': [(np.float64(1864.33), np.float64(2.984054)), (np.float64(1864.33), np.float64(2.984054)), (np.float64(1864.32), np.float64(2.987372))], 'smoothed_derivative_signal': <signal_transformations.SignalData object at 0x000002B4BD0D6910>, 'relevant_time_window': (1861.8345470760366, 1866.7854529239632), 'file_name': 'Original_Signal', 'params_used': {'rated_voltage': 3.0, 'sampling_interval': 0.01, 'window_time': 10.0, 'std_factor': 3.0, 'derivative_smooth_n': 8, 'post_peak_cut_ratio': 0.4, 'unload_fit_order': 6, 'rated_fit_order': 1, 'holding_fit_order': 0, 'cutaway': 0.2, 'unloading_low_high': (0.6, 0.95), 'min_derivative_neg': -0.04}}
+2025-08-25 19:53:12,280 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A4_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-25 19:53:12,284 - INFO - Analyse gestartet: Original_Signal
+2025-08-25 19:53:12,435 - INFO - Peak gefunden bei t=1830.790s, Wert=2.985
+2025-08-25 19:56:11,256 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A4_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-25 19:56:11,263 - INFO - Analyse gestartet: Original_Signal
+2025-08-25 19:56:11,484 - INFO - Peak gefunden bei t=1830.790s, Wert=2.985
+2025-08-25 19:56:11,536 - WARNING - Fehler beim Öffnen: 'Logger' object has no attribute 'debu' (File: ui, Line: 217, Function: on_open_file)
+2025-08-25 19:58:52,403 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-25 19:58:52,410 - INFO - Analyse gestartet: Original_Signal
+2025-08-25 19:58:52,786 - INFO - Peak gefunden bei t=1813.220s, Wert=2.988
+2025-08-25 20:01:22,826 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A4_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-25 20:01:22,832 - INFO - Analyse gestartet: Original_Signal
+2025-08-25 20:01:22,984 - INFO - Peak gefunden bei t=1849.960s, Wert=2.986

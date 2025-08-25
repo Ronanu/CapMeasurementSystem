@@ -21,11 +21,11 @@ class AnalysisParams:
     std_factor: float = 3.0              # Threshold-Multiplikator
     derivative_smooth_n: int = 8         # Moving Average Fenster
     post_peak_cut_ratio: float = 0.4     # r > ratio * peak_value
-    unload_fit_order: int = 3            # nach Peak
+    unload_fit_order: int = 6            # nach Peak
     rated_fit_order: int = 1             # vor Peak (linear)
     holding_fit_order: int = 0           # 0 = Mittelwert / konstante Regression
     cutaway: float = 0.2                 # für Holding-Extraction
-    unloading_low_high: Tuple[float, float] = (0.6, 0.90)  # Bereich für rated_time-Bestimmung
+    unloading_low_high: Tuple[float, float] = (0.6, 0.95)  # Bereich für rated_time-Bestimmung
     min_derivative_neg: float = -0.04    # Abbruchkriterium im Rückwärts-Scan
 
 
@@ -106,8 +106,10 @@ def _post_peak_calculations(signal, peak_time: float, peak_value: float, params:
     peak_eval_value = evaluate_polynomial(post_fit, peak_time)
     u3 = float(peak_value - peak_eval_value)
 
-    mean_window = SignalCutter(signal).cut_time_range((float(peak_time) - 10.0, float(peak_time) - 1.0))
+    mean_window = SignalCutter(signal).cut_time_range((float(peak_time) - 5.1, float(peak_time) - 0.1))
     peak_mean = float(np.mean(mean_window.data["value"])) if len(mean_window.data["value"]) > 0 else float('nan')
+
+    u3_mean = float(peak_mean-peak_eval_value)
 
     after_peak_signal.get_derivative()
 
@@ -117,6 +119,7 @@ def _post_peak_calculations(signal, peak_time: float, peak_value: float, params:
         "post_peak_unloading_fit": post_fit,
         "U3": u3,
         "peak_mean": peak_mean,
+        "U3_mean": u3_mean,
     }
 
 
@@ -149,6 +152,7 @@ def cut_and_analyze_peak(signal, params: AnalysisParams):
         "peak_mean": post["peak_mean"],
         "threshold": threshold,
         "U3": post["U3"],
+        "U3_mean": post["U3_mean"],
         "pre_peak_unloading_fit": pre["peak_linear_function"],
         "post_peak_unloading_fit": post["post_peak_unloading_fit"],
         "after_peak_signal": post["after_peak_signal"],
@@ -206,6 +210,7 @@ def recompute_from_peak(signal, peak_time: float, params: AnalysisParams, base_r
         "peak_mean": post["peak_mean"],
         "threshold": threshold,
         "U3": post["U3"],
+        "U3_mean": post["U3_mean"],
         "pre_peak_unloading_fit": peak_linear_function,
         "post_peak_unloading_fit": post["post_peak_unloading_fit"],
         "after_peak_signal": post["after_peak_signal"],

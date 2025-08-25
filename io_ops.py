@@ -40,6 +40,7 @@ def save_results(after_peak_signal, results: Dict[str, Any], save_dir: str, base
         'peak_mean': results.get('peak_mean'),
         'plus_minus_toleranz': results.get('threshold'),
         'U3': results.get('U3'),
+        'U3_mean': results.get('U3_mean'),
     }
 
     saver = SignalDataSaver(
