@@ -16,6 +16,9 @@ from io_ops import load_signal, ensure_save_dir, make_save_name, save_results
 from gui_fig import DischargePlot
 from log import logger
 
+# >>> Neu: Dateiname-Infos extrahieren
+from getFileNameInfos import getFileNameInfos
+
 
 class SingleFileApp:
     def __init__(self, root: tk.Tk, params: AnalysisParams):
@@ -34,7 +37,7 @@ class SingleFileApp:
         self.plot: Optional[DischargePlot] = None
 
         self.root.title("Cap Unloading – Single File Analyse")
-        self.root.geometry("1280x820")
+        self.root.geometry("1280x860")
 
         self._build_widgets()
         self._layout_widgets()
@@ -51,11 +54,32 @@ class SingleFileApp:
         self.lbl_filename = ttk.Label(self.top_frame, text="Keine Datei geladen", width=60)
         self.lbl_status = ttk.Label(self.top_frame, text="", foreground="#555")
 
-        # Center: plot + results panel
+        # Center: plot + rechte Seitenleiste (Datei-Infos + Ergebnisse)
         self.plot_frame = ttk.Frame(self.root)
-        self.info_frame = ttk.LabelFrame(self.root, text="Ergebnisse")
 
-        # Results fields
+        # Neu: Seitenpanel, das zwei Abschnitte vertikal stapelt
+        self.side_panel = ttk.Frame(self.root)
+
+        # ---- Abschnitt 1: Dateiname-Infos
+        self.fileinfo_frame = ttk.LabelFrame(self.side_panel, text="Dateiname‑Infos")
+        self._fileinfo_fields = [
+            ("manufacturer", "Hersteller"),
+            ("capacitance", "Kapazität [F]"),
+            ("typ", "Typ"),
+            ("methode", "Methode"),
+            ("klass", "Klasse"),
+            ("dut", "DUT"),
+            ("version", "Version"),
+        ]
+        self.fileinfo_labels: Dict[str, ttk.Label] = {}
+        for r, (key, label) in enumerate(self._fileinfo_fields):
+            ttk.Label(self.fileinfo_frame, text=label + ":").grid(row=r, column=0, sticky="w", padx=(8, 6), pady=4)
+            val_label = ttk.Label(self.fileinfo_frame, text="—", width=18)
+            val_label.grid(row=r, column=1, sticky="e", padx=(0, 8), pady=4)
+            self.fileinfo_labels[key] = val_label
+
+        # ---- Abschnitt 2: Ergebnisse
+        self.info_frame = ttk.LabelFrame(self.side_panel, text="Ergebnisse")
         self._result_fields = [
             ("holding_voltage", "Holding [V]"),
             ("rated_time", "Rated time [s]"),
@@ -106,7 +130,7 @@ class SingleFileApp:
     def _layout_widgets(self):
         # Grid weights
         self.root.columnconfigure(0, weight=1)  # plot column
-        self.root.columnconfigure(1, weight=0)  # info column
+        self.root.columnconfigure(1, weight=0)  # side column
         self.root.rowconfigure(1, weight=1)
 
         # Top
@@ -118,7 +142,13 @@ class SingleFileApp:
 
         # Center
         self.plot_frame.grid(row=1, column=0, sticky="nsew", padx=(10, 6), pady=6)
-        self.info_frame.grid(row=1, column=1, sticky="ns", padx=(6, 10), pady=6)
+
+        # Seitenpanel (rechts): zwei Reihen (Dateiname-Infos oben, Ergebnisse darunter)
+        self.side_panel.grid(row=1, column=1, sticky="ns", padx=(6, 10), pady=6)
+        self.side_panel.columnconfigure(0, weight=1)
+
+        self.fileinfo_frame.grid(row=0, column=0, sticky="new", pady=(0, 8))
+        self.info_frame.grid(row=1, column=0, sticky="ns")
 
         # Controls unter den Plots (über volle Breite)
         self.ctrl_frame.grid(row=2, column=0, columnspan=2, sticky="ew", padx=10, pady=(6, 10))
@@ -204,6 +234,9 @@ class SingleFileApp:
             self.entry_peak.configure(state="normal")
             self.entry_peak.delete(0, tk.END)
             self.entry_peak.insert(0, f"{self.results['peak_time']:.2f}")
+
+            # Neu: Dateiname-Infos aktualisieren
+            self._update_fileinfo_panel(self.file_name)
 
             # Render (Default: Peak Window)
             self._render_current_plot(initial_view="window")
@@ -416,6 +449,40 @@ class SingleFileApp:
 
         for key, _label in self._result_fields:
             self.result_labels.get(key, ttk.Label()).configure(text=fmt(results.get(key)))
+
+    def _update_fileinfo_panel(self, filename: str):
+        """Dateiname parsen und Anzeige befüllen."""
+        def fmt(v):
+            if v is None or v == "":
+                return "—"
+            return str(v)
+
+        # Standardwerte
+        info = {
+            "manufacturer": None,
+            "capacitance": None,
+            "typ": None,
+            "methode": None,
+            "klass": None,
+            "dut": None,
+            "version": None,
+        }
+        try:
+            manufacturer, capacitance, typ, methode, klass, dut, version = getFileNameInfos(filename)
+            info.update({
+                "manufacturer": manufacturer,
+                "capacitance": capacitance,
+                "typ": typ,
+                "methode": methode,
+                "klass": klass,
+                "dut": dut,
+                "version": version,
+            })
+        except Exception as e:
+            logger.warning(f"Konnte Dateiname-Infos nicht extrahieren: {e}")
+
+        for key, _label in self._fileinfo_fields:
+            self.fileinfo_labels.get(key, ttk.Label()).configure(text=fmt(info.get(key)))
 
     def _set_status(self, text: str):
         self.lbl_status.configure(text=text)
