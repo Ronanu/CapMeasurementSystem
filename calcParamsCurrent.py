@@ -1,8 +1,15 @@
-import sympy as sp
-U_sp, C_n = sp.symbols('U_R C_n')
-#TEST pull
+# Settings: Modify only here ---------------------
+
+
+Manufacturers = ["Vishay", "WuerthElektronik", "Eaton", "Sech", "Kyocera", "Maxwell"]
+
+types = ["C", "ESR"]
+
+methode = ["A", "B"]
+
+klass = ["1", "2", "3", "4"]
+
 # Manufacturer's ESR values for different capacitances
-# TODO: Add ESR values for more capacitances
 ESR = {"vishay" : {"5": 0.074, "7": 0.06, "8": 0.058,"10": 0.046, "12":0.041, "15": 0.034,
                     "20":0.038, "25" : 0.034, "30": 0.026, 
                     "35": 0.024, "40": 0.024, "50": 0.022, "60": 0.022}, 
@@ -21,7 +28,11 @@ U_R = {"vishay" : 3,
        "kyocera" : 3
        }
 
+# END SETTINGS ---------------------
+
 # formulas for the discharge current according to the norm
+import sympy as sp
+U_sp, C_n = sp.symbols('U_R C_n')
 norm_A = {"C": {"1": "1*C_n",
                 "2": "0.4*C_n*U_R",
                 "3": "4*C_n*U_R",
@@ -30,6 +41,10 @@ norm_A = {"C": {"1": "1*C_n",
                 "2": "4*C_n*U_R",
                 "3": "40*C_n*U_R",
                 "4": "400*C_n*U_R"}}
+
+
+
+# Functions
 
 def get_U_R(manufacturer):
     """
