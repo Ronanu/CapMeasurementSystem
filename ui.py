@@ -380,7 +380,7 @@ class SingleFileApp:
         tmax = float(np.max(self.orig_signal.data["time"]))
         t_new = max(tmin, min(tmax, t_new))
         self.entry_peak.delete(0, tk.END)
-        self.entry_peak.insert(0, f"{t_new:.6f}")
+        self.entry_peak.insert(0, f"{t_new:.2f}")
         self.on_replot_clicked()
 
     # ---------- Helpers ----------

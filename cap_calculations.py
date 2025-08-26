@@ -18,19 +18,19 @@ from analysis_param_management import AnalysisParams
 
 def _compute_core_before_peak(signal, params: AnalysisParams) -> Dict[str, Any]:
     """Berechnungen, die unabhängig von der Peak-Time sind."""
-    holding_signal = get_holding_voltage_signal(signal, rated_voltage=params.rated_voltage, cutaway=params.cutaway)
+    holding_signal = get_holding_voltage_signal(signal, rated_voltage=params.holding_voltage, cutaway=params.cutaway)
     holding_voltage = polynomial_fit(holding_signal, order=params.holding_fit_order)[0]
 
     unloading_pre = get_unloading_signal(
         signal,
-        rated_voltage=params.rated_voltage,
+        rated_voltage=params.holding_voltage,
         low_level=params.unloading_low_high[0],
         high_level=params.unloading_low_high[1]
     )
     unload_lin = polynomial_fit(unloading_pre, order=params.rated_fit_order)
-    rated_time = (params.rated_voltage - unload_lin[1]) / unload_lin[0]
+    rated_time = (params.holding_voltage - unload_lin[1]) / unload_lin[0]
 
-    peak_detection_signal = SignalCutter(signal).cut_time_range((rated_time - params.window_time, rated_time))
+    peak_detection_signal = SignalCutter(signal).cut_time_range((rated_time - params.peak_search_window_s, rated_time))
     std_dev = float(np.std(peak_detection_signal.data["value"]))
     peak_linear_function = polynomial_fit(peak_detection_signal, order=1)
 
@@ -48,7 +48,7 @@ def _find_peak_backward(signal, rated_time: float, std_dev: float, peak_linear_f
     Sucht den Peak rückwärts ab, mit Schwellwert und Ableitungsprüfung.
     Gibt (peak_time, peak_value, threshold, outliers) zurück.
     """
-    signal_to_cut = SignalCutter(signal).cut_time_range((rated_time - params.window_time, inf))
+    signal_to_cut = SignalCutter(signal).cut_time_range((rated_time - params.peak_search_window_s, inf))
     signal_to_cut.get_derivative()
 
     limit_reached = False
@@ -86,14 +86,18 @@ def _post_peak_calculations(signal, peak_time: float, peak_value: float, params:
     Berechnungen ab Peak: Segmente, Fits, U3, peak_mean.
     """
     after_peak_signal = SignalCutter(signal).cut_time_range((peak_time, inf))
-    unloading_signal = SignalCutter(after_peak_signal).cut_by_value("r>", params.post_peak_cut_ratio * peak_value)
+    low_rel, high_rel = params.unloading_low_high
+    low_abs  = low_rel * peak_value
+    high_abs = high_rel * peak_value
+    unloading_signal = SignalCutter(after_peak_signal).cut_by_value("r>", low_abs)
+    unloading_signal = SignalCutter(unloading_signal).cut_by_value("r<", high_abs)
 
     post_fit = polynomial_fit(unloading_signal, order=params.unload_fit_order)
 
     peak_eval_value = evaluate_polynomial(post_fit, peak_time)
     u3 = float(peak_value - peak_eval_value)
 
-    mean_window = SignalCutter(signal).cut_time_range((float(peak_time) - 5.1, float(peak_time) - 0.1))
+    mean_window = SignalCutter(signal).cut_time_range((float(peak_time) - params.peak_mean_window_s[0], float(peak_time) - params.peak_mean_window_s[1]))
     peak_mean = float(np.mean(mean_window.data["value"])) if len(mean_window.data["value"]) > 0 else float('nan')
 
     u3_mean = float(peak_mean - peak_eval_value)
