@@ -137,6 +137,10 @@ class DischargePlot:
             label = "MA(dU/dt)" + (f" [n={n}]" if n is not None else "")
             self.ax_bot.plot(sm.data["time"], sm.data["value"], label=label, linewidth=0.9)
 
+        # Peak-Vertikale (ohne Einfluss aufs Scaling)
+        if self.show_peak_line:
+            self.ax_bot.axvline(peak_time, linestyle="--", linewidth=1.0)
+        
         self.ax_bot.set_xlabel("Zeit (s)")
         self.ax_bot.set_ylabel("dU/dt (V/s)")
         self.ax_bot.grid(True, alpha=0.25)

@@ -21,6 +21,7 @@ class AnalysisParams:
     std_factor: float = 3.0              # Threshold-Multiplikator
     derivative_smooth_n: int = 8         # Moving Average Fenster
     post_peak_cut_ratio: float = 0.4     # r > ratio * peak_value
+                                         # Schwellenwert, ab dem nach dem Peak das Unloading-Signal geschnitten und gefittet wird.
     unload_fit_order: int = 6            # nach Peak
     rated_fit_order: int = 1             # vor Peak (linear)
     holding_fit_order: int = 0           # 0 = Mittelwert / konstante Regression
