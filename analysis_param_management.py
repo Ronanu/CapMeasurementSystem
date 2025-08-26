@@ -1,4 +1,3 @@
-# analysis_param_management.py
 from __future__ import annotations
 from dataclasses import dataclass, asdict, fields
 from typing import Tuple, Any, Dict
@@ -177,6 +176,8 @@ class ParamsEditor(tk.Toplevel):
         self.yaml_path = yaml_path
 
         self._vars: Dict[str, tk.StringVar] = {}
+        self._hint_widgets: Dict[str, tk.Widget] = {}
+        self._hint_visible: Dict[str, bool] = {}
         self._build_ui(params)
         self.bind("<Escape>", lambda e: self.destroy())
         self.grab_set()
@@ -194,11 +195,29 @@ class ParamsEditor(tk.Toplevel):
         self.columnconfigure(0, weight=1)
         self.rowconfigure(0, weight=1)
 
+        frm.columnconfigure(1, weight=1)  # Eingabespalte dehnbar
+
         # Validierer
         vcmd_float = (self.register(self._validate_float), "%P")
         vcmd_int   = (self.register(self._validate_int), "%P")
 
         row = 0
+
+        def _add_info_button(name: str, hint: str | None, row_index: int):
+            """Erzeugt einen kleinen Info‑Button rechts, der den unterliegenden Hint‑Text ein/ausklappt."""
+            if not hint:
+                return
+            btn = ttk.Button(frm, text="ℹ", width=2,
+                             command=lambda n=name: self._toggle_hint(n),
+                             takefocus=False)
+            btn.grid(row=row_index, column=3, sticky="e", padx=(6,0))
+            # vorbereiteter Hint‑Label (unter dem Feld), initial versteckt
+            hint_lbl = ttk.Label(frm, text=hint, foreground="#444", wraplength=520, justify="left")
+            # wir platzieren ihn auf row_index+1, über die volle Breite
+            hint_lbl.grid(row=row_index+1, column=0, columnspan=4, sticky="w", pady=(0,6))
+            hint_lbl.grid_remove()
+            self._hint_widgets[name] = hint_lbl
+            self._hint_visible[name] = False
 
         def add_float(name: str, label: str, value: float, width: int = 12, hint: str | None = None, state: str = "normal"):
             nonlocal row
@@ -207,9 +226,8 @@ class ParamsEditor(tk.Toplevel):
             self._vars[name] = var
             e = ttk.Entry(frm, textvariable=var, width=width, validate="key", validatecommand=vcmd_float, state=state, justify="right")
             e.grid(row=row, column=1, sticky="we", padx=2, columnspan=2)
-            if hint:
-                e.tooltip = hint
-            row += 1
+            _add_info_button(name, hint, row)
+            row += 2  # +1 für Feldzeile, +1 für (ggf. sichtbare) Hint-Zeile
 
         def add_int(name: str, label: str, value: int, from_: int, to_: int, hint: str | None = None, state: str = "normal"):
             nonlocal row
@@ -219,9 +237,8 @@ class ParamsEditor(tk.Toplevel):
             sp = ttk.Spinbox(frm, textvariable=var, from_=from_, to_=to_, increment=1, width=8,
                              validate="key", validatecommand=vcmd_int, state=state, justify="right")
             sp.grid(row=row, column=1, sticky="w", padx=2)
-            if hint:
-                sp.tooltip = hint
-            row += 1
+            _add_info_button(name, hint, row)
+            row += 2
 
         def add_tuple_low_high(name: str, label: str, value: Tuple[float,float], hint: str | None = None):
             nonlocal row
@@ -234,10 +251,8 @@ class ParamsEditor(tk.Toplevel):
             e2 = ttk.Entry(frm, textvariable=vhigh, width=6, validate="key", validatecommand=vcmd_float, justify="right")
             e1.grid(row=row, column=1, sticky="w", padx=(0,2))
             e2.grid(row=row, column=2, sticky="w", padx=(2,0))
-            if hint:
-                e1.tooltip = hint
-                e2.tooltip = hint
-            row += 1
+            _add_info_button(name, hint, row)
+            row += 2
 
         # ---- Felder mit Erklärtexten ----
 
@@ -296,10 +311,24 @@ class ParamsEditor(tk.Toplevel):
 
         # Buttons
         btns = ttk.Frame(frm)
-        btns.grid(row=row, column=0, columnspan=3, sticky="e", pady=(10,0))
+        btns.grid(row=row, column=0, columnspan=4, sticky="e", pady=(10,0))
         ttk.Button(btns, text="Speichern", command=self._on_save).grid(row=0, column=0, padx=4)
         ttk.Button(btns, text="Übernehmen", command=self._on_apply).grid(row=0, column=1, padx=4)
         ttk.Button(btns, text="Abbrechen", command=self.destroy).grid(row=0, column=2, padx=4)
+
+    # ---------- Hint-Logik ----------
+
+    def _toggle_hint(self, name: str):
+        w = self._hint_widgets.get(name)
+        if not w:
+            return
+        visible = self._hint_visible.get(name, False)
+        if visible:
+            w.grid_remove()
+            self._hint_visible[name] = False
+        else:
+            w.grid()
+            self._hint_visible[name] = True
 
     # ---------- Validierung ----------
 
