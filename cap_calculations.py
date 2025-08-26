@@ -1,8 +1,8 @@
-
+# cap_calculations.py
 from __future__ import annotations
 
-from dataclasses import dataclass, asdict
-from typing import Tuple, List, Dict, Any, Optional
+from dataclasses import asdict
+from typing import List, Dict, Any, Optional
 
 import numpy as np
 from numpy import inf
@@ -12,22 +12,8 @@ from cap_signal_processing import polynomial_fit, evaluate_polynomial
 from signal_transformations import SignalCutter, MovingAverageFilter
 from log import logger
 
-
-@dataclass
-class AnalysisParams:
-    rated_voltage: float = 3.0   # eigentlich holding voltage
-    sampling_interval: float = 0.01
-    window_time: float = 10.0            # Zeitfenster vor rated_time für Peak-Find
-    std_factor: float = 3.0              # Threshold-Multiplikator
-    derivative_smooth_n: int = 8         # Moving Average Fenster
-    post_peak_cut_ratio: float = 0.4     # r > ratio * peak_value
-                                         # Schwellenwert, ab dem nach dem Peak das Unloading-Signal geschnitten und gefittet wird.
-    unload_fit_order: int = 6            # nach Peak
-    rated_fit_order: int = 1             # vor Peak (linear)
-    holding_fit_order: int = 0           # 0 = Mittelwert / konstante Regression
-    cutaway: float = 0.2                 # für Holding-Extraction
-    unloading_low_high: Tuple[float, float] = (0.6, 0.95)  # Bereich für rated_time-Bestimmung
-    min_derivative_neg: float = -0.04    # Abbruchkriterium im Rückwärts-Scan
+# NEU: Dataclass aus ausgelagertem Modul importieren
+from analysis_param_management import AnalysisParams
 
 
 def _compute_core_before_peak(signal, params: AnalysisParams) -> Dict[str, Any]:
@@ -67,7 +53,7 @@ def _find_peak_backward(signal, rated_time: float, std_dev: float, peak_linear_f
 
     limit_reached = False
     threshold = params.std_factor * std_dev
-    outliers: List[Tuple[float, float]] = []
+    outliers: List[tuple[float, float]] = []
 
     for t, val, dval in zip(
         reversed(signal_to_cut.data["time"]),
@@ -97,7 +83,7 @@ def _find_peak_backward(signal, rated_time: float, std_dev: float, peak_linear_f
 
 def _post_peak_calculations(signal, peak_time: float, peak_value: float, params: AnalysisParams) -> Dict[str, Any]:
     """
-    Berechnungen ab Peak: Segmente, Fits, U3, peak_mean. 
+    Berechnungen ab Peak: Segmente, Fits, U3, peak_mean.
     """
     after_peak_signal = SignalCutter(signal).cut_time_range((peak_time, inf))
     unloading_signal = SignalCutter(after_peak_signal).cut_by_value("r>", params.post_peak_cut_ratio * peak_value)
@@ -110,7 +96,7 @@ def _post_peak_calculations(signal, peak_time: float, peak_value: float, params:
     mean_window = SignalCutter(signal).cut_time_range((float(peak_time) - 5.1, float(peak_time) - 0.1))
     peak_mean = float(np.mean(mean_window.data["value"])) if len(mean_window.data["value"]) > 0 else float('nan')
 
-    u3_mean = float(peak_mean-peak_eval_value)
+    u3_mean = float(peak_mean - peak_eval_value)
 
     after_peak_signal.get_derivative()
 

@@ -1,3 +1,4 @@
+# ui.py
 from __future__ import annotations
 
 import tkinter as tk
@@ -11,7 +12,13 @@ matplotlib.use("TkAgg")
 
 import numpy as np
 
-from cap_calculations import AnalysisParams, cut_and_analyze_peak, recompute_from_peak
+# ALT: from cap_calculations import AnalysisParams, cut_and_analyze_peak, recompute_from_peak
+from cap_calculations import cut_and_analyze_peak, recompute_from_peak
+# NEU: Param-Management zentralisiert
+from analysis_param_management import (
+    AnalysisParams, load_params_from_yaml, ParamsEditor, DEFAULT_YAML_PATH
+)
+
 from io_ops import load_signal, ensure_save_dir, make_save_name, save_results
 from gui_fig import DischargePlot
 from log import logger
@@ -54,14 +61,17 @@ class SingleFileApp:
         self.lbl_filename = ttk.Label(self.top_frame, text="Keine Datei geladen", width=60)
         self.lbl_status = ttk.Label(self.top_frame, text="", foreground="#555")
 
+        # NEU: Button zum Öffnen des Param-Editors
+        self.btn_params = ttk.Button(self.top_frame, text="Analyse-Parameter", command=self.on_open_params)
+
         # Center: plot + rechte Seitenleiste (Datei-Infos + Ergebnisse)
         self.plot_frame = ttk.Frame(self.root)
 
-        # Neu: Seitenpanel, das zwei Abschnitte vertikal stapelt
+        # Seitenpanel
         self.side_panel = ttk.Frame(self.root)
 
         # ---- Abschnitt 1: Dateiname-Infos
-        self.fileinfo_frame = ttk.LabelFrame(self.side_panel, text="Dateiname‑Infos")
+        self.fileinfo_frame = ttk.LabelFrame(self.side_panel, text="Dateiname-Infos")
         self._fileinfo_fields = [
             ("manufacturer", "Hersteller"),
             ("capacitance", "Kapazität [F]"),
@@ -135,26 +145,26 @@ class SingleFileApp:
 
         # Top
         self.top_frame.grid(row=0, column=0, columnspan=2, sticky="ew", padx=10, pady=(10, 6))
-        self.top_frame.columnconfigure(2, weight=1)
+        self.top_frame.columnconfigure(3, weight=1)
         self.btn_open.grid(row=0, column=0, padx=(0, 8))
         self.lbl_filename.grid(row=0, column=1, sticky="w")
-        self.lbl_status.grid(row=0, column=2, sticky="e")
+        self.btn_params.grid(row=0, column=2, padx=8)  # NEU
+        self.lbl_status.grid(row=0, column=3, sticky="e")
 
         # Center
         self.plot_frame.grid(row=1, column=0, sticky="nsew", padx=(10, 6), pady=6)
 
-        # Seitenpanel (rechts): zwei Reihen (Dateiname-Infos oben, Ergebnisse darunter)
+        # Seitenpanel (rechts)
         self.side_panel.grid(row=1, column=1, sticky="ns", padx=(6, 10), pady=6)
         self.side_panel.columnconfigure(0, weight=1)
 
         self.fileinfo_frame.grid(row=0, column=0, sticky="new", pady=(0, 8))
         self.info_frame.grid(row=1, column=0, sticky="ns")
 
-        # Controls unter den Plots (über volle Breite)
+        # Controls unten
         self.ctrl_frame.grid(row=2, column=0, columnspan=2, sticky="ew", padx=10, pady=(6, 10))
         for c in range(12):
             self.ctrl_frame.columnconfigure(c, weight=0)
-        # letzte Spalte dehnen wir für den Speichern-Button rechts
         self.ctrl_frame.columnconfigure(11, weight=1)
 
         # --- Row 0: Ansichten ---
@@ -165,10 +175,8 @@ class SingleFileApp:
         self.btn_view_full.grid(row=r, column=c, padx=4, pady=4); c += 1
         self.btn_view_window.grid(row=r, column=c, padx=4, pady=4); c += 1
 
-        # kleiner Spacer
         ttk.Label(self.ctrl_frame, text="\t").grid(row=r, column=c, padx=10); c += 1
 
-        # Peak-Operationen daneben
         self.lbl_peak.grid(row=r, column=c, sticky="e", padx=(4, 2)); c += 1
         self.entry_peak.grid(row=r, column=c, sticky="w", padx=(6, 12)); c += 1
         self.btn_replot.grid(row=r, column=c, padx=4); c += 1
@@ -183,22 +191,17 @@ class SingleFileApp:
         self.btn_pan_right.grid(row=r, column=c, padx=4, pady=6); c += 1
 
         c = c + 3
-        # ---  Feinjustage 
         self.btn_peak_minus.grid(row=r, column=c, padx=4, pady=(4, 6)); c += 1
         self.btn_peak_plus.grid(row=r, column=c, padx=4, pady=(4, 6)); c += 1
 
-        # Dehner bis vor letzte Spalte
         ttk.Label(self.ctrl_frame, text="").grid(row=r, column=10, sticky="ew")
-        # Speichern ganz rechts (Spalte 11)
         self.btn_save.grid(row=r, column=11, sticky="e", padx=(4, 0), pady=(4, 6))
 
     def _bind_shortcuts(self):
         self.root.bind("<Return>", lambda e: self.on_replot_clicked())
         self.root.bind("<Control-s>", lambda e: self.on_save_clicked())
-        # Zoom shortcuts
         self.root.bind("<Control-equal>", lambda e: self._zoom(0.8))   # Ctrl+= → zoom in
         self.root.bind("<Control-minus>", lambda e: self._zoom(1.25))  # Ctrl+- → zoom out
-        # Pan shortcuts: 1/5 Fensterbreite
         self.root.bind("<Left>", lambda e: self._pan_relative(-0.2))
         self.root.bind("<Right>", lambda e: self._pan_relative(+0.2))
 
@@ -213,6 +216,29 @@ class SingleFileApp:
             w.configure(state=state)
 
     # ---------- Callbacks ----------
+
+    def on_open_params(self):
+        """Dialog öffnen; bei Übernahme optional aktuelle Analyse neu rechnen."""
+        dlg = ParamsEditor(self.root, self.params, yaml_path=DEFAULT_YAML_PATH)
+        self.root.wait_window(dlg)
+        if dlg.result is None:
+            return
+        self.params = dlg.result
+        self._set_status("Parameter übernommen.")
+        # falls ein Signal geladen ist → Analyse mit neuen Parametern auffrischen
+        if self.orig_signal is not None:
+            try:
+                self.orig_signal, self.results = cut_and_analyze_peak(self.orig_signal, self.params)
+                auto_peak = float(self.results.get("peak_time", 0.0))
+                self.entry_peak.configure(state="normal")
+                self.entry_peak.delete(0, tk.END)
+                self.entry_peak.insert(0, f"{auto_peak:.2f}")
+                self._render_current_plot(initial_view="window")
+                self._update_results_panel(self.results)
+                self._set_status("Analyse mit neuen Parametern aktualisiert.")
+            except Exception as e:
+                logger.warning(f"Neu-Analyse nach Param-Update fehlgeschlagen: {e}")
+                messagebox.showerror("Fehler", f"Neu-Analyse fehlgeschlagen:\n{e}")
 
     def on_open_file(self):
         path = filedialog.askopenfilename(filetypes=[("CSV files", "*.csv")])
@@ -230,15 +256,11 @@ class SingleFileApp:
             self.orig_signal, self.results = cut_and_analyze_peak(self.orig_signal, self.params)
             logger.debug(f"Analyseergebnisse: {self.results}")
 
-            # Peak entry
             self.entry_peak.configure(state="normal")
             self.entry_peak.delete(0, tk.END)
             self.entry_peak.insert(0, f"{self.results['peak_time']:.2f}")
 
-            # Neu: Dateiname-Infos aktualisieren
             self._update_fileinfo_panel(self.file_name)
-
-            # Render (Default: Peak Window)
             self._render_current_plot(initial_view="window")
             self._update_results_panel(self.results)
 
@@ -314,13 +336,11 @@ class SingleFileApp:
         self._redraw_canvas()
 
     def on_view_all(self):
-        """t=0 (Start der Daten) bis Ende des Entladevorgangs (t_zero)."""
         if self.plot is None:
             return
         try:
-            # interne Helfer der Klasse verwenden
-            t0, t1 = self.plot._data_time_bounds()  # start..end der Daten
-            t_zero = self.plot._compute_t_zero()    # Ende des Discharge-Fits
+            t0, t1 = self.plot._data_time_bounds()
+            t_zero = self.plot._compute_t_zero()
             self.plot.set_xlim(t0, t_zero)
             self._redraw_canvas()
         except Exception as e:
@@ -333,7 +353,6 @@ class SingleFileApp:
         self._redraw_canvas()
 
     def _pan_relative(self, frac: float):
-        """Pan um frac * Fensterbreite (±0.2 = 1/5)."""
         if self.plot is None:
             return
         xlim = self.plot.get_xlim()
@@ -348,7 +367,6 @@ class SingleFileApp:
     # --- Peak Feinjustage ---
 
     def _nudge_peak(self, delta: float):
-        """Peak-Zeit im Feld anpassen (±0.01 s) und sofort neu plotten."""
         if self.orig_signal is None:
             return
         val = self.entry_peak.get().strip()
@@ -358,13 +376,11 @@ class SingleFileApp:
             self._flash_entry_error(self.entry_peak, "Ungültige Peak-Zeit")
             return
         t_new = t + float(delta)
-        # in Datenzeit clampen
         tmin = float(np.min(self.orig_signal.data["time"]))
         tmax = float(np.max(self.orig_signal.data["time"]))
         t_new = max(tmin, min(tmax, t_new))
         self.entry_peak.delete(0, tk.END)
         self.entry_peak.insert(0, f"{t_new:.6f}")
-        # Neu plotten mit neuer Peak-Time
         self.on_replot_clicked()
 
     # ---------- Helpers ----------
@@ -394,7 +410,6 @@ class SingleFileApp:
             pass
 
     def _render_current_plot(self, initial_view: str | None = None, keep_view: bool = False):
-        # clear old canvas/toolbar
         if self.canvas is not None:
             self.canvas.get_tk_widget().destroy()
             self.canvas = None
@@ -402,7 +417,6 @@ class SingleFileApp:
             self.toolbar.destroy()
             self.toolbar = None
 
-        # prepare / update DischargePlot
         if self.plot is None:
             self.plot = DischargePlot(self.orig_signal, self.results)
             fig = self.plot.draw(initial_view=initial_view or "window")
@@ -420,13 +434,11 @@ class SingleFileApp:
                 self.plot = DischargePlot(self.orig_signal, self.results)
                 fig = self.plot.draw(initial_view=initial_view or "window")
 
-        # embed canvas
         self.figure = fig
         self.canvas = FigureCanvasTkAgg(fig, master=self.plot_frame)
         self.canvas.draw()
         self.canvas.get_tk_widget().pack(fill="both", expand=True)
 
-        # toolbar
         self.toolbar = NavigationToolbar2Tk(self.canvas, self.plot_frame)
         self.toolbar.update()
 
@@ -451,13 +463,10 @@ class SingleFileApp:
             self.result_labels.get(key, ttk.Label()).configure(text=fmt(results.get(key)))
 
     def _update_fileinfo_panel(self, filename: str):
-        """Dateiname parsen und Anzeige befüllen."""
         def fmt(v):
             if v is None or v == "":
                 return "—"
             return str(v)
-
-        # Standardwerte
         info = {
             "manufacturer": None,
             "capacitance": None,
@@ -489,7 +498,7 @@ class SingleFileApp:
 
 
 def run_app():
-    params = AnalysisParams()
+    params = load_params_from_yaml(DEFAULT_YAML_PATH)
     root = tk.Tk()
     try:
         style = ttk.Style()
