@@ -287,7 +287,7 @@ class ParamsEditor(tk.Toplevel):
                 codefrm,
                 wrap=wrap,
                 font="TkFixedFont",
-                height=min(18, code.count("\\n") + 3),
+                height=min(18, code.count("\\n") + 5),
                 padx=6, pady=6, bd=0,
                 highlightthickness=1, relief="solid",
                 background="#f8f8f8",
