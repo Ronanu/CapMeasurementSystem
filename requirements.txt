@@ -28,4 +28,4 @@ tzdata==2025.2
 tksheet
 openpyxl
 sympy
-
+pygments

@@ -92,7 +92,7 @@ class SingleFileApp:
         self.info_frame = ttk.LabelFrame(self.side_panel, text="Ergebnisse")
         self._result_fields = [
             ("holding_voltage", "Holding [V]"),
-            ("rated_time", "Rated time [s]"),
+            ("approx_peak_time", "Rated time [s]"),
             ("peak_time", "Peak time [s]"),
             ("peak_value", "Peak value [V]"),
             ("peak_mean", "Mean before peak [V]"),

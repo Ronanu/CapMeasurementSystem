@@ -28,27 +28,27 @@ def _compute_core_before_peak(signal, params: AnalysisParams) -> Dict[str, Any]:
         high_level=params.unloading_low_high[1]
     )
     unload_lin = polynomial_fit(unloading_pre, order=params.rated_fit_order)
-    rated_time = (params.holding_voltage - unload_lin[1]) / unload_lin[0]
+    approx_peak_time = (params.holding_voltage - unload_lin[1]) / unload_lin[0]
 
-    peak_detection_signal = SignalCutter(signal).cut_time_range((rated_time - params.peak_search_window_s, rated_time))
+    peak_detection_signal = SignalCutter(signal).cut_time_range((approx_peak_time - params.peak_search_window_s, approx_peak_time))
     std_dev = float(np.std(peak_detection_signal.data["value"]))
     peak_linear_function = polynomial_fit(peak_detection_signal, order=1)
 
     return {
         "holding_voltage": float(holding_voltage),
-        "rated_time": float(rated_time),
+        "approx_peak_time": float(approx_peak_time),
         "peak_detection_signal": peak_detection_signal,
         "std_dev": std_dev,
         "peak_linear_function": peak_linear_function,
     }
 
 
-def _find_peak_backward(signal, rated_time: float, std_dev: float, peak_linear_function, params: AnalysisParams):
+def _find_peak_backward(signal, approx_peak_time: float, std_dev: float, peak_linear_function, params: AnalysisParams):
     """
     Sucht den Peak rückwärts ab, mit Schwellwert und Ableitungsprüfung.
     Gibt (peak_time, peak_value, threshold, outliers) zurück.
     """
-    signal_to_cut = SignalCutter(signal).cut_time_range((rated_time - params.peak_search_window_s, inf))
+    signal_to_cut = SignalCutter(signal).cut_time_range((approx_peak_time - params.peak_search_window_s, inf))
     signal_to_cut.get_derivative()
 
     limit_reached = False
@@ -73,9 +73,9 @@ def _find_peak_backward(signal, rated_time: float, std_dev: float, peak_linear_f
                 peak_value = float(val)
                 break
     else:
-        # Fallback: rated_time als Peak
-        peak_time = float(rated_time)
-        idx = int(np.argmin(np.abs(signal_to_cut.data["time"] - rated_time)))
+        # Fallback: approx_peak_time als Peak
+        peak_time = float(approx_peak_time)
+        idx = int(np.argmin(np.abs(signal_to_cut.data["time"] - approx_peak_time)))
         peak_value = float(signal_to_cut.data["value"][idx])
 
     return peak_time, peak_value, threshold, outliers
@@ -90,7 +90,8 @@ def _post_peak_calculations(signal, peak_time: float, peak_value: float, params:
     low_abs  = low_rel * peak_value
     high_abs = high_rel * peak_value
     unloading_signal = SignalCutter(after_peak_signal).cut_by_value("r>", low_abs)
-    unloading_signal = SignalCutter(unloading_signal).cut_by_value("r<", high_abs)
+    if high_abs < 0.98:
+        unloading_signal = SignalCutter(unloading_signal).cut_by_value("r<", high_abs)
 
     post_fit = polynomial_fit(unloading_signal, order=params.unload_fit_order)
 
@@ -121,7 +122,7 @@ def cut_and_analyze_peak(signal, params: AnalysisParams):
 
     pre = _compute_core_before_peak(signal, params)
     peak_time, peak_value, threshold, outliers = _find_peak_backward(
-        signal, pre["rated_time"], pre["std_dev"], pre["peak_linear_function"], params
+        signal, pre["approx_peak_time"], pre["std_dev"], pre["peak_linear_function"], params
     )
     logger.info(f"Peak gefunden bei t={peak_time:.3f}s, Wert={peak_value:.3f}")
 
@@ -132,12 +133,12 @@ def cut_and_analyze_peak(signal, params: AnalysisParams):
         signal.get_derivative()
     smoothed_derivative_signal = MovingAverageFilter(signal.get_derivative_signal(), window_size=params.derivative_smooth_n).signal_data
 
-    time_range = abs(peak_time - pre["rated_time"]) * 2.0
-    relevant_time_window = (pre["rated_time"], pre["rated_time"] + time_range)
+    time_range = abs(peak_time - pre["approx_peak_time"]) * 2.0
+    relevant_time_window = (pre["approx_peak_time"], pre["approx_peak_time"] + time_range)
 
     results: Dict[str, Any] = {
         "holding_voltage": pre["holding_voltage"],
-        "rated_time": pre["rated_time"],
+        "approx_peak_time": pre["approx_peak_time"],
         "peak_time": peak_time,
         "peak_value": peak_value,
         "peak_mean": post["peak_mean"],
@@ -162,12 +163,12 @@ def recompute_from_peak(signal, peak_time: float, params: AnalysisParams, base_r
     """Rechnet nur peak-abhängige Größen neu (für Replot/Save nach manueller Anpassung)."""
     if base_results is None:
         pre = _compute_core_before_peak(signal, params)
-        rated_time = pre["rated_time"]
+        approx_peak_time = pre["approx_peak_time"]
         holding_voltage = pre["holding_voltage"]
         peak_detection_signal = pre["peak_detection_signal"]
         peak_linear_function = pre["peak_linear_function"]
     else:
-        rated_time = base_results.get("rated_time")
+        approx_peak_time = base_results.get("approx_peak_time")
         holding_voltage = base_results.get("holding_voltage")
         peak_detection_signal = base_results.get("peak_detection_signal")
         peak_linear_function = base_results.get("pre_peak_unloading_fit")
@@ -184,8 +185,8 @@ def recompute_from_peak(signal, peak_time: float, params: AnalysisParams, base_r
         signal.get_derivative()
     smoothed_derivative_signal = MovingAverageFilter(signal.get_derivative_signal(), window_size=params.derivative_smooth_n).signal_data
 
-    time_range = abs(float(peak_time) - float(rated_time)) * 2.0
-    relevant_time_window = (rated_time, rated_time + time_range)
+    time_range = abs(float(peak_time) - float(approx_peak_time)) * 2.0
+    relevant_time_window = (approx_peak_time, approx_peak_time + time_range)
 
     if peak_detection_signal is not None:
         std_dev = float(np.std(peak_detection_signal.data["value"]))
@@ -195,7 +196,7 @@ def recompute_from_peak(signal, peak_time: float, params: AnalysisParams, base_r
 
     results = {
         "holding_voltage": holding_voltage,
-        "rated_time": rated_time,
+        "approx_peak_time": approx_peak_time,
         "peak_time": float(peak_time),
         "peak_value": peak_value,
         "peak_mean": post["peak_mean"],

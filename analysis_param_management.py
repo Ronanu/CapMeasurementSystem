@@ -17,14 +17,14 @@ class AnalysisParams:
     sampling_interval: float = 0.01         # Zeitabstand zwischen Messpunkten [s]
 
     # --- Peak-Erkennung ---
-    peak_search_window_s: float = 10.0      # Suchfenster vor rated_time [s]
+    peak_search_window_s: float = 10.0      # Suchfenster vor approx_peak_time [s]
     std_factor: float = 3.0                 # Threshold-Multiplikator (σ-Faktor)
     derivative_smooth_n: int = 8            # Fensterlänge gleitender Mittelwert für Ableitung
     min_derivative_neg: float = -0.04       # Abbruchkriterium: wie negativ darf dV/dt noch sein
 
     # --- Fits ---
     # rated_fit_order wird in der GUI deaktiviert & intern auf 1 erzwungen (Entlade‑Bezugslinie vor dem Peak)
-    rated_fit_order: int = 1                # Polynomgrad vor dem Peak (rated_time via Schnitt mit Haltespannung)
+    rated_fit_order: int = 1                # Polynomgrad vor dem Peak (approx_peak_time via Schnitt mit Haltespannung)
     unload_fit_order: int = 6               # Polynomgrad nach dem Peak (Entladeast)
     # holding_fit_order bleibt 0 (Mittelwert) – GUI deaktiviert; behalten für Kompatibilität der Oberfläche
     holding_fit_order: int = 0
@@ -260,7 +260,7 @@ class ParamsEditor(tk.Toplevel):
 
         add_float(
             "holding_voltage", "holding_voltage [V]", p.holding_voltage,
-            hint="Haltespannung: Referenz für Holding‑Mittel und zur Bestimmung der rated time (Schnitt der Entlade‑Bezugslinie mit dieser Spannung)."
+            hint="Haltespannung: Referenz für Holding‑Mittel und zur Bestimmung ersten groben peak time approximation (Schnitt der Entlade‑Bezugslinie mit dieser Spannung)."
         )
         add_float(
             "sampling_interval", "sampling_interval [s]", p.sampling_interval,
@@ -268,11 +268,12 @@ class ParamsEditor(tk.Toplevel):
         )
         add_float(
             "peak_search_window_s", "peak_search_window_s [s]", p.peak_search_window_s,
-            hint="Suchfenster VOR der rated time. In diesem Bereich wird die Entlade‑Bezugslinie geschätzt und der Rückwärts‑Scan gestartet."
+            hint="Suchfenster VOR der groben peak time approximation. In diesem Bereich wird die Entlade‑Bezugslinie geschätzt und der Rückwärts‑Scan gestartet."
         )
         add_float(
             "std_factor", "std_factor [-]", p.std_factor,
-            hint="Schwellwert = std_factor × σ des Signals im Suchfenster. Höher = konservativer, weniger falsche Peaks."
+            hint="Schwellwert = std_factor multipliziert mit der Standardabweichung der Messschwankungen. " \
+            "Höher = konservativer, weniger falsche Peak frühdetektion."
         )
         add_int(
             "derivative_smooth_n", "derivative_smooth_n [n]", p.derivative_smooth_n, from_=1, to_=999,
@@ -300,13 +301,32 @@ class ParamsEditor(tk.Toplevel):
         )
 
         add_float(
-            "cutaway", "cutaway [s]", p.cutaway,
-            hint="Anfangsdauer, die beim Holding ignoriert wird (Schalt‑/Einschwingartefakte entfernen)."
+            "cutaway", "cutaway [-]", p.cutaway,
+            hint="Dieser Parameter dient hauptsächlich zur bestimmung der Haltespannung des Messsignals." \
+            "Die \"angepeilte\" Haltespannung der Messung ist bekannt (siehe Parameter holding_voltage)." \
+            "Für die ermittlung der messwerte der Haltespannung wird das Signal erst Beidseitig Hard gecodet " \
+            "auf 98.5% der holding_voltage beschnitten und dann noch anand dieses cutaway parameters zeitlich beschnitten." \
+            "Übrig bleibt der relevante Zeitbereich für die Haltespannung." \
+            "Zuschneidfunktion:" \
+            "" \
+            "def get_holding_voltage_signal(signal, rated_voltage, limit=0.985, cutaway=parameters.cutaway):" \
+            "first_cut = SignalCutter(signal).cut_by_value(\"l>\", limit * rated_voltage)" \
+            "second_cut = SignalCutter(first_cut).cut_by_value(\"r>\", limit * rated_voltage)" \
+            "start_time, end_time = second_cut.get_start_and_end_time()" \
+            "time_diff = end_time - start_time" \
+            "cut = cutaway * time_diff " \
+            "third_cut = SignalCutter(second_cut).cut_time_range((start_time + cut * 0.7, end_time - cut * 0.3))" \
+            "return third_cut" \
+            "" \
+            "gemessene holding voltage dann über:" \
+            "" \
+            "holding_voltage = polynomial_fit(holding_signal, order=params.holding_fit_order)[0]" 
         )
 
         add_tuple_low_high(
             "peak_mean_window_s", "peak_mean_window_s [s,s]", p.peak_mean_window_s,
-            hint="Fenster für Peak‑Mittelwert vor dem Peak, als positive Offsets: (max_vor_peak, min_vor_peak). Beispiel: (5.1, 0.1) → [−5.1 s … −0.1 s]."
+            hint="Zeitfenster für Peak‑Mittelwert vor dem Peak, als positive Offsets: (max_vor_peak, min_vor_peak). Beispiel: (5.1, 0.1) → [−5.1 s … −0.1 s]." \
+            "Relevant für die Berechnung von U3 Mean."
         )
 
         # Buttons

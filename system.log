@@ -136,7 +136,7 @@ ImportError: cannot import name 'DischargePlot' from 'gui_fig' (c:\Users\rodi9\D
 2025-08-23 13:58:24,626 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_B1_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
 2025-08-23 13:58:24,628 - INFO - Analyse gestartet: Original_Signal
 2025-08-23 13:58:24,706 - INFO - Peak gefunden bei t=340.720s, Wert=2.986
-2025-08-23 13:58:24,716 - WARNING - Fehler beim Öffnen: DischargePlot.draw() got an unexpected keyword argument 'view' (File: ui, Line: 153, Function: on_open_file)
+2025-08-23 13:58:24,716 - WARNING - Fehler beim ï¿½ffnen: DischargePlot.draw() got an unexpected keyword argument 'view' (File: ui, Line: 153, Function: on_open_file)
 2025-08-23 14:04:21,599 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A4_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
 2025-08-23 14:04:21,603 - INFO - Analyse gestartet: Original_Signal
 2025-08-23 14:04:21,758 - INFO - Peak gefunden bei t=1832.910s, Wert=2.987
@@ -226,12 +226,12 @@ ImportError: cannot import name 'DischargePlot' from 'gui_fig' (c:\Users\rodi9\D
 2025-08-25 19:45:11,809 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_B1_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
 2025-08-25 19:45:11,810 - INFO - Analyse gestartet: Original_Signal
 2025-08-25 19:45:11,867 - INFO - Peak gefunden bei t=345.800s, Wert=2.988
-2025-08-25 19:45:11,878 - INFO - Analyseergebnisse: {'holding_voltage': 2.990190746454666, 'rated_time': 345.12790776630607, 'peak_time': 345.8, 'peak_value': 2.987758, 'peak_mean': 2.98880665926748, 'threshold': 0.0011465282060883117, 'U3': 0.07172866965699187, 'pre_peak_unloading_fit': array([-5.79737200e-05,  3.00854907e+00]), 'post_peak_unloading_fit': array([-8.15950853e-09,  1.14905351e-05, -5.05844693e-03,  2.50907737e-03,
+2025-08-25 19:45:11,878 - INFO - Analyseergebnisse: {'holding_voltage': 2.990190746454666, 'approx_peak_time': 345.12790776630607, 'peak_time': 345.8, 'peak_value': 2.987758, 'peak_mean': 2.98880665926748, 'threshold': 0.0011465282060883117, 'U3': 0.07172866965699187, 'pre_peak_unloading_fit': array([-5.79737200e-05,  3.00854907e+00]), 'post_peak_unloading_fit': array([-8.15950853e-09,  1.14905351e-05, -5.05844693e-03,  2.50907737e-03,
         6.25410685e+02, -1.76203669e+05,  1.55081191e+07]), 'after_peak_signal': <signal_transformations.SignalData object at 0x000001C3DADF3010>, 'unloading_signal': <signal_transformations.SignalData object at 0x000001C3FBE5E510>, 'peak_detection_signal': <signal_transformations.SignalData object at 0x000001C3FABE9550>, 'outliers': [(np.float64(345.81), np.float64(2.987989)), (np.float64(345.81), np.float64(2.987989))], 'smoothed_derivative_signal': <signal_transformations.SignalData object at 0x000001C3FBE5D1D0>, 'relevant_time_window': (345.12790776630607, 346.47209223369396), 'file_name': 'Original_Signal', 'params_used': {'rated_voltage': 3.0, 'sampling_interval': 0.01, 'window_time': 10.0, 'std_factor': 3.0, 'derivative_smooth_n': 8, 'post_peak_cut_ratio': 0.4, 'unload_fit_order': 6, 'rated_fit_order': 1, 'holding_fit_order': 0, 'cutaway': 0.2, 'unloading_low_high': (0.6, 0.95), 'min_derivative_neg': -0.04}}
 2025-08-25 19:47:45,824 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
 2025-08-25 19:47:45,828 - INFO - Analyse gestartet: Original_Signal
 2025-08-25 19:47:46,179 - INFO - Peak gefunden bei t=1813.220s, Wert=2.988
-2025-08-25 19:47:46,228 - INFO - Analyseergebnisse: {'holding_voltage': 2.9870533435924362, 'rated_time': 1810.4662523706738, 'peak_time': 1813.22, 'peak_value': 2.988221, 'peak_mean': 2.9875022108768032, 'threshold': 0.0023106253576412866, 'U3': 0.007478292346082771, 'pre_peak_unloading_fit': array([-1.47802786e-05,  3.01422405e+00]), 'post_peak_unloading_fit': array([-1.70915554e-16,  1.34077175e-12, -3.31163255e-09,  1.77473120e-07,
+2025-08-25 19:47:46,228 - INFO - Analyseergebnisse: {'holding_voltage': 2.9870533435924362, 'approx_peak_time': 1810.4662523706738, 'peak_time': 1813.22, 'peak_value': 2.988221, 'peak_mean': 2.9875022108768032, 'threshold': 0.0023106253576412866, 'U3': 0.007478292346082771, 'pre_peak_unloading_fit': array([-1.47802786e-05,  3.01422405e+00]), 'post_peak_unloading_fit': array([-1.70915554e-16,  1.34077175e-12, -3.31163255e-09,  1.77473120e-07,
         1.21617834e-02, -1.92627675e+01,  9.47953430e+03]), 'after_peak_signal': <signal_transformations.SignalData object at 0x00000255AF340210>, 'unloading_signal': <signal_transformations.SignalData object at 0x00000255AF353150>, 'peak_detection_signal': <signal_transformations.SignalData object at 0x00000255AF331ED0>, 'outliers': [(np.float64(1813.24), np.float64(2.985752)), (np.float64(1813.24), np.float64(2.985752)), (np.float64(1813.23), np.float64(2.986986))], 'smoothed_derivative_signal': <signal_transformations.SignalData object at 0x00000255B365C150>, 'relevant_time_window': (1810.4662523706738, 1815.9737476293262), 'file_name': 'Original_Signal', 'params_used': {'rated_voltage': 3.0, 'sampling_interval': 0.01, 'window_time': 10.0, 'std_factor': 3.0, 'derivative_smooth_n': 8, 'post_peak_cut_ratio': 0.4, 'unload_fit_order': 6, 'rated_fit_order': 1, 'holding_fit_order': 0, 'cutaway': 0.2, 'unloading_low_high': (0.6, 0.95), 'min_derivative_neg': -0.04}}
 2025-08-25 19:48:23,968 - INFO - Analyse gestartet: Original_Signal
 2025-08-25 19:48:24,287 - INFO - Peak gefunden bei t=1813.220s, Wert=2.988
@@ -239,7 +239,7 @@ ImportError: cannot import name 'DischargePlot' from 'gui_fig' (c:\Users\rodi9\D
 2025-08-25 19:51:05,257 - INFO - Analyse gestartet: Original_Signal
 2025-08-25 19:51:05,644 - INFO - Peak gefunden bei t=1864.310s, Wert=2.986
 2025-08-25 19:51:05,672 - INFO - U3 Mean: 0.006 V
-2025-08-25 19:51:05,778 - INFO - Analyseergebnisse: {'holding_voltage': 2.9867261881574896, 'rated_time': 1861.8345470760366, 'peak_time': 1864.31, 'peak_value': 2.986137, 'peak_mean': 2.986247426193119, 'threshold': 0.002311331426868698, 'U3': 0.0059173261980878245, 'pre_peak_unloading_fit': array([-6.10139164e-05,  3.09958810e+00]), 'post_peak_unloading_fit': array([-8.14141908e-17,  6.65641270e-13, -1.71912088e-09,  1.39263848e-07,
+2025-08-25 19:51:05,778 - INFO - Analyseergebnisse: {'holding_voltage': 2.9867261881574896, 'approx_peak_time': 1861.8345470760366, 'peak_time': 1864.31, 'peak_value': 2.986137, 'peak_mean': 2.986247426193119, 'threshold': 0.002311331426868698, 'U3': 0.0059173261980878245, 'pre_peak_unloading_fit': array([-6.10139164e-05,  3.09958810e+00]), 'post_peak_unloading_fit': array([-8.14141908e-17,  6.65641270e-13, -1.71912088e-09,  1.39263848e-07,
         6.70434273e-03, -1.11074743e+01,  5.70093541e+03]), 'after_peak_signal': <signal_transformations.SignalData object at 0x000002B4B1339610>, 'unloading_signal': <signal_transformations.SignalData object at 0x000002B4B1354E50>, 'peak_detection_signal': <signal_transformations.SignalData object at 0x000002B491FA65D0>, 'outliers': [(np.float64(1864.33), np.float64(2.984054)), (np.float64(1864.33), np.float64(2.984054)), (np.float64(1864.32), np.float64(2.987372))], 'smoothed_derivative_signal': <signal_transformations.SignalData object at 0x000002B4BD0D6910>, 'relevant_time_window': (1861.8345470760366, 1866.7854529239632), 'file_name': 'Original_Signal', 'params_used': {'rated_voltage': 3.0, 'sampling_interval': 0.01, 'window_time': 10.0, 'std_factor': 3.0, 'derivative_smooth_n': 8, 'post_peak_cut_ratio': 0.4, 'unload_fit_order': 6, 'rated_fit_order': 1, 'holding_fit_order': 0, 'cutaway': 0.2, 'unloading_low_high': (0.6, 0.95), 'min_derivative_neg': -0.04}}
 2025-08-25 19:53:12,280 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A4_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
 2025-08-25 19:53:12,284 - INFO - Analyse gestartet: Original_Signal
@@ -247,7 +247,7 @@ ImportError: cannot import name 'DischargePlot' from 'gui_fig' (c:\Users\rodi9\D
 2025-08-25 19:56:11,256 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A4_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
 2025-08-25 19:56:11,263 - INFO - Analyse gestartet: Original_Signal
 2025-08-25 19:56:11,484 - INFO - Peak gefunden bei t=1830.790s, Wert=2.985
-2025-08-25 19:56:11,536 - WARNING - Fehler beim Öffnen: 'Logger' object has no attribute 'debu' (File: ui, Line: 217, Function: on_open_file)
+2025-08-25 19:56:11,536 - WARNING - Fehler beim ï¿½ffnen: 'Logger' object has no attribute 'debu' (File: ui, Line: 217, Function: on_open_file)
 2025-08-25 19:58:52,403 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
 2025-08-25 19:58:52,410 - INFO - Analyse gestartet: Original_Signal
 2025-08-25 19:58:52,786 - INFO - Peak gefunden bei t=1813.220s, Wert=2.988
@@ -415,7 +415,7 @@ ImportError: cannot import name 'DEFAULT_YAML_PATH' from 'analysis_param_managem
 2025-08-26 15:49:40,604 - INFO - Analyse gestartet: Original_Signal
 2025-08-26 15:49:40,826 - INFO - Peak gefunden bei t=4973.680s, Wert=0.001
 2025-08-26 15:49:40,834 - WARNING - Warnung: Keine Datenpunkte wurden durch r> 0.00027 entfernt. (File: signal_transformations, Line: 211, Function: cut_by_value)
-2025-08-26 15:49:40,857 - WARNING - Fehler beim Öffnen: index 0 is out of bounds for axis 0 with size 0 (File: ui, Line: 272, Function: on_open_file)
+2025-08-26 15:49:40,857 - WARNING - Fehler beim ï¿½ffnen: index 0 is out of bounds for axis 0 with size 0 (File: ui, Line: 272, Function: on_open_file)
 2025-08-26 15:50:02,737 - INFO - Analyse gestartet: Original_Signal
 2025-08-26 15:50:02,905 - INFO - Peak gefunden bei t=4973.680s, Wert=0.001
 2025-08-26 15:50:02,913 - WARNING - Warnung: Keine Datenpunkte wurden durch r> 0.00027 entfernt. (File: signal_transformations, Line: 211, Function: cut_by_value)
@@ -504,3 +504,66 @@ ImportError: cannot import name 'DEFAULT_YAML_PATH' from 'analysis_param_managem
 2025-08-26 16:02:10,246 - INFO - Analyse gestartet: Original_Signal
 2025-08-26 16:02:13,000 - INFO - Peak gefunden bei t=1836.950s, Wert=2.993
 2025-08-26 16:02:13,048 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.8434278999999996 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:05:02,156 - INFO - Analyse gestartet: Original_Signal
+2025-08-26 16:05:05,078 - INFO - Peak gefunden bei t=1836.950s, Wert=2.993
+2025-08-26 16:05:05,119 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.90328954 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:32:31,262 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A4_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-26 16:32:31,265 - INFO - Analyse gestartet: Original_Signal
+2025-08-26 16:32:31,400 - INFO - Peak gefunden bei t=1849.960s, Wert=2.986
+2025-08-26 16:32:31,405 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.8369033 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:33:41,267 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.836244 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:33:45,596 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.83807655 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:33:46,876 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.8365375499999996 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:33:48,532 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.83807655 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:33:49,300 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.836244 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:33:50,628 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.8369033 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:33:52,084 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.8358773 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:37:18,240 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-26 16:37:18,242 - INFO - Analyse gestartet: Original_Signal
+2025-08-26 16:37:18,581 - INFO - Peak gefunden bei t=1864.310s, Wert=2.986
+2025-08-26 16:37:18,586 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.8368301499999995 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:37:29,488 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A2_DUT1_V1_Eaton_25F_06-08-2025.csv
+2025-08-26 16:37:29,491 - INFO - Analyse gestartet: Original_Signal
+2025-08-26 16:37:32,228 - INFO - Peak gefunden bei t=1836.360s, Wert=2.991
+2025-08-26 16:37:32,254 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.8413018 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:37:41,459 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.8409351 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:38:09,033 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.8429880499999998 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:39:27,722 - INFO - Analyse gestartet: Original_Signal
+2025-08-26 16:39:30,527 - INFO - Peak gefunden bei t=1837.580s, Wert=2.990
+2025-08-26 16:39:30,553 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.8402758 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:39:33,946 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.8402758 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:39:58,370 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.84262135 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:41:47,979 - INFO - Analyse gestartet: Original_Signal
+2025-08-26 16:41:48,133 - INFO - Peak gefunden bei t=4973.680s, Wert=0.001
+2025-08-26 16:41:48,148 - WARNING - Warnung: Keine Datenpunkte wurden durch r> 0.00027 entfernt. (File: signal_transformations, Line: 211, Function: cut_by_value)
+2025-08-26 16:41:48,166 - WARNING - Neu-Analyse nach Param-Update fehlgeschlagen: index 0 is out of bounds for axis 0 with size 0 (File: ui, Line: 240, Function: on_open_params)
+2025-08-26 16:42:03,032 - INFO - Analyse gestartet: Original_Signal
+2025-08-26 16:42:05,765 - INFO - Peak gefunden bei t=1835.800s, Wert=2.991
+2025-08-26 16:42:05,802 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.6922456 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:42:09,617 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.6922456 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:42:36,394 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/C_A4_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-26 16:42:36,396 - INFO - Analyse gestartet: Original_Signal
+2025-08-26 16:42:36,485 - INFO - Peak gefunden bei t=1849.960s, Wert=2.986
+2025-08-26 16:42:36,488 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.6875926 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:42:47,295 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A4_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-26 16:42:47,297 - INFO - Analyse gestartet: Original_Signal
+2025-08-26 16:42:47,380 - INFO - Peak gefunden bei t=1830.790s, Wert=2.985
+2025-08-26 16:42:47,384 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.6865513 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:43:10,748 - INFO - Analyse gestartet: Original_Signal
+2025-08-26 16:43:10,873 - INFO - Peak gefunden bei t=1830.790s, Wert=2.985
+2025-08-26 16:43:10,881 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.6865513 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:43:12,220 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.6865513 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:43:54,593 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-26 16:43:54,596 - INFO - Analyse gestartet: Original_Signal
+2025-08-26 16:43:54,903 - INFO - Peak gefunden bei t=1829.450s, Wert=2.988
+2025-08-26 16:43:54,909 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.6891901 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:44:08,095 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.6891901 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:44:57,488 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.6891901 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:46:53,401 - INFO - Analyse gestartet: Original_Signal
+2025-08-26 16:46:53,714 - INFO - Peak gefunden bei t=1829.450s, Wert=2.988
+2025-08-26 16:46:53,720 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.6891901 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:47:15,696 - INFO - Analyse gestartet: Original_Signal
+2025-08-26 16:47:16,000 - INFO - Peak gefunden bei t=1829.450s, Wert=2.988
+2025-08-26 16:47:16,006 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.6891901 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:52:15,743 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.6888436000000002 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)
+2025-08-26 16:52:36,910 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 2.6891901 entfernt. (File: signal_transformations, Line: 221, Function: cut_by_value)

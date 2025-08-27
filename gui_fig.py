@@ -49,7 +49,7 @@ class DischargePlot:
 
     def draw(self, initial_view: str = "window"):
         """
-        initial_view: "window" (relevant_time_window) oder "full" (bis Fit==0 ab rated_time)
+        initial_view: "window" (relevant_time_window) oder "full" (bis Fit==0 ab approx_peak_time)
         """
         import numpy as np
         from matplotlib.figure import Figure
@@ -64,7 +64,7 @@ class DischargePlot:
             s.get_derivative()
 
         peak_time = float(r["peak_time"])
-        rated_t = float(r["rated_time"])
+        rated_t = float(r["approx_peak_time"])
         U3 = float(r["U3"])
         peak_mean = float(r["peak_mean"])
         coeffs = r["post_peak_unloading_fit"]
@@ -168,7 +168,7 @@ class DischargePlot:
         self._apply_view()
 
     def zoom_full(self):
-        """Von max(t0, rated_time) bis Nulldurchgang des Fits."""
+        """Von max(t0, approx_peak_time) bis Nulldurchgang des Fits."""
         t0, t1 = self._full_xlim()
         self.current_xlim = (t0, t1)
         self._apply_view()
@@ -235,22 +235,22 @@ class DischargePlot:
     # ------------------------ Internals ------------------------
 
     def _initial_xlim(self, initial_view: str):
-        """Bestimmt das Startfenster. 'window' = genau relevant_time_window; 'full' = rated_time..t_zero."""
+        """Bestimmt das Startfenster. 'window' = genau relevant_time_window; 'full' = approx_peak_time..t_zero."""
         if initial_view == "full":
             return self._full_xlim()
         # window
         rel = self.results.get("relevant_time_window")
         if rel is None:
-            rated_t = float(self.results["rated_time"])
+            rated_t = float(self.results["approx_peak_time"])
             rel = (rated_t, rated_t + 10.0)
         a, b = float(rel[0]), float(rel[1])
         t0, t1 = self._data_time_bounds()
         return (max(t0, a), min(t1, b))
 
     def _full_xlim(self):
-        """Von max(t0, rated_time) bis zum Nulldurchgang des Fits."""
+        """Von max(t0, approx_peak_time) bis zum Nulldurchgang des Fits."""
         t0_data, t1_data = self._data_time_bounds()
-        rated_t = float(self.results["rated_time"])
+        rated_t = float(self.results["approx_peak_time"])
         a = max(t0_data, rated_t)
         t_zero = self._compute_t_zero()
         b = min(t1_data, float(t_zero))
