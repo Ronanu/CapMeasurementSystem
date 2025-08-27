@@ -151,8 +151,8 @@ class SignalDataSaver:
             for key, value in self.header_info.items():
                 writer.writerow([key, value])  # Speichert Schlüssel-Wert-Paare
             
-            # Falls weniger als 10 Header-Zeilen, füllen wir die restlichen mit Leerzeilen
-            for _ in range(10 - (len(self.header_info) + 1)):  
+            # Falls weniger als 25 Header-Zeilen, füllen wir die restlichen mit Leerzeilen
+            for _ in range(25 - (len(self.header_info) + 1)):  
                 writer.writerow([])
 
             # Speichert das DataFrame mit Spaltennamen

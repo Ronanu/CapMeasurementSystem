@@ -1,7 +1,6 @@
-
 from __future__ import annotations
 from typing import Dict, Any
-from os.path import dirname, basename, join, exists
+from os.path import join, exists
 from os import makedirs
 
 from signal_transformations import SignalDataLoader, SignalDataSaver
@@ -29,10 +28,14 @@ def make_save_name(file_name: str) -> str:
     return '_'.join(name_parts)
 
 
-def save_results(after_peak_signal, results: Dict[str, Any], save_dir: str, base_name: str) -> str:
-    save_path = join(save_dir, base_name + ".csv")
-
+def _extract_header_from_results(results: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Baut den CSV-Header aus dem results-Dict zusammen. Erwartet, dass UI die
+    Dateiname-Infos (manufacturer, capacitance, typ, methode, klass, dut, version)
+    und die berechneten Kenngrößen (U_R, ESR, I_c, I_dc) bereits in results ergänzt hat.
+    """
     header = {
+        # Analyse-Ergebnisse (bestehend)
         'holding_voltage': results.get('holding_voltage'),
         'unloading_parameter': results.get('post_peak_unloading_fit'),
         'peak_time': results.get('peak_time'),
@@ -41,7 +44,28 @@ def save_results(after_peak_signal, results: Dict[str, Any], save_dir: str, base
         'plus_minus_toleranz': results.get('threshold'),
         'U3': results.get('U3'),
         'U3_mean': results.get('U3_mean'),
+
+        # Dateiname-Infos (NEU)
+        'manufacturer': results.get('manufacturer'),
+        'capacitance': results.get('capacitance'),
+        'typ': results.get('typ'),
+        'methode': results.get('methode'),
+        'klass': results.get('klass'),
+        'dut': results.get('dut'),
+        'version': results.get('version'),
+
+        # Berechnete Kenngrößen (NEU)
+        'U_R': results.get('U_R'),
+        'ESR': results.get('ESR'),
+        'I_c': results.get('I_c'),
+        'I_dc': results.get('I_dc'),
     }
+    return header
+
+
+def save_results(after_peak_signal, results: Dict[str, Any], save_dir: str, base_name: str) -> str:
+    save_path = join(save_dir, base_name + ".csv")
+    header = _extract_header_from_results(results)
 
     saver = SignalDataSaver(
         signal_data=after_peak_signal,

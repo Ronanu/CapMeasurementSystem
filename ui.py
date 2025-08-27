@@ -23,11 +23,10 @@ from io_ops import load_signal, ensure_save_dir, make_save_name, save_results
 from gui_fig import DischargePlot
 from log import logger
 
-# >>> Neu: Dateiname-Infos extrahieren
+# >>> Dateiname-Infos extrahieren
 from getFileNameInfos import getFileNameInfos
 
-# >>> Neu: Import der Berechnungen aus dem zweiten File
-# Wir importieren sowohl Tabellen (ESR/U_R) als auch Funktionen.
+# >>> Import der Berechnungen aus dem zweiten File (NICHT doppelt implementieren!)
 try:
     from calcParamsCurrent import (
         ESR as ESR_TABLE,
@@ -38,16 +37,12 @@ try:
         get_U_R,
     )
 except Exception as e:
-    logger.warning(f"Konnte calcParamsCurrent nicht importieren: {e}")
+    logger.warning(f"calcParamsCurrent Importproblem: {e}")
     ESR_TABLE, UR_TABLE = {}, {}
-    def get_esr(*_a, **_k):
-        raise RuntimeError("calcParamsCurrent.get_esr nicht verfügbar")
-    def get_U_R(*_a, **_k):
-        raise RuntimeError("calcParamsCurrent.get_U_R nicht verfügbar")
-    def calc_charge_current(*_a, **_k):
-        raise RuntimeError("calcParamsCurrent.calc_charge_current nicht verfügbar")
-    def calc_discharge_current(*_a, **_k):
-        raise RuntimeError("calcParamsCurrent.calc_discharge_current nicht verfügbar")
+    def get_esr(*_a, **_k): raise RuntimeError("calcParamsCurrent.get_esr nicht verfügbar")
+    def get_U_R(*_a, **_k): raise RuntimeError("calcParamsCurrent.get_U_R nicht verfügbar")
+    def calc_charge_current(*_a, **_k): raise RuntimeError("calcParamsCurrent.calc_charge_current nicht verfügbar")
+    def calc_discharge_current(*_a, **_k): raise RuntimeError("calcParamsCurrent.calc_discharge_current nicht verfügbar")
 
 
 class SingleFileApp:
@@ -66,8 +61,12 @@ class SingleFileApp:
         self.toolbar: Optional[NavigationToolbar2Tk] = None
         self.plot: Optional[DischargePlot] = None
 
+        # Zuletzt ermittelte Zusatzinfos (für Replot/Speichern erneut injizieren)
+        self._last_fileinfo: Dict[str, Any] = {}
+        self._last_calcinfo: Dict[str, Any] = {}
+
         self.root.title("Cap Unloading – Single File Analyse")
-        self.root.geometry("1280x860")
+        self.root.geometry("1280x880")
 
         self._build_widgets()
         self._layout_widgets()
@@ -84,13 +83,11 @@ class SingleFileApp:
         self.lbl_filename = ttk.Label(self.top_frame, text="Keine Datei geladen", width=60)
         self.lbl_status = ttk.Label(self.top_frame, text="", foreground="#555")
 
-        # NEU: Button zum Öffnen des Param-Editors
+        # Param-Editor
         self.btn_params = ttk.Button(self.top_frame, text="Analyse-Parameter", command=self.on_open_params)
 
-        # Center: plot + rechte Seitenleiste (Datei-Infos + Berechnungen + Ergebnisse)
+        # Plot + Seitenleiste
         self.plot_frame = ttk.Frame(self.root)
-
-        # Seitenpanel
         self.side_panel = ttk.Frame(self.root)
 
         # ---- Abschnitt 1: Dateiname-Infos
@@ -111,7 +108,7 @@ class SingleFileApp:
             val_label.grid(row=r, column=1, sticky="e", padx=(0, 8), pady=4)
             self.fileinfo_labels[key] = val_label
 
-        # ---- Abschnitt 1.5 (NEU): Berechnete Kenngrößen aus calcParamsCurrent
+        # ---- Abschnitt 1.5: Berechnete Kenngrößen
         self.calc_frame = ttk.LabelFrame(self.side_panel, text="Berechnete Kenngrößen")
         self._calc_fields = [
             ("U_R", "U_R [V]"),
@@ -161,18 +158,18 @@ class SingleFileApp:
 
         # Row 1: Zoom/Pan (Zoom − vor +), daneben Peak-Operationen
         self.btn_zoom_out = ttk.Button(self.ctrl_frame, text="Zoom −", command=lambda: self._zoom(1.25))
-        self.btn_zoom_in = ttk.Button(self.ctrl_frame, text="Zoom +", command=lambda: self._zoom(0.8))
-        self.btn_pan_left = ttk.Button(self.ctrl_frame, text="← Pan", command=lambda: self._pan_relative(-0.2))
+        self.btn_zoom_in  = ttk.Button(self.ctrl_frame, text="Zoom +", command=lambda: self._zoom(0.8))
+        self.btn_pan_left  = ttk.Button(self.ctrl_frame, text="← Pan", command=lambda: self._pan_relative(-0.2))
         self.btn_pan_right = ttk.Button(self.ctrl_frame, text="Pan →", command=lambda: self._pan_relative(+0.2))
 
         self.lbl_peak = ttk.Label(self.ctrl_frame, text="Peak-Zeit [s]:")
         self.entry_peak = ttk.Entry(self.ctrl_frame, width=14)
         self.btn_replot = ttk.Button(self.ctrl_frame, text="Neu plotten", command=self.on_replot_clicked)
-        self.btn_reset = ttk.Button(self.ctrl_frame, text="Reset Peak", command=self.on_reset_peak)
+        self.btn_reset  = ttk.Button(self.ctrl_frame, text="Reset Peak", command=self.on_reset_peak)
 
-        # Row 2: Feinjustage Peak + Speichern ganz rechts
+        # Row 2: Feinjustage Peak + Speichern
         self.btn_peak_minus = ttk.Button(self.ctrl_frame, text="−0.01 s", command=lambda: self._nudge_peak(-0.01))
-        self.btn_peak_plus = ttk.Button(self.ctrl_frame, text="+0.01 s", command=lambda: self._nudge_peak(+0.01))
+        self.btn_peak_plus  = ttk.Button(self.ctrl_frame, text="+0.01 s",  command=lambda: self._nudge_peak(+0.01))
         self.btn_save = ttk.Button(self.ctrl_frame, text="Speichern", command=self.on_save_clicked)
 
     def _layout_widgets(self):
@@ -186,20 +183,18 @@ class SingleFileApp:
         self.top_frame.columnconfigure(3, weight=1)
         self.btn_open.grid(row=0, column=0, padx=(0, 8))
         self.lbl_filename.grid(row=0, column=1, sticky="w")
-        self.btn_params.grid(row=0, column=2, padx=8)  # NEU
+        self.btn_params.grid(row=0, column=2, padx=8)
         self.lbl_status.grid(row=0, column=3, sticky="e")
 
         # Center
         self.plot_frame.grid(row=1, column=0, sticky="nsew", padx=(10, 6), pady=6)
 
-        # Seitenpanel (rechts)
+        # Seitenpanel
         self.side_panel.grid(row=1, column=1, sticky="ns", padx=(6, 10), pady=6)
         self.side_panel.columnconfigure(0, weight=1)
 
         self.fileinfo_frame.grid(row=0, column=0, sticky="new", pady=(0, 8))
-        # NEU: Berechnungen zwischen Dateiinfos und Ergebnissen
         self.calc_frame.grid(row=1, column=0, sticky="new", pady=(0, 8))
-        # Ergebnisse wandern eine Zeile nach unten
         self.info_frame.grid(row=2, column=0, sticky="ns")
 
         # Controls unten
@@ -208,33 +203,27 @@ class SingleFileApp:
             self.ctrl_frame.columnconfigure(c, weight=0)
         self.ctrl_frame.columnconfigure(11, weight=1)
 
-        # --- Row 0: Ansichten ---
-        r = 0
-        c = 0
+        # Row 0
+        r = 0; c = 0
         self.lbl_views.grid(row=r, column=c, sticky="w", padx=(0, 6), pady=4); c += 1
         self.btn_view_all.grid(row=r, column=c, padx=4, pady=4); c += 1
         self.btn_view_full.grid(row=r, column=c, padx=4, pady=4); c += 1
         self.btn_view_window.grid(row=r, column=c, padx=4, pady=4); c += 1
-
         ttk.Label(self.ctrl_frame, text="\t").grid(row=r, column=c, padx=10); c += 1
-
         self.lbl_peak.grid(row=r, column=c, sticky="e", padx=(4, 2)); c += 1
         self.entry_peak.grid(row=r, column=c, sticky="w", padx=(6, 12)); c += 1
         self.btn_replot.grid(row=r, column=c, padx=4); c += 1
         self.btn_reset.grid(row=r, column=c, padx=4); c += 1
 
-        # --- Row 1: Zoom/Pan + Peak-Ops ---
-        r = 1
-        c = 0
+        # Row 1
+        r = 1; c = 0
         self.btn_zoom_out.grid(row=r, column=c, padx=4, pady=6); c += 1
         self.btn_zoom_in.grid(row=r, column=c, padx=4, pady=6); c += 1
         self.btn_pan_left.grid(row=r, column=c, padx=4, pady=6); c += 1
         self.btn_pan_right.grid(row=r, column=c, padx=4, pady=6); c += 1
-
         c = c + 3
         self.btn_peak_minus.grid(row=r, column=c, padx=4, pady=(4, 6)); c += 1
         self.btn_peak_plus.grid(row=r, column=c, padx=4, pady=(4, 6)); c += 1
-
         ttk.Label(self.ctrl_frame, text="").grid(row=r, column=10, sticky="ew")
         self.btn_save.grid(row=r, column=11, sticky="e", padx=(4, 0), pady=(4, 6))
 
@@ -259,14 +248,12 @@ class SingleFileApp:
     # ---------- Callbacks ----------
 
     def on_open_params(self):
-        """Dialog öffnen; bei Übernahme optional aktuelle Analyse neu rechnen."""
         dlg = ParamsEditor(self.root, self.params, yaml_path=DEFAULT_YAML_PATH)
         self.root.wait_window(dlg)
         if dlg.result is None:
             return
         self.params = dlg.result
         self._set_status("Parameter übernommen.")
-        # falls ein Signal geladen ist → Analyse mit neuen Parametern auffrischen
         if self.orig_signal is not None:
             try:
                 self.orig_signal, self.results = cut_and_analyze_peak(self.orig_signal, self.params)
@@ -274,12 +261,10 @@ class SingleFileApp:
                 self.entry_peak.configure(state="normal")
                 self.entry_peak.delete(0, tk.END)
                 self.entry_peak.insert(0, f"{auto_peak:.2f}")
+                # Zusatzinfos/Calc neu bestimmen und in results injizieren
+                self._augment_and_refresh_panels()
                 self._render_current_plot(initial_view="window")
                 self._update_results_panel(self.results)
-                # Datei-Infos und berechnete Größen aktualisieren (nur falls Dateiname bekannt)
-                if self.file_name:
-                    self._update_fileinfo_panel(self.file_name)
-                    self._update_calc_panel(self.file_name)
                 self._set_status("Analyse mit neuen Parametern aktualisiert.")
             except Exception as e:
                 logger.warning(f"Neu-Analyse nach Param-Update fehlgeschlagen: {e}")
@@ -289,7 +274,6 @@ class SingleFileApp:
         path = filedialog.askopenfilename(filetypes=[["CSV files", "*.csv"]])
         if not path:
             return
-
         try:
             self.orig_signal = load_signal(path, sampling_interval=self.params.sampling_interval)
             self.file_path = path
@@ -305,9 +289,8 @@ class SingleFileApp:
             self.entry_peak.delete(0, tk.END)
             self.entry_peak.insert(0, f"{self.results['peak_time']:.2f}")
 
-            self._update_fileinfo_panel(self.file_name)
-            # NEU: berechnete Kennwerte aus dem zweiten File aktualisieren
-            self._update_calc_panel(self.file_name)
+            # Zusatzinfos und berechnete Größen injizieren & anzeigen
+            self._augment_and_refresh_panels()
 
             self._render_current_plot(initial_view="window")
             self._update_results_panel(self.results)
@@ -330,6 +313,8 @@ class SingleFileApp:
             return
         try:
             self.results = recompute_from_peak(self.orig_signal, peak_time, self.params, base_results=self.results)
+            # Sicherstellen, dass Meta/Calc im results sind
+            self._inject_metadata_into(self.results)
             self._render_current_plot(keep_view=True)
             self._update_results_panel(self.results)
             self._set_status("Darstellung aktualisiert (manuelle Peak-Zeit).")
@@ -345,6 +330,8 @@ class SingleFileApp:
             return
         try:
             fresh_results = recompute_from_peak(self.orig_signal, peak_time, self.params, base_results=self.results)
+            # Meta/Calc in die frischen Ergebnisse injizieren
+            self._inject_metadata_into(fresh_results)
             base_name = make_save_name(self.file_name) if self.file_name else "cut"
             path = save_results(fresh_results["after_peak_signal"], fresh_results, self.save_dir, base_name)
             self._set_status(f"Gespeichert: {path}")
@@ -362,12 +349,9 @@ class SingleFileApp:
             self.entry_peak.configure(state="normal")
             self.entry_peak.delete(0, tk.END)
             self.entry_peak.insert(0, f"{auto_peak:.2f}")
+            self._augment_and_refresh_panels()
             self._render_current_plot(initial_view="window")
             self._update_results_panel(self.results)
-            # Datei-Infos & Berechnungen frisch anzeigen
-            if self.file_name:
-                self._update_fileinfo_panel(self.file_name)
-                self._update_calc_panel(self.file_name)
             self._set_status("Peak zurückgesetzt (automatisch ermittelt).")
         except Exception as e:
             logger.warning(f"Reset-Fehler: {e}")
@@ -469,22 +453,18 @@ class SingleFileApp:
             self.toolbar.destroy()
             self.toolbar = None
 
-        if self.plot is None:
+        if self.plot is None or not keep_view:
             self.plot = DischargePlot(self.orig_signal, self.results)
             fig = self.plot.draw(initial_view=initial_view or "window")
         else:
-            if keep_view:
-                try:
-                    cur = self.plot.get_view()
-                except Exception:
-                    cur = None
-                self.plot.update_results(self.results, keep_view=True)
-                if cur is not None:
-                    self.plot.set_xlim(*cur["xlim"])
-                fig = self.plot.fig
-            else:
-                self.plot = DischargePlot(self.orig_signal, self.results)
-                fig = self.plot.draw(initial_view=initial_view or "window")
+            try:
+                cur = self.plot.get_view()
+            except Exception:
+                cur = None
+            self.plot.update_results(self.results, keep_view=True)
+            if cur is not None:
+                self.plot.set_xlim(*cur["xlim"])
+            fig = self.plot.fig
 
         self.figure = fig
         self.canvas = FigureCanvasTkAgg(fig, master=self.plot_frame)
@@ -514,12 +494,37 @@ class SingleFileApp:
         for key, _label in self._result_fields:
             self.result_labels.get(key, ttk.Label()).configure(text=fmt(results.get(key)))
 
-    def _update_fileinfo_panel(self, filename: str):
-        def fmt(v):
-            if v is None or v == "":
-                return "—"
-            return str(v)
-        info = {
+    # ====== NEU: Metadaten & berechnete Kenngrößen auch ins results packen ======
+
+    def _augment_and_refresh_panels(self):
+        # 1) Dateiname-Infos
+        if self.file_name:
+            finfo = self._collect_fileinfo(self.file_name)
+            self._last_fileinfo = finfo
+            self._update_fileinfo_panel_from_dict(finfo)
+        # 2) Berechnete Größen
+        if self.file_name:
+            cinfo = self._compute_calcinfo(self.file_name, self._last_fileinfo)
+            self._last_calcinfo = cinfo
+            self._update_calc_panel_from_dict(cinfo)
+        # 3) Alles ins results injizieren (für Speichern/Export)
+        if self.results is None:
+            self.results = {}
+        self._inject_metadata_into(self.results)
+
+    def _inject_metadata_into(self, results: Dict[str, Any]) -> Dict[str, Any]:
+        if results is None:
+            results = {}
+        for k, v in (self._last_fileinfo or {}).items():
+            results[k] = v
+        for k, v in (self._last_calcinfo or {}).items():
+            results[k] = v
+        return results
+
+    # ---- Dateiname-Infos
+
+    def _collect_fileinfo(self, filename: str) -> Dict[str, Any]:
+        finfo = {
             "manufacturer": None,
             "capacitance": None,
             "typ": None,
@@ -530,7 +535,7 @@ class SingleFileApp:
         }
         try:
             manufacturer, capacitance, typ, methode, klass, dut, version = getFileNameInfos(filename)
-            info.update({
+            finfo.update({
                 "manufacturer": manufacturer,
                 "capacitance": capacitance,
                 "typ": typ,
@@ -541,141 +546,118 @@ class SingleFileApp:
             })
         except Exception as e:
             logger.warning(f"Konnte Dateiname-Infos nicht extrahieren: {e}")
+        return finfo
 
+    def _update_fileinfo_panel_from_dict(self, info: Dict[str, Any]):
+        def fmt(v):
+            if v is None or v == "":
+                return "—"
+            return str(v)
         for key, _label in self._fileinfo_fields:
             self.fileinfo_labels.get(key, ttk.Label()).configure(text=fmt(info.get(key)))
 
-    # --- NEU: Zwischenpanel Berechnungen aktualisieren ---
-    def _update_calc_panel(self, filename: str):
+    # ---- Berechnete Kenngrößen
+
+    def _compute_calcinfo(self, filename: str, finfo: Dict[str, Any]) -> Dict[str, Any]:
+        def safe_float(s: str) -> Optional[float]:
+            try:
+                digits = "".join(ch for ch in str(s) if (ch.isdigit() or ch == "."))
+                return float(digits) if digits else None
+            except Exception:
+                return None
+
+        manufacturer = (finfo.get("manufacturer") or "").strip()
+        capacitance_raw = (finfo.get("capacitance") or "").strip()
+        typ = finfo.get("typ")
+        methode = (finfo.get("methode") or "").upper()
+        klass = finfo.get("klass")
+
+        manuf_key, cap_key = self._pick_best_keys(
+            self._manufacturer_candidates(manufacturer),
+            self._capacitance_candidates(capacitance_raw)
+        )
+        if manuf_key is None or cap_key is None:
+            logger.warning(f"Keine passenden Keys gefunden (manuf='{manufacturer}', cap='{capacitance_raw}')")
+            return {"U_R": None, "ESR": None, "I_c": None, "I_dc": None}
+
+        U_R_val = None
+        ESR_val = None
+        I_c_val = None
+        I_dc_val = None
+
+        try:
+            U_R_val = float(get_U_R(manuf_key))
+        except Exception as e:
+            logger.warning(f"U_R nicht ermittelbar: {e}")
+        try:
+            ESR_val = float(get_esr(manuf_key, cap_key))
+        except Exception as e:
+            logger.warning(f"ESR nicht ermittelbar: {e}")
+        try:
+            # I_c via importierter Funktion (keine Doppelimplementierung)
+            I_c_val = float(calc_charge_current(manuf_key, cap_key))
+        except Exception as e:
+            logger.warning(f"I_c-Berechnung via calc_charge_current fehlgeschlagen: {e}")
+        try:
+            if methode == "B":
+                I_dc_val = float(calc_discharge_current(manuf_key, cap_key, str(typ), methode, str(klass)))
+            else:
+                C_n_float = safe_float(capacitance_raw)
+                if C_n_float is not None:
+                    I_dc_val = float(calc_discharge_current(manuf_key, C_n_float, str(typ), methode, str(klass)))
+        except Exception as e:
+            logger.warning(f"I_dc-Berechnung via calc_discharge_current fehlgeschlagen: {e}")
+
+        return {"U_R": U_R_val, "ESR": ESR_val, "I_c": I_c_val, "I_dc": I_dc_val}
+
+    def _update_calc_panel_from_dict(self, cinfo: Dict[str, Any]):
         def fmt_float(v: Optional[float]) -> str:
             try:
-                if v is None:
-                    return "—"
+                if v is None: return "—"
                 return f"{float(v):.6g}"
             except Exception:
                 return "—"
-
-        # Default: alles leeren
-        for key, _ in self._calc_fields:
-            self.calc_labels.get(key, ttk.Label()).configure(text="—")
-
-        # Aus Dateinamen extrahieren
-        try:
-            manufacturer, capacitance_raw, typ, methode, klass, _dut, _version = getFileNameInfos(filename)
-        except Exception as e:
-            logger.warning(f"Berechnungen: Dateiname nicht auswertbar: {e}")
-            return
-
-        if not manufacturer or not capacitance_raw:
-            return
-
-        # Normalisieren von Hersteller & Kapazität
-        manuf_candidates = self._manufacturer_candidates(manufacturer)
-        cap_candidates = self._capacitance_candidates(capacitance_raw)
-
-        # Versuche, gültige Keys für beide Tabellen zu finden
-        manuf_key, cap_key = self._pick_best_keys(manuf_candidates, cap_candidates)
-        if manuf_key is None or cap_key is None:
-            logger.warning(f"Keine passenden Keys gefunden (manuf='{manufacturer}', cap='{capacitance_raw}')")
-            return
-
-        # Einzelwerte bestimmen
-        U_R_val: Optional[float] = None
-        ESR_val: Optional[float] = None
-        I_c_val: Optional[float] = None
-        I_dc_val: Optional[float] = None
-
-        try:
-            U_R_val = float(UR_TABLE[manuf_key])
-        except Exception:
-            try:
-                U_R_val = float(get_U_R(manuf_key))
-            except Exception as e:
-                logger.warning(f"U_R nicht ermittelbar: {e}")
-        try:
-            ESR_val = float(ESR_TABLE[manuf_key][cap_key])
-        except Exception:
-            try:
-                ESR_val = float(get_esr(manuf_key, cap_key))
-            except Exception as e:
-                logger.warning(f"ESR nicht ermittelbar: {e}")
-
-        # Ströme berechnen – robust mit Fallbacks
-        if U_R_val is not None and ESR_val is not None:
-            try:
-                # Formel aus calcParamsCurrent: I_c = U_R / (38*ESR)
-                I_c_val = round(U_R_val / (38.0 * ESR_val), 3)
-            except Exception as e:
-                logger.warning(f"I_c-Berechnung fehlgeschlagen: {e}")
-
-            try:
-                if str(methode).upper() == "B":
-                    # I_dc(B) = U_R/(40*ESR)
-                    I_dc_val = round(U_R_val / (40.0 * ESR_val), 3)
-                else:
-                    # Methode A: Formel aus Tabelle norm_A in calcParamsCurrent
-                    # Wir verwenden hier calc_discharge_current mit den rohen Werten.
-                    # cap_key ist die String-Kapazität für ESR; für die Formel wird C_n (F) erwartet → versuche float aus Rohwert
-                    try:
-                        C_n_float = float(self._only_digits_dot(capacitance_raw))
-                    except Exception:
-                        C_n_float = None
-                    if C_n_float is not None:
-                        I_dc_val = float(calc_discharge_current(manuf_key, C_n_float, str(typ), str(methode), str(klass)))
-            except Exception as e:
-                logger.warning(f"I_dc-Berechnung fehlgeschlagen: {e}")
-
-        # Ausgabe ins Panel
-        self.calc_labels["U_R"].configure(text=fmt_float(U_R_val))
-        self.calc_labels["ESR"].configure(text=fmt_float(ESR_val))
-        self.calc_labels["I_c"].configure(text=fmt_float(I_c_val))
-        self.calc_labels["I_dc"].configure(text=fmt_float(I_dc_val))
+        self.calc_labels["U_R"].configure(text=fmt_float(cinfo.get("U_R")))
+        self.calc_labels["ESR"].configure(text=fmt_float(cinfo.get("ESR")))
+        self.calc_labels["I_c"].configure(text=fmt_float(cinfo.get("I_c")))
+        self.calc_labels["I_dc"].configure(text=fmt_float(cinfo.get("I_dc")))
 
     # --- Schlüsselableitung/Normalisierung ---
+
     def _manufacturer_candidates(self, name: str) -> List[str]:
         n = (name or "").strip()
         out = []
         if not n:
             return out
-        # Original
-        out.append(n)
-        # Varianten
+        out.append(n)  # Original
         base = n.replace(" ", "").replace("-", "")
         out.append(base)
         out.append(base.lower())
-        # Spezielle Behandlung Wuerth
         wl = base.lower()
         if wl.startswith("wuerth") or wl.startswith("würth") or wl.startswith("wuerthe"):
             out.extend(["wuerthelektronik", "wuerthElektronik", "wuerth", "WuerthElektronik"])
-        return list(dict.fromkeys(out))  # eindeutige Reihenfolge
+        return list(dict.fromkeys(out))
 
     def _capacitance_candidates(self, cap: str) -> List[str]:
         s = (cap or "").strip()
         out = [s]
-        digits_only = self._only_digits_dot(s, allow_dot=False)
+        digits_only = "".join(ch for ch in s if ch.isdigit())  # ESR-Keys z.B. "25","50"
         if digits_only:
             out.append(digits_only)
-        # häufige Suffixe entfernen
         for suf in ("F", "f", "Farad", "farad", "_F", "-F"):
             if s.endswith(suf):
                 out.append(s[: -len(suf)])
         return list(dict.fromkeys([c for c in out if c]))
 
-    def _only_digits_dot(self, s: str, allow_dot: bool = True) -> str:
-        allowed = set("0123456789" + ("." if allow_dot else ""))
-        return "".join(ch for ch in s if ch in allowed)
-
     def _pick_best_keys(self, manuf_candidates: List[str], cap_candidates: List[str]) -> Tuple[Optional[str], Optional[str]]:
         manuf_key = None
         cap_key = None
-        # Hersteller: erster Kandidat, der in mindestens einer Tabelle vorkommt
         for m in manuf_candidates:
             if m in UR_TABLE or m in ESR_TABLE:
                 manuf_key = m
                 break
         if manuf_key is None:
             return None, None
-        # Kapazität: erster Kandidat, der in der ESR-Tabelle für diesen Hersteller existiert
         table = ESR_TABLE.get(manuf_key, {})
         for c in cap_candidates:
             if c in table:

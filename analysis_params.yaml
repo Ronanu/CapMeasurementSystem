@@ -2,13 +2,13 @@ holding_voltage: 3.0
 sampling_interval: 0.01
 peak_search_window_s: 10.0
 std_factor: 3.0
-derivative_smooth_n: 8
+derivative_smooth_n: 5
 min_derivative_neg: -0.04
 rated_fit_order: 1
-unload_fit_order: 3
+unload_fit_order: 2
 holding_fit_order: 0
 unloading_low_high:
-- 0.4
+- 0.7
 - 0.9
 peak_mean_window_s:
 - 5.1
