@@ -5,7 +5,7 @@ std_factor: 3.0
 derivative_smooth_n: 8
 min_derivative_neg: -0.04
 rated_fit_order: 1
-unload_fit_order: 1
+unload_fit_order: 3
 holding_fit_order: 0
 unloading_low_high:
 - 0.4

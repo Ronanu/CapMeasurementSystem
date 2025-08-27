@@ -1,3 +1,4 @@
+
 from __future__ import annotations
 from dataclasses import dataclass, asdict, fields
 from typing import Tuple, Any, Dict
@@ -5,6 +6,12 @@ from pathlib import Path
 import tkinter as tk
 from tkinter import ttk, messagebox
 import yaml
+import re
+
+# === Syntax-Highlighting mit Pygments (bewusst ohne Fallback) ===
+from pygments import lex
+from pygments.lexers import get_lexer_by_name, PythonLexer
+from pygments.token import Token
 
 # =========================
 #   Datenmodell
@@ -201,22 +208,138 @@ class ParamsEditor(tk.Toplevel):
         vcmd_float = (self.register(self._validate_float), "%P")
         vcmd_int   = (self.register(self._validate_int), "%P")
 
+        # ---------- Hint‑Helfer (Parsing + Rendering) ----------
+
+        def _parse_hint_blocks(hint: str):
+            """
+            Zerlegt den Hint in Blöcke: ('text', str) oder ('code', lang, str).
+            ```lang\n...\n``` wird erkannt. Mehrere Blöcke erlaubt.
+            """
+            blocks = []
+            pattern = re.compile(r"```(\w+)?\n(.*?)\n```", re.DOTALL)
+            pos = 0
+            for m in pattern.finditer(hint):
+                if m.start() > pos:
+                    blocks.append(("text", hint[pos:m.start()]))
+                lang = (m.group(1) or "python").lower()
+                code = m.group(2)
+                blocks.append(("code", lang, code))
+                pos = m.end()
+            if pos < len(hint):
+                blocks.append(("text", hint[pos:]))
+            return blocks
+
+        def _apply_pygments_to_text(txt: tk.Text, code: str, lang: str = "python"):
+            """
+            Färbt Code in einem tk.Text mit Pygments ein.
+            """
+            txt.config(state="normal")
+            txt.delete("1.0", "end")
+
+            # Tags (Farben hier bewusst „IDE‑artig“)
+            txt.tag_configure("k", foreground="#0000AA")   # Keywords
+            txt.tag_configure("nb", foreground="#0077AA")  # Builtins/Names
+            txt.tag_configure("s", foreground="#A31515")   # Strings
+            txt.tag_configure("c", foreground="#008000")   # Comments
+            txt.tag_configure("d", foreground="#098658")   # Numbers
+            txt.tag_configure("o", foreground="#000000")   # Operators
+            txt.tag_configure("nf", foreground="#795E26")  # Function names
+            txt.tag_configure("nc", foreground="#267F99")  # Class names
+            txt.tag_configure("p", foreground="#000000")   # Punctuation / default
+
+            try:
+                lexer = get_lexer_by_name(lang)
+            except Exception:
+                lexer = PythonLexer()
+
+            for ttype, value in lex(code, lexer):
+                tag = "p"
+                if ttype in Token.Keyword:
+                    tag = "k"
+                elif ttype in Token.Name.Builtin:
+                    tag = "nb"
+                elif ttype in Token.Literal.String:
+                    tag = "s"
+                elif ttype in Token.Comment:
+                    tag = "c"
+                elif ttype in Token.Number:
+                    tag = "d"
+                elif ttype in Token.Operator:
+                    tag = "o"
+                elif ttype in Token.Name.Function:
+                    tag = "nf"
+                elif ttype in Token.Name.Class:
+                    tag = "nc"
+                txt.insert("end", value, tag)
+
+            txt.config(state="disabled")
+
+        def _make_code_widget(parent, code: str, lang: str = "python") -> tk.Widget:
+            """
+            Scrollbarer Code‑Block (tk.Text + Scrollbars) mit Syntax‑Highlighting.
+            """
+            wrap = "none"
+            codefrm = ttk.Frame(parent)
+            yscroll = ttk.Scrollbar(codefrm, orient="vertical")
+            xscroll = ttk.Scrollbar(codefrm, orient="horizontal")
+
+            txt = tk.Text(
+                codefrm,
+                wrap=wrap,
+                font="TkFixedFont",
+                height=min(18, code.count("\\n") + 3),
+                padx=6, pady=6, bd=0,
+                highlightthickness=1, relief="solid",
+                background="#f8f8f8",
+                yscrollcommand=yscroll.set,
+                xscrollcommand=xscroll.set,
+            )
+            yscroll.config(command=txt.yview)
+            xscroll.config(command=txt.xview)
+
+            _apply_pygments_to_text(txt, code, lang)
+
+            txt.grid(row=0, column=0, sticky="nsew")
+            yscroll.grid(row=0, column=1, sticky="ns")
+            xscroll.grid(row=1, column=0, sticky="ew")
+            codefrm.columnconfigure(0, weight=1)
+            codefrm.rowconfigure(0, weight=1)
+
+            return codefrm
+
         row = 0
 
         def _add_info_button(name: str, hint: str | None, row_index: int):
-            """Erzeugt einen kleinen Info‑Button rechts, der den unterliegenden Hint‑Text ein/ausklappt."""
+            """Erzeugt einen kleinen Info‑Button rechts, der den unterliegenden Hint ein/ausklappt (Text + Code)."""
             if not hint:
                 return
             btn = ttk.Button(frm, text="ℹ", width=2,
                              command=lambda n=name: self._toggle_hint(n),
                              takefocus=False)
             btn.grid(row=row_index, column=3, sticky="e", padx=(6,0))
-            # vorbereiteter Hint‑Label (unter dem Feld), initial versteckt
-            hint_lbl = ttk.Label(frm, text=hint, foreground="#444", wraplength=520, justify="left")
-            # wir platzieren ihn auf row_index+1, über die volle Breite
-            hint_lbl.grid(row=row_index+1, column=0, columnspan=4, sticky="w", pady=(0,6))
-            hint_lbl.grid_remove()
-            self._hint_widgets[name] = hint_lbl
+
+            # Container für kombinierten Hint
+            hint_container = ttk.Frame(frm)
+
+            blocks = _parse_hint_blocks(hint)
+            r = 0
+            for b in blocks:
+                if b[0] == "text":
+                    txt = b[1].strip("\\n")
+                    if txt:
+                        lbl = ttk.Label(hint_container, text=txt, foreground="#444", wraplength=520, justify="left")
+                        lbl.grid(row=r, column=0, columnspan=1, sticky="w", pady=(0,4))
+                        r += 1
+                else:
+                    _, lang, code = b
+                    codew = _make_code_widget(hint_container, code, lang)
+                    codew.grid(row=r, column=0, sticky="we", pady=(0,6))
+                    r += 1
+
+            hint_container.grid(row=row_index+1, column=0, columnspan=4, sticky="we", pady=(0,6))
+            hint_container.grid_remove()
+
+            self._hint_widgets[name] = hint_container
             self._hint_visible[name] = False
 
         def add_float(name: str, label: str, value: float, width: int = 12, hint: str | None = None, state: str = "normal"):
@@ -272,8 +395,7 @@ class ParamsEditor(tk.Toplevel):
         )
         add_float(
             "std_factor", "std_factor [-]", p.std_factor,
-            hint="Schwellwert = std_factor multipliziert mit der Standardabweichung der Messschwankungen. " \
-            "Höher = konservativer, weniger falsche Peak frühdetektion."
+            hint="Schwellwert = std_factor multipliziert mit der Standardabweichung der Messschwankungen. Höher = konservativer, weniger falsche Peak‑Frühdetektion."
         )
         add_int(
             "derivative_smooth_n", "derivative_smooth_n [n]", p.derivative_smooth_n, from_=1, to_=999,
@@ -300,33 +422,39 @@ class ParamsEditor(tk.Toplevel):
             hint="Relativer Spannungsbereich des ENTLADEVORGANGS für Nach‑Peak‑Fit: low ≤ r/peak ≤ high. Wird beidseitig geschnitten."
         )
 
+        # --- überarbeiteter Hint mit Code‑Fence und Syntax‑Highlighting ---
         add_float(
             "cutaway", "cutaway [-]", p.cutaway,
-            hint="Dieser Parameter dient hauptsächlich zur bestimmung der Haltespannung des Messsignals." \
-            "Die \"angepeilte\" Haltespannung der Messung ist bekannt (siehe Parameter holding_voltage)." \
-            "Für die ermittlung der messwerte der Haltespannung wird das Signal erst Beidseitig Hard gecodet " \
-            "auf 98.5% der holding_voltage beschnitten und dann noch anand dieses cutaway parameters zeitlich beschnitten." \
-            "Übrig bleibt der relevante Zeitbereich für die Haltespannung." \
-            "Zuschneidfunktion:" \
-            "" \
-            "def get_holding_voltage_signal(signal, rated_voltage, limit=0.985, cutaway=parameters.cutaway):" \
-            "first_cut = SignalCutter(signal).cut_by_value(\"l>\", limit * rated_voltage)" \
-            "second_cut = SignalCutter(first_cut).cut_by_value(\"r>\", limit * rated_voltage)" \
-            "start_time, end_time = second_cut.get_start_and_end_time()" \
-            "time_diff = end_time - start_time" \
-            "cut = cutaway * time_diff " \
-            "third_cut = SignalCutter(second_cut).cut_time_range((start_time + cut * 0.7, end_time - cut * 0.3))" \
-            "return third_cut" \
-            "" \
-            "gemessene holding voltage dann über:" \
-            "" \
-            "holding_voltage = polynomial_fit(holding_signal, order=params.holding_fit_order)[0]" 
+            hint="""Dieser Parameter dient hauptsächlich zur Bestimmung der Haltespannung im Messsignal.
+Die \"angepeilte\" Haltespannung ist bekannt (siehe Parameter holding_voltage).
+Für die Ermittlung der Messwerte der Haltespannung wird das Signal zunächst beidseitig hart
+auf 98.5% der holding_voltage beschnitten und anschließend zeitlich – gemäß diesem cutaway‑Parameter – weiter beschnitten.
+Übrig bleibt der relevante Zeitbereich für die Haltespannung.
+
+Zuschneidfunktion:
+```python
+def get_holding_voltage_signal(signal, rated_voltage, limit=0.985, cutaway=parameters.cutaway):
+    first_cut  = SignalCutter(signal).cut_by_value('l>', limit * rated_voltage)
+    second_cut = SignalCutter(first_cut).cut_by_value('r>', limit * rated_voltage)
+    start_time, end_time = second_cut.get_start_and_end_time()
+    time_diff = end_time - start_time
+    cut = cutaway * time_diff
+    third_cut = SignalCutter(second_cut).cut_time_range(
+        (start_time + cut * 0.7, end_time - cut * 0.3)
+    )
+    return third_cut
+```
+
+Gemessene holding_voltage dann z. B. über:
+```python
+holding_voltage = polynomial_fit(holding_signal, order=params.holding_fit_order)[0]
+```
+"""
         )
 
         add_tuple_low_high(
             "peak_mean_window_s", "peak_mean_window_s [s,s]", p.peak_mean_window_s,
-            hint="Zeitfenster für Peak‑Mittelwert vor dem Peak, als positive Offsets: (max_vor_peak, min_vor_peak). Beispiel: (5.1, 0.1) → [−5.1 s … −0.1 s]." \
-            "Relevant für die Berechnung von U3 Mean."
+            hint="Zeitfenster für Peak‑Mittelwert vor dem Peak, als positive Offsets: (max_vor_peak, min_vor_peak). Beispiel: (5.1, 0.1) → [−5.1 s … −0.1 s]. Relevant für die Berechnung von U3‑Mean."
         )
 
         # Buttons
@@ -466,7 +594,7 @@ class ParamsEditor(tk.Toplevel):
             save_params_to_yaml(params, self.yaml_path)
             messagebox.showinfo("OK", f"Gespeichert nach {self.yaml_path}", parent=self)
         except Exception as e:
-            messagebox.showerror("Fehler", f"Konnte YAML nicht speichern:\n{e}", parent=self)
+            messagebox.showerror("Fehler", f"Konnte YAML nicht speichern:\\n{e}", parent=self)
 
     def _on_apply(self):
         params = self._collect()
