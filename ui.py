@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, Tuple, List
 
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
@@ -25,6 +25,29 @@ from log import logger
 
 # >>> Neu: Dateiname-Infos extrahieren
 from getFileNameInfos import getFileNameInfos
+
+# >>> Neu: Import der Berechnungen aus dem zweiten File
+# Wir importieren sowohl Tabellen (ESR/U_R) als auch Funktionen.
+try:
+    from calcParamsCurrent import (
+        ESR as ESR_TABLE,
+        U_R as UR_TABLE,
+        calc_charge_current,
+        calc_discharge_current,
+        get_esr,
+        get_U_R,
+    )
+except Exception as e:
+    logger.warning(f"Konnte calcParamsCurrent nicht importieren: {e}")
+    ESR_TABLE, UR_TABLE = {}, {}
+    def get_esr(*_a, **_k):
+        raise RuntimeError("calcParamsCurrent.get_esr nicht verfügbar")
+    def get_U_R(*_a, **_k):
+        raise RuntimeError("calcParamsCurrent.get_U_R nicht verfügbar")
+    def calc_charge_current(*_a, **_k):
+        raise RuntimeError("calcParamsCurrent.calc_charge_current nicht verfügbar")
+    def calc_discharge_current(*_a, **_k):
+        raise RuntimeError("calcParamsCurrent.calc_discharge_current nicht verfügbar")
 
 
 class SingleFileApp:
@@ -64,7 +87,7 @@ class SingleFileApp:
         # NEU: Button zum Öffnen des Param-Editors
         self.btn_params = ttk.Button(self.top_frame, text="Analyse-Parameter", command=self.on_open_params)
 
-        # Center: plot + rechte Seitenleiste (Datei-Infos + Ergebnisse)
+        # Center: plot + rechte Seitenleiste (Datei-Infos + Berechnungen + Ergebnisse)
         self.plot_frame = ttk.Frame(self.root)
 
         # Seitenpanel
@@ -87,6 +110,21 @@ class SingleFileApp:
             val_label = ttk.Label(self.fileinfo_frame, text="—", width=18)
             val_label.grid(row=r, column=1, sticky="e", padx=(0, 8), pady=4)
             self.fileinfo_labels[key] = val_label
+
+        # ---- Abschnitt 1.5 (NEU): Berechnete Kenngrößen aus calcParamsCurrent
+        self.calc_frame = ttk.LabelFrame(self.side_panel, text="Berechnete Kenngrößen")
+        self._calc_fields = [
+            ("U_R", "U_R [V]"),
+            ("ESR", "ESR [Ω]"),
+            ("I_c", "I_c Ladestrom [A]"),
+            ("I_dc", "I_dc Entladestrom [A]"),
+        ]
+        self.calc_labels: Dict[str, ttk.Label] = {}
+        for r, (key, label) in enumerate(self._calc_fields):
+            ttk.Label(self.calc_frame, text=label + ":").grid(row=r, column=0, sticky="w", padx=(8, 6), pady=4)
+            val_label = ttk.Label(self.calc_frame, text="—", width=18)
+            val_label.grid(row=r, column=1, sticky="e", padx=(0, 8), pady=4)
+            self.calc_labels[key] = val_label
 
         # ---- Abschnitt 2: Ergebnisse
         self.info_frame = ttk.LabelFrame(self.side_panel, text="Ergebnisse")
@@ -159,7 +197,10 @@ class SingleFileApp:
         self.side_panel.columnconfigure(0, weight=1)
 
         self.fileinfo_frame.grid(row=0, column=0, sticky="new", pady=(0, 8))
-        self.info_frame.grid(row=1, column=0, sticky="ns")
+        # NEU: Berechnungen zwischen Dateiinfos und Ergebnissen
+        self.calc_frame.grid(row=1, column=0, sticky="new", pady=(0, 8))
+        # Ergebnisse wandern eine Zeile nach unten
+        self.info_frame.grid(row=2, column=0, sticky="ns")
 
         # Controls unten
         self.ctrl_frame.grid(row=2, column=0, columnspan=2, sticky="ew", padx=10, pady=(6, 10))
@@ -235,13 +276,17 @@ class SingleFileApp:
                 self.entry_peak.insert(0, f"{auto_peak:.2f}")
                 self._render_current_plot(initial_view="window")
                 self._update_results_panel(self.results)
+                # Datei-Infos und berechnete Größen aktualisieren (nur falls Dateiname bekannt)
+                if self.file_name:
+                    self._update_fileinfo_panel(self.file_name)
+                    self._update_calc_panel(self.file_name)
                 self._set_status("Analyse mit neuen Parametern aktualisiert.")
             except Exception as e:
                 logger.warning(f"Neu-Analyse nach Param-Update fehlgeschlagen: {e}")
                 messagebox.showerror("Fehler", f"Neu-Analyse fehlgeschlagen:\n{e}")
 
     def on_open_file(self):
-        path = filedialog.askopenfilename(filetypes=[("CSV files", "*.csv")])
+        path = filedialog.askopenfilename(filetypes=[["CSV files", "*.csv"]])
         if not path:
             return
 
@@ -261,6 +306,9 @@ class SingleFileApp:
             self.entry_peak.insert(0, f"{self.results['peak_time']:.2f}")
 
             self._update_fileinfo_panel(self.file_name)
+            # NEU: berechnete Kennwerte aus dem zweiten File aktualisieren
+            self._update_calc_panel(self.file_name)
+
             self._render_current_plot(initial_view="window")
             self._update_results_panel(self.results)
 
@@ -316,6 +364,10 @@ class SingleFileApp:
             self.entry_peak.insert(0, f"{auto_peak:.2f}")
             self._render_current_plot(initial_view="window")
             self._update_results_panel(self.results)
+            # Datei-Infos & Berechnungen frisch anzeigen
+            if self.file_name:
+                self._update_fileinfo_panel(self.file_name)
+                self._update_calc_panel(self.file_name)
             self._set_status("Peak zurückgesetzt (automatisch ermittelt).")
         except Exception as e:
             logger.warning(f"Reset-Fehler: {e}")
@@ -492,6 +544,144 @@ class SingleFileApp:
 
         for key, _label in self._fileinfo_fields:
             self.fileinfo_labels.get(key, ttk.Label()).configure(text=fmt(info.get(key)))
+
+    # --- NEU: Zwischenpanel Berechnungen aktualisieren ---
+    def _update_calc_panel(self, filename: str):
+        def fmt_float(v: Optional[float]) -> str:
+            try:
+                if v is None:
+                    return "—"
+                return f"{float(v):.6g}"
+            except Exception:
+                return "—"
+
+        # Default: alles leeren
+        for key, _ in self._calc_fields:
+            self.calc_labels.get(key, ttk.Label()).configure(text="—")
+
+        # Aus Dateinamen extrahieren
+        try:
+            manufacturer, capacitance_raw, typ, methode, klass, _dut, _version = getFileNameInfos(filename)
+        except Exception as e:
+            logger.warning(f"Berechnungen: Dateiname nicht auswertbar: {e}")
+            return
+
+        if not manufacturer or not capacitance_raw:
+            return
+
+        # Normalisieren von Hersteller & Kapazität
+        manuf_candidates = self._manufacturer_candidates(manufacturer)
+        cap_candidates = self._capacitance_candidates(capacitance_raw)
+
+        # Versuche, gültige Keys für beide Tabellen zu finden
+        manuf_key, cap_key = self._pick_best_keys(manuf_candidates, cap_candidates)
+        if manuf_key is None or cap_key is None:
+            logger.warning(f"Keine passenden Keys gefunden (manuf='{manufacturer}', cap='{capacitance_raw}')")
+            return
+
+        # Einzelwerte bestimmen
+        U_R_val: Optional[float] = None
+        ESR_val: Optional[float] = None
+        I_c_val: Optional[float] = None
+        I_dc_val: Optional[float] = None
+
+        try:
+            U_R_val = float(UR_TABLE[manuf_key])
+        except Exception:
+            try:
+                U_R_val = float(get_U_R(manuf_key))
+            except Exception as e:
+                logger.warning(f"U_R nicht ermittelbar: {e}")
+        try:
+            ESR_val = float(ESR_TABLE[manuf_key][cap_key])
+        except Exception:
+            try:
+                ESR_val = float(get_esr(manuf_key, cap_key))
+            except Exception as e:
+                logger.warning(f"ESR nicht ermittelbar: {e}")
+
+        # Ströme berechnen – robust mit Fallbacks
+        if U_R_val is not None and ESR_val is not None:
+            try:
+                # Formel aus calcParamsCurrent: I_c = U_R / (38*ESR)
+                I_c_val = round(U_R_val / (38.0 * ESR_val), 3)
+            except Exception as e:
+                logger.warning(f"I_c-Berechnung fehlgeschlagen: {e}")
+
+            try:
+                if str(methode).upper() == "B":
+                    # I_dc(B) = U_R/(40*ESR)
+                    I_dc_val = round(U_R_val / (40.0 * ESR_val), 3)
+                else:
+                    # Methode A: Formel aus Tabelle norm_A in calcParamsCurrent
+                    # Wir verwenden hier calc_discharge_current mit den rohen Werten.
+                    # cap_key ist die String-Kapazität für ESR; für die Formel wird C_n (F) erwartet → versuche float aus Rohwert
+                    try:
+                        C_n_float = float(self._only_digits_dot(capacitance_raw))
+                    except Exception:
+                        C_n_float = None
+                    if C_n_float is not None:
+                        I_dc_val = float(calc_discharge_current(manuf_key, C_n_float, str(typ), str(methode), str(klass)))
+            except Exception as e:
+                logger.warning(f"I_dc-Berechnung fehlgeschlagen: {e}")
+
+        # Ausgabe ins Panel
+        self.calc_labels["U_R"].configure(text=fmt_float(U_R_val))
+        self.calc_labels["ESR"].configure(text=fmt_float(ESR_val))
+        self.calc_labels["I_c"].configure(text=fmt_float(I_c_val))
+        self.calc_labels["I_dc"].configure(text=fmt_float(I_dc_val))
+
+    # --- Schlüsselableitung/Normalisierung ---
+    def _manufacturer_candidates(self, name: str) -> List[str]:
+        n = (name or "").strip()
+        out = []
+        if not n:
+            return out
+        # Original
+        out.append(n)
+        # Varianten
+        base = n.replace(" ", "").replace("-", "")
+        out.append(base)
+        out.append(base.lower())
+        # Spezielle Behandlung Wuerth
+        wl = base.lower()
+        if wl.startswith("wuerth") or wl.startswith("würth") or wl.startswith("wuerthe"):
+            out.extend(["wuerthelektronik", "wuerthElektronik", "wuerth", "WuerthElektronik"])
+        return list(dict.fromkeys(out))  # eindeutige Reihenfolge
+
+    def _capacitance_candidates(self, cap: str) -> List[str]:
+        s = (cap or "").strip()
+        out = [s]
+        digits_only = self._only_digits_dot(s, allow_dot=False)
+        if digits_only:
+            out.append(digits_only)
+        # häufige Suffixe entfernen
+        for suf in ("F", "f", "Farad", "farad", "_F", "-F"):
+            if s.endswith(suf):
+                out.append(s[: -len(suf)])
+        return list(dict.fromkeys([c for c in out if c]))
+
+    def _only_digits_dot(self, s: str, allow_dot: bool = True) -> str:
+        allowed = set("0123456789" + ("." if allow_dot else ""))
+        return "".join(ch for ch in s if ch in allowed)
+
+    def _pick_best_keys(self, manuf_candidates: List[str], cap_candidates: List[str]) -> Tuple[Optional[str], Optional[str]]:
+        manuf_key = None
+        cap_key = None
+        # Hersteller: erster Kandidat, der in mindestens einer Tabelle vorkommt
+        for m in manuf_candidates:
+            if m in UR_TABLE or m in ESR_TABLE:
+                manuf_key = m
+                break
+        if manuf_key is None:
+            return None, None
+        # Kapazität: erster Kandidat, der in der ESR-Tabelle für diesen Hersteller existiert
+        table = ESR_TABLE.get(manuf_key, {})
+        for c in cap_candidates:
+            if c in table:
+                cap_key = c
+                break
+        return manuf_key, cap_key
 
     def _set_status(self, text: str):
         self.lbl_status.configure(text=text)
