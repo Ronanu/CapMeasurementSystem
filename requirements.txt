@@ -7,4 +7,4 @@ PyYAML==6.0.2
 openpyxl==3.1.5
 sympy==1.13.3
 pygments==2.18.0
-tksheet==7.0.7
+tksheet==7.5.13

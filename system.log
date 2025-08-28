@@ -627,3 +627,6 @@ ImportError: cannot import name 'DEFAULT_YAML_PATH' from 'analysis_param_managem
 2025-08-27 17:01:20,217 - INFO - Peak gefunden bei t=1849.960s, Wert=2.986
 2025-08-27 17:02:38,806 - INFO - Analyse gestartet: Original_Signal
 2025-08-27 17:02:38,918 - INFO - Peak gefunden bei t=1849.960s, Wert=2.986
+2025-08-28 15:54:48,039 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-28 15:54:48,044 - INFO - Analyse gestartet: Original_Signal
+2025-08-28 15:54:48,433 - INFO - Peak gefunden bei t=1829.450s, Wert=2.988
