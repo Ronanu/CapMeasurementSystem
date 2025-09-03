@@ -186,7 +186,7 @@ class DischargePlot:
         self.current_xlim = (a_new, b_new)
         self._apply_view()
 
-    def zoom(self, factor: float, center: float | None = None):
+    def zoom(self, factor, center=None):
         """Zoom um Faktor (factor<1 rein, >1 raus). center in s; sonst Fenster-Mitte."""
         a, b = self.current_xlim
         if center is None:
