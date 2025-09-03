@@ -636,3 +636,407 @@ ImportError: cannot import name 'DEFAULT_YAML_PATH' from 'analysis_param_managem
 2025-08-28 15:59:36,947 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Maxwell/25F/C_A1_Class2_DUT1_V1_Maxwell_25F_31-07-2025.csv
 2025-08-28 15:59:36,955 - INFO - Analyse gestartet: Original_Signal
 2025-08-28 15:59:40,648 - INFO - Peak gefunden bei t=1843.110s, Wert=2.992
+2025-08-28 16:37:52,691 - CRITICAL - Unbehandelte Ausnahme (File: log, Line: 22, Function: handle_exception)
+Traceback (most recent call last):
+  File "C:\Users\simon\Seafile\CapMeasurementSystem\main.py", line 2, in <module>
+    from ui import run_app
+  File "C:\Users\simon\Seafile\CapMeasurementSystem\ui.py", line 23, in <module>
+    from gui_fig import DischargePlot
+  File "C:\Users\simon\Seafile\CapMeasurementSystem\gui_fig.py", line 1, in <module>
+    class DischargePlot:
+  File "C:\Users\simon\Seafile\CapMeasurementSystem\gui_fig.py", line 189, in DischargePlot
+    def zoom(self, factor: float, center: float | None = None):
+TypeError: unsupported operand type(s) for |: 'type' and 'NoneType'
+2025-08-28 16:38:36,967 - CRITICAL - Unbehandelte Ausnahme (File: log, Line: 22, Function: handle_exception)
+Traceback (most recent call last):
+  File "C:\Users\simon\Seafile\CapMeasurementSystem\main.py", line 2, in <module>
+    from ui import run_app
+  File "C:\Users\simon\Seafile\CapMeasurementSystem\ui.py", line 16, in <module>
+    from cap_calculations import cut_and_analyze_peak, recompute_from_peak
+  File "C:\Users\simon\Seafile\CapMeasurementSystem\cap_calculations.py", line 16, in <module>
+    from analysis_param_management import AnalysisParams
+  File "C:\Users\simon\Seafile\CapMeasurementSystem\analysis_param_management.py", line 8, in <module>
+    import yaml
+ModuleNotFoundError: No module named 'yaml'
+2025-08-28 16:39:32,498 - CRITICAL - Unbehandelte Ausnahme (File: log, Line: 22, Function: handle_exception)
+Traceback (most recent call last):
+  File "C:\Users\simon\Seafile\CapMeasurementSystem\main.py", line 2, in <module>
+    from ui import run_app
+  File "C:\Users\simon\Seafile\CapMeasurementSystem\ui.py", line 23, in <module>
+    from gui_fig import DischargePlot
+  File "C:\Users\simon\Seafile\CapMeasurementSystem\gui_fig.py", line 1, in <module>
+    class DischargePlot:
+  File "C:\Users\simon\Seafile\CapMeasurementSystem\gui_fig.py", line 189, in DischargePlot
+    def zoom(self, factor: float, center: float | None = None):
+TypeError: unsupported operand type(s) for |: 'type' and 'NoneType'
+2025-08-28 16:41:17,321 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/C_A1_Class4_DUT1_V1_Vishay_Testaufbau_50F_18-03-2025.csv
+2025-08-28 16:41:17,329 - INFO - Analyse gestartet: Original_Signal
+2025-08-28 16:41:17,682 - INFO - Peak gefunden bei t=1854.560s, Wert=2.987
+2025-08-28 16:45:01,058 - CRITICAL - Unbehandelte Ausnahme (File: log, Line: 22, Function: handle_exception)
+Traceback (most recent call last):
+  File "C:\Users\simon\Seafile\CapMeasurementSystem\main.py", line 2, in <module>
+    from ui import run_app
+  File "C:\Users\simon\Seafile\CapMeasurementSystem\ui.py", line 16, in <module>
+    from cap_calculations import cut_and_analyze_peak, recompute_from_peak
+  File "C:\Users\simon\Seafile\CapMeasurementSystem\cap_calculations.py", line 16, in <module>
+    from analysis_param_management import AnalysisParams
+  File "C:\Users\simon\Seafile\CapMeasurementSystem\analysis_param_management.py", line 8, in <module>
+    import yaml
+ModuleNotFoundError: No module named 'yaml'
+2025-08-28 16:45:19,296 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/C_A1_Class4_DUT2_V1_Vishay_Testaufbau_50F_20-03-2025.csv
+2025-08-28 16:45:19,301 - INFO - Analyse gestartet: Original_Signal
+2025-08-28 16:45:19,496 - INFO - Peak gefunden bei t=1923.090s, Wert=2.986
+2025-08-28 16:49:12,660 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/C_A1_Class4_DUT1_V1_Vishay_Testaufbau_50F_18-03-2025.csv
+2025-08-28 16:49:12,666 - INFO - Analyse gestartet: Original_Signal
+2025-08-28 16:49:13,006 - INFO - Peak gefunden bei t=1854.560s, Wert=2.987
+2025-08-28 16:50:11,796 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay\cut_data\C_A1_Class4_DUT1_V1_Vishay_50F_cut.csv gespeichert.
+2025-08-28 16:50:11,796 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay\cut_data\C_A1_Class4_DUT1_V1_Vishay_50F_cut.csv
+2025-08-28 17:12:39,641 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F/C_A2_DUT1_V1_Vishay_25F_05-08-2025.csv
+2025-08-28 17:12:39,656 - INFO - Analyse gestartet: Original_Signal
+2025-08-28 17:12:45,825 - INFO - Peak gefunden bei t=1871.370s, Wert=2.993
+2025-08-28 17:20:44,185 - INFO - Analyse gestartet: Original_Signal
+2025-08-28 17:20:50,213 - INFO - Peak gefunden bei t=1875.630s, Wert=2.988
+2025-08-28 17:27:04,954 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\C_A2_DUT1_V1_Vishay_25F_cut.csv gespeichert.
+2025-08-28 17:27:04,955 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\C_A2_DUT1_V1_Vishay_25F_cut.csv
+2025-08-29 10:03:28,708 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F/C_A2_DUT2_V1_Vishay_25F_06-08-2025.csv
+2025-08-29 10:03:28,722 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:03:35,104 - INFO - Peak gefunden bei t=1851.860s, Wert=2.992
+2025-08-29 10:04:07,415 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:04:15,982 - INFO - Peak gefunden bei t=1853.590s, Wert=2.990
+2025-08-29 10:06:11,895 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\C_A2_DUT2_V1_Vishay_25F_cut.csv gespeichert.
+2025-08-29 10:06:11,896 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\C_A2_DUT2_V1_Vishay_25F_cut.csv
+2025-08-29 10:06:22,091 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F/C_A2_DUT3_V1_Vishay_25F_05-08-2025.csv
+2025-08-29 10:06:22,102 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:06:28,741 - INFO - Peak gefunden bei t=1876.040s, Wert=2.992
+2025-08-29 10:07:51,451 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\C_A2_DUT3_V1_Vishay_25F_cut.csv gespeichert.
+2025-08-29 10:07:51,452 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\C_A2_DUT3_V1_Vishay_25F_cut.csv
+2025-08-29 10:08:06,709 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F/C_A3_DUT1_V1_Vishay_Testaufbau_25F_09-07-2025.csv
+2025-08-29 10:08:06,715 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:08:07,580 - INFO - Peak gefunden bei t=1852.920s, Wert=2.989
+2025-08-29 10:08:43,281 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:08:43,917 - INFO - Peak gefunden bei t=1852.920s, Wert=2.989
+2025-08-29 10:09:00,555 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\C_A3_DUT1_V1_Vishay_25F_cut.csv gespeichert.
+2025-08-29 10:09:00,555 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\C_A3_DUT1_V1_Vishay_25F_cut.csv
+2025-08-29 10:09:24,591 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F/C_A3_DUT2_V1_Vishay_Testaufbau_25F_09-07-2025.csv
+2025-08-29 10:09:24,597 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:09:25,365 - INFO - Peak gefunden bei t=1855.870s, Wert=2.988
+2025-08-29 10:09:36,871 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:09:37,465 - INFO - Peak gefunden bei t=1855.870s, Wert=2.988
+2025-08-29 10:09:52,384 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:09:53,752 - INFO - Peak gefunden bei t=1855.870s, Wert=2.988
+2025-08-29 10:10:14,095 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\C_A3_DUT2_V1_Vishay_25F_cut.csv gespeichert.
+2025-08-29 10:10:14,096 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\C_A3_DUT2_V1_Vishay_25F_cut.csv
+2025-08-29 10:11:22,352 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F/C_A3_DUT3_V1_Vishay_Testaufbau_25F_09-07-2025.csv
+2025-08-29 10:11:22,361 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:11:23,534 - INFO - Peak gefunden bei t=1871.170s, Wert=2.988
+2025-08-29 10:11:54,391 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\C_A3_DUT3_V1_Vishay_25F_cut.csv gespeichert.
+2025-08-29 10:11:54,391 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\C_A3_DUT3_V1_Vishay_25F_cut.csv
+2025-08-29 10:12:04,742 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F/C_B1_DUT1_V1_Vishay_Testaufbau_25F_09-07-2025.csv
+2025-08-29 10:12:04,745 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:12:04,879 - INFO - Peak gefunden bei t=363.210s, Wert=2.986
+2025-08-29 10:13:10,446 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\C_B1_DUT1_V1_Vishay_25F_cut.csv gespeichert.
+2025-08-29 10:13:10,447 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\C_B1_DUT1_V1_Vishay_25F_cut.csv
+2025-08-29 10:13:20,153 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F/C_B1_DUT2_V1_Vishay_Testaufbau_25F_09-07-2025.csv
+2025-08-29 10:13:20,157 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:13:20,422 - INFO - Peak gefunden bei t=355.730s, Wert=2.987
+2025-08-29 10:13:31,005 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\C_B1_DUT2_V1_Vishay_25F_cut.csv gespeichert.
+2025-08-29 10:13:31,006 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\C_B1_DUT2_V1_Vishay_25F_cut.csv
+2025-08-29 10:13:36,267 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F/C_B1_DUT3_V1_Vishay_Testaufbau_25F_09-07-2025.csv
+2025-08-29 10:13:36,269 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:13:36,361 - INFO - Peak gefunden bei t=346.610s, Wert=2.988
+2025-08-29 10:13:39,138 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\C_B1_DUT3_V1_Vishay_25F_cut.csv gespeichert.
+2025-08-29 10:13:39,139 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\C_B1_DUT3_V1_Vishay_25F_cut.csv
+2025-08-29 10:13:41,630 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\C_B1_DUT3_V1_Vishay_25F_cut.csv gespeichert.
+2025-08-29 10:13:41,630 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\C_B1_DUT3_V1_Vishay_25F_cut.csv
+2025-08-29 10:13:47,252 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F/ESR_A3_DUT1_V1_Vishay_Testaufbau_25F_09-07-2025.csv
+2025-08-29 10:13:47,257 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:13:47,487 - INFO - Peak gefunden bei t=2055.450s, Wert=2.990
+2025-08-29 10:13:59,119 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\ESR_A3_DUT1_V1_Vishay_25F_cut.csv gespeichert.
+2025-08-29 10:13:59,120 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\ESR_A3_DUT1_V1_Vishay_25F_cut.csv
+2025-08-29 10:14:07,357 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F/ESR_A3_DUT2_V1_Vishay_Testaufbau_25F_09-07-2025.csv
+2025-08-29 10:14:07,361 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:14:07,622 - INFO - Peak gefunden bei t=1853.800s, Wert=2.986
+2025-08-29 10:14:18,590 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\ESR_A3_DUT2_V1_Vishay_25F_cut.csv gespeichert.
+2025-08-29 10:14:18,590 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\ESR_A3_DUT2_V1_Vishay_25F_cut.csv
+2025-08-29 10:14:23,699 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F/ESR_A3_DUT3_V1_Vishay_Testaufbau_25F_09-07-2025.csv
+2025-08-29 10:14:23,703 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:14:23,915 - INFO - Peak gefunden bei t=1838.390s, Wert=2.989
+2025-08-29 10:14:46,354 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\ESR_A3_DUT3_V1_Vishay_25F_cut.csv gespeichert.
+2025-08-29 10:14:46,354 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\ESR_A3_DUT3_V1_Vishay_25F_cut.csv
+2025-08-29 10:15:11,575 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\ESR_A3_DUT3_V1_Vishay_25F_cut.csv gespeichert.
+2025-08-29 10:15:11,576 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Vishay/25F\cut_data\ESR_A3_DUT3_V1_Vishay_25F_cut.csv
+2025-08-29 10:16:26,329 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/WürthElektronik/25F/C_A3_DUT1_V1_WuerthElektronik_Testaufbau_25F_29-07-2025.csv
+2025-08-29 10:16:26,336 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:16:26,347 - WARNING - Fehler beim Öffnen: Das Signal enthält keine Datenpunkte nach dem Schneiden. (File: ui, Line: 303, Function: on_open_file)
+2025-08-29 10:16:34,607 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/WürthElektronik/25F/C_A3_DUT2_V1_WuerthElektronik_Testaufbau_25F_30-07-2025.csv
+2025-08-29 10:16:34,613 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:16:34,622 - WARNING - Fehler beim Öffnen: Das Signal enthält keine Datenpunkte nach dem Schneiden. (File: ui, Line: 303, Function: on_open_file)
+2025-08-29 10:16:38,720 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/WürthElektronik/25F/ESR_A3_DUT1_V1_WuerthElektronik_Testaufbau_25F_29-07-2025.csv
+2025-08-29 10:16:38,726 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:16:38,735 - WARNING - Fehler beim Öffnen: Das Signal enthält keine Datenpunkte nach dem Schneiden. (File: ui, Line: 303, Function: on_open_file)
+2025-08-29 10:18:46,393 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F/C_A3_DUT1_V1_Kyocera_Testaufbau_25F_08-07-2025.csv
+2025-08-29 10:18:46,400 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:18:47,580 - INFO - Peak gefunden bei t=1880.310s, Wert=2.991
+2025-08-29 10:19:02,399 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\C_A3_DUT1_V1_Kyocera_25F_cut.csv gespeichert.
+2025-08-29 10:19:02,400 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\C_A3_DUT1_V1_Kyocera_25F_cut.csv
+2025-08-29 10:19:11,382 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F/C_A3_DUT2_V1_Kyocera_Testaufbau_25F_08-07-2025.csv
+2025-08-29 10:19:11,388 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:19:12,481 - INFO - Peak gefunden bei t=1875.660s, Wert=2.989
+2025-08-29 10:19:33,820 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\C_A3_DUT2_V1_Kyocera_25F_cut.csv gespeichert.
+2025-08-29 10:19:33,821 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\C_A3_DUT2_V1_Kyocera_25F_cut.csv
+2025-08-29 10:19:55,772 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F/C_A3_DUT3_V1_Kyocera_Testaufbau_25F_08-07-2025.csv
+2025-08-29 10:19:55,777 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:19:56,469 - INFO - Peak gefunden bei t=1949.260s, Wert=2.989
+2025-08-29 10:20:05,924 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\C_A3_DUT3_V1_Kyocera_25F_cut.csv gespeichert.
+2025-08-29 10:20:05,925 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\C_A3_DUT3_V1_Kyocera_25F_cut.csv
+2025-08-29 10:20:13,480 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F/C_B1_DUT1_V1_Kyocera_Testaufbau_25F_02-07-2025.csv
+2025-08-29 10:20:13,481 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:20:13,602 - INFO - Peak gefunden bei t=358.130s, Wert=2.983
+2025-08-29 10:20:20,859 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\C_B1_DUT1_V1_Kyocera_25F_cut.csv gespeichert.
+2025-08-29 10:20:20,860 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\C_B1_DUT1_V1_Kyocera_25F_cut.csv
+2025-08-29 10:20:35,727 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F/C_B1_DUT2_V1_Kyocera_Testaufbau_25F_02-07-2025.csv
+2025-08-29 10:20:35,729 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:20:35,850 - INFO - Peak gefunden bei t=331.420s, Wert=2.982
+2025-08-29 10:20:42,512 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\C_B1_DUT2_V1_Kyocera_25F_cut.csv gespeichert.
+2025-08-29 10:20:42,513 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\C_B1_DUT2_V1_Kyocera_25F_cut.csv
+2025-08-29 10:20:49,503 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F/C_B1_DUT3_V1_Kyocera_Testaufbau_25F_02-07-2025.csv
+2025-08-29 10:20:49,504 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:20:49,628 - INFO - Peak gefunden bei t=369.580s, Wert=2.985
+2025-08-29 10:20:56,566 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\C_B1_DUT3_V1_Kyocera_25F_cut.csv gespeichert.
+2025-08-29 10:20:56,566 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\C_B1_DUT3_V1_Kyocera_25F_cut.csv
+2025-08-29 10:21:02,158 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F/ESR_A3_DUT1_V1_Kyocera_Testaufbau_25F_08-07-2025.csv
+2025-08-29 10:21:02,163 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:21:02,392 - INFO - Peak gefunden bei t=1933.520s, Wert=2.990
+2025-08-29 10:21:07,566 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\ESR_A3_DUT1_V1_Kyocera_25F_cut.csv gespeichert.
+2025-08-29 10:21:07,567 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\ESR_A3_DUT1_V1_Kyocera_25F_cut.csv
+2025-08-29 10:21:13,689 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F/ESR_A3_DUT2_V1_Kyocera_Testaufbau_25F_08-07-2025.csv
+2025-08-29 10:21:13,694 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:21:14,108 - INFO - Peak gefunden bei t=1867.380s, Wert=2.989
+2025-08-29 10:21:20,601 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\ESR_A3_DUT2_V1_Kyocera_25F_cut.csv gespeichert.
+2025-08-29 10:21:20,602 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\ESR_A3_DUT2_V1_Kyocera_25F_cut.csv
+2025-08-29 10:21:26,430 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F/ESR_A3_DUT3_V1_Kyocera_Testaufbau_25F_08-07-2025.csv
+2025-08-29 10:21:26,435 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:21:26,649 - INFO - Peak gefunden bei t=1813.630s, Wert=2.990
+2025-08-29 10:21:48,867 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\ESR_A3_DUT3_V1_Kyocera_25F_cut.csv gespeichert.
+2025-08-29 10:21:48,868 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\ESR_A3_DUT3_V1_Kyocera_25F_cut.csv
+2025-08-29 10:23:45,673 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\ESR_A3_DUT3_V1_Kyocera_25F_cut.csv gespeichert.
+2025-08-29 10:23:45,673 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\ESR_A3_DUT3_V1_Kyocera_25F_cut.csv
+2025-08-29 10:24:01,454 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F/C_A2_DUT1_V1_Kyocera_25F_07-08-2025.csv
+2025-08-29 10:24:01,464 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:24:06,264 - INFO - Peak gefunden bei t=1863.730s, Wert=2.992
+2025-08-29 10:24:29,269 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:24:33,864 - INFO - Peak gefunden bei t=1862.880s, Wert=2.994
+2025-08-29 10:26:14,993 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\C_A2_DUT1_V1_Kyocera_25F_cut.csv gespeichert.
+2025-08-29 10:26:14,994 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\C_A2_DUT1_V1_Kyocera_25F_cut.csv
+2025-08-29 10:26:21,120 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F/C_A2_DUT2_V1_Kyocera_25F_11-08-2025.csv
+2025-08-29 10:26:21,131 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:26:26,516 - INFO - Peak gefunden bei t=1874.930s, Wert=2.992
+2025-08-29 10:27:26,907 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\C_A2_DUT2_V1_Kyocera_25F_cut.csv gespeichert.
+2025-08-29 10:27:26,908 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\C_A2_DUT2_V1_Kyocera_25F_cut.csv
+2025-08-29 10:27:33,689 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F/C_A2_DUT3_V1_Kyocera_25F_11-08-2025.csv
+2025-08-29 10:27:33,700 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:27:38,944 - INFO - Peak gefunden bei t=1915.320s, Wert=2.993
+2025-08-29 10:28:12,855 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\C_A2_DUT3_V1_Kyocera_25F_cut.csv gespeichert.
+2025-08-29 10:28:12,855 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Kyocera/25F\cut_data\C_A2_DUT3_V1_Kyocera_25F_cut.csv
+2025-08-29 10:28:46,008 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F/C_A1_Class2_DUT1_V1_Maxwell_25F_31-07-2025.csv
+2025-08-29 10:28:46,018 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:28:51,537 - INFO - Peak gefunden bei t=1841.110s, Wert=2.995
+2025-08-29 10:31:47,306 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\C_A1_Class2_DUT1_V1_Maxwell_25F_cut.csv gespeichert.
+2025-08-29 10:31:47,307 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\C_A1_Class2_DUT1_V1_Maxwell_25F_cut.csv
+2025-08-29 10:31:56,196 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F/C_A1_Class2_DUT2_V1_Maxwell_25F_31-07-2025.csv
+2025-08-29 10:31:56,207 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:32:02,226 - INFO - Peak gefunden bei t=1849.950s, Wert=2.988
+2025-08-29 10:33:34,170 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\C_A1_Class2_DUT2_V1_Maxwell_25F_cut.csv gespeichert.
+2025-08-29 10:33:34,170 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\C_A1_Class2_DUT2_V1_Maxwell_25F_cut.csv
+2025-08-29 10:33:56,101 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F/C_A2_DUT3_V1_Maxwell_Testaufbau_25F_29-07-2025.csv
+2025-08-29 10:33:56,110 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:34:00,922 - INFO - Peak gefunden bei t=1914.740s, Wert=2.995
+2025-08-29 10:35:02,811 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\C_A2_DUT3_V1_Maxwell_25F_cut.csv gespeichert.
+2025-08-29 10:35:02,812 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\C_A2_DUT3_V1_Maxwell_25F_cut.csv
+2025-08-29 10:35:40,384 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F/C_A3_DUT1_V1_Maxwell_Testaufbau_25F_29-07-2025.csv
+2025-08-29 10:35:40,393 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:35:41,321 - INFO - Peak gefunden bei t=1839.870s, Wert=2.994
+2025-08-29 10:36:10,596 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:36:11,072 - INFO - Peak gefunden bei t=1839.870s, Wert=2.994
+2025-08-29 10:36:26,326 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\C_A3_DUT1_V1_Maxwell_25F_cut.csv gespeichert.
+2025-08-29 10:36:26,326 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\C_A3_DUT1_V1_Maxwell_25F_cut.csv
+2025-08-29 10:36:36,319 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F/C_A3_DUT2_V1_Maxwell_Testaufbau_25F_29-07-2025.csv
+2025-08-29 10:36:36,324 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:36:36,930 - INFO - Peak gefunden bei t=1841.990s, Wert=2.994
+2025-08-29 10:36:45,845 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\C_A3_DUT2_V1_Maxwell_25F_cut.csv gespeichert.
+2025-08-29 10:36:45,846 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\C_A3_DUT2_V1_Maxwell_25F_cut.csv
+2025-08-29 10:36:57,921 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F/C_A3_DUT3_V1_Maxwell_Testaufbau_25F_29-07-2025.csv
+2025-08-29 10:36:57,926 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:36:58,841 - INFO - Peak gefunden bei t=1848.620s, Wert=2.994
+2025-08-29 10:37:08,993 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\C_A3_DUT3_V1_Maxwell_25F_cut.csv gespeichert.
+2025-08-29 10:37:08,994 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\C_A3_DUT3_V1_Maxwell_25F_cut.csv
+2025-08-29 10:37:15,485 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F/C_B1_DUT1_V1_Maxwell_Testaufbau_25F_29-07-2025.csv
+2025-08-29 10:37:15,487 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:37:15,584 - INFO - Peak gefunden bei t=346.380s, Wert=2.995
+2025-08-29 10:37:41,651 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\C_B1_DUT1_V1_Maxwell_25F_cut.csv gespeichert.
+2025-08-29 10:37:41,651 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\C_B1_DUT1_V1_Maxwell_25F_cut.csv
+2025-08-29 10:37:48,942 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F/C_B1_DUT2_V1_Maxwell_Testaufbau_25F_29-07-2025.csv
+2025-08-29 10:37:48,944 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:37:49,033 - INFO - Peak gefunden bei t=356.010s, Wert=2.995
+2025-08-29 10:37:57,113 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\C_B1_DUT2_V1_Maxwell_25F_cut.csv gespeichert.
+2025-08-29 10:37:57,113 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\C_B1_DUT2_V1_Maxwell_25F_cut.csv
+2025-08-29 10:38:09,855 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F/C_B1_DUT3_V1_Maxwell_Testaufbau_25F_29-07-2025.csv
+2025-08-29 10:38:09,857 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:38:10,004 - INFO - Peak gefunden bei t=344.510s, Wert=2.994
+2025-08-29 10:38:15,077 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\C_B1_DUT3_V1_Maxwell_25F_cut.csv gespeichert.
+2025-08-29 10:38:15,078 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\C_B1_DUT3_V1_Maxwell_25F_cut.csv
+2025-08-29 10:38:24,163 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F/ESR_A3_DUT1_V1_Maxwell_Testaufbau_25F_29-07-2025.csv
+2025-08-29 10:38:24,168 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:38:24,363 - INFO - Peak gefunden bei t=1840.880s, Wert=2.994
+2025-08-29 10:38:31,339 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\ESR_A3_DUT1_V1_Maxwell_25F_cut.csv gespeichert.
+2025-08-29 10:38:31,340 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\ESR_A3_DUT1_V1_Maxwell_25F_cut.csv
+2025-08-29 10:38:36,825 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F/ESR_A3_DUT2_V1_Maxwell_Testaufbau_25F_29-07-2025.csv
+2025-08-29 10:38:36,830 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:38:37,065 - INFO - Peak gefunden bei t=1835.970s, Wert=2.993
+2025-08-29 10:38:40,073 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\ESR_A3_DUT2_V1_Maxwell_25F_cut.csv gespeichert.
+2025-08-29 10:38:40,074 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\ESR_A3_DUT2_V1_Maxwell_25F_cut.csv
+2025-08-29 10:38:49,215 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F/ESR_A3_DUT3_V1_Maxwell_Testaufbau_25F_29-07-2025.csv
+2025-08-29 10:38:49,220 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:38:49,438 - INFO - Peak gefunden bei t=1837.830s, Wert=2.993
+2025-08-29 10:38:55,694 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\ESR_A3_DUT3_V1_Maxwell_25F_cut.csv gespeichert.
+2025-08-29 10:38:55,695 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Maxwell/25F\cut_data\ESR_A3_DUT3_V1_Maxwell_25F_cut.csv
+2025-08-29 10:40:51,393 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F/C_A4_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-29 10:40:51,398 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:40:51,653 - INFO - Peak gefunden bei t=1832.840s, Wert=2.986
+2025-08-29 10:41:30,025 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\C_A4_DUT1_V1_EATON_25F_cut.csv gespeichert.
+2025-08-29 10:41:30,026 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\C_A4_DUT1_V1_EATON_25F_cut.csv
+2025-08-29 10:41:35,616 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F/C_A4_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-29 10:41:35,621 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:41:35,867 - INFO - Peak gefunden bei t=1832.910s, Wert=2.987
+2025-08-29 10:41:55,777 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\C_A4_DUT2_V1_EATON_25F_cut.csv gespeichert.
+2025-08-29 10:41:55,778 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\C_A4_DUT2_V1_EATON_25F_cut.csv
+2025-08-29 10:42:04,367 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F/C_A4_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-29 10:42:04,372 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:42:04,582 - INFO - Peak gefunden bei t=1849.960s, Wert=2.986
+2025-08-29 10:42:13,769 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\C_A4_DUT3_V1_EATON_25F_cut.csv gespeichert.
+2025-08-29 10:42:13,769 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\C_A4_DUT3_V1_EATON_25F_cut.csv
+2025-08-29 10:42:21,562 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F/C_B1_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-29 10:42:21,564 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:42:21,652 - INFO - Peak gefunden bei t=345.800s, Wert=2.988
+2025-08-29 10:43:45,590 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\C_B1_DUT1_V1_EATON_25F_cut.csv gespeichert.
+2025-08-29 10:43:45,590 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\C_B1_DUT1_V1_EATON_25F_cut.csv
+2025-08-29 10:43:52,218 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F/C_B1_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-29 10:43:52,220 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:43:52,407 - INFO - Peak gefunden bei t=340.720s, Wert=2.986
+2025-08-29 10:43:55,365 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\C_B1_DUT2_V1_EATON_25F_cut.csv gespeichert.
+2025-08-29 10:43:55,365 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\C_B1_DUT2_V1_EATON_25F_cut.csv
+2025-08-29 10:44:35,595 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F/C_B1_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-29 10:44:35,597 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:44:35,691 - INFO - Peak gefunden bei t=343.370s, Wert=2.986
+2025-08-29 10:44:39,948 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\C_B1_DUT3_V1_EATON_25F_cut.csv gespeichert.
+2025-08-29 10:44:39,949 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\C_B1_DUT3_V1_EATON_25F_cut.csv
+2025-08-29 10:44:45,539 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-29 10:44:45,545 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:44:46,303 - INFO - Peak gefunden bei t=1829.450s, Wert=2.988
+2025-08-29 10:44:55,061 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\ESR_A2_DUT1_V1_EATON_25F_cut.csv gespeichert.
+2025-08-29 10:44:55,061 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\ESR_A2_DUT1_V1_EATON_25F_cut.csv
+2025-08-29 10:45:00,897 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT2_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-29 10:45:00,902 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:45:01,536 - INFO - Peak gefunden bei t=1813.220s, Wert=2.988
+2025-08-29 10:45:08,043 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\ESR_A2_DUT2_V1_EATON_25F_cut.csv gespeichert.
+2025-08-29 10:45:08,043 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\ESR_A2_DUT2_V1_EATON_25F_cut.csv
+2025-08-29 10:45:13,096 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F/ESR_A2_DUT3_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-29 10:45:13,101 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:45:13,818 - INFO - Peak gefunden bei t=1864.310s, Wert=2.986
+2025-08-29 10:45:21,300 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\ESR_A2_DUT3_V1_EATON_25F_cut.csv gespeichert.
+2025-08-29 10:45:21,301 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\ESR_A2_DUT3_V1_EATON_25F_cut.csv
+2025-08-29 10:45:28,958 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F/ESR_A4_DUT1_V1_EATON_Testaufbau_25F_01-07-2025.csv
+2025-08-29 10:45:28,963 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:45:29,163 - INFO - Peak gefunden bei t=1830.790s, Wert=2.985
+2025-08-29 10:46:19,888 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:46:20,047 - INFO - Peak gefunden bei t=1830.790s, Wert=2.985
+2025-08-29 10:46:44,830 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F/C_A2_DUT1_V1_Eaton_25F_06-08-2025.csv
+2025-08-29 10:46:44,840 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:46:49,583 - INFO - Peak gefunden bei t=1838.320s, Wert=2.989
+2025-08-29 10:48:13,128 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\C_A2_DUT1_V1_Eaton_25F_cut.csv gespeichert.
+2025-08-29 10:48:13,128 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\C_A2_DUT1_V1_Eaton_25F_cut.csv
+2025-08-29 10:48:19,462 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F/C_A2_DUT2_V1_Eaton_25F_06-08-2025.csv
+2025-08-29 10:48:19,473 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:48:24,750 - INFO - Peak gefunden bei t=1836.520s, Wert=2.990
+2025-08-29 10:54:41,688 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\C_A2_DUT2_V1_Eaton_25F_cut.csv gespeichert.
+2025-08-29 10:54:41,689 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\C_A2_DUT2_V1_Eaton_25F_cut.csv
+2025-08-29 10:54:47,666 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F/C_A2_DUT3_V1_Eaton_25F_06-08-2025.csv
+2025-08-29 10:54:47,680 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:54:52,890 - INFO - Peak gefunden bei t=1834.150s, Wert=2.994
+2025-08-29 10:58:24,767 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\C_A2_DUT3_V1_Eaton_25F_cut.csv gespeichert.
+2025-08-29 10:58:24,767 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Eaton/25F\cut_data\C_A2_DUT3_V1_Eaton_25F_cut.csv
+2025-08-29 10:58:36,496 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F/C_A2_DUT1_V1_Sech_25F_06-08-2025.csv
+2025-08-29 10:58:36,507 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:58:41,700 - INFO - Peak gefunden bei t=1847.610s, Wert=2.990
+2025-08-29 10:59:42,112 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\C_A2_DUT1_V1_Sech_25F_cut.csv gespeichert.
+2025-08-29 10:59:42,112 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\C_A2_DUT1_V1_Sech_25F_cut.csv
+2025-08-29 10:59:50,081 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F/C_A2_DUT2_V1_Sech_25F_07-08-2025.csv
+2025-08-29 10:59:50,094 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 10:59:55,278 - INFO - Peak gefunden bei t=1846.090s, Wert=2.993
+2025-08-29 11:02:41,427 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\C_A2_DUT2_V1_Sech_25F_cut.csv gespeichert.
+2025-08-29 11:02:41,428 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\C_A2_DUT2_V1_Sech_25F_cut.csv
+2025-08-29 11:03:02,669 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F/C_A2_DUT3_V1_Sech_25F_07-08-2025.csv
+2025-08-29 11:03:02,679 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 11:03:07,341 - INFO - Peak gefunden bei t=1836.560s, Wert=2.994
+2025-08-29 11:03:36,493 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\C_A2_DUT3_V1_Sech_25F_cut.csv gespeichert.
+2025-08-29 11:03:36,493 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\C_A2_DUT3_V1_Sech_25F_cut.csv
+2025-08-29 11:03:42,123 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F/C_A4_DUT1_V1_SECH_Testaufbau_25F_02-07-2025.csv
+2025-08-29 11:03:42,129 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 11:03:42,372 - INFO - Peak gefunden bei t=1842.870s, Wert=2.985
+2025-08-29 11:03:50,558 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 11:03:50,711 - INFO - Peak gefunden bei t=1842.870s, Wert=2.985
+2025-08-29 11:03:54,701 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\C_A4_DUT1_V1_SECH_25F_cut.csv gespeichert.
+2025-08-29 11:03:54,701 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\C_A4_DUT1_V1_SECH_25F_cut.csv
+2025-08-29 11:04:01,403 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F/C_A4_DUT2_V1_SECH_Testaufbau_25F_02-07-2025.csv
+2025-08-29 11:04:01,408 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 11:04:01,788 - INFO - Peak gefunden bei t=1848.770s, Wert=2.987
+2025-08-29 11:04:06,659 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\C_A4_DUT2_V1_SECH_25F_cut.csv gespeichert.
+2025-08-29 11:04:06,660 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\C_A4_DUT2_V1_SECH_25F_cut.csv
+2025-08-29 11:04:12,948 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F/C_A4_DUT3_V1_SECH_Testaufbau_25F_02-07-2025.csv
+2025-08-29 11:04:12,952 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 11:04:13,207 - INFO - Peak gefunden bei t=1855.870s, Wert=2.987
+2025-08-29 11:04:19,255 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\C_A4_DUT3_V1_SECH_25F_cut.csv gespeichert.
+2025-08-29 11:04:19,255 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\C_A4_DUT3_V1_SECH_25F_cut.csv
+2025-08-29 11:04:40,400 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F/C_B1_DUT1_V1_SECH_Testaufbau_25F_01-07-2025.csv
+2025-08-29 11:04:40,402 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 11:04:40,518 - INFO - Peak gefunden bei t=327.870s, Wert=2.984
+2025-08-29 11:04:58,295 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\C_B1_DUT1_V1_SECH_25F_cut.csv gespeichert.
+2025-08-29 11:04:58,296 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\C_B1_DUT1_V1_SECH_25F_cut.csv
+2025-08-29 11:05:07,937 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F/C_B1_DUT2_V1_SECH_Testaufbau_25F_01-07-2025.csv
+2025-08-29 11:05:07,938 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 11:05:08,066 - INFO - Peak gefunden bei t=346.280s, Wert=2.985
+2025-08-29 11:05:36,440 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\C_B1_DUT2_V1_SECH_25F_cut.csv gespeichert.
+2025-08-29 11:05:36,441 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\C_B1_DUT2_V1_SECH_25F_cut.csv
+2025-08-29 11:06:01,095 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F/C_B1_DUT3_V1_SECH_Testaufbau_25F_01-07-2025.csv
+2025-08-29 11:06:01,098 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 11:06:01,224 - INFO - Peak gefunden bei t=347.160s, Wert=2.983
+2025-08-29 11:06:17,694 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\C_B1_DUT3_V1_SECH_25F_cut.csv gespeichert.
+2025-08-29 11:06:17,694 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\C_B1_DUT3_V1_SECH_25F_cut.csv
+2025-08-29 11:06:23,166 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F/ESR_A2_DUT1_V1_SECH_Testaufbau_25F_02-07-2025.csv
+2025-08-29 11:06:23,171 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 11:06:23,793 - INFO - Peak gefunden bei t=1845.050s, Wert=2.988
+2025-08-29 11:06:32,911 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\ESR_A2_DUT1_V1_SECH_25F_cut.csv gespeichert.
+2025-08-29 11:06:32,912 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\ESR_A2_DUT1_V1_SECH_25F_cut.csv
+2025-08-29 11:06:37,553 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F/ESR_A2_DUT2_V1_SECH_Testaufbau_25F_02-07-2025.csv
+2025-08-29 11:06:37,559 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 11:06:38,185 - INFO - Peak gefunden bei t=1858.920s, Wert=2.987
+2025-08-29 11:06:44,963 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\ESR_A2_DUT2_V1_SECH_25F_cut.csv gespeichert.
+2025-08-29 11:06:44,964 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\ESR_A2_DUT2_V1_SECH_25F_cut.csv
+2025-08-29 11:06:52,509 - INFO - Datei erfolgreich geladen: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F/ESR_A2_DUT3_V1_SECH_Testaufbau_25F_02-07-2025.csv
+2025-08-29 11:06:52,514 - INFO - Analyse gestartet: Original_Signal
+2025-08-29 11:06:53,175 - INFO - Peak gefunden bei t=1845.670s, Wert=2.986
+2025-08-29 11:07:07,597 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\ESR_A2_DUT3_V1_SECH_25F_cut.csv gespeichert.
+2025-08-29 11:07:07,598 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\ESR_A2_DUT3_V1_SECH_25F_cut.csv
+2025-08-29 11:07:14,260 - INFO - SignalData erfolgreich in C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\ESR_A2_DUT3_V1_SECH_25F_cut.csv gespeichert.
+2025-08-29 11:07:14,260 - INFO - Gespeichert: C:/Users/simon/Seafile/Supercap Testing/Testing/Sech/25F\cut_data\ESR_A2_DUT3_V1_SECH_25F_cut.csv
+2025-09-03 12:18:00,249 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/Maxwell/25F/C_A3_DUT1_V1_Maxwell_Testaufbau_25F_29-07-2025.csv
+2025-09-03 12:18:00,253 - INFO - Analyse gestartet: Original_Signal
+2025-09-03 12:18:00,723 - INFO - Peak gefunden bei t=1839.870s, Wert=2.994
+2025-09-03 12:19:26,272 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/WürthElektronik/25F/C_B1_DUT1_V1_WuerthElektronik_Testaufbau_25F_02-07-2025.csv
+2025-09-03 12:19:26,273 - INFO - Analyse gestartet: Original_Signal
+2025-09-03 12:19:26,278 - WARNING - Fehler beim Öffnen: Das Signal enthält keine Datenpunkte nach dem Schneiden. (File: ui, Line: 303, Function: on_open_file)
+2025-09-03 12:19:39,107 - INFO - Analyse gestartet: Original_Signal
+2025-09-03 12:19:39,175 - INFO - Peak gefunden bei t=341.110s, Wert=2.683
+2025-09-03 12:19:48,098 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/WürthElektronik/25F/C_A2_DUT1_V1_WuerthElektronik_Testaufbau_25F_30-07-2025.csv
+2025-09-03 12:19:48,108 - INFO - Analyse gestartet: Original_Signal
+2025-09-03 12:19:52,280 - INFO - Peak gefunden bei t=1862.560s, Wert=2.684
