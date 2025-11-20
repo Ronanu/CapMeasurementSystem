@@ -9,32 +9,48 @@ from log import logger
 
 class SignalDataLoader:
     def __init__(self, file_path, name, sampling_interval=0.01):
-        """
-        Lädt eine CSV-Datei und erstellt ein SignalData-Objekt.
-        :param file_path: Pfad zur CSV-Datei
-        :param name: Name des Signals
-        :param sampling_interval: Abtastintervall in Sekunden
-        """
         self.file_path = file_path
         self.sampling_interval = sampling_interval
-        self.signal_data = self.load_data(name)
+        self.signal_data, self.state_signal_data = self.load_data(name)
 
     def load_data(self, name):
         try:
-            """Lädt die CSV-Datei und gibt ein SignalData-Objekt zurück."""
-            df = read_csv(self.file_path, delimiter=",", decimal=",", quotechar='"',
-                            skipinitialspace=True, usecols=[1], names=["value"], skiprows=1)
-            df["value"] = df["value"].astype(str).str.replace(",", ".").astype(float)
-            df.dropna(subset=["value"], inplace=True)
-            df["time"] = arange(len(df)) * self.sampling_interval
+            # CSV komplett einlesen (Indexspalte + 1–2 Kanäle)
+            df = read_csv(
+                self.file_path,
+                delimiter=",",
+                decimal=",",
+                quotechar='"',
+                skipinitialspace=True
+            )
+
+            # Spalte 0 = Index aus der Datei, Spalte 1 = Messdaten, Spalte 2 (optional) = Zustand
+            value_series = df.iloc[:, 1].astype(float)
+            state_series = df.iloc[:, 2].astype(float) if df.shape[1] > 2 else None
+
+            # Zeitachse
+            time = arange(len(value_series)) * self.sampling_interval
+
             logger.info(f"Datei erfolgreich geladen: {self.file_path}")
-            return SignalData(name, df["time"], df["value"])
+
+            signal = SignalData(name, time, value_series)
+
+            if state_series is not None:
+                state_signal = SignalData(f"{name}_state", time, state_series)
+                logger.info("Zustandsignal in der Datei gefunden und geladen.")
+            else:
+                state_signal = None
+                logger.info("Kein Zustandsignal in der Datei gefunden.")
+
+            return signal, state_signal
+
         except FileNotFoundError:
             logger.error(f"Datei nicht gefunden: {self.file_path}")
             raise
         except Exception as e:
             logger.exception(f"Fehler beim Laden der Datei {self.file_path}: {e}")
             raise
+
     
 
 class SignalData:
