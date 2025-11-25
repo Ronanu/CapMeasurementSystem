@@ -275,14 +275,17 @@ class SingleFileApp:
         if not path:
             return
         try:
-            self.orig_signal = load_signal(path, sampling_interval=self.params.sampling_interval)
+            self.orig_signal, state_signal= load_signal(path, sampling_interval=self.params.sampling_interval)
             self.file_path = path
             self.file_name = path.split("/")[-1]
             base_dir = "/".join(path.split("/")[:-1])
             self.save_dir = ensure_save_dir(base_dir)
 
             # Analyse (liefert signal & results)
-            self.orig_signal, self.results = cut_and_analyze_peak(self.orig_signal, self.params)
+            if state_signal is None:
+                self.orig_signal, self.results = cut_and_analyze_peak(self.orig_signal, self.params)
+            else:
+                pass # todo # NEU: state_signal berücksichtigen
             logger.debug(f"Analyseergebnisse: {self.results}")
 
             self.entry_peak.configure(state="normal")
