@@ -1040,3 +1040,154 @@ ModuleNotFoundError: No module named 'yaml'
 2025-09-03 12:19:48,098 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/Supercap Testing/Testing/WürthElektronik/25F/C_A2_DUT1_V1_WuerthElektronik_Testaufbau_25F_30-07-2025.csv
 2025-09-03 12:19:48,108 - INFO - Analyse gestartet: Original_Signal
 2025-09-03 12:19:52,280 - INFO - Peak gefunden bei t=1862.560s, Wert=2.684
+2025-11-19 12:38:48,541 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Downloads/ESR_A2_Class2_DUT5_V1_Vishay_50.csv
+2025-11-19 12:38:48,545 - INFO - Analyse gestartet: Original_Signal
+2025-11-19 12:38:49,399 - INFO - Peak gefunden bei t=1933.300s, Wert=2.987
+2025-11-19 12:38:49,467 - WARNING - Konnte Dateiname-Infos nicht extrahieren: cannot access local variable 'capacitance' where it is not associated with a value (File: ui, Line: 548, Function: _collect_fileinfo)
+2025-11-19 12:38:49,474 - WARNING - Keine passenden Keys gefunden (manuf='', cap='') (File: ui, Line: 580, Function: _compute_calcinfo)
+2025-11-20 16:21:03,389 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Documents/github_repos/CapMeasurementSystem/samples/C_A2_DUT1_V1_Vishay_Testaufbau_50F_10-11-2025.csv
+2025-11-20 16:21:03,418 - INFO - Analyse gestartet: Original_Signal
+2025-11-20 16:21:11,341 - INFO - Peak gefunden bei t=1864.170s, Wert=2.961
+2025-11-20 16:21:25,310 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Documents/github_repos/CapMeasurementSystem/samples/ESR_A2_Class2_DUT5_V1_Vishay_50.csv
+2025-11-20 16:21:25,314 - INFO - Analyse gestartet: Original_Signal
+2025-11-20 16:21:26,116 - INFO - Peak gefunden bei t=1933.300s, Wert=2.987
+2025-11-20 16:21:26,194 - WARNING - Konnte Dateiname-Infos nicht extrahieren: cannot access local variable 'capacitance' where it is not associated with a value (File: ui, Line: 548, Function: _collect_fileinfo)
+2025-11-20 16:21:26,200 - WARNING - Keine passenden Keys gefunden (manuf='', cap='') (File: ui, Line: 580, Function: _compute_calcinfo)
+2025-11-20 16:22:01,468 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Documents/github_repos/CapMeasurementSystem/samples/C_A2_DUT1_V1_Vishay_Testaufbau_50F_10-11-2025.csv
+2025-11-20 16:22:01,482 - INFO - Analyse gestartet: Original_Signal
+2025-11-20 16:22:07,805 - INFO - Peak gefunden bei t=1864.170s, Wert=2.961
+2025-11-20 16:23:16,091 - INFO - Datei erfolgreich geladen: C:/Users/rodi9/Documents/github_repos/CapMeasurementSystem/samples/C_A2_DUT1_V1_Vishay_Testaufbau_50F_10-11-2025.csv
+2025-11-20 16:23:16,103 - INFO - Zustandsignal in der Datei gefunden und geladen.
+2025-11-20 16:23:16,108 - INFO - Analyse gestartet: Original_Signal
+2025-11-20 16:23:23,370 - INFO - Peak gefunden bei t=1864.170s, Wert=2.961
+2025-11-25 10:07:38,949 - ERROR - Datei nicht gefunden: c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\processed_measurements\full_csv\C_A1_Class2_DUT1_V1_Vishay_50.csv (File: signal_transformations, Line: 48, Function: load_data)
+2025-11-25 10:07:38,950 - CRITICAL - Unbehandelte Ausnahme (File: log, Line: 22, Function: handle_exception)
+Traceback (most recent call last):
+  File "c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\state_from_state_signal.py", line 19, in <module>
+    signal, state_signal = load_signal(file, "Original Signal")
+                           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\io_ops.py", line 12, in load_signal
+    data_loader = SignalDataLoader(file_path=file_path, name='Original_Signal', sampling_interval=sampling_interval)
+  File "c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\signal_transformations.py", line 14, in __init__
+    self.signal_data, self.state_signal_data = self.load_data(name)
+                                               ~~~~~~~~~~~~~~^^^^^^
+  File "c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\signal_transformations.py", line 19, in load_data
+    df = read_csv(
+        self.file_path,
+    ...<3 lines>...
+        skipinitialspace=True
+    )
+  File "C:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ~~~~~~~~~~^
+        f,
+        ^^
+    ...<6 lines>...
+        storage_options=self.options.get("storage_options", None),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\venv\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+        handle,
+    ...<3 lines>...
+        newline="",
+    )
+FileNotFoundError: [Errno 2] No such file or directory: 'c:\\Users\\rodi9\\Documents\\github_repos\\CapMeasurementSystem\\processed_measurements\\full_csv\\C_A1_Class2_DUT1_V1_Vishay_50.csv'
+2025-11-25 10:09:05,183 - ERROR - Fehler beim Laden der Datei c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\samples\C_A2_DUT1_V1_Vishay_Testaufbau_50F_10-11-2025.csv: The 'out' kwarg is necessary when using the string multiply ufunc directly. Use numpy.strings.multiply to multiply strings without specifying 'out'. (File: signal_transformations, Line: 51, Function: load_data)
+Traceback (most recent call last):
+  File "c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\signal_transformations.py", line 32, in load_data
+    time = arange(len(value_series)) * self.sampling_interval
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: The 'out' kwarg is necessary when using the string multiply ufunc directly. Use numpy.strings.multiply to multiply strings without specifying 'out'.
+2025-11-25 10:09:05,185 - CRITICAL - Unbehandelte Ausnahme (File: log, Line: 22, Function: handle_exception)
+Traceback (most recent call last):
+  File "c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\state_from_state_signal.py", line 19, in <module>
+    signal, state_signal = load_signal(file, "Original Signal")
+                           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\io_ops.py", line 12, in load_signal
+    data_loader = SignalDataLoader(file_path=file_path, name='Original_Signal', sampling_interval=sampling_interval)
+  File "c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\signal_transformations.py", line 14, in __init__
+    self.signal_data, self.state_signal_data = self.load_data(name)
+                                               ~~~~~~~~~~~~~~^^^^^^
+  File "c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\signal_transformations.py", line 32, in load_data
+    time = arange(len(value_series)) * self.sampling_interval
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: The 'out' kwarg is necessary when using the string multiply ufunc directly. Use numpy.strings.multiply to multiply strings without specifying 'out'.
+2025-11-25 10:09:22,466 - ERROR - Fehler beim Laden der Datei c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\samples\C_A2_DUT1_V1_Vishay_Testaufbau_50F_10-11-2025.csv: The 'out' kwarg is necessary when using the string multiply ufunc directly. Use numpy.strings.multiply to multiply strings without specifying 'out'. (File: signal_transformations, Line: 51, Function: load_data)
+Traceback (most recent call last):
+  File "c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\signal_transformations.py", line 32, in load_data
+    time = arange(len(value_series)) * self.sampling_interval
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: The 'out' kwarg is necessary when using the string multiply ufunc directly. Use numpy.strings.multiply to multiply strings without specifying 'out'.
+2025-11-25 10:09:22,468 - CRITICAL - Unbehandelte Ausnahme (File: log, Line: 22, Function: handle_exception)
+Traceback (most recent call last):
+  File "c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\state_from_state_signal.py", line 19, in <module>
+    signal, state_signal = load_signal(file, "Original Signal")
+                           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\io_ops.py", line 12, in load_signal
+    data_loader = SignalDataLoader(file_path=file_path, name='Original_Signal', sampling_interval=sampling_interval)
+  File "c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\signal_transformations.py", line 14, in __init__
+    self.signal_data, self.state_signal_data = self.load_data(name)
+                                               ~~~~~~~~~~~~~~^^^^^^
+  File "c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\signal_transformations.py", line 32, in load_data
+    time = arange(len(value_series)) * self.sampling_interval
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: The 'out' kwarg is necessary when using the string multiply ufunc directly. Use numpy.strings.multiply to multiply strings without specifying 'out'.
+2025-11-25 10:10:51,661 - INFO - Datei erfolgreich geladen: c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\samples\C_A2_DUT1_V1_Vishay_Testaufbau_50F_10-11-2025.csv
+2025-11-25 10:10:51,677 - INFO - Zustandsignal in der Datei gefunden und geladen.
+2025-11-25 10:10:51,729 - CRITICAL - Unbehandelte Ausnahme (File: log, Line: 22, Function: handle_exception)
+Traceback (most recent call last):
+  File "c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\state_from_state_signal.py", line 21, in <module>
+    peak_signal.plot(title="Extracted Peak Signal")
+    ^^^^^^^^^^^^^^^^
+AttributeError: 'SignalData' object has no attribute 'plot'
+2025-11-25 10:11:31,536 - INFO - Datei erfolgreich geladen: c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\samples\C_A2_DUT1_V1_Vishay_Testaufbau_50F_10-11-2025.csv
+2025-11-25 10:11:31,545 - INFO - Zustandsignal in der Datei gefunden und geladen.
+2025-11-25 10:11:31,586 - CRITICAL - Unbehandelte Ausnahme (File: log, Line: 22, Function: handle_exception)
+Traceback (most recent call last):
+  File "c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\state_from_state_signal.py", line 21, in <module>
+    peak_signal.plot_signal(title="Extracted Peak Signal")
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SignalData.plot_signal() got an unexpected keyword argument 'title'
+2025-11-25 10:11:50,115 - INFO - Datei erfolgreich geladen: c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\samples\C_A2_DUT1_V1_Vishay_Testaufbau_50F_10-11-2025.csv
+2025-11-25 10:11:50,125 - INFO - Zustandsignal in der Datei gefunden und geladen.
+2025-11-25 10:13:17,776 - INFO - Datei erfolgreich geladen: c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\samples\C_A2_DUT1_V1_Vishay_Testaufbau_50F_10-11-2025.csv
+2025-11-25 10:13:17,785 - INFO - Zustandsignal in der Datei gefunden und geladen.
+2025-11-25 10:14:06,661 - INFO - Datei erfolgreich geladen: c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\samples\C_A2_DUT1_V1_Vishay_Testaufbau_50F_10-11-2025.csv
+2025-11-25 10:14:06,669 - INFO - Zustandsignal in der Datei gefunden und geladen.
+2025-11-25 10:14:50,969 - INFO - Datei erfolgreich geladen: c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\samples\C_A2_DUT1_V1_Vishay_Testaufbau_50F_10-11-2025.csv
+2025-11-25 10:14:50,978 - INFO - Zustandsignal in der Datei gefunden und geladen.
+2025-11-25 10:14:51,392 - WARNING - Warnung: Keine Datenpunkte wurden durch r< 1 entfernt. (File: signal_transformations, Line: 237, Function: cut_by_value)
+2025-11-25 10:15:05,828 - INFO - Datei erfolgreich geladen: c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\samples\C_A2_DUT1_V1_Vishay_Testaufbau_50F_10-11-2025.csv
+2025-11-25 10:15:05,838 - INFO - Zustandsignal in der Datei gefunden und geladen.
+2025-11-25 10:18:16,547 - INFO - Datei erfolgreich geladen: c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\samples\C_A2_DUT1_V1_Vishay_Testaufbau_50F_10-11-2025.csv
+2025-11-25 10:18:16,561 - INFO - Zustandsignal in der Datei gefunden und geladen.
+2025-11-25 10:21:16,985 - INFO - Datei erfolgreich geladen: c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\samples\C_A2_DUT1_V1_Vishay_Testaufbau_50F_10-11-2025.csv
+2025-11-25 10:21:16,993 - INFO - Zustandsignal in der Datei gefunden und geladen.
+2025-11-25 10:22:57,508 - INFO - Datei erfolgreich geladen: c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\samples\C_A2_DUT1_V1_Vishay_Testaufbau_50F_10-11-2025.csv
+2025-11-25 10:22:57,517 - INFO - Zustandsignal in der Datei gefunden und geladen.
+2025-11-25 10:25:22,902 - INFO - Datei erfolgreich geladen: c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\samples\C_A2_DUT1_V1_Vishay_Testaufbau_50F_10-11-2025.csv
+2025-11-25 10:25:22,912 - INFO - Zustandsignal in der Datei gefunden und geladen.
+2025-11-25 10:26:40,681 - INFO - Datei erfolgreich geladen: c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\samples\C_A2_DUT1_V1_Vishay_Testaufbau_50F_10-11-2025.csv
+2025-11-25 10:26:40,690 - INFO - Zustandsignal in der Datei gefunden und geladen.
+2025-11-25 10:26:41,201 - WARNING - Warnung: Keine Datenpunkte wurden durch l< 0.003 entfernt. (File: signal_transformations, Line: 217, Function: cut_by_value)
+2025-11-25 10:26:57,855 - INFO - Datei erfolgreich geladen: c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\samples\C_A2_DUT1_V1_Vishay_Testaufbau_50F_10-11-2025.csv
+2025-11-25 10:26:57,864 - INFO - Zustandsignal in der Datei gefunden und geladen.
+2025-11-25 10:27:43,112 - INFO - Datei erfolgreich geladen: c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\samples\C_A2_DUT1_V1_Vishay_Testaufbau_50F_10-11-2025.csv
+2025-11-25 10:27:43,121 - INFO - Zustandsignal in der Datei gefunden und geladen.
+2025-11-25 10:28:53,498 - INFO - Datei erfolgreich geladen: c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\samples\C_A2_DUT1_V1_Vishay_Testaufbau_50F_10-11-2025.csv
+2025-11-25 10:28:53,508 - INFO - Zustandsignal in der Datei gefunden und geladen.
+2025-11-25 10:29:53,869 - INFO - Datei erfolgreich geladen: c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\samples\C_A2_DUT1_V1_Vishay_Testaufbau_50F_10-11-2025.csv
+2025-11-25 10:29:53,878 - INFO - Zustandsignal in der Datei gefunden und geladen.
+2025-11-25 10:33:28,181 - INFO - Datei erfolgreich geladen: c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\samples\C_A2_DUT1_V1_Vishay_Testaufbau_50F_10-11-2025.csv
+2025-11-25 10:33:28,190 - INFO - Zustandsignal in der Datei gefunden und geladen.
+2025-11-25 10:36:10,431 - INFO - Datei erfolgreich geladen: c:\Users\rodi9\Documents\github_repos\CapMeasurementSystem\samples\C_A2_DUT1_V1_Vishay_Testaufbau_50F_10-11-2025.csv
+2025-11-25 10:36:10,441 - INFO - Zustandsignal in der Datei gefunden und geladen.
