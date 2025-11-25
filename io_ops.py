@@ -10,7 +10,7 @@ from log import logger
 def load_signal(file_path: str, sampling_interval: float = 0.01):
     """Lädt CSV als SignalData (Projektklasse)."""
     data_loader = SignalDataLoader(file_path=file_path, name='Original_Signal', sampling_interval=sampling_interval)
-    return data_loader.signal_data
+    return data_loader.signal_data, data_loader.state_signal_data
 
 
 def ensure_save_dir(base_dir: str, subdir: str = "cut_data") -> str:
